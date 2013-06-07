@@ -140,16 +140,15 @@ diag_log "ANTI-HACK 0.6.7: Adding public variable handler";
 	_playerNum = owner _player;
 	_hackType = _array select 1;
 	_hackValue = _array select 2;
-	diag_log format ["ANTI-HACK 0.6.7: %1 (%2) has a scripts-detection for '%3' with the value '%4'", _playerName, _playerID, _hackType, _hackValue];
 
 	// Bug #8396 - serverCommand doesn't work for ARMA 3 as of 2013-05-27
-	serverCommand format ["#exec ban %1", _playerID];
-	serverCommand format ["#kick %1", _playerID];
+	// serverCommand format ["#exec ban %1", _playerID];
+	// serverCommand format ["#kick %1", _playerID];
 	
 	sleep 0.5;
 	
 	[call compile format ["[{ player commandChat '[ANTI-HACK NOTICE] %1 was kicked for using cheating scripts.'; }]", _playerName], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
-	diag_log format ["ANTI-HACK 0.6.7: %1 (%2) was kicked for '%3' with the value '%4'", _playerName, _playerID, _hackType, _hackValue];
+	diag_log format ["ANTI-HACK 0.6.7: %1 (%2) was removed for '%3' with the value '%4'", _playerName, _playerID, _hackType, _hackValue];
 };
 
 "dat4ClientStarted" addPublicVariableEventHandler
