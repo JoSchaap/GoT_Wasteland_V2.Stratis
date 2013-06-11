@@ -3574,7 +3574,7 @@ class Mission
 			position[]={4277.4092,5.7745996,2705.1855};
 			id=309;
 			side="EMPTY";
-			vehicle="Land_Sack_F";
+			vehicle="Land_Cages_F";
 			skill=0.2;
 		};
 		class Item242
