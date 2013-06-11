@@ -56,6 +56,9 @@ createCargoItem = compile preprocessFileLineNumbers "server\missions\factoryMeth
 defendArea = compile preprocessFileLineNumbers "server\functions\defendArea.sqf";
 defendArea2 = compile preprocessFileLineNumbers "server\functions\defendArea2.sqf";
 defendArea3 = compile preprocessFileLineNumbers "server\functions\defendArea3.sqf";
+checkHackedVehicles = compileFinal preprocessFileLineNumbers "server\functions\checkHackedVehicles.sqf";
+findSafePos = compile preprocessFileLineNumbers "server\functions\findSafePos.sqf";
+findClientPlayer = compileFinal preprocessFileLineNumbers "server\functions\findClientPlayer.sqf";
 
 //Spawning Compiles
 fn_vehicleInit = compile preprocessFileLineNumbers "server\functions\fn_vehicleInit.sqf";
