@@ -1,4 +1,3 @@
-
 //	@file Version: 1.1
 //	@file Name: vehicleCreation.sqf
 //	@file Author: [404] Deadbeat, modded by AgentRev
@@ -56,6 +55,6 @@ _car disableTIEquipment true;
 [_car] call randomWeapons;
 
 //Set original posistion then add to vehicle array
-_car setVariable ["vehicleChecksum",vChecksum,true];
+_car setVariable ["vehicleChecksum",call vChecksum,true]; 
 _car setPosATL [getpos _car select 0,getpos _car select 1,1];
 _car setVelocity [0,0,0];
