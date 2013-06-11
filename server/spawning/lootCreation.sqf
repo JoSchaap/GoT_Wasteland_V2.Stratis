@@ -1,9 +1,9 @@
     //Random weapons and items spawning script for wasteland missions.
     //Author : Ed!, [GoT] JoSchaap
 
-    _odd1 = 35;       //The odds that a building is selected to place loot.
-    _odd2 = 30;       //The odds that the selected building's spots will have loot(almost like odds per room).
-    _itemtoweaponratio = 45;    //The chances of an item like food,money etc. will spawn instead of a weapon.
+    _odd1 = 30;       //The odds that a building is selected to place loot.
+    _odd2 = 25;       //The odds that the selected building's spots will have loot(almost like odds per room).
+    _itemtoweaponratio = 30;    //The chances of an item like food,money etc. will spawn instead of a weapon.
 //		randomweaponspawnminmoney = 30;  //The minimum amount of money that can spawn.
 //		randomweaponspawnmaxmoney = 190; //The maximum amount of money that can spawn.
 	money = 50; //random kept generating scalar errors , back to a steady ammount of 50
