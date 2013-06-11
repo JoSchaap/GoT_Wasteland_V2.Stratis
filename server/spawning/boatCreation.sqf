@@ -1,4 +1,3 @@
-
 //	@file Version: 1.1
 //	@file Name: boatCreation.sqf
 //	@file Author: [GoT] JoSchaap
@@ -33,5 +32,5 @@ _boat disableTIEquipment true;
 
 //Set original posistion then add to vehicle array
 _boat setVariable ["vehicleChecksum",vChecksum,true];
-_boat setPosATL [getpos _boat select 0,getpos _boat select 1,1];
+_boat setPosASL [getpos _boat select 0,getpos _boat select 1,0];
 _boat setVelocity [0,0,0];
