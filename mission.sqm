@@ -94,8 +94,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v2 (GoT/JoSchaap)";
-		briefingDescription="GoT Wasteland Survival Sandbox v2 (Enhanced-Edition) - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingName="GoT Wasteland v2.1 (GoT/JoSchaap)";
+		briefingDescription="GoT Wasteland Survival Sandbox v2.1 (Enhanced-Edition) - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;
@@ -107,7 +107,7 @@ class Mission
 		year=2013;
 		month=6;
 		day=25;
-		hour=5;
+		hour=4;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -5177,7 +5177,7 @@ class Intro
 		year=2013;
 		month=6;
 		day=25;
-		hour=5;
+		hour=4;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -5207,7 +5207,7 @@ class OutroWin
 		year=2013;
 		month=6;
 		day=25;
-		hour=5;
+		hour=4;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -5237,7 +5237,7 @@ class OutroLoose
 		year=2013;
 		month=6;
 		day=25;
-		hour=5;
+		hour=4;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;

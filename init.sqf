@@ -6,7 +6,7 @@
 //	@file Args:
 
 //  	reset BIS_fnc_mp
-"BIS_fnc_MP_packet" addPublicVariableEventHandler {};
+//"BIS_fnc_MP_packet" addPublicVariableEventHandler {};
 
 #include "setup.sqf"
 
@@ -17,7 +17,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "GoT Wasteland v2";
+versionName = "GoT Wasteland v2.1";
 
 vChecksum = 1;
 
@@ -31,7 +31,7 @@ if(isNull player) then {X_JIP = true;};
 
 true spawn {
 	if(!isDedicated) then {
-		titleText ["Welcome to GoT Wasteland v2, Have patience dear Padawan!", "BLACK", 0];
+		titleText ["Welcome to GoT Wasteland v2.1, Have patience dear Padawan!", "BLACK", 0];
 		waitUntil {player == player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
@@ -88,13 +88,5 @@ if (!isDedicated) then {
 
 [] execVM "addons\proving_Ground\init.sqf";
 
-if (X_Server) then
-{
-	[] execVM "server\functions\Cheatsarebadmmkay.sqf";
-}
-else
-{
-	"THISIS43SPARTA" addPublicVariableEventHandler { [] spawn (_this select 1); };
-    dat4ClientStarted = player;
-    publicVariableServer "dat4ClientStarted";
-};
+
+GAM_TimeXlerationMP = [1, 10, true, 5] execVM "addons\GAM_TimeXlr\timexleration-mp.sqf";

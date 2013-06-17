@@ -90,5 +90,5 @@ _player setVariable["camonet",0,false];
 
 [] execVM "client\functions\playerActions.sqf";
 
-_player groupChat format["GoT Wasteland v2 - Initialization Complete"];
+_player groupChat format["GoT Wasteland v2.1 - Initialization Complete"];
 playerSetupComplete = true;

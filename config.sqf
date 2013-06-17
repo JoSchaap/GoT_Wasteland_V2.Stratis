@@ -30,8 +30,8 @@ weaponsArray = [
     ["RPG-42 Alamut","launch_RPG32_F",300,200],
     	//Sniper
     ["EBR","srifle_EBR_F",250,100],
-    ["Lynx 12.7c GM6","srifle_GM6_SOS_F",750,450],
-    ["M320 LRR Rifle","srifle_LRR_SOS_F",750,450]
+    ["Lynx 12.7c GM6","srifle_GM6_SOS_F",950,450],
+    ["M320 LRR Rifle","srifle_LRR_SOS_F",950,450]
 ];
 
 //Gun Store Ammo List
@@ -118,7 +118,7 @@ accessoriesArray = [
     ["Cap (Blue)","H_Cap_blu", 100,"hat"],
     ["Cap (Red)","H_Cap_red", 100,"hat"],
     ["Cap (SERO)","H_Cap_brn_SERO", 100,"hat"],
-    ["Cap Rangemaster","H_Cap_headphones", 100,"hat"],
+//    ["Cap Rangemaster","H_Cap_headphones", 100,"hat"],
     ["Cap Military (Hex)","H_MilCap_ocamo", 100,"hat"],
     ["Cap Military (MTP)","H_MilCap_mcamo", 100,"hat"],
     ["Pilot Helmet(bluefor)","H_PilotHelmetHeli_B", 100,"hat"],
