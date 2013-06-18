@@ -11,7 +11,7 @@ if (isNil "ahSetupDone") then
 	flagHandler = compileFinal (_assignChecksum + (preprocessFileLineNumbers "server\antihack\flagHandler.sqf"));
 
 	[compile (_assignChecksum + (preprocessFileLineNumbers "server\antihack\payload.sqf")), "BIS_fnc_spawn", true, true] call BIS_fnc_MP;
-	[compile ("chatBroadcast = compileFinal '" + _assignChecksum + (preprocessFileLineNumbers "server\functions\chatBroadcast.sqf") + "'"), "BIS_fnc_spawn", true, true] call BIS_fnc_MP;
+	[compile ("chatBroadcast = compileFinal '" + _assignChecksum + (preprocessFileLineNumbers "server\antihack\chatBroadcast.sqf") + "'"), "BIS_fnc_spawn", true, true] call BIS_fnc_MP;
 	
 	LystoAntiAntiHack = compileFinal "false";
 };

@@ -41,7 +41,7 @@ true spawn {
 [] execVM "config.sqf";
 [] execVM "briefing.sqf";
 
-generateKey = compileFinal preprocessFileLineNumbers "server\functions\generateKey.sqf"; 
+generateKey = compileFinal preprocessFileLineNumbers "server\antihack\generateKey.sqf"; 
 
 if(X_Client) then {
 	waitUntil {player == player};
