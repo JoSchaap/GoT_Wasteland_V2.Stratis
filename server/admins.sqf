@@ -13,7 +13,6 @@ publicVariable "moderators";
 administrators = [];
 publicVariable "administrators";
 
-serverAdministrators = ["216825",				 //JoSchaap (stablebranch)
-           				"76561197960482553"		 //JoSchaap (DEVBranch)
+serverAdministrators = ["76561197960482553"		 //JoSchaap 
                     ]; 
 publicVariable "serverAdministrators";

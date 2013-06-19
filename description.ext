@@ -2,7 +2,7 @@ respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
 enableItemsDropping = 0;
-loadScreen = "Loading.jpg";  //LoadingN.jpg for nighttime
+loadScreen = "Loading.jpg";
 aikills = 1;
 class Header
 {
@@ -11,11 +11,11 @@ class Header
 	maxPlayers=65;
 };
 author="JoSchaap (GoT2DayZ.nl & Tweakers.Net)";
-OnLoadName = "GoT Wasteland (v2)";
+OnLoadName = "GoT Wasteland (v2.1)";
 OnLoadMission = "Wasteland is a harsh survival sandbox where 2 teams and independent players fight for survival. For more information, hints and tips open the map (M), and click on [HOW-TO-PLAY??]";
 overviewText = "Wasteland is a harsh survival sandbox where 2 teams and independent players fight for survival. For more information, hints and tips open the map (M), and click on [HOW-TO-PLAY??]";
 overviewTextLocked = "Wasteland is a harsh survival sandbox where 2 teams and independent players fight for survival. For more information, hints and tips open the map (M), and click on [HOW-TO-PLAY??]";
-overviewPicture = "Loading.jpg"; //LoadingN.jpg for nighttime
+overviewPicture = "Loading.jpg";
 //Dialog includes
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 #include "client\systems\common.hpp"

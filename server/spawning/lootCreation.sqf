@@ -1,27 +1,25 @@
     //Random weapons and items spawning script for wasteland missions.
     //Author : Ed!, [GoT] JoSchaap
 
-    _odd1 = 30;       //The odds that a building is selected to place loot.
-    _odd2 = 25;       //The odds that the selected building's spots will have loot(almost like odds per room).
-    _itemtoweaponratio = 30;    //The chances of an item like food,money etc. will spawn instead of a weapon.
-//		randomweaponspawnminmoney = 30;  //The minimum amount of money that can spawn.
-//		randomweaponspawnmaxmoney = 190; //The maximum amount of money that can spawn.
-	money = 50; //random kept generating scalar errors , back to a steady ammount of 50
+    _odd1 = 40;       //The odds that a building is selected to place loot.
+    _odd2 = 30;       //The odds that the selected building's spots will have loot(almost like odds per room).
+    _itemtoweaponratio = 55;    //The chances of an item like food,money etc. will spawn instead of a weapon.
     randomweapontestint = 0.01;   //Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
 
 
-randomweapon_weaponlist = [["arifle_MX_F","30Rnd_65x39_caseless_mag"],
-["arifle_TRG21_F","30Rnd_556x45_Stanag_Tracer_Red"],
-["arifle_TRG20_F","30Rnd_556x45_Stanag_Tracer_Yellow"],
-["arifle_MXC_F","30Rnd_65x39_caseless_mag_Tracer"],
-["arifle_Khaybar_F","30Rnd_65x39_caseless_green"],
-["arifle_Khaybar_C_F","30Rnd_65x39_caseless_green_mag_Tracer"],
-["arifle_MX_GL_F","30Rnd_65x39_caseless_mag"],
-["arifle_Khaybar_GL_F","30Rnd_65x39_caseless_green_mag_Tracer"],
-["srifle_EBR_F","20Rnd_762x51_Mag"]];
+randomweapon_weaponlist = [
+["SDAR_F","20Rnd_556x45_UW_mag"],
+["arifle_TRG21_ACO_point_F","30Rnd_556x45_Stanag_Tracer_Red"],
+["arifle_TRG20_ACO_F","30Rnd_556x45_Stanag_Tracer_Yellow"],
+["arifle_TRG21_F","30Rnd_556x45_Stanag"],
+["arifle_TRG20_F","30Rnd_556x45_Stanag"],
+["hgun_P07_snds_F","16Rnd_9x21_Mag"],
+["hgun_P07_F","16Rnd_9x21_Mag"],
+["hgun_Rook40_snds_F","16Rnd_9x21_Mag"],
+["hgun_Rook40_F","16Rnd_9x21_Mag"]
+];
  
 randomweapon_itemlist = [
-//"Land_Sack_F",				//Money
 "Land_Basket_F",			//Water
 "Land_Bucket_F"				//Food
 ];
@@ -43,16 +41,10 @@ randomweapon_itemlist = [
     };
 
     randomweaponspawnitem = {
-	 _amountmoney = 50;
      _position = _this;
      _selectedgroup = (floor(random(count randomweapon_itemlist)));
      _class = randomweapon_itemlist select _selectedgroup;
      _item = createVehicle [_class, _position, [], 0, "CAN_COLLIDE"];
-     if(_class == "Land_Sack_F") then {
-	  _amountmoney = _money;
-      _item setVariable ["money", _amountmoney, true];
-      _item setVariable ["owner", "world", true];
-     };
      _item setPos _position;
     };
 

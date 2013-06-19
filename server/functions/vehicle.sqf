@@ -1,6 +1,6 @@
 /* ===============================================================================================================
   Simple Vehicle Respawn Script v1.83 for Arma 3
-  by Tophe of Östgöta Ops [OOPS]
+  by Tophe of ï¿½stgï¿½ta Ops [OOPS]
   Updated by SPJESTER & modded by AgentRev
   
   vehicle.sqf is an example of the name of the file, name it whatever you would like
@@ -9,7 +9,7 @@
   veh = [this] execVM "vehicle.sqf"
   _______
   Options
-  ¯¯¯¯¯¯¯
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   There are some optional settings. The format for these are:
   veh = [object, Delay, Deserted timer, Respawns, Effect, Dynamic, Init commands] execVM "vehicle.sqf"
   
@@ -151,7 +151,7 @@ while {_run} do
 			_towedUnit setVelocity [0,0,0];
 		};
 		
-		if (typename _static == "ARRAY") then { _position = _static; }
+		if (typename _static == typeName []) then { _position = _static; }
 		else { _position = getPosASL _unit; _dir = getDir _unit; };
 		
 		if (_explode) then { ("M_AT" createVehicle getPos _unit) setPosASL getPosASL _unit };

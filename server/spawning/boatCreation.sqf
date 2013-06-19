@@ -1,4 +1,3 @@
-
 //	@file Version: 1.1
 //	@file Name: boatCreation.sqf
 //	@file Author: [GoT] JoSchaap
@@ -14,11 +13,11 @@ _markerPos = _this select 0;
 _boattype = BoatList call BIS_fnc_selectRandom; 
 _type = 3;
 
-_pos = [_markerPos, 2, 15, ( if (_type == 1) then { 2 } else { 5 } ), 1, 60 * (pi / 180), 1] call BIS_fnc_findSafePos;
+_pos = [_markerPos, 1, 15, 5, 2, 60 * (pi / 180), 0, [], [[], _markerPos]] call BIS_fnc_findSafePos;
 
 //Car Initialization
 _boat = createVehicle [_boattype,_pos, [], 0, "None"];
-[_boat, 30, 120, 0, false, _markerPos, """R3F_LOG_disabled"",false"] execVM "server\functions\vehicle.sqf";
+[_boat, 60, 190, 0, false, _markerPos, """R3F_LOG_disabled"",false"] execVM "server\functions\vehicle.sqf";
 
 //Clear Cars Inventory
 clearMagazineCargoGlobal _boat;
@@ -32,6 +31,6 @@ _boat setDir (random 360);
 _boat disableTIEquipment true;
 
 //Set original posistion then add to vehicle array
-_boat setVariable ["vehicleChecksum",vChecksum,true];
-_boat setPosATL [getpos _boat select 0,getpos _boat select 1,1];
+_boat setVariable ["vehicleChecksum",call vChecksum,true]; 
+_boat setPosASL [getpos _boat select 0,getpos _boat select 1,0];
 _boat setVelocity [0,0,0];

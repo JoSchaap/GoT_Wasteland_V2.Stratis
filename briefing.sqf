@@ -200,13 +200,40 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"v2.1 (GoT)",
+"
+		[Added] Time Accelerated x10<br/>
+		[Added] New gunstore dialog!<br/>
+		[Fixed] Scalar value money bug (infinite money)<br/>
+		[Fixed] Vehicles that kept respawning in limbo<br/>
+		[Fixed] Boats that kept respawning in limbo<br/>
+		[Changed] gunstore prices have been changed<br/>
+		[Changed] Starting money reduced<br/>
+		[Changed] Nerfed lootspawns inside buildings<br/>
+		[Changed] Raised prices of the sniper rifles<br/>
+		[Changed] antihack/scriptdetection methods<br/>
+		[Changed] minor changes to player hud<br/>
+		*- your idea here? let us know!<br/>
+"
+]
+];
+
+
 
 player createDiaryRecord["404games",
 [
 "Credits",
 "
 <br/>
-	This wasteland mission was originally created by:<br/>
+	First things first: <br/>
+	The idea of wasteland and the first original in arma2:<br/> 
+	* TAW_Tonic<br/>
+	* Sa-Matra<br/>
+	* Marker<br/>
+	<br/>
+	This wasteland mission was originally re-developped by:<br/>
 	(404games DEV-Team) consisting:<br/><br/>
 	* Deadbeat<br/>
 	* Costlyy<br/>
