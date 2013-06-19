@@ -70,7 +70,7 @@ ammoArray = [
 accessoriesArray = [
 	["GPS","ItemGPS", 30,"item"],
 	["Binoculars","Binocular", 20,"binoc"],
-	["NV Goggles","NVGoggles", 100,"item"],
+//	["NV Goggles","NVGoggles", 100,"item"],
 	["Range Finder","Rangefinder", 250,"binoc"],
     ["First Aid","FirstAidKit", 20,"item"],
     ["Medkit","Medikit", 150,"item"],
