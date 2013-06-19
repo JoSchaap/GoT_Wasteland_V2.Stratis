@@ -11,7 +11,10 @@ sideMissions = 1;
 serverSpawning = 1;
 buildingsloot = 1;
 
+vChecksum = compileFinal format ["'%1'", call generateKey];
+
 //Execute Server Side Scripts.
+[] execVM "server\antihack\setup.sqf";
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";
 _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";

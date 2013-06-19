@@ -77,7 +77,7 @@ _player switchMove "amovpknlmstpsraswpstdnon_gear";
 thirstLevel = 100;
 hungerLevel = 100;
 
-_player setVariable["cmoney",200,true];
+_player setVariable["cmoney",95,true];
 _player setVariable["canfood",1,false];
 _player setVariable["medkits",0,false];
 _player setVariable["water",1,false];
@@ -90,5 +90,5 @@ _player setVariable["camonet",0,false];
 
 [] execVM "client\functions\playerActions.sqf";
 
-_player groupChat format["GoT Wasteland v2 - Initialization Complete"];
+_player groupChat format["GoT Wasteland v2.1 - Initialization Complete"];
 playerSetupComplete = true;
