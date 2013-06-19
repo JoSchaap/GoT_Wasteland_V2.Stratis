@@ -12,9 +12,9 @@ randomweapon_weaponlist = [
 ["arifle_TRG21_F","30Rnd_556x45_Stanag_Tracer_Red"],
 ["arifle_TRG20_F","30Rnd_556x45_Stanag_Tracer_Yellow"],
 ["hgun_P07_snds_F","16Rnd_9x21_Mag"],
-["hgun_P07_F","30Rnd_9x21_Mag_vector_Tracer_Green"],
+["hgun_P07_F","16Rnd_9x21_Mag"],
 ["hgun_Rook40_snds_F","16Rnd_9x21_Mag"],
-["hgun_Rook40_F","30Rnd_9x21_Mag_vector_Tracer_Green"]
+["hgun_Rook40_F","16Rnd_9x21_Mag"]
 ];
  
 randomweapon_itemlist = [
