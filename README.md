@@ -49,8 +49,11 @@ changelog for v2.1:
 		[Added] Time Accelerated x10
 		[Added] New gunstore dialog!
 		[Fixed] Scalar value money bug (infinite money)
-		[Changed] boats no longer respawn in limbo
-		[Changed] vehicles no longer respawn in limbo
+		[Fixed] Vehicles that kept respawning in limbo
+		[Fixed] Boats that kept respawning in limbo
+		[Changed] gunstore prices have been changed
+		[Changed] Starting money reduced
+		[Changed] Nerfed lootspawns inside buildings
 		[Changed] Raised prices of the sniper rifles
 		[Changed] antihack/scriptdetection methods
 		[Changed] minor changes to player hud
