@@ -207,8 +207,11 @@ player createDiaryRecord["changelog",
 		[Added] Time Accelerated x10<br/>
 		[Added] New gunstore dialog!<br/>
 		[Fixed] Scalar value money bug (infinite money)<br/>
-		[Changed] boats no longer respawn in limbo<br/>
-		[Changed] vehicles no longer respawn in limbo<br/>
+		[Fixed] Vehicles that kept respawning in limbo<br/>
+		[Fixed] Boats that kept respawning in limbo<br/>
+		[Changed] gunstore prices have been changed<br/>
+		[Changed] Starting money reduced<br/>
+		[Changed] Nerfed lootspawns inside buildings<br/>
 		[Changed] Raised prices of the sniper rifles<br/>
 		[Changed] antihack/scriptdetection methods<br/>
 		[Changed] minor changes to player hud<br/>
