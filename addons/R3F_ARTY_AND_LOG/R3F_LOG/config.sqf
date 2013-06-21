@@ -35,9 +35,9 @@ R3F_LOG_CFG_objets_remorquables = [
  * Liste des noms de classes des v�hicules a�riens pouvant h�liporter des objets h�liportables.
  */
 R3F_LOG_CFG_heliporteurs = [
-	"O_Ka60_Unarmed_F",
+	"O_Heli_Light_02_F",
 	"B_Heli_Light_01_F",
-	"O_Ka60_F",
+	"O_Heli_Light_02_armed_F",
 	"B_Heli_Light_01_armed_F"
 ];
 
@@ -69,9 +69,9 @@ R3F_LOG_CFG_transporteurs = [
 	["B_MRAP_01_hmg_F", 25],
 	["O_MRAP_02_F", 25],
 	["O_MRAP_02_gmg_F", 25],
-	["O_Ka60_Unarmed_F", 20],
+	["O_Heli_Light_02_F", 20],
 	["B_Heli_Light_01_F", 10],
-	["O_Ka60_F", 20],
+	["O_Heli_Light_02_armed_F", 20],
     	["O_Quadbike_01_F", 5],
     	["B_Quadbike_01_F", 5],
 		["O_Boat_Armed_01_hmg_F", 10],

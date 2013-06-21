@@ -41,7 +41,7 @@ _marker = createMarkerLocal ["CivHeli_Marker", _randomPos];
 "CivHeli_Marker" setMarkerSizeLocal [1,1];
 "CivHeli_Marker" setMarkerTextLocal "Mission Here";
 */
-_vehicleClass = ["O_Ka60_Unarmed_F","B_Heli_Light_01_F"] call BIS_fnc_selectRandom;
+_vehicleClass = ["O_Heli_Light_02_F","B_Heli_Light_01_F"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
 _vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle; 
