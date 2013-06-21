@@ -4,14 +4,11 @@ class Mission
 	addOns[]=
 	{
 		"a3_map_stratis",
-		"a3_air_f_mh9",
-		"a3_air_f_ka60",
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_OPFOR",
 		"A3_Weapons_F",
 		"a3_weapons_f_longrangerifles_gm6",
 		"a3_weapons_f_longrangerifles_m320",
-		"A3_Soft_F_Ifrit",
 		"A3_Characters_F_Civil",
 		"A3_Structures_F_Mil_Fortification",
 		"A3_Structures_F_Walls",
