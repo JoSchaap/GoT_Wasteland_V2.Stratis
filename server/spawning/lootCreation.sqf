@@ -9,7 +9,9 @@
 
 randomweapon_weaponlist = [
 ["arifle_SDAR_F","20Rnd_556x45_UW_mag"],
-["arifle_TRG21_ACO_point_F","30Rnd_556x45_Stanag_Tracer_Red"],
+["arifle_SDAR_ACO_grn_F","20Rnd_556x45_UW_mag"],
+["arifle_SDAR_Nstalker_pointer_F","20Rnd_556x45_UW_mag"],
+["arifle_TRG21_ACO_pointer_F","30Rnd_556x45_Stanag_Tracer_Red"],
 ["arifle_TRG20_ACO_F","30Rnd_556x45_Stanag_Tracer_Yellow"],
 ["arifle_TRG21_F","30Rnd_556x45_Stanag"],
 ["arifle_TRG20_F","30Rnd_556x45_Stanag"],

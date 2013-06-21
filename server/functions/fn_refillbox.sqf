@@ -74,7 +74,7 @@ switch(_selectedBox) do {
 		clearWeaponCargoGlobal _currBox;
         
         // Add new weapons before ammunition
-		_currBox addWeaponCargoGlobal ["arifle_Khaybar_GL_F",3];
+		_currBox addWeaponCargoGlobal ["arifle_Katiba_GL_F",3];
 		_currBox addWeaponCargoGlobal ["arifle_TRG21_GL_F",3];
 		_currBox addWeaponCargoGlobal ["arifle_MX_GL_F",3];
 		_currBox addMagazineCargoGlobal ["UGL_FlareWhite_F",10];

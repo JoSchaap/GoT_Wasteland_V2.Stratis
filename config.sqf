@@ -17,10 +17,10 @@ weaponsArray = [
 	["MX","arifle_MX_F",250,100],
     ["MXC","arifle_MXC_F",260,100],
 	["MXM","arifle_MXM_F",270,100], 
-    ["Katiba","arifle_Khaybar_F",250,100],
-    ["Katiba Carabine","arifle_Khaybar_C_F",275,120],
+    ["Katiba","arifle_Katiba_F",250,100],
+    ["Katiba Carabine","arifle_Katiba_C_F",275,120],
     ["MX 3GL","arifle_MX_GL_F",270,120],
-    ["Katiba GL","arifle_Khaybar_GL_F",270,120],
+    ["Katiba GL","arifle_Katiba_GL_F",270,120],
 	["TRG-21 EGLM","arifle_TRG21_GL_F",190,90],
     	//Light Machine Gun
     ["MX SW","arifle_MX_SW_F",300,120],
