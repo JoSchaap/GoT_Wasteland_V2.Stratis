@@ -41,7 +41,7 @@ _marker = createMarkerLocal ["ArmedHeli_Marker", _randomPos];
 "ArmedHeli_Marker" setMarkerSizeLocal [1,1];
 "ArmedHeli_Marker" setMarkerTextLocal "Mission Here";
 */
-_vehicleClass = ["O_Heli_Light_02_armed_F","B_Heli_Light_01_armed_F"] call BIS_fnc_selectRandom;
+_vehicleClass = ["O_Heli_Light_02_armed_F","B_Heli_Light_01_armed_F","B_Heli_Attack_01_F","O_Heli_Attack_02_F","B_Heli_Transport_01_F"] call BIS_fnc_selectRandom;
 
 // Vehicle spawning: Name, Position, Fuel, Ammo, Damage, "NONE"
 
@@ -53,11 +53,20 @@ switch (_vehicleClass) do
 	case "O_Heli_Light_02_armed_F": {	// Ka60 has twice less default ammo capacity than AH9
 		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
 	};
+	case "B_Heli_Attack_01_F": {	
+		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
+	};
+	case "O_Heli_Attack_02_F": {	
+		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
+	};
+	case "B_Heli_Transport_01_F": {	
+		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
+	};
 };
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t>, has been immobilized go get it for your team.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t>, has stranded! go get it for your team.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 messageSystem = _hint;
 publicVariable "messageSystem";
 

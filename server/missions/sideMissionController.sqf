@@ -16,6 +16,7 @@ _SideMissions = [[mission_SunkenSupplies,"Sunken Supplies"],
 		[mission_WepCache,"mission_WepCache"],
 		[mission_HostileHelicopter,"mission_HostileHelicopter"],
 		[mission_MiniConvoy,"mission_MiniConvoy"],
+		[mission_Truck,"mission_Truck"],
 	        [mission_AirWreck,"mission_AirWreck"]]; 
 
 _notPlayedSideMissions = +_SideMissions;

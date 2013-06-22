@@ -3,18 +3,20 @@
 
     _odd1 = 40;       //The odds that a building is selected to place loot.
     _odd2 = 30;       //The odds that the selected building's spots will have loot(almost like odds per room).
-    _itemtoweaponratio = 55;    //The chances of an item like food,money etc. will spawn instead of a weapon.
+    _itemtoweaponratio = 35;    //The chances of an item like food,water will spawn instead of a weapon.
     randomweapontestint = 0.01;   //Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
 
 
 randomweapon_weaponlist = [
 ["arifle_SDAR_F","20Rnd_556x45_UW_mag"],
-["arifle_SDAR_ACO_grn_F","20Rnd_556x45_UW_mag"],
-["arifle_SDAR_Nstalker_pointer_F","20Rnd_556x45_UW_mag"],
 ["arifle_TRG21_ACO_pointer_F","30Rnd_556x45_Stanag_Tracer_Red"],
 ["arifle_TRG20_ACO_F","30Rnd_556x45_Stanag_Tracer_Yellow"],
 ["arifle_TRG21_F","30Rnd_556x45_Stanag"],
 ["arifle_TRG20_F","30Rnd_556x45_Stanag"],
+["SMG_01_F","30Rnd_45ACP_Mag_SMG_01"],
+["SMG_02_F","30Rnd_9x21_Mag"],
+["hgun_ACPC2_snds_F","16Rnd_9x21_Mag"],
+["hgun_ACPC2_F","16Rnd_9x21_Mag"],
 ["hgun_P07_snds_F","16Rnd_9x21_Mag"],
 ["hgun_P07_F","16Rnd_9x21_Mag"],
 ["hgun_Rook40_snds_F","16Rnd_9x21_Mag"],

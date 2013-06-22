@@ -89,4 +89,4 @@ if (!isDedicated) then {
 [] execVM "addons\proving_Ground\init.sqf";
 
 
-GAM_TimeXlerationMP = [1, 10, true, 5] execVM "addons\GAM_TimeXlr\timexleration-mp.sqf";
+GAM_TimeXlerationMP = [1, 4, true, 5] execVM "addons\GAM_TimeXlr\timexleration-mp.sqf";

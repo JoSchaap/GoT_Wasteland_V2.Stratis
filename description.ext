@@ -11,7 +11,7 @@ class Header
 	maxPlayers=65;
 };
 author="JoSchaap (GoT2DayZ.nl & Tweakers.Net)";
-OnLoadName = "GoT Wasteland (v2.1)";
+OnLoadName = "GoT Wasteland (v2.1B)";
 OnLoadMission = "Wasteland is a harsh survival sandbox where 2 teams and independent players fight for survival. For more information, hints and tips open the map (M), and click on [HOW-TO-PLAY??]";
 overviewText = "Wasteland is a harsh survival sandbox where 2 teams and independent players fight for survival. For more information, hints and tips open the map (M), and click on [HOW-TO-PLAY??]";
 overviewTextLocked = "Wasteland is a harsh survival sandbox where 2 teams and independent players fight for survival. For more information, hints and tips open the map (M), and click on [HOW-TO-PLAY??]";

@@ -32,15 +32,17 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
-_veh = ["outpostUS1","smallbase1"] call BIS_fnc_selectRandom;
+//_veh = ["outpostUS1","smallbase1"] call BIS_fnc_selectRandom;
+_veh = "smallbase1";
+
 _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
 _vehicleName = "Outpost";
-_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t>, has been spotted near the marker go capture it.</t>", _missionType, _vehicleName, mainMissionColor, subTextColor];
+_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t>, has been spotted near the marker go capture it. There might be some powerfull weapons inside!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor];
 [nil,nil,rHINT,_hint] call RE;
 
 CivGrpM = createGroup civilian;
-[CivGrpM,_randomPos] spawn createLargeGroup;
+[CivGrpM,_randomPos] spawn createMidGroup;
 
 diag_log format["WASTELAND SERVER - Main Mission Waiting to be Finished: %1",_missionType];
 #ifdef __A2NET__
