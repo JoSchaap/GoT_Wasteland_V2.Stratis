@@ -2,7 +2,7 @@ private ["_objs"];
 _objs =
 [
 ["Land_WaterBarrel_F", [4.9016, 6.2346, 4.9591064e-005], 0, 1,0,{}],
-["Box_NATO_Support_F", [6.3168, 1.7998, 1.1444092e-005], 0, 1,0,"[this,"mission_Main_A3snipers"] call fn_refillbox"],
+["Box_NATO_Support_F", [6.3168, 1.7998, 1.1444092e-005], 0, 1,0,"[this,'mission_Main_A3snipers'] call fn_refillbox"],
 ["Land_BagBunker_Small_F", [4.4502, 15.2827, 3.8146973e-006], 190.9557, 1,0,{}],
 ["Land_HBarrier_5_F", [9.1663, -0.7385,0.001], 181.12386, 1,0,{}],
 ["Land_HBarrier_5_F", [13.0701, 2.3604, 1.9073486e-006], 138.28712, 1,0,{}],
