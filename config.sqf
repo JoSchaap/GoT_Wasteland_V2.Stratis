@@ -9,10 +9,12 @@ weaponsArray = [
 		//Handgun
 	["ACP-C2","hgun_ACPC2_F",90,50],
 	["P07","hgun_P07_F",70,40],
-    ["Rook-40","hgun_Rook40_F",70,40], 
+        ["Rook-40","hgun_Rook40_F",70,40], 
 	//SMG's
 	["SMG (9mm)","SMG_02_F",100,50],
 	["SMG (46ACP)","SMG_01_F",100,50],
+	["MK20 (5.56)","arifle_MK20_F",140,60],
+	["MK20C (5.56)","arifle_MK20C_F",150,65],
     	//Underwater Gun
 	["SDAR (underwater)","arifle_SDAR_F",110,20],
     	//Assault Rifle
