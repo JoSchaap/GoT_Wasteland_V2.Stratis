@@ -44,7 +44,11 @@ class Mission
 		"A3_Structures_F_Dominants_Lighthouse",
 		"A3_Structures_F_Ind_Shed",
 		"A3_Structures_F_Naval_Piers",
-		"A3_Structures_F_Households_House_Big01"
+		"A3_Structures_F_Households_House_Big01",
+		"a3_structures_f_mil_bagfence",
+		"a3_structures_f_mil_bagbunker",
+		"a3_air_f_heli_light_01",
+		"a3_air_f_heli_light_02"
 	};
 	addOnsAuto[]=
 	{
@@ -80,6 +84,8 @@ class Mission
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_Mil_Barracks",
 		"A3_Structures_F_Mil_Fortification",
+		"a3_structures_f_mil_bagfence",
+		"a3_structures_f_mil_bagbunker",
 		"A3_Structures_F_Training",
 		"A3_Structures_F_Ind_Cargo",
 		"A3_Structures_F_Dominants_Lighthouse",
