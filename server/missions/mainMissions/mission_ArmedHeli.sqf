@@ -41,7 +41,7 @@ _marker = createMarkerLocal ["ArmedHeli_Marker", _randomPos];
 "ArmedHeli_Marker" setMarkerSizeLocal [1,1];
 "ArmedHeli_Marker" setMarkerTextLocal "Mission Here";
 */
-_vehicleClass = ["O_Heli_Light_02_armed_F","B_Heli_Light_01_armed_F","B_Heli_Attack_01_F","O_Heli_Attack_02_F","B_Heli_Transport_01_F"] call BIS_fnc_selectRandom;
+_vehicleClass = ["O_Heli_Light_02_F","B_Heli_Light_01_armed_F","B_Heli_Attack_01_F","O_Heli_Attack_02_F","B_Heli_Transport_01_F"] call BIS_fnc_selectRandom;
 
 // Vehicle spawning: Name, Position, Fuel, Ammo, Damage, "NONE"
 
@@ -50,7 +50,7 @@ switch (_vehicleClass) do
 	case "B_Heli_Light_01_armed_F": {
 		_vehicle = [_vehicleClass,_randomPos,0,0.5,0,"NONE"] call createMissionVehicle;
 	};
-	case "O_Heli_Light_02_armed_F": {	// Ka60 has twice less default ammo capacity than AH9
+	case "O_Heli_Light_02_F": {	// Ka60 has twice less default ammo capacity than AH9
 		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
 	};
 	case "B_Heli_Attack_01_F": {	

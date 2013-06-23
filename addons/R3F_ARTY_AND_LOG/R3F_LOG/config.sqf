@@ -51,7 +51,7 @@ R3F_LOG_CFG_objets_remorquables = [
 R3F_LOG_CFG_heliporteurs = [
 	"O_Heli_Light_02_F",
 	"B_Heli_Light_01_F",
-	"O_Heli_Light_02_armed_F",
+	"O_Heli_Light_02_F",
 	"B_Heli_Light_01_armed_F",
 	"B_Heli_Attack_01_F",
 	"O_Heli_Attack_02_F",
@@ -103,7 +103,7 @@ R3F_LOG_CFG_transporteurs = [
 	["I_Truck_02_Transport_F", 50],
 	["O_Heli_Light_02_F", 20],
 	["B_Heli_Light_01_F", 10],
-	["O_Heli_Light_02_armed_F", 20],
+	["O_Heli_Light_02_F", 20],
     	["O_Quadbike_01_F", 5],
     	["B_Quadbike_01_F", 5],
     	["I_Quadbike_01_F", 5],
