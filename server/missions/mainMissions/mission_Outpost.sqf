@@ -69,6 +69,7 @@ if(_result == 1) then
 	//Mission Failed.
     {deleteVehicle _x;}forEach units CivGrpM;
     deleteGroup CivGrpM;
+    {deleteVehicle _x} foreach _base;
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed, better luck next time</t>", _missionType, _vehicleName, failMissionColor, subTextColor];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
