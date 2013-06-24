@@ -66,18 +66,19 @@ objectList = ["Land_Sacks_goods_F",
 			"Land_HBarrier_5_F",
 			"Land_LampShabby_F",
 			"Land_HBarrierBig_F",
+			"Land_BagBunker_Small_F",
 			"Land_HBarrier_1_F",
-			"Land_LampDecor_F",
+//			"Land_LampDecor_F",			shabby lamps are good enough :)
 //			"Land_Ytong_F",				seems broken
 			"Land_WaterBarrel_F",
 			"Land_MetalBarrel_F",
 			"Land_HBarrierBig_F",
-			"Land_Stone_8m_F",
+//			"Land_Stone_8m_F",		keeps falling over in MP
 			"Land_HBarrier_5_F",
 			"Land_Mil_WallBig_4m_F",
 			"Land_ToiletBox_F",
 			"Land_HBarrier_3_F",
-			"Land_Stone_8m_F",
+//			"Land_Stone_8m_F",		keeps falling over in MP
 			"Land_Mil_WallBig_4m_F",
 			"Land_HBarrier_5_F",
 			"Land_Coil_F",
