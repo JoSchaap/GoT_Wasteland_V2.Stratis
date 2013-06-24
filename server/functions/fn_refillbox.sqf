@@ -63,8 +63,8 @@ switch(_selectedBox) do {
 		_currBox addMagazineCargoGlobal ["RPG32_AA_F",5];
 		_currBox addMagazineCargoGlobal ["RPG32_F",5];
 		_currBox addMagazineCargoGlobal ["NLAW_F",5];
-		_currBox addMagazineCargoGlobal ["DemoCharge_Remote_Mag",20];
-		_currBox addMagazineCargoGlobal ["APERSMine_Range_Mag",25];
+		_currBox addMagazineCargoGlobal ["DemoCharge_Remote_Mag",8];
+		_currBox addMagazineCargoGlobal ["APERSMine_Range_Mag",8];
     };
     case "mission_USSpecial2": { // Used in some other mission
     	_currBox = _box;
@@ -82,8 +82,8 @@ switch(_selectedBox) do {
 		_currBox addMagazineCargoGlobal ["UGL_FlareRed_F",10];
 		_currBox addMagazineCargoGlobal ["UGL_FlareYellow_F",10];
 		_currBox addMagazineCargoGlobal ["UGL_FlareCIR_F",10];
-		_currBox addMagazineCargoGlobal ["20Rnd_762x51_Mag",15];
-		_currBox addMagazineCargoGlobal ["100Rnd_65x39_caseless_mag_Tracer",10];
+		_currBox addMagazineCargoGlobal ["30Rnd_556x45_Stanag",15];
+		_currBox addMagazineCargoGlobal ["30Rnd_65x39_caseless_mag",10];
 		_currBox addMagazineCargoGlobal ["200Rnd_65x39_cased_Box",5];		
     };
 	case "mission_Main_A3snipers": { // Used in the diving expedition mission

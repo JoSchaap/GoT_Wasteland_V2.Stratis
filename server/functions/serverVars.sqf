@@ -51,7 +51,7 @@ currentStaticHelis = []; // Storage for the heli marker numbers so that we don't
 civilianVehicles = ["c_Offroad_01_F"];
 
 //Light Military Vehicle List - Random Spawns
-lightMilitaryVehicles = ["B_Quadbike_01_F","O_Quadbike_01_F","I_Quadbike_01_F"];
+lightMilitaryVehicles = ["B_Quadbike_01_F","O_Quadbike_01_F","I_Quadbike_01_F","C_Quadbike_01_F"];
 
 //Medium Military Vehicle List - Random Spawns
 mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_Covered_F","I_Truck_02_Covered_F","O_Truck_02_Transport_F","I_Truck_02_Transport_F"];
@@ -85,18 +85,16 @@ objectList = ["Land_Sacks_goods_F",
 			"Land_HBarrierBig_F",
 			"Land_Pipes_Large_F",
 			"Land_BagFence_Long_F",
-			"Land_BagFence_Round_F",
 			"Land_BagBunker_Small_F",
 			"Land_CncBarrierMedium4_F",
 			"Land_CncWall4_F",
-			"Land_BarGate_F",
-			"Land_CargoBox_V1_F"];
+			"Land_BarGate_F"];
                                          
 //Object List - Random Spawns.
 staticWeaponsList = ["B_Mortar_01_F","O_Mortar_01_F","I_Mortar_01_F"];
 
 //Object List - Random Helis.
-staticHeliList = ["O_Heli_Light_02_F","B_Heli_Light_01_F","I_Heli_Transport_02_F"];
+staticHeliList = ["O_Heli_Light_unarmed_02_F","B_Heli_Light_01_F","I_Heli_Transport_02_F"];
 
 //Random Weapon List - Change this to what you want to spawn in cars.
 vehicleWeapons = ["arifle_SDAR_F",

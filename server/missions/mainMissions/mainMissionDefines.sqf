@@ -15,8 +15,8 @@
 
 #else
 
-#define mainMissionTimeout 1200
-#define mainMissionDelayTime 600
+#define mainMissionTimeout 1800
+#define mainMissionDelayTime 900
 
 #endif
 

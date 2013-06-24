@@ -36,7 +36,7 @@ diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 _vehicleClass = ["B_Truck_01_Transport_F","B_Truck_01_Covered_F"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
-_vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
+_vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicleWL;
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");

@@ -51,6 +51,7 @@ createMidGroup = compile preprocessFileLineNumbers "server\missions\factoryMetho
 createLargeGroup = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\largeGroup.sqf";
 createMissionVehicle = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionVehicle.sqf";
 createMissionVehicle2 = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionVehicle2.sqf";
+createMissionVehicleWL = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionVehicleWithLog.sqf";
 createSupplyDrop = compile preprocessFileLineNumbers "server\missions\factoryMethods\createSupplyDrop.sqf";
 createCargoItem = compile preprocessFileLineNumbers "server\missions\factoryMethods\createCargoItem.sqf";
 defendArea = compile preprocessFileLineNumbers "server\functions\defendArea.sqf";

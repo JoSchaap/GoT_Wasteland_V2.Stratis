@@ -47,14 +47,41 @@ class Mission
 		"A3_Structures_F_Households_House_Big01",
 		"a3_structures_f_mil_bagfence",
 		"a3_structures_f_mil_bagbunker",
-		"a3_air_f_heli_light_01",
-		"a3_air_f_heli_light_02"
+		"A3_Air_F_Heli_Light_01",
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Air_F_Beta_Heli_Transport_02",
+		"A3_Air_F_Beta_Heli_Attack_02",
+		"A3_Air_F_Heli_Light_02",
+		"A3_Air_F_Beta_Heli_Transport_01",
+		"A3_Soft_F_HEMTT",
+		"A3_Soft_F_Offroad_01",
+		"A3_Soft_F_Quadbike",
+		"a3_soft_f_beta_quadbike",
+		"A3_Soft_F_MRAP_03",
+		"a3_soft_f_truckheavy",
+		"A3_Boat_F_Boat_Transport_01",
+		"a3_boat_f_beta_boat_transport_01",
+		"A3_Boat_F_Boat_Armed_01",
+		"a3_boat_f_beta_boat_armed_01",
+		"A3_Boat_F_SDV_01"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_Civil",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Air_F_Beta_Heli_Transport_02",
+		"A3_Air_F_Beta_Heli_Attack_02",
+		"A3_Air_F_Heli_Light_02",
+		"A3_Air_F_Beta_Heli_Transport_01",
+		"A3_Soft_F_HEMTT",
+		"A3_Soft_F_Offroad_01",
+		"A3_Soft_F_Quadbike",
+		"a3_soft_f_beta_quadbike",
+		"A3_Soft_F_MRAP_03",
+		"a3_soft_f_truckheavy",
 		"A3_Structures_F_Households_House_Small01",
 		"A3_Structures_F_Households_House_Small02",
 		"a3_structures_f_households_stone_big",
@@ -92,13 +119,18 @@ class Mission
 		"A3_Structures_F_Ind_Shed",
 		"A3_Structures_F_Naval_Piers",
 		"A3_Structures_F_Households_House_Big01",
+		"A3_Boat_F_Boat_Transport_01",
+		"a3_boat_f_beta_boat_transport_01",
+		"A3_Boat_F_Boat_Armed_01",
+		"a3_boat_f_beta_boat_armed_01",
+		"A3_Boat_F_SDV_01",
 		"a3_map_stratis"
 	};
 	randomSeed=14957468;
 	class Intel
 	{
 		briefingName="GoT Wasteland v2.1b (GoT/JoSchaap)";
-		briefingDescription="GoT Wasteland Survival Sandbox v2.1 (Enhanced-Edition) - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingDescription="GoT Wasteland Survival Sandbox v2.1b (beta-edition) - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;

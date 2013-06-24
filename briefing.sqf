@@ -214,8 +214,38 @@ player createDiaryRecord["changelog",
 		[Changed] Nerfed lootspawns inside buildings<br/>
 		[Changed] Raised prices of the sniper rifles<br/>
 		[Changed] antihack/scriptdetection methods<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"v2.2 (GoT)",
+"
+		! -INITIAL ARMA3 BETA RELEASE- !<br/>
+		[Removed] Time Acceleration (lagged)<br/>
+		[Removed] Random ammocrate spawns<br/>
+		[Added] New beta weapons!<br/>
+		[Added] New beta vehicles!<br/>
+		[Added] New beta clothing!<br/>
+		[Added] New beta ammunition!<br/>
+		[Added] New beta boats/submarines!<br/>
+		[Added] New outpost Main-mission<br/>
+		[Added] New APC Main-mission<br/>
+		[Added] New abandonned truck sidemission</br/>
+		[Fixed] broken vehiclespawns/missions due to beta<br/>
+		[Fixed] errors in admin menu's<br/>
+		[Fixed] all respawn issues in limbo<br/>
+		[Changed] existing mainmissions to new vehicles<br/>
+		[Changed] existing sidemissions to new vehicles<br/>
+		[Changed] More time between missions (side 8, main 15 minutes)<br/>
+		[Changed] new lootspawns in buildings (SMG/Handguns)<br/>
+		[Changed] mission starts at 4am for day edition<br/>
+		[Changed] mission starts at 7pm for evening edition<br/>
 		[Changed] minor changes to player hud<br/>
 		*- your idea here? let us know!<br/>
+		*- please bare with me if there are still issues<br/>
+		   beta just got out and i wanted this out asap<br/>
 "
 ]
 ];
