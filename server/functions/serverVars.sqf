@@ -48,10 +48,10 @@ publicVariable "currentInvites";
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
 
 //Civilian Vehicle List - Random Spawns
-civilianVehicles = ["c_Offroad_01_F"];
+civilianVehicles = ["c_Offroad_01_F","C_Quadbike_01_F"];
 
 //Light Military Vehicle List - Random Spawns
-lightMilitaryVehicles = ["B_Quadbike_01_F","O_Quadbike_01_F","I_Quadbike_01_F","C_Quadbike_01_F"];
+lightMilitaryVehicles = ["B_Quadbike_01_F","O_Quadbike_01_F","I_Quadbike_01_F"];
 
 //Medium Military Vehicle List - Random Spawns
 mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_Covered_F","I_Truck_02_Covered_F","O_Truck_02_Transport_F","I_Truck_02_Transport_F"];
