@@ -27,14 +27,17 @@ _createVehicle = {
     
     _soldier = [_grouphsq, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
-
+    if (_vehicle isKindOf "O_Heli_Attack_02_F") then {
+  	   _soldier = [_group, _position] call createRandomSoldier; 
+        _soldier moveInTurret [_vehicle, [0]];
+    }
     
     _vehicle
 };
 
 _vehicles = [];
 _vehicles set [0, ["O_Heli_Light_02_F", [2436.24,847.9,0.00133419], 91, _grouphsq] call _createVehicle];
-_vehicles set [1, ["O_Heli_Light_02_F", [2418.8,828.152,0.00138879], 285, _grouphsq] call _createVehicle];
+_vehicles set [1, ["O_Heli_Attack_02_F", [2418.8,828.152,0.00138879], 285, _grouphsq] call _createVehicle];
 _vehicles set [2, ["O_Heli_Light_02_F", [2401.98,872.439,0.00141001], 285, _grouphsq] call _createVehicle];
 
 _leader = driver (_vehicles select 0);

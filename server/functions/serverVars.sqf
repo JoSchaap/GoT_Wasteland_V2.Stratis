@@ -124,6 +124,7 @@ vehicleAddition = [
 			"Zasleh2",
 			"muzzle_snds_H",
 			"muzzle_snds_L",
+			"muzzle_snds_M",
 			"muzzle_snds_B",
 			"muzzle_snds_H_MG",
 			"optic_Arco",

@@ -123,7 +123,7 @@ class FSM
        "		} else {" \n
        "			if (_x isKindOf ""CAManBase"") then {" \n
        "				_deathTime = _x getVariable [""processedDeath"", time];" \n
-       "				if (time - _deathTime > 900) then {" \n
+       "				if (time - _deathTime > 600) then {" \n
        "					{" \n
        "						deleteVehicle _x;" \n
        "						_delQtyTP = _delQtyTP + 1;" \n

@@ -129,8 +129,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v2.1b (GoT/JoSchaap)";
-		briefingDescription="GoT Wasteland Survival Sandbox v2.1b (beta-edition) - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingName="GoT Wasteland v2.2 (GoT/JoSchaap)";
+		briefingDescription="GoT Wasteland Survival Sandbox v2.2 (beta-edition) - Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;
@@ -2300,7 +2300,7 @@ class Mission
 			position[]={4403.0142,128.00865,6765.0273};
 			id=173;
 			side="EMPTY";
-			vehicle="Land_Bucket_F";
+			vehicle="Land_HumanSkull_F";
 			skill=0.2;
 			init="this setVariable [""R3F_LOG_disabled"", true];this setpos [4403.833, 6764.9941, 1.15];this setVectorUp[0,0,0.5]";
 		};
@@ -2565,7 +2565,7 @@ class Mission
 			position[]={2164.8069,2.5705309,1905.2285};
 			id=200;
 			side="EMPTY";
-			vehicle="Land_Bucket_F";
+			vehicle="Land_HumanSkull_F";
 			skill=0.2;
 			init="this setVariable [""R3F_LOG_disabled"", true];this setpos [2164.8069, 1905.2285, -3.3378601e-006];";
 		};
@@ -3082,7 +3082,7 @@ class Mission
 			position[]={4280.5459,5.6444311,2701.657};
 			id=254;
 			side="EMPTY";
-			vehicle="Land_Bucket_F";
+			vehicle="Land_HumanSkull_F";
 			skill=0.2;
 			init="this setVariable [""R3F_LOG_disabled"", true];this setpos [4280.5459, 2701.657, 0.00013828278];";
 		};

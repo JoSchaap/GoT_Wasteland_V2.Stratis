@@ -5,9 +5,6 @@
 //	@file Description: The main init.
 //	@file Args:
 
-//  	reset BIS_fnc_mp
-//"BIS_fnc_MP_packet" addPublicVariableEventHandler {};
-
 #include "setup.sqf"
 
 StartProgress = false;
@@ -17,13 +14,8 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "GoT Wasteland v2.1";
+versionName = "GoT Wasteland v2.2";
 
-vChecksum = 1;
-
-{
-	vChecksum = vChecksum + _x;
-} forEach (toArray versionName); 
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
@@ -31,7 +23,7 @@ if(isNull player) then {X_JIP = true;};
 
 true spawn {
 	if(!isDedicated) then {
-		titleText ["Welcome to GoT Wasteland v2.1, Have patience dear Padawan!", "BLACK", 0];
+		titleText ["Welcome to GoT Wasteland v2.2, Have patience dear Padawan!", "BLACK", 0];
 		waitUntil {player == player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
@@ -42,6 +34,7 @@ true spawn {
 [] execVM "briefing.sqf";
 
 generateKey = compileFinal preprocessFileLineNumbers "server\antihack\generateKey.sqf"; 
+fn_vehicleInit = compile preprocessFileLineNumbers "server\functions\fn_vehicleInit.sqf";
 
 if(X_Client) then {
 	waitUntil {player == player};

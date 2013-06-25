@@ -27,11 +27,13 @@ _createVehicle = {
     
     _soldier = [_groupsm, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
+    _soldier = [_groupsm, _position] call createRandomSoldier; 
+    _soldier moveInTurret [_vehicle, [0]];  
     _vehicle
 };
 
 _vehicles = [];
-_vehicles set [0, ["O_Heli_Light_02_F", [7108.42,5996.3,0.00166416], 284, _groupsm] call _createVehicle];
+_vehicles set [0, ["O_Heli_Attack_02_black_F", [7108.42,5996.3,0.00166416], 284, _groupsm] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _groupsm selectLeader _leader;

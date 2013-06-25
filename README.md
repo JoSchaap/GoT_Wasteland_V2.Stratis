@@ -59,7 +59,7 @@ changelog for v2.1:
 		[Changed] minor changes to player hud
 		*- your idea here? let us know!
 
-(preliminary) changelog for v2.2:
+changelog for v2.2:
 
 		! -INITIAL ARMA3 BETA RELEASE- !
 		[Removed] Time Acceleration (lagged)
