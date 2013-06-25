@@ -30,7 +30,7 @@ _createVehicle = {
     if (_vehicle isKindOf "O_Heli_Attack_02_F") then {
   	   _soldier = [_group, _position] call createRandomSoldier; 
         _soldier moveInTurret [_vehicle, [0]];
-    }
+    };
     
     _vehicle
 };
