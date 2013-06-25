@@ -15,8 +15,8 @@
 
 #else
 
-	#define sideMissionTimeout 1200
-	#define sideMissionDelayTime 300
+	#define sideMissionTimeout 1500
+	#define sideMissionDelayTime 480
 
 #endif
 

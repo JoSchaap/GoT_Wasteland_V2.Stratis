@@ -26,10 +26,10 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
 CivGrpS = createGroup civilian;
-_vehicleClass = ["O_Speedboat","B_Speedboat"] call BIS_fnc_selectRandom;
+_vehicleClass = ["O_Boat_Armed_01_hmg_F","B_Boat_Armed_01_minigun_F"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
-_vehicle = [_vehicleClass,_randomPos,0.15,1,0,"NONE"] call createMissionVehicle2;
+_vehicle = [_vehicleClass,_randomPos,0.05,1,0,"NONE"] call createMissionVehicle2;
 
 _slbox = createVehicle ["Box_NATO_Support_F",[(_randomPos select 0), (_randomPos select 1),0],[], 0, "NONE"];
 [_slbox,"mission_Main_A3snipers"] call fn_refillbox;

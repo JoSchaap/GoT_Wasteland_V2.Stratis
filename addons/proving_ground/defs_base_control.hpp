@@ -106,6 +106,7 @@
 		y = 0.0; h = 0.06;
 		colorText[] = {0.85, 0.85, 0.85, 1};
 		colorSelection[] = {1, 1, 1, 1};
+		colorDisabled[] = {1,1,1,0.3};
 		autocomplete = "scripting";
 		//text = "";
 	};

@@ -27,15 +27,18 @@ _createVehicle = {
     
     _soldier = [_grouphsq, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
-
+    if (_vehicle isKindOf "O_Heli_Attack_02_F") then {
+  	   _soldier = [_group, _position] call createRandomSoldier; 
+        _soldier moveInTurret [_vehicle, [0]];
+    }
     
     _vehicle
 };
 
 _vehicles = [];
-_vehicles set [0, ["O_Ka60_F", [2436.24,847.9,0.00133419], 91, _grouphsq] call _createVehicle];
-_vehicles set [1, ["O_Ka60_F", [2418.8,828.152,0.00138879], 285, _grouphsq] call _createVehicle];
-_vehicles set [2, ["O_Ka60_F", [2401.98,872.439,0.00141001], 285, _grouphsq] call _createVehicle];
+_vehicles set [0, ["O_Heli_Light_02_F", [2436.24,847.9,0.00133419], 91, _grouphsq] call _createVehicle];
+_vehicles set [1, ["O_Heli_Attack_02_F", [2418.8,828.152,0.00138879], 285, _grouphsq] call _createVehicle];
+_vehicles set [2, ["O_Heli_Light_02_F", [2401.98,872.439,0.00141001], 285, _grouphsq] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _grouphsq selectLeader _leader;
@@ -98,8 +101,8 @@ _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText "HostileHelis";
 
-_picture = getText (configFile >> "CfgVehicles" >> "O_Ka60_F" >> "picture");
-_vehicleName = getText (configFile >> "cfgVehicles" >> "O_Ka60_F" >> "displayName");
+_picture = getText (configFile >> "CfgVehicles" >> "O_Heli_Light_02_F" >> "picture");
+_vehicleName = getText (configFile >> "cfgVehicles" >> "O_Heli_Light_02_F" >> "displayName");
 _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>! AIR ALARM !</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A formation of 3 <t color='%4'>%3</t> Are patroling the island, armed and dangerous! Take them out now!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };

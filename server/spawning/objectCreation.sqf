@@ -15,11 +15,11 @@ _obj addeventhandler ["dammaged", {(_this select 0) setdamage 0;}];
 
 switch (_Objtype) do
 {
-	case "Land_CanisterPlastic_F": {
-		_obj setVariable["water",20,true];
+	case "Land_WaterBarrel_F": {
+		_obj setVariable["water",50,true];
 	};
 	case "Land_Sacks_goods_F": {
-		_obj setVariable["food",20,true];
+		_obj setVariable["food",40,true];
 	};
 };
 
