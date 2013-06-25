@@ -29,7 +29,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	_vehicleCount = 0;
 	{
 	    _vehicleType = Format["%1",typeOf _x];
-		if(((_vehicleType isKindOf "LandVehicle") OR (_vehicleType isKindOf "Air")) AND !(_vehicleType isKindOf "StaticWeapon")) then {
+		if(((_vehicleType isKindOf "LandVehicle") OR (_vehicleType isKindOf "Air") OR (_vehicleType isKindOf "Ship")) AND !(_vehicleType isKindOf "StaticWeapon")) then {
 	        _vehicleCount = _vehicleCount + 1;
 		};
 	}forEach vehicles;

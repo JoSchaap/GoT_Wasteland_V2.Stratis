@@ -34,7 +34,7 @@ _createVehicle = {
     _soldier = [_group, _position] call createRandomSoldier; 
     _soldier moveInCargo [_vehicle, 1];
     _soldier = [_group, _position] call createRandomSoldier; 
-    if (_vehicle isKindOf "B_Hunter_F") then {
+    if (_vehicle isKindOf "I_MRAP_03_F") then {
         _soldier moveInCargo [_vehicle, 2];
     } else {
         _soldier moveInTurret [_vehicle, [0]];
@@ -44,9 +44,9 @@ _createVehicle = {
 };
 
 _vehicles = [];
-_vehicles set [0, ["B_Hunter_HMG_F", [3272.0862, 6818.0166, 4.1839767], 110, _group] call _createVehicle];
-_vehicles set [1, ["B_Hunter_F", [3256.6409, 6823.4746, 3.8003173], 110, _group] call _createVehicle];
-_vehicles set [2, ["B_Hunter_RCWS_F", [3240.3447, 6829.6089, 4.275979], 110, _group] call _createVehicle];
+_vehicles set [0, ["I_MRAP_03_hmg_F", [3272.0862, 6818.0166, 4.1839767], 110, _group] call _createVehicle];
+_vehicles set [1, ["I_MRAP_03_F", [3256.6409, 6823.4746, 3.8003173], 110, _group] call _createVehicle];
+_vehicles set [2, ["I_MRAP_03_gmg_F", [3240.3447, 6829.6089, 4.275979], 110, _group] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _group selectLeader _leader;
@@ -93,8 +93,8 @@ _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText "Convoy";
 
-_picture = getText (configFile >> "CfgVehicles" >> "B_Hunter_F" >> "picture");
-_vehicleName = getText (configFile >> "cfgVehicles" >> "B_Hunter_F" >> "displayName");
+_picture = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_F" >> "picture");
+_vehicleName = getText (configFile >> "cfgVehicles" >> "I_MRAP_03_F" >> "displayName");
 _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> is convoyed by two armored vehicles. Stop them!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };

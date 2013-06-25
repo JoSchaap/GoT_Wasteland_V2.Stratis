@@ -8,6 +8,7 @@ _display = uiNamespace getVariable "WelcomeMessage";
 _control = _display displayCtrl welcomeText;
 
 private ["_teamrules", "_teamicon", "_teamcol"];
+
 switch(str(side player)) do {
 	case "WEST": {
 		_teamrules = "STR_WL_YouAreInTeam";
@@ -26,7 +27,7 @@ switch(str(side player)) do {
 	};
 };
 
-_message = format ["<t shadow=""1""><t size=""2"">%1</t> (%2)<br/>%4<br/>%3</t>",
+_message = format ["<t shadow=""1""><t size=""2"">%1</t> (%2)<br/>%4<br/>%3<br/><img size=""7"" image=""client\icons\logo.paa""></t>",
 	localize "STR_WL_WelcomeToWasteland",
 	versionName,
 	format [localize _teamrules, 

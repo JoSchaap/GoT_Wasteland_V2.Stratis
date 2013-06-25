@@ -17,11 +17,11 @@ mission_CivHeli = compile preprocessFileLineNumbers "server\missions\mainMission
 mission_HostileHeliFormation = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_HostileHeliFormation.sqf";
 mission_Convoy = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Convoy.sqf";
 mission_ArmedDiversquad = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_ArmedDiversquad.sqf";
-/*
 mission_APC = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_APC.sqf";
+mission_Outpost = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Outpost.sqf";
+/*
 mission_LightTank = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_LightTank.sqf";
 mission_MBT = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_MBT.sqf";
-mission_Outpost = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Outpost.sqf";
 mission_RadarTruck = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_RadarTruck.sqf";
 mission_SupplyDrop = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_SupplyDrop.sqf";
 */
@@ -32,9 +32,9 @@ mission_WepCache = compile preprocessFileLineNumbers "server\missions\sideMissio
 mission_MiniConvoy = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_MiniConvoy.sqf";
 mission_SunkenSupplies = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_SunkenSupplys.sqf";
 mission_HostileHelicopter = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_HostileHelicopter.sqf";
-
-/*
 mission_Truck = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_Truck.sqf";
+/*
+
 mission_ReconVeh = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_ReconVeh.sqf";
 */
 
@@ -51,6 +51,7 @@ createMidGroup = compile preprocessFileLineNumbers "server\missions\factoryMetho
 createLargeGroup = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\largeGroup.sqf";
 createMissionVehicle = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionVehicle.sqf";
 createMissionVehicle2 = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionVehicle2.sqf";
+createMissionVehicleWL = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionVehicleWithLog.sqf";
 createSupplyDrop = compile preprocessFileLineNumbers "server\missions\factoryMethods\createSupplyDrop.sqf";
 createCargoItem = compile preprocessFileLineNumbers "server\missions\factoryMethods\createCargoItem.sqf";
 defendArea = compile preprocessFileLineNumbers "server\functions\defendArea.sqf";
@@ -60,7 +61,6 @@ checkHackedVehicles = compileFinal preprocessFileLineNumbers "server\functions\c
 findClientPlayer = compileFinal preprocessFileLineNumbers "server\functions\findClientPlayer.sqf";
 
 //Spawning Compiles
-fn_vehicleInit = compile preprocessFileLineNumbers "server\functions\fn_vehicleInit.sqf";
 randomWeapons = compile preprocessFileLineNumbers "server\spawning\randomWeapon.sqf";
 vehicleCreation = compile preprocessFileLineNumbers "server\spawning\vehicleCreation.sqf";
 objectCreation = compile preprocessFileLineNumbers "server\spawning\objectCreation.sqf";

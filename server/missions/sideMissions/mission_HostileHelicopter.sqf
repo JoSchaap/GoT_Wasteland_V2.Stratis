@@ -27,11 +27,13 @@ _createVehicle = {
     
     _soldier = [_groupsm, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
+    _soldier = [_groupsm, _position] call createRandomSoldier; 
+    _soldier moveInTurret [_vehicle, [0]];  
     _vehicle
 };
 
 _vehicles = [];
-_vehicles set [0, ["O_Ka60_F", [7108.42,5996.3,0.00166416], 284, _groupsm] call _createVehicle];
+_vehicles set [0, ["O_Heli_Attack_02_black_F", [7108.42,5996.3,0.00166416], 284, _groupsm] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _groupsm selectLeader _leader;
@@ -75,8 +77,8 @@ _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText "Hostile Helicopter";
 
-_picture = getText (configFile >> "CfgVehicles" >> "O_Ka60_F" >> "picture");
-_vehicleName = getText (configFile >> "cfgVehicles" >> "O_Ka60_F" >> "displayName");
+_picture = getText (configFile >> "CfgVehicles" >> "O_Heli_Light_02_F" >> "picture");
+_vehicleName = getText (configFile >> "cfgVehicles" >> "O_Heli_Light_02_F" >> "displayName");
 _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>!! WARNING !!</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A armed <t color='%4'>%3</t> is patrolling the island. Destroy or steal it!</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };

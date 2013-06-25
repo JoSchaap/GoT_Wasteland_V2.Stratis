@@ -59,8 +59,8 @@ for "_i" from 0 to ((count _objs) - 1) do
 		_newObj setPos _newPos;
 		if (!isNil "_fuel") then {_newObj setFuel _fuel};
 		if (!isNil "_damage") then {_newObj setDamage _damage};
-		if (!isNil "_vehicleinit") then {_newObj setVehicleInit format ["%1;",_vehicleinit]};
-		processInitCommands;
-		clearVehicleInit _newObj;  //Stop weapon boxes refilling themselves 
+		if (!isNil "_vehicleinit") then {[_newObj, format ["%1;",_vehicleinit], false] call fn_vehicleInit};
+		// processInitCommands;
+		// clearVehicleInit _newObj;  //Stop weapon boxes refilling themselves 
 		_newObjs = _newObjs + [_newObj];	
 };

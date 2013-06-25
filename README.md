@@ -59,4 +59,34 @@ changelog for v2.1:
 		[Changed] minor changes to player hud
 		*- your idea here? let us know!
 
+changelog for v2.2:
+
+		! -INITIAL ARMA3 BETA RELEASE- !
+		[Removed] Time Acceleration (lagged)
+		[Removed] Random ammocrate spawns
+		[Added] New beta weapons!
+		[Added] New beta vehicles!
+		[Added] New beta clothing!
+		[Added] New beta ammunition!
+		[Added] New beta boats/submarines!
+		[Added] New outpost Main-mission
+		[Added] New APC Main-mission
+		[Added] New abandonned truck sidemission</br/>
+		[Fixed] broken vehiclespawns/missions due to beta
+		[Fixed] errors in admin menu's
+		[Fixed] all respawn issues in limbo
+		[Changed] existing mainmissions to new vehicles
+		[Changed] existing sidemissions to new vehicles
+		[Changed] More time between sidemissions (8min)
+		[Changed] More time between mainmissions (15min)
+		[Changed] Missions take longer to time-out
+		[Changed] new lootspawns in buildings (SMG/Handguns)
+		[Changed] mission starts at 4am for day edition
+		[Changed] mission starts at 7pm for evening edition
+		[Changed] minor changes to player hud
+		*- your idea here? let us know!
+		*- please bare with me if there are still issues
+		   beta just got out and i wanted this out asap
+
+
 
