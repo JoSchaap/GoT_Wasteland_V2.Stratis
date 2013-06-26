@@ -3,7 +3,7 @@ private ["_missionMarkerName","_missionType","_picture","_vehicleName","_hint","
 #include "sideMissionDefines.sqf"
 
 _missionMarkerName = "MiniConvoy_Marker";
-_missionType = "MiniConvoy";
+_missionType = "Offroad Convoy";
 
 diag_log format["WASTELAND SERVER - Side Mission Started: %1", _missionType];
 
@@ -86,7 +86,7 @@ _marker setMarkerText "MiniConvoy";
 
 _picture = getText (configFile >> "CfgVehicles" >> "C_Offroad_01_F" >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> "C_Offroad_01_F" >> "displayName");
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> is convoyed by two ATV's. Stop them!</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor];
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> transporting a crate of GL weapons and ammo is convoyed by two ATV squads. Stop them!</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };
 publicVariable "messageSystem";

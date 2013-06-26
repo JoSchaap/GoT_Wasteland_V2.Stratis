@@ -4,7 +4,7 @@ _objs =
 ["Land_LampShabby_F",[3.50317,2.47949,0],325,1,0,{}],
 ["Land_LampShabby_F",[-4.50623,2.23486,0],35,1,0,{}],
 ["Land_BagFence_Long_F",[3.52722,4.10938,0],90,1,0,{}],
-["Land_BarGate_F",[-4.38623,5.86182,0],180,1,0,{}],
+["Land_BarGate_F",[-4.38623,5.86182,0],180,1,0,"this animate ['Land_BarGate_F',1]"],  // this should open the gate :) TEST FIRST!
 ["Land_LampShabby_F",[3.95813,-4.55029,0],210,1,0,{}],
 ["Land_LampShabby_F",[-3.84167,-4.69043,0],150,1,0,{}],
 ["Land_BagFence_Long_F",[-4.8949,3.82715,0],90,1,0,{}],

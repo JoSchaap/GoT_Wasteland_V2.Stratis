@@ -22,6 +22,11 @@ while {_counter < 6} do // 8 helis spawn at the beginning
     else
     {
         _position = getMarkerPos format ["heliSpawn_%1", _selectedMarker];
+
+		//debug line added by JoSchaap to find an issue (you should NOT use my debug builds on your server!)
+		diag_log format["--DEBUG-- [staticHeliSpawning] call findsafepos for (heliSpawn_%2) with args: [%1, 25, 50, 1, 0, 60 * (pi / 180), 0] --DEBUG--", _position, _selectedMarker]; 
+		//end of debug line added by JoSchaap (you should NOT use my debug builds on your server!)
+
 	    _newPos = [_position, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
 		[0, _newPos] call staticHeliCreation;
 	    

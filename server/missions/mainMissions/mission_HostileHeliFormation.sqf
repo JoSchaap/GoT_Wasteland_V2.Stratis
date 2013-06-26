@@ -103,7 +103,7 @@ _marker setMarkerText "HostileHelis";
 
 _picture = getText (configFile >> "CfgVehicles" >> "O_Heli_Light_02_F" >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> "O_Heli_Light_02_F" >> "displayName");
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>! AIR ALARM !</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A formation of 3 <t color='%4'>%3</t> Are patroling the island, armed and dangerous! Take them out now!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>! AIR ALARM !</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A formation of 2 <t color='%4'>%3</t> and a <t color='%4'>MI-48</t> Are patroling the island, transporting two weapon crates. Take them out before they kill you!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };
 publicVariable "messageSystem";
@@ -135,7 +135,7 @@ if(_failed) then
 	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units _grouphsq;
 	{deleteVehicle _x;}forEach units _grouphsq;
 	deleteGroup _grouphsq; 
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The enemy got away, better luck next time!</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The enemy has got away, better luck next time!</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
     messageSystem = _hint;
     if (!isDedicated) then { call serverMessage };
     publicVariable "messageSystem";
@@ -154,7 +154,7 @@ if(_failed) then
     clearMagazineCargoGlobal _ammobox3;
     clearWeaponCargoGlobal _ammobox3; 
     [_ammobox3,"mission_Side_USSpecial"] call fn_refillbox;
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The Hostile AirSquad has been taken down!</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The Hostile AirSquad has been taken down! The weapon crates have survived the crash and are near the wreck!</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
     messageSystem = _hint;
     if (!isDedicated) then { call serverMessage };
     publicVariable "messageSystem";
