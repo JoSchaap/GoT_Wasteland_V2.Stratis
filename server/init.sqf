@@ -55,7 +55,7 @@ if (serverSpawning == 1) then {
 if (sideMissions == 1) then {
 	diag_log format["WASTELAND SERVER - Initilizing Missions"];
     [] execVM "server\missions\sideMissionController.sqf";
-    sleep 9;
+    sleep 5;
     [] execVM "server\missions\mainMissionController.sqf";
 };
 
