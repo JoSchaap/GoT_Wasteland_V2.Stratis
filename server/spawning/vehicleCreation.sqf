@@ -9,10 +9,10 @@ if(!X_Server) exitWith {};
 private ["_markerPos","_pos","_type","_num","_cartype","_car","_debug"];
 
 _markerPos = _this select 0;
+_cartype = _this select 1;
 
 if (count _this > 1) then
 {
-	_cartype = _this select 1;
 	
 	if (_cartype in civilianVehicles) then { _type = 0 };
 	if (_cartype in lightMilitaryVehicles) then { _type = 1 };
