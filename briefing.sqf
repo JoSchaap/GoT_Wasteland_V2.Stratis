@@ -282,6 +282,7 @@ player createDiaryRecord["404games",
 	* Hub (404forums)<br/>
 	* Tonic-_- (BIS-forums)<br/>
 	* spunFIN (BIS-forum)<br/><br/>
+	* AWA (OpenDayZ.Net)<br/>
 	* * Thanks ALOT everyone!<br/>
 	<br/>
 "
