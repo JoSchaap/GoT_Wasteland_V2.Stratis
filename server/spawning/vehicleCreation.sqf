@@ -9,11 +9,11 @@ if(!X_Server) exitWith {};
 private ["_markerPos","_pos","_type","_num","_cartype","_car","_debug"];
 
 _markerPos = _this select 0;
-_cartype = _this select 1;
+
 
 if (count _this > 1) then
 {
-	
+	_cartype = _this select 1;	
 	if (_cartype in civilianVehicles) then { _type = 0 };
 	if (_cartype in lightMilitaryVehicles) then { _type = 1 };
 	if (_cartype in mediumMilitaryVehicles) then { _type = 2 };
@@ -29,7 +29,7 @@ else
 
 		//debug line added by JoSchaap to find an issue (you should NOT use my debug builds on your server!)
 		_debug = (if (_type == 1) then { 2 } else { 5 });
-		diag_log format["--DEBUG-- [vehicleCreation] call findsafepos with args: [%1, 1, 35, %2, 0, 60 * (pi / 180), 0, [], [%1]] --DEBUG--", _markerPos, _debug]; 
+		diag_log format["--DEBUG-- [vehicleCreation] call findsafepos for(%3 type:%4) with args: [%1, 1, 35, %2, 0, 60 * (pi / 180), 0, [], [%1]] --DEBUG--", _markerPos, _debug, _cartype, _type]; 
 		//end of debug line added by JoSchaap (you should NOT use my debug builds on your server!)
 
 _pos = [_markerPos, 1, 35, ( if (_type == 1) then { 2 } else { 5 } ), 0, 60 * (pi / 180), 0, [], [_markerPos]] call BIS_fnc_findSafePos;
