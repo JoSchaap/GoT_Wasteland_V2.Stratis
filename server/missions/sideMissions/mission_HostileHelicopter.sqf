@@ -28,6 +28,7 @@ _createVehicle = {
     _soldier = [_groupsm, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
     _soldier = [_groupsm, _position] call createRandomSoldier; 
+	_soldier assignAsGunner _vehicle;
     _soldier moveInTurret [_vehicle, [0]];  
     _vehicle
 };

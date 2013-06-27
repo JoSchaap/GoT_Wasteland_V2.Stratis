@@ -256,6 +256,7 @@ player createDiaryRecord["changelog",
 		[Added] Diving class to all factions<br/>
 		[Added] Green army suits to gunstore<br/>
 		[Added] spawn protection on debug island<br/>
+		[Added] New ghosthawk with camo<br/>
 		[Fixed] new outpost mission did not despawn correctly<br/>
 		[Fixed] incorrect mission descriptions<br/>
 		[Fixed] Server cleanup set to 10 minutes after death<br/>

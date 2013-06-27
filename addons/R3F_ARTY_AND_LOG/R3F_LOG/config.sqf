@@ -58,7 +58,8 @@ R3F_LOG_CFG_heliporteurs = [
 	"B_Heli_Attack_01_F",
 	"O_Heli_Attack_02_F",
 	"B_Heli_Transport_01_F",
-	"I_Heli_Transport_02_F"
+	"I_Heli_Transport_02_F",
+	"B_Heli_Transport_01_camo_F"
 ];
 
 /**
@@ -120,7 +121,8 @@ R3F_LOG_CFG_transporteurs = [
 	["B_Heli_Attack_01_F", 10],
 	["O_Heli_Attack_02_F", 10],
 	["B_Heli_Transport_01_F", 20],
-	["I_Heli_Transport_02_F", 20]
+	["I_Heli_Transport_02_F", 20],
+	["B_Heli_Transport_01_camo_F", 20]
 ];
 
  
