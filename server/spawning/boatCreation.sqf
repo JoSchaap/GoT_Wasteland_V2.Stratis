@@ -12,11 +12,6 @@ _markerPos = _this select 0;
 
 _boattype = BoatList call BIS_fnc_selectRandom; 
 _type = 3;
-
-		//debug line added by JoSchaap to find an issue (you should NOT use my debug builds on your server!)
-		diag_log format["--DEBUG-- [boatCreation] call findsafepos with args: [%1, 1, 15, 5, 2, 60 * (pi / 180), 0, [], [[], %1]] --DEBUG--", _markerPos]; 
-		//end of debug line added by JoSchaap (you should NOT use my debug builds on your server!)
-
 _pos = [_markerPos, 1, 15, 5, 2, 60 * (pi / 180), 0, [], [[], _markerPos]] call BIS_fnc_findSafePos;
 
 //Car Initialization
