@@ -51,7 +51,7 @@ while {true} do
             };    
         } forEach crew _vehicle;
 
-        if(isStreamFriendlyUIEnabled == true) then
+        if(isStreamFriendlyUIEnabled) then
         {
         	_tempString = format ["<img image='client\icons\logo.paa'/>"];
         	_hudVehicle ctrlSetStructuredText parseText _tempString;
