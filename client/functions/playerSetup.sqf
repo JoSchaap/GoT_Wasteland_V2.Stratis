@@ -26,7 +26,7 @@ removeGoggles _player;
 
 switch (str(playerSide)) do
 {
-	case "WEST"
+	case "WEST":
    	{
 		switch (_startunif) do
 		{
@@ -50,7 +50,7 @@ switch (str(playerSide)) do
 		};
 	};
 
-	case "EAST"
+	case "EAST":
    	{
 		switch (_startunif) do
 		{
@@ -74,7 +74,7 @@ switch (str(playerSide)) do
 		};
 	};
 
-	case "GUER"
+	case "GUER":
    	{
 		switch (_startunif) do
 		{
