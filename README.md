@@ -93,6 +93,7 @@ changelog for v2.21
 		[Added] Diving class to all factions
 		[Added] Green army suits to gunstore
 		[Added] spawn protection on debug island
+		[Added] New ghosthawk with camo (DEVBRANCH-ONLY)
 		[Fixed] new outpost mission did not despawn correctly
 		[Fixed] incorrect mission descriptions
 		[Fixed] Server cleanup set to 10 minutes after death
@@ -102,6 +103,7 @@ changelog for v2.21
 		[Changed] missions last longer before timing out
 		[Changed] added debug logging for findsafepos *debug build*
 		[Changed] mission starts at 8pm for evening edition
+		[Removed] Names when in vehicle in StreamFriendlyUI
 
 
 

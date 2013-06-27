@@ -22,50 +22,56 @@ removeGoggles _player;
 
 switch (str(playerSide)) do
 {
-	case "WEST":
-		if (typeof _player == "B_sniper_F") then { 
-			_player addUniform "U_B_Ghilliesuit"; 
-			_player addVest "V_PlateCarrier1_rgr"; 
-		};
-		if (typeof _player == "B_diver_F") then { 
-			_player addUniform "U_B_Wetsuit"; 
-			_player addVest "V_RebreatherB";
-			_player addGoggles "G_Diving";
-		};
-		if (typeof _player != "B_diver_F" && typeof _player != "B_sniper_F") then { 
-			_player addUniform "U_B_CombatUniform_mcam";
-			_player addVest "V_PlateCarrier1_rgr";
-			_player addHeadgear "H_HelmetB";
+	case "WEST": 
+		{
+			if (typeof _player == "B_sniper_F") then { 
+				_player addUniform "U_B_Ghilliesuit"; 
+				_player addVest "V_PlateCarrier1_rgr"; 
+			};
+			if (typeof _player == "B_diver_F") then { 
+				_player addUniform "U_B_Wetsuit"; 
+				_player addVest "V_RebreatherB";
+				_player addGoggles "G_Diving";
+			};
+			if (typeof _player != "B_diver_F" && typeof _player != "B_sniper_F") then { 
+				_player addUniform "U_B_CombatUniform_mcam";
+				_player addVest "V_PlateCarrier1_rgr";
+				_player addHeadgear "H_HelmetB";
+			};
 		};
 	case "EAST":
-		if (typeof _player == "O_sniper_F") then { 
-			_player addUniform "U_O_Ghilliesuit"; 
-			_player addVest "V_PlateCarrier1_rgr"; 
-		};
-		if (typeof _player == "O_diver_F") then { 
-			_player addUniform "U_O_Wetsuit"; 
-			_player addVest "V_RebreatherIR";
-			_player addGoggles "G_Diving";
-		};
-		if (typeof _player != "O_diver_F" && typeof _player != "O_sniper_F") then { 
-			_player addUniform "U_O_CombatUniform_ocamo";
-			_player addVest "V_PlateCarrier1_rgr";
-			_player addHeadgear "H_HelmetO_ocamo";
+		{
+			if (typeof _player == "O_sniper_F") then { 
+				_player addUniform "U_O_Ghilliesuit"; 
+				_player addVest "V_PlateCarrier1_rgr"; 
+			};
+			if (typeof _player == "O_diver_F") then { 
+				_player addUniform "U_O_Wetsuit"; 
+				_player addVest "V_RebreatherIR";
+				_player addGoggles "G_Diving";
+			};
+			if (typeof _player != "O_diver_F" && typeof _player != "O_sniper_F") then { 
+				_player addUniform "U_O_CombatUniform_ocamo";
+				_player addVest "V_PlateCarrier1_rgr";
+				_player addHeadgear "H_HelmetO_ocamo";
+			};
 		};
 	case "GUER":
-		if (typeof _player == "I_sniper_F") then { 
-			_player addUniform "U_I_Ghilliesuit"; 
-			_player addVest "V_PlateCarrier1_rgr"; 
-		};
-		if (typeof _player == "I_diver_F") then { 
-			_player addUniform "U_I_Wetsuit"; 
-			_player addVest "V_RebreatherIA";
-			_player addGoggles "G_Diving";
-		};
-		if (typeof _player != "I_diver_F" && typeof _player != "I_sniper_F") then { 
-			_player addUniform "U_I_CombatUniform";
-			_player addVest "V_PlateCarrier1_rgr";
-			_player addHeadgear "H_MilCap_ocamo";
+		{
+			if (typeof _player == "I_sniper_F") then { 
+				_player addUniform "U_I_Ghilliesuit"; 
+				_player addVest "V_PlateCarrier1_rgr"; 
+			};
+			if (typeof _player == "I_diver_F") then { 
+				_player addUniform "U_I_Wetsuit"; 
+				_player addVest "V_RebreatherIA";
+				_player addGoggles "G_Diving";
+			};
+			if (typeof _player != "I_diver_F" && typeof _player != "I_sniper_F") then { 
+				_player addUniform "U_I_CombatUniform";
+				_player addVest "V_PlateCarrier1_rgr";
+				_player addHeadgear "H_MilCap_ocamo";
+			};
 		};
 };
 
