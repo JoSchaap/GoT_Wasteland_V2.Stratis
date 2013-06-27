@@ -129,8 +129,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v2.2 (GoT/JoSchaap)";
-		briefingDescription="GoT Wasteland Survival Sandbox v2.2 (beta-edition) - Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingName="GoT Wasteland v2.21 (GoT/JoSchaap)";
+		briefingDescription="GoT Wasteland Survival Sandbox v2.21 (beta-edition) - Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;
