@@ -26,67 +26,76 @@ removeGoggles _player;
 
 switch (str(playerSide)) do
 {
-	case "WEST":
-    {
+	case "WEST"
+   	{
 		switch (_startunif) do
 		{
 			case "U_B_Ghilliesuit":
 			{
 				_player addUniform "U_B_Ghilliesuit";
+				_player addVest "V_PlateCarrier1_rgr";
 			};
 			case "U_B_Wetsuit":
 			{
 				_player addUniform "U_B_Wetsuit";
+				_player addVest "V_RebreatherB";
+				_player addGoggles "G_Diving";
 			};
-			default:
+			default
 			{
 				_player addUniform "U_B_CombatUniform_mcam";
+				_player addVest "V_PlateCarrier1_rgr";
+				_player addHeadgear "H_HelmetB";
 			};
 		};
-	_player addVest "V_PlateCarrier1_rgr";
-	_player addHeadgear "H_HelmetB";
 	};
 
-	case "EAST":
-    {
+	case "EAST"
+   	{
 		switch (_startunif) do
 		{
 			case "U_O_Ghilliesuit":
 			{
 				_player addUniform "U_O_Ghilliesuit";
+				_player addVest "V_PlateCarrier1_rgr";
 			};
 			case "U_O_Wetsuit":
 			{
 				_player addUniform "U_O_Wetsuit";
+				_player addVest "V_RebreatherIR";
+				_player addGoggles "G_Diving";
 			};
-			default:
+			default
 			{
 				_player addUniform "U_O_CombatUniform_mcam";
+				_player addVest "V_PlateCarrier1_rgr";
+				_player addHeadgear "H_HelmetB";
 			};
 		};
-	_player addVest "V_PlateCarrier1_rgr";
-	_player addHeadgear "H_HelmetB";
 	};
 
-	case "GUER":
-    {
+	case "GUER"
+   	{
 		switch (_startunif) do
 		{
 			case "U_I_Ghilliesuit":
 			{
 				_player addUniform "U_I_Ghilliesuit";
+				_player addVest "V_PlateCarrier1_rgr";
 			};
 			case "U_I_Wetsuit":
 			{
 				_player addUniform "U_I_Wetsuit";
+				_player addVest "V_RebreatherIA";
+				_player addGoggles "G_Diving";
 			};
-			default:
+			default
 			{
 				_player addUniform "U_I_CombatUniform_mcam";
+				_player addVest "V_PlateCarrier1_rgr";
+				_player addHeadgear "H_HelmetB";
 			};
 		};
-	_player addVest "V_PlateCarrier1_rgr";
-	_player addHeadgear "H_HelmetB";
 	};
 };
 
