@@ -1,4 +1,3 @@
-
 //	@file Version: 1.0
 //	@file Name: playerHud.sqf
 //	@file Author: [GoT] JoSchaap
@@ -52,7 +51,13 @@ while {true} do
             };    
         } forEach crew _vehicle;
 
-        _hudVehicle ctrlSetStructuredText parseText _tempString;
+        if(isStreamFriendlyUIEnabled == true) then
+        {
+        	_tempString = format ["<img image='client\icons\logo.paa'/>"];
+        	_hudVehicle ctrlSetStructuredText parseText _tempString;
+        } else {
+        	_hudVehicle ctrlSetStructuredText parseText _tempString;
+        };
         _x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
         _y = safeZoneY + (safeZoneH * (1 - (_yOffset / SafeZoneH)));
         _hudVehicle ctrlSetPosition [_x, _y, 0.4, 0.65];
