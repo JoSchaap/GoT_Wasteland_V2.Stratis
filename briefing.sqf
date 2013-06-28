@@ -249,14 +249,14 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 [
-"v2.21(GoT)*DEBUGBUILD*",
-"
-		DEBUG BUILD DONT USE ON YOUR OWN SERVER YET!<br/>		
+"v2.21(GoT)",
+"	
 		[Added] Green army (Independent)<br/>
 		[Added] Diving class to all factions<br/>
 		[Added] Green army suits to gunstore<br/>
 		[Added] spawn protection on debug island<br/>
-		[Added] New ghosthawk with camo (DEVBRANCH-ONLY)<br/>
+		[Fixed] Lagspikes due to errors in vehicle respawn<br/>
+		[Fixed] RPT logfile findsafepos spam<br/>
 		[Fixed] new outpost mission did not despawn correctly<br/>
 		[Fixed] incorrect mission descriptions<br/>
 		[Fixed] Server cleanup set to 10 minutes after death<br/>
@@ -264,7 +264,6 @@ player createDiaryRecord["changelog",
 		[Changed] hostile heli missions contain a mi48 now<br/>
 		[Changed] hints before and after missions rewritten<br/>
 		[Changed] missions last longer before timing out<br/>
-		[Changed] added debug logging for findsafepos *debug build*<br/>
 		[Changed] mission starts at 8pm for evening edition<br/>
 		[Removed] Names when in vehicle in StreamFriendlyUI<br/>
 		*- your idea here? let us know!<br/>

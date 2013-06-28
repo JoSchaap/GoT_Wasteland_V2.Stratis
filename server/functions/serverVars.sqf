@@ -84,7 +84,7 @@ objectList = ["Land_Sacks_goods_F",
 			"Land_Coil_F",
 			"Land_cargo_addon02_V2_F",  // camonet dont put in r3f!
 			"Land_HBarrierBig_F",
-			"Land_Pipes_Large_F",
+			"Land_Pipes_large_F",
 			"Land_BagFence_Long_F",
 			"Land_BagBunker_Small_F",
 			"Land_CncBarrierMedium4_F",
