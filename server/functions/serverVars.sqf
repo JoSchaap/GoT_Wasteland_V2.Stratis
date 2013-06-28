@@ -54,7 +54,7 @@ civilianVehicles = ["C_Offroad_01_F"];
 lightMilitaryVehicles = ["B_Quadbike_01_F","O_Quadbike_01_F","I_Quadbike_01_F","C_Quadbike_01_F"];
 
 //Medium Military Vehicle List - Random Spawns
-mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_Covered_F","I_Truck_02_covered_F","O_Truck_02_Transport_F","I_Truck_02_Transport_F"];
+mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_covered_F","I_Truck_02_covered_F","O_Truck_02_transport_F","I_Truck_02_transport_F"];
 
 
 //boat - Random Boats.
