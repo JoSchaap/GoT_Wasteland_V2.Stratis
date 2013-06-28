@@ -6,7 +6,7 @@
 
 if(!X_Server) exitWith {};
 
-private ["_markerPos","_pos","_type","_num","_cartype","_car","_debug"];
+private ["_markerPos","_pos","_type","_num","_cartype","_car"];
 
 _markerPos = _this select 0;
 
