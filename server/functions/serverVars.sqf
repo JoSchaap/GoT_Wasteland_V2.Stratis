@@ -48,13 +48,13 @@ publicVariable "currentInvites";
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
 
 //Civilian Vehicle List - Random Spawns
-civilianVehicles = ["c_Offroad_01_F","C_Quadbike_01_F"];
+civilianVehicles = ["C_Offroad_01_F"];
 
 //Light Military Vehicle List - Random Spawns
-lightMilitaryVehicles = ["B_Quadbike_01_F","O_Quadbike_01_F","I_Quadbike_01_F"];
+lightMilitaryVehicles = ["B_Quadbike_01_F","O_Quadbike_01_F","I_Quadbike_01_F","C_Quadbike_01_F"];
 
 //Medium Military Vehicle List - Random Spawns
-mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_Covered_F","I_Truck_02_Covered_F","O_Truck_02_Transport_F","I_Truck_02_Transport_F"];
+mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_covered_F","I_Truck_02_covered_F","O_Truck_02_transport_F","I_Truck_02_transport_F"];
 
 
 //boat - Random Boats.
@@ -84,7 +84,7 @@ objectList = ["Land_Sacks_goods_F",
 			"Land_Coil_F",
 			"Land_cargo_addon02_V2_F",  // camonet dont put in r3f!
 			"Land_HBarrierBig_F",
-			"Land_Pipes_Large_F",
+			"Land_Pipes_large_F",
 			"Land_BagFence_Long_F",
 			"Land_BagBunker_Small_F",
 			"Land_CncBarrierMedium4_F",

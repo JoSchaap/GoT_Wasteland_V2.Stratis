@@ -129,8 +129,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v2.2 (GoT/JoSchaap)";
-		briefingDescription="GoT Wasteland Survival Sandbox v2.2 (beta-edition) - Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingName="GoT Wasteland v2.21 (GoT/JoSchaap)";
+		briefingDescription="GoT Wasteland Survival Sandbox v2.21 (beta-edition) - Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;
@@ -223,7 +223,7 @@ class Mission
 					special="NONE";
 					id=5;
 					side="WEST";
-					vehicle="B_sniper_F";
+					vehicle="B_diver_F";
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=0.60000002;
@@ -325,7 +325,7 @@ class Mission
 					special="NONE";
 					id=13;
 					side="WEST";
-					vehicle="B_sniper_F";
+					vehicle="B_diver_F";
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=0.60000002;
@@ -482,7 +482,7 @@ class Mission
 					special="NONE";
 					id=25;
 					side="EAST";
-					vehicle="O_sniper_F";
+					vehicle="O_diver_F";
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=0.60000002;
@@ -588,7 +588,7 @@ class Mission
 					special="NONE";
 					id=33;
 					side="EAST";
-					vehicle="O_sniper_F";
+					vehicle="O_diver_F";
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=0.60000002;
@@ -682,7 +682,7 @@ class Mission
 					special="NONE";
 					id=40;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -702,7 +702,7 @@ class Mission
 					special="NONE";
 					id=41;
 					side="GUER";
-					vehicle="O_sniper_F";
+					vehicle="I_sniper_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -722,7 +722,7 @@ class Mission
 					special="NONE";
 					id=42;
 					side="GUER";
-					vehicle="O_medic_F";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -742,7 +742,7 @@ class Mission
 					special="NONE";
 					id=43;
 					side="GUER";
-					vehicle="O_soldier_repair_F";
+					vehicle="I_soldier_repair_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -762,7 +762,7 @@ class Mission
 					special="NONE";
 					id=44;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -782,7 +782,7 @@ class Mission
 					special="NONE";
 					id=45;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -802,7 +802,7 @@ class Mission
 					special="NONE";
 					id=46;
 					side="GUER";
-					vehicle="O_sniper_F";
+					vehicle="I_diver_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -822,7 +822,7 @@ class Mission
 					special="NONE";
 					id=47;
 					side="GUER";
-					vehicle="O_medic_F";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -842,7 +842,7 @@ class Mission
 					special="NONE";
 					id=48;
 					side="GUER";
-					vehicle="O_soldier_repair_F";
+					vehicle="I_soldier_repair_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -862,7 +862,7 @@ class Mission
 					special="NONE";
 					id=49;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -882,7 +882,7 @@ class Mission
 					special="NONE";
 					id=50;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -902,7 +902,7 @@ class Mission
 					special="NONE";
 					id=51;
 					side="GUER";
-					vehicle="O_sniper_F";
+					vehicle="I_sniper_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -922,7 +922,7 @@ class Mission
 					special="NONE";
 					id=52;
 					side="GUER";
-					vehicle="O_medic_F";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -942,7 +942,7 @@ class Mission
 					special="NONE";
 					id=53;
 					side="GUER";
-					vehicle="O_soldier_repair_F";
+					vehicle="I_soldier_repair_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -962,7 +962,7 @@ class Mission
 					special="NONE";
 					id=54;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -982,7 +982,7 @@ class Mission
 					special="NONE";
 					id=55;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1002,7 +1002,7 @@ class Mission
 					special="NONE";
 					id=56;
 					side="GUER";
-					vehicle="O_sniper_F";
+					vehicle="I_diver_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1022,7 +1022,7 @@ class Mission
 					special="NONE";
 					id=57;
 					side="GUER";
-					vehicle="O_medic_F";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1042,7 +1042,7 @@ class Mission
 					special="NONE";
 					id=58;
 					side="GUER";
-					vehicle="O_soldier_repair_F";
+					vehicle="I_soldier_repair_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1062,7 +1062,7 @@ class Mission
 					special="NONE";
 					id=59;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1082,7 +1082,7 @@ class Mission
 					special="NONE";
 					id=60;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1102,7 +1102,7 @@ class Mission
 					special="NONE";
 					id=61;
 					side="GUER";
-					vehicle="O_sniper_F";
+					vehicle="I_sniper_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1122,7 +1122,7 @@ class Mission
 					special="NONE";
 					id=62;
 					side="GUER";
-					vehicle="O_medic_F";
+					vehicle="I_medic_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1142,7 +1142,7 @@ class Mission
 					special="NONE";
 					id=63;
 					side="GUER";
-					vehicle="O_soldier_repair_F";
+					vehicle="I_soldier_repair_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1162,7 +1162,7 @@ class Mission
 					special="NONE";
 					id=64;
 					side="GUER";
-					vehicle="O_Soldier_exp_F";
+					vehicle="I_Soldier_exp_F";
 					player="PLAY CDG";
 					leader=1;
 					lock="UNLOCKED";
@@ -1186,7 +1186,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore1";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_GM6_SOS_F""; this addUniform ""U_B_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_1');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Mk200_MRCO_F""; this addUniform ""U_I_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_1');";
 				};
 			};
 		};
@@ -1206,7 +1206,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore2";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_LRR_SOS_F""; this addUniform ""U_B_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_2');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Zafir_pointer_F""; this addUniform ""U_I_HeliPilotCoveralls""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_2');";
 				};
 			};
 		};
@@ -1226,7 +1226,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore3";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_GM6_SOS_F""; this addUniform ""U_O_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_3');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_GM6_SOS_F""; this addUniform ""U_I_CombatUniform_tshirt""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_3');";
 				};
 			};
 		};
@@ -1246,7 +1246,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore4";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_LRR_SOS_F""; this addUniform ""U_O_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_4');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""arifle_Mk20_GL_MRCO_pointer_F""; this addUniform ""U_I_Wetsuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_4');";
 				};
 			};
 		};
@@ -2291,7 +2291,7 @@ class Mission
 			position[]={4380.3848,128.75488,6755.2236};
 			id=172;
 			side="EMPTY";
-			vehicle="Land_Basket_F";
+			vehicle="Land_CanisterPlastic_F";
 			skill=0.2;
 			init="this setVariable [""R3F_LOG_disabled"", true];this setpos [4380.3848, 6755.2236, -0.066899374];";
 		};
@@ -2746,7 +2746,7 @@ class Mission
 			position[]={2661.7561,12.336285,1225.0559};
 			id=219;
 			side="EMPTY";
-			vehicle="Land_Basket_F";
+			vehicle="Land_CanisterPlastic_F";
 			skill=0.2;
 			init="this setVariable [""R3F_LOG_disabled"", true];this setpos [2661.7561, 1225.0559, 3.1245809];";
 		};
@@ -3483,7 +3483,7 @@ class Mission
 			position[]={7103.7925,7.7730455,5950.1216};
 			id=296;
 			side="EMPTY";
-			vehicle="Land_Basket_F";
+			vehicle="Land_CanisterPlastic_F";
 			skill=0.2;
 			init="this setVariable [""R3F_LOG_disabled"", true];this setpos [7103.7925, 5950.1216, -6.6757202e-005];";
 		};

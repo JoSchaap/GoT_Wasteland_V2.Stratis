@@ -26,9 +26,11 @@ _leader addWeapon "arifle_TRG20_F";
 _man2 = _group createunit ["C_man_polo_2_F", [(_pos select 0) - 30, _pos select 1, 0], [], 0.5, "Form"];
 _man2 addUniform "U_B_CombatUniform_mcam_tshirt";
 _man2 addVest "V_PlateCarrier1_rgr";
-_man2 addMagazine "200Rnd_65x39_cased_Box";
-_man2 addMagazine "200Rnd_65x39_cased_Box";
-_man2 addWeapon "LMG_Mk200_F";
+_man2 addMagazine "30Rnd_556x45_Stanag";
+_man2 addMagazine "30Rnd_556x45_Stanag";
+_man2 addMagazine "30Rnd_556x45_Stanag";
+_man2 addMagazine "30Rnd_556x45_Stanag";
+_man2 addWeapon "arifle_MK20C_F";
 
 //Rifle_man
 _man3 = _group createunit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) + 30, 0], [], 0.5, "Form"];

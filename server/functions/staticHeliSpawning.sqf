@@ -22,7 +22,7 @@ while {_counter < 6} do // 8 helis spawn at the beginning
     else
     {
         _position = getMarkerPos format ["heliSpawn_%1", _selectedMarker];
-	    _newPos = [_position, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
+    	   _newPos = [_position, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
 		[0, _newPos] call staticHeliCreation;
 	    
 		currentStaticHelis set [count currentStaticHelis, _selectedMarker];

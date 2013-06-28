@@ -7,12 +7,12 @@
 #include "mainMissionDefines.sqf";
 
 if(!isServer) exitwith {};
-private ["_result","_missionMarkerName","_missionType","_startTime","_returnData","_randomPos","_randomIndex","_vehicleClass","_base","_veh","_picture","_vehicleName","_hint","_currTime","_playerPresent","_unitsAlive"];
+private ["_result","_missionMarkerName","_missionType","_startTime","_returnData","_randomPos","_randomIndex","_vehicleClass","_base","_veh","_picture","_vehicleName","_hint","_currTime","_playerPresent","_unitsAlive","_basetodelete"];
 
 //Mission Initialization.
 _result = 0;
 _missionMarkerName = "Outpost_Marker";
-_missionType = "Capture Outpost";
+_missionType = "Enemy outpost";
 #ifdef __A2NET__
 _startTime = floor(netTime);
 #else
@@ -38,7 +38,7 @@ _veh = "JoSchaap01";
 _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
 _vehicleName = "Outpost";
-_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t>, has been spotted near the marker go capture it. There might be some powerfull weapons inside!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor];
+_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>An<t color='%3'> %2</t>, with special weapons has been spotted near the marker, go capture it. They also seem to have some nice base building materials!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor];
 [nil,nil,rHINT,_hint] call RE;
 
 CivGrpM = createGroup civilian;
@@ -67,16 +67,17 @@ waitUntil
 if(_result == 1) then
 {
 	//Mission Failed.
+	_baseToDelete = nearestObjects [_randomPos, ["All"], 25];
+    { deleteVehicle _x; } forEach _baseToDelete;    
     {deleteVehicle _x;}forEach units CivGrpM;
     deleteGroup CivGrpM;
-    {deleteVehicle _x} foreach _base;
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed, better luck next time</t>", _missionType, _vehicleName, failMissionColor, subTextColor];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
     deleteGroup CivGrpM;
-    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost has been captured, use what you found to help you crush the enemy</t>", _missionType, _vehicleName, successMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost has been captured, the special weapons and base parts are now yours to take. Did you bring a truck? Great work!</t>", _missionType, _vehicleName, successMissionColor, subTextColor];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
 };

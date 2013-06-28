@@ -88,5 +88,23 @@ changelog for v2.2:
 		*- please bare with me if there are still issues
 		   beta just got out and i wanted this out asap
 
+changelog for v2.21
+		[Added] Green army (Independent)
+		[Added] Diving class to all factions
+		[Added] Green army suits to gunstore
+		[Added] spawn protection on debug island
+		[Added] New ghosthawk with camo (DEVBRANCH-ONLY)
+		[Fixed] new outpost mission did not despawn correctly
+		[Fixed] incorrect mission descriptions
+		[Fixed] Server cleanup set to 10 minutes after death
+		[Fixed] Cargo on armed boat not working
+		[Changed] hostile heli missions contain a mi48 now
+		[Changed] hints before and after missions rewritten
+		[Changed] missions last longer before timing out
+		[Changed] added debug logging for findsafepos *debug build*
+		[Changed] mission starts at 8pm for evening edition
+		[Removed] Names when in vehicle in StreamFriendlyUI
+
+
 
 
