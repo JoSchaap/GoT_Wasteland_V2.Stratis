@@ -1,8 +1,7 @@
-/****** TOW WITH VEHICLE / REMORQUER AVEC VEHICULE ******/
+/****** TOW WITH VEHICLE  ******/
 
 /**
  * List of class names of (ground or air) vehicles which can tow towables objects.
- * Liste des noms de classes des v�hicules terrestres pouvant remorquer des objets remorquables.
  */
 R3F_LOG_CFG_remorqueurs = [
 	"C_Offroad_01_F",
@@ -15,17 +14,18 @@ R3F_LOG_CFG_remorqueurs = [
 	"I_MRAP_03_gmg_F",
 	"I_MRAP_03_hmg_F",
 	"I_MRAP_03_F",
-	"O_Truck_02_Covered_F",
-	"I_Truck_02_Covered_F",
-	"O_Truck_02_Transport_F",
-	"I_Truck_02_Transport_F",
-	"B_Truck_01_Covered_F",
-	"B_Truck_01_Transport_F"
+	"O_Truck_02_covered_F",
+	"I_Truck_02_covered_F",
+	"O_Truck_02_transport_F",
+	"I_Truck_02_transport_F",
+	"B_Truck_01_covered_F",
+	"B_Truck_01_transport_F",
+	"B_APC_Wheeled_01_cannon_F",
+	"O_APC_Wheeled_02_rcws_F"
 ];
 
 /**
  * List of class names of towables objects.
- * Liste des noms de classes des objets remorquables.
  */
 R3F_LOG_CFG_objets_remorquables = [
 	"C_Offroad_01_F",
@@ -38,17 +38,18 @@ R3F_LOG_CFG_objets_remorquables = [
 	"I_MRAP_03_gmg_F",
 	"I_MRAP_03_hmg_F",
 	"I_MRAP_03_F",
-	"O_Truck_02_Covered_F",
-	"I_Truck_02_Covered_F",
-	"O_Truck_02_Transport_F",
-	"I_Truck_02_Transport_F"
+	"O_Truck_02_covered_F",
+	"I_Truck_02_covered_F",
+	"O_Truck_02_transport_F",
+	"I_Truck_02_transport_F",
+	"B_APC_Wheeled_01_cannon_F",
+	"O_APC_Wheeled_02_rcws_F"
 ];
 
-/****** LIFT WITH VEHICLE / HELIPORTER AVEC VEHICULE ******/
+/****** LIFT WITH VEHICLE  ******/
 
 /**
  * List of class names of air vehicles which can lift liftables objects.
- * Liste des noms de classes des v�hicules a�riens pouvant h�liporter des objets h�liportables.
  */
 R3F_LOG_CFG_heliporteurs = [
 	"O_Heli_Light_02_unarmed_F",
@@ -58,7 +59,9 @@ R3F_LOG_CFG_heliporteurs = [
 	"B_Heli_Attack_01_F",
 	"O_Heli_Attack_02_F",
 	"B_Heli_Transport_01_F",
-	"I_Heli_Transport_02_F"
+	"I_Heli_Transport_02_F",
+//	"B_Heli_Transport_01_camo_F",
+	"O_Heli_Attack_02_black_F"
 ];
 
 /**
@@ -78,10 +81,12 @@ R3F_LOG_CFG_objets_heliportables = [
 	"I_MRAP_03_gmg_F",
 	"I_MRAP_03_hmg_F",
 	"I_MRAP_03_F",
-	"O_Truck_02_Covered_F",
-	"I_Truck_02_Covered_F",
-	"O_Truck_02_Transport_F",
-	"I_Truck_02_Transport_F"
+	"O_Truck_02_covered_F",
+	"I_Truck_02_covered_F",
+	"O_Truck_02_transport_F",
+	"I_Truck_02_transport_F",
+	"B_APC_Wheeled_01_cannon_F",
+	"O_APC_Wheeled_02_rcws_F"
 ];
 
 
@@ -101,12 +106,12 @@ R3F_LOG_CFG_transporteurs = [
 	["I_MRAP_03_F",25],
 	["B_APC_Wheeled_01_cannon_F",10],
 	["O_APC_Wheeled_02_rcws_F",10],
-	["O_Truck_02_Covered_F", 50],
-	["I_Truck_02_Covered_F", 50],
-	["O_Truck_02_Transport_F", 50],
-	["I_Truck_02_Transport_F", 50],
-	["B_Truck_01_Covered_F", 90],
-	["B_Truck_01_Transport_F", 90],
+	["O_Truck_02_covered_F", 50],
+	["I_Truck_02_covered_F", 50],
+	["O_Truck_02_transport_F", 50],
+	["I_Truck_02_transport_F", 50],
+	["B_Truck_01_covered_F", 90],
+	["B_Truck_01_transport_F", 90],
 	["O_Heli_Light_02_unarmed_F", 20],
 	["B_Heli_Light_01_F", 10],
 	["O_Heli_Light_02_F", 20],
@@ -115,12 +120,16 @@ R3F_LOG_CFG_transporteurs = [
     	["B_Quadbike_01_F", 5],
     	["I_Quadbike_01_F", 5],
 	["O_Boat_Armed_01_hmg_F", 10],
+	["I_Boat_Armed_01_minigun_F", 10],
 	["B_Boat_Armed_01_minigun_F", 10],
 	["B_Heli_Light_01_armed_F", 10],
 	["B_Heli_Attack_01_F", 10],
 	["O_Heli_Attack_02_F", 10],
 	["B_Heli_Transport_01_F", 20],
-	["I_Heli_Transport_02_F", 20]
+	["I_Heli_Transport_02_F", 20],
+//	["B_Heli_Transport_01_camo_F", 20],
+	["B_APC_Wheeled_01_cannon_F", 10],
+	["O_APC_Wheeled_02_rcws_F", 10]
 ];
 
  
@@ -148,7 +157,7 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Land_Stone_8m_F", 5],
 	["Land_LampDecor_F", 3],
 	["Land_Coil_F", 5],
-	["Land_Pipes_Large_F", 5],
+	["Land_Pipes_large_F", 5],
 	["Land_CargoBox_V1_F", 5],
 	["Land_BagFence_Long_F", 3],
 	["Land_BagBunker_Small_F", 5],
@@ -183,12 +192,13 @@ R3F_LOG_CFG_objets_deplacables = [
     	"B_Quadbike_01_F",
     	"I_Quadbike_01_F",
 	"Land_Coil_F",
-	"Land_Pipes_Large_F",
+	"Land_Pipes_large_F",
 	"Land_BagFence_Long_F",
 	"Land_BagBunker_Small_F",
 	"Land_CncBarrierMedium4_F",
 	"Land_CncWall4_F",
 	"Land_BarGate_F",
+	"I_Boat_Transport_01_F",
 	"O_Boat_Transport_01_F",
 	"B_Boat_Transport_01_F",
 	"O_Lifeboat",

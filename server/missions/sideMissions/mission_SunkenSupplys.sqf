@@ -7,7 +7,7 @@ private ["_result","_missionMarkerName","_missionType","_startTime","_randomPos"
 
 //Mission Initialization.
 _result = 0;
-_missionMarkerName = "WeaponCache_Marker";
+_missionMarkerName = "SunkenCache_Marker";
 _missionType = "Sunken Supplies";
 #ifdef __A2NET__
 _startTime = floor(netTime);
@@ -30,18 +30,18 @@ diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
 /*
-_marker = createMarkerLocal ["WeaponCache_Marker", _randomPos];
-"WeaponCache_Marker" setMarkerShapeLocal "ICON";
-"WeaponCache_Marker" setMarkerTypeLocal "mil_dot";
-"WeaponCache_Marker" setMarkerColorLocal "ColorRed";
-"WeaponCache_Marker" setMarkerSizeLocal [1,1];
-"WeaponCache_Marker" setMarkerTextLocal "Sunken Supplies";
+_marker = createMarkerLocal ["SunkenCache_Marker", _randomPos];
+"SunkenCache_Marker" setMarkerShapeLocal "ICON";
+"SunkenCache_Marker" setMarkerTypeLocal "mil_dot";
+"SunkenCache_Marker" setMarkerColorLocal "ColorRed";
+"SunkenCache_Marker" setMarkerSizeLocal [1,1];
+"SunkenCache_Marker" setMarkerTextLocal "Sunken Supplies";
 */
 
 _sbox = createVehicle ["Box_NATO_Support_F",[(_randomPos select 0), (_randomPos select 1),0],[], 0, "NONE"];
 [_sbox,"mission_Side_USSpecial"] call fn_refillbox;
 
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>Sunken supplies have been spotted near the marker. You might need a wetsuit for this one!</t>", _missionType,  sideMissionColor, subTextColor];
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>Sunken supplies have been spotted in the ocean near the marker. You might need diving gear and an underwater weapon for this one!</t>", _missionType,  sideMissionColor, subTextColor];
 messageSystem = _hint;
 publicVariable "messageSystem";
 

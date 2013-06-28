@@ -243,6 +243,29 @@ player createDiaryRecord["changelog",
 		[Changed] mission starts at 4am for day edition<br/>
 		[Changed] mission starts at 7pm for evening edition<br/>
 		[Changed] minor changes to player hud<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"v2.21(GoT)",
+"	
+		[Added] Green army (Independent)<br/>
+		[Added] Diving class to all factions<br/>
+		[Added] Green army suits to gunstore<br/>
+		[Added] spawn protection on debug island<br/>
+		[Fixed] Lagspikes due to errors in vehicle respawn<br/>
+		[Fixed] RPT logfile findsafepos spam<br/>
+		[Fixed] new outpost mission did not despawn correctly<br/>
+		[Fixed] incorrect mission descriptions<br/>
+		[Fixed] Server cleanup set to 10 minutes after death<br/>
+		[Fixed] Cargo on armed boat not working<br/>
+		[Changed] hostile heli missions contain a mi48 now<br/>
+		[Changed] hints before and after missions rewritten<br/>
+		[Changed] missions last longer before timing out<br/>
+		[Changed] mission starts at 8pm for evening edition<br/>
+		[Removed] Names when in vehicle in StreamFriendlyUI<br/>
 		*- your idea here? let us know!<br/>
 		*- please bare with me if there are still issues<br/>
 		   beta just got out and i wanted this out asap<br/>
@@ -282,6 +305,7 @@ player createDiaryRecord["404games",
 	* Hub (404forums)<br/>
 	* Tonic-_- (BIS-forums)<br/>
 	* spunFIN (BIS-forum)<br/><br/>
+	* AWA (OpenDayZ.Net)<br/>
 	* * Thanks ALOT everyone!<br/>
 	<br/>
 "
@@ -313,11 +337,11 @@ player createDiaryRecord["GoT2DayZ",
 	<br/>Our website: www.got2dayz.nl<br/><br>
 	our servers:<br/>
 	* ArmA2 Wasteland on Utes (Customized by us)<br/>
-	* ArmA3 Alpha Wasteland on Stratis (Normal)<br/>
-	* ArmA3 Alpha Wasteland on Stratis (Teamplay-only)<br/>
+	* ArmA3 Alpha Wasteland on Stratis (day)<br/>
+	* ArmA3 Alpha Wasteland on Stratis (night)<br/>
 	<br/>
-	I cant urge enough that all credits for this mission go<br/>
-	to the original makers at 404Games.co.uk!<br/>
+	I cant urge enough that all credits for releasing this mission go<br/>
+	to the re-developers at 404Games.co.uk!<br/>
 	<br/>
 "
 ]
@@ -380,7 +404,7 @@ Q. What am I supposed to do here?<br/>
 A. See the above description<br/>
 <br/>
 Q. Where can I get a gun?<br/>
-A. Weapons are found in one of three places, first in ammo crates that randomly spawn around the map, inside and outside buildings, and second, in the gear section of the vehicles, which also randomly spawn around the map. The last place to find a gun would be at the gunshops located throughout the map. You can also find them on dead players whose bodies have not yet been looted.
+A. Weapons are found in one of three places, first in ammo crates that come as rewards from missions, inside and outside buildings, and second, in the gear section of the vehicles, which also randomly spawn around the map. The last place to find a gun would be at the gunshops located throughout the map. You can also find them on dead players whose bodies have not yet been looted.
 <br/><br/>
 Q. What are the grey circles on the map?<br/>
 A. The circles represent town limits. If friendly soldiers are in a town, you can spawn there from the re-spawn menu; however if there is an enemy presence, you will not be able to spawn there.

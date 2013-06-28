@@ -40,7 +40,7 @@ _slbox2 = createVehicle ["Box_East_Support_F",[(_randomPos select 0), (_randomPo
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center' color='%5'>Some sunken treasureboxes with rare weapons have been spotted near the marker.<img size='5' image='%2'/>However, a heavily armed expedition with a<t color='%4'> %3</t> is allready on site! <t color='%4'>You need diving gear for this one!</t> get it at a gunstore</t>", _missionType, _picture, _vehicleName,  mainMissionColor, subTextColor];
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center' color='%5'>Some sunken treasureboxes with rare weapons have been spotted in the ocean near the marker.<img size='5' image='%2'/>However, a heavily armed expedition with a<t color='%4'> %3</t> is allready on site! <t color='%4'>You need diving gear and a underwater weapon for this one!</t> get it at a gunstore!</t>", _missionType, _picture, _vehicleName,  mainMissionColor, subTextColor];
 messageSystem = _hint;
 publicVariable "messageSystem";
 
@@ -58,6 +58,9 @@ waitUntil
     (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) OR ((damage _slbox) == 1)
 };
 
+_vehicle setVehicleLock "UNLOCKED";
+_vehicle setVariable ["R3F_LOG_disabled", false, true];
+
 if(_result == 1) then
 {
 	//Mission Failed.
@@ -74,7 +77,7 @@ if(_result == 1) then
 } else {
 	//Mission Complete.
     deleteGroup CivGrpS;
-    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>The sunken treasures have been found well done team. You might asswell take their boat!</t>", _missionType, successMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>The sunken treasures are yours to take.</t> You might ass-well take their boat to transport it!</t>", _missionType, successMissionColor, subTextColor];
 	messageSystem = _hint;
     publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];

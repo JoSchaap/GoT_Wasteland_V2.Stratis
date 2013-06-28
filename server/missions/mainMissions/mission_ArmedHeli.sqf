@@ -62,6 +62,9 @@ switch (_vehicleClass) do
 	case "B_Heli_Transport_01_F": {	
 		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
 	};
+//	case "B_Heli_Transport_01_camo_F": {	
+//		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
+//	};
 };
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
