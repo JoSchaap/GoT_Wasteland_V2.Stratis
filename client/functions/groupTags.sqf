@@ -54,7 +54,7 @@ while {true} do
     _currPos = getPosATL player;
         
     _gunStore = nearestObjects [_currPos, ["C_man_1_1_F"], _storeInteractionZone];    
-    _genStore = nearestObjects [_currPos, ["TK_CIV_Takistani04_EP1"], _storeInteractionZone];  
+    _genStore = nearestObjects [_currPos, ["C_man_1_2_F"], _storeInteractionZone];  
      
     if (!isNull (_gunStore select 0)) then {  
         _relativeDir = [player, _gunStore select 0] call BIS_fnc_relativeDirTo;

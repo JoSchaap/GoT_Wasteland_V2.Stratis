@@ -149,7 +149,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=41;
+		items=44;
 		class Item0
 		{
 			side="WEST";
@@ -1250,12 +1250,71 @@ class Mission
 				};
 			};
 		};
-
 		class Item39
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3046.49,4.30898,6005.05};
+					azimut=191;
+					id=69;
+					side="LOGIC";
+					vehicle="C_man_1_2_F";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore1";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_1');";
+				};
+			};
+		};
+		class Item40
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6539.38,0.582188,5043.2};
+					azimut=52;
+					id=70;
+					side="LOGIC";
+					vehicle="C_man_1_2_F";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore2";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_2');";
+				};
+			};
+		};
+		class Item41
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2000.87,0.315531,2717.57};
+					azimut=30;
+					id=70;
+					side="LOGIC";
+					vehicle="C_man_1_2_F";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore3";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_3');";
+				};
+			};
+		};
+		class Item42
 		{
 			side="WEST";
 		};
-		class Item40
+		class Item43
 		{
 			side="WEST";
 		};
@@ -3748,7 +3807,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=225;
+		items=228;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -5183,6 +5242,27 @@ class Mission
 		{
 			position[]={2015.22,0.137633,5337.34};
 			name="Store_Gun_4";
+			type="Empty";
+			colorName="ColorBrown";
+		};
+		class Item225
+		{
+			position[]={3046.49,4.30898,6005.05};
+			name="Store_Gen_1";
+			type="Empty";
+			colorName="ColorBrown";
+		};
+		class Item226
+		{
+			position[]={6539.38,0.582188,5043.2};
+			name="Store_Gen_2";
+			type="Empty";
+			colorName="ColorBrown";
+		};
+		class Item227
+		{
+			position[]={2000.87,0.315531,2717.57};
+			name="Store_Gen_3";
 			type="Empty";
 			colorName="ColorBrown";
 		};

@@ -76,16 +76,37 @@ if((_player getVariable "cmoney") > 0) then {
 
 if((_player getVariable "canfood") > 0) then {
 	for "_a" from 1 to (_player getVariable "canfood") do {	
-		_m = "Land_Basket_F" createVehicle (position _player);
-		_to_delete = _to_delete + [_m];
+		_a = "Land_Basket_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_a];
 	};
 };
 
 if((_player getVariable "water") > 0) then {
 	for "_b" from 1 to (_player getVariable "water") do {	
-		_m = "Land_Bucket_F" createVehicle (position _player);
-		_to_delete = _to_delete + [_m];
+		_b = "Land_Bucket_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_b];
 	};
+};
+
+if((_player getVariable "repairkits") > 0) then {
+	for "_c" from 1 to (_player getVariable "repairkits") do {	
+		_c = "Land_Suitcase_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_c];
+	};
+};
+
+if((_player getVariable "fuelFull") > 0) then {
+	_d = "Land_CanisterFuel_F" createVehicle (position _player);
+	_d setVariable["fuel", true, true];
+	_d setVariable ["owner", "world", true];
+	_to_delete = _to_delete + [_d];
+};
+
+if((_player getVariable "fuelEmpty") > 0) then {
+	_e = "Land_CanisterFuel_F" createVehicle (position _player);
+	_e setVariable["fuel", false, true];
+	_e setVariable ["owner", "world", true];
+	_to_delete = _to_delete + [_e];
 };
 
 true spawn {

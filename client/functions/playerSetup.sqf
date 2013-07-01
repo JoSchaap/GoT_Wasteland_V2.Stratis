@@ -93,7 +93,7 @@ _player setVariable["medkits",0,false];
 _player setVariable["fuel",0,false];
 _player setVariable["repairkits",0,false];
 _player setVariable["fuelFull", 0, false];
-_player setVariable["fuelEmpty", 1, false];
+_player setVariable["fuelEmpty", 0, false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];
 

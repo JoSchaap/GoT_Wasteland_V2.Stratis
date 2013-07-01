@@ -65,30 +65,31 @@ objectList = ["Land_Sacks_goods_F",
 			"Land_HBarrierBig_F",
 			"Land_HBarrier_5_F",
 			"Land_LampShabby_F",
+			"Land_Scaffolding_F",
 			"Land_HBarrierBig_F",
 			"Land_BagBunker_Small_F",
 			"Land_HBarrier_1_F",
-//			"Land_LampDecor_F",			shabby lamps are good enough :)
-//			"Land_Ytong_F",				seems broken
 			"Land_WaterBarrel_F",
 			"Land_MetalBarrel_F",
 			"Land_HBarrierBig_F",
-//			"Land_Stone_8m_F",		keeps falling over in MP
+			"Land_Canal_WallSmall_10m_F",
 			"Land_HBarrier_5_F",
 			"Land_Mil_WallBig_4m_F",
-			"Land_ToiletBox_F",
 			"Land_HBarrier_3_F",
-//			"Land_Stone_8m_F",		keeps falling over in MP
+			"Land_Canal_Wall_Stairs_F",
 			"Land_Mil_WallBig_4m_F",
 			"Land_HBarrier_5_F",
-			"Land_Coil_F",
-			"Land_cargo_addon02_V2_F",  // camonet dont put in r3f!
+			"Land_cargo_addon02_V2_F",
 			"Land_HBarrierBig_F",
 			"Land_Pipes_large_F",
 			"Land_BagFence_Long_F",
 			"Land_BagBunker_Small_F",
 			"Land_CncBarrierMedium4_F",
 			"Land_CncWall4_F",
+			"Land_Mil_ConcreteWall_F",
+			"Land_Mil_WallBig_4m_F",
+			"RampConcrete",
+			"Land_Shoot_House_Wall_F",
 			"Land_BarGate_F"];
                                          
 //Object List - Random Spawns.

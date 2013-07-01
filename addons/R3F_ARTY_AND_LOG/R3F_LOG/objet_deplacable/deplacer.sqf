@@ -26,7 +26,7 @@ else
 	
 	R3F_LOG_objet_selectionne = objNull;
 	
-	private ["_objet", "_est_calculateur", "_arme_principale", "_arme_principale_accessoires", "_arme_principale_magasines", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon", "_muzzles", "_magazine", "_ammo"];
+	private ["_objet", "_est_calculateur", "_arme_principale", "_arme_principale_accessoires", "_arme_principale_magasines", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon", "_muzzles", "_magazine", "_ammo", "_adjustPOS"];
 	
 	_objet = _this select 0;
 	if(isNil {_objet getVariable "R3F_Side"}) then {
@@ -148,6 +148,25 @@ else
 			
 			// L'objet n'est plus porté, on le repose
 			detach _objet;
+
+			// this addition comes from Sa-Matra (fixes the heigt of some of the objects) - all credits for this fix go to him!
+
+			_adjustPOS=0;
+			switch(typeOf _objet) do {
+				case "Land_Scaffolding_F":
+				{
+					_adjustPOS=-3; 
+				};
+				case "Land_Canal_WallSmall_10m_F":
+				{
+					_adjustPOS=3;
+				};
+				case "Land_Canal_Wall_Stairs_F":
+				{
+					_adjustPOS=3;
+				};
+			};
+
 			if(R3F_LOG_force_horizontally) then {
 				R3F_LOG_force_horizontally = false;
 
@@ -155,7 +174,7 @@ else
 				_ppos = getPosASL player;
 				_opos set [2, _ppos select 2];
 				_opos2 = +_opos;
-				_opos2 set [2, (_opos2 select 2) - 1];
+				_opos2 set [2, (_opos2 select 2)+ _adjustPOS];
 				if(terrainIntersectASL [_opos, _opos2]) then {
 					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL player select 2];
 				} else {
@@ -163,9 +182,9 @@ else
 				};
 			} else {
 				if((getPosATL player select 2) < 5) then {
-					_objet setPos [getPos _objet select 0, getPos _objet select 1, getPosATL player select 2];
+					_objet setPos [getPos _objet select 0, getPos _objet select 1, (getPosATL player select 2)+_adjustPOS];
 				} else {
-					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL player select 2];
+					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, (getPosATL player select 2)+_adjustPOS];
 				};
 			};
 			

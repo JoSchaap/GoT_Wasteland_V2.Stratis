@@ -49,7 +49,8 @@ ammoArray = [
 	["Laserdes. Battery","Laserbatteries",30],
 	["9mm 16Rnd Mag","16Rnd_9x21_Mag",12],
 	["9mm 30Rnd Mag","30Rnd_9x21_Mag",22],
-	["45ACP 30Rnd Mag","30Rnd_45ACP_Mag_SMG_01",22],
+	["9Rnd 45ACP Mag","9Rnd_45ACP_Mag",12],
+	["30Rnd 45ACP Mag","30Rnd_45ACP_Mag_SMG_01",22],
 	["5.56mm 20Rnd (U.W.) Mag","20Rnd_556x45_UW_mag",8],
 	["5.56mm 30Rnd STANAG Mag","30Rnd_556x45_Stanag",14],
     	["6.5mm 30Rnd CL Mag","30Rnd_65x39_caseless_mag",30],
@@ -159,8 +160,8 @@ accessoriesArray = [
 generalStore = [
 	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
 	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",30,15],
-	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa",1000,500],
-	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
+	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa",500,500],
+//	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
 	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",150,75],
     ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",50,25]
 ];

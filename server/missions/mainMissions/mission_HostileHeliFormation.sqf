@@ -42,7 +42,7 @@ _createVehicle = {
 };
 
 _vehicles = [];
-_vehicles set [0, ["O_Heli_Light_02_F", [2436.24,847.9,0.00133419], 91, _grouphsq] call _createVehicle];
+_vehicles set [0, ["O_Heli_Light_02_F", [2436.24,847.9,0.00133419], 285, _grouphsq] call _createVehicle];
 _vehicles set [1, ["O_Heli_Attack_02_F", [2418.8,828.152,0.00138879], 285, _grouphsq] call _createVehicle];
 _vehicles set [2, ["B_Heli_Transport_01_F", [2401.98,872.439,0.00141001], 285, _grouphsq] call _createVehicle];
 
