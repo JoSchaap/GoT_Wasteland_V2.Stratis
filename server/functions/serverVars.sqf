@@ -88,7 +88,6 @@ objectList = ["Land_Sacks_goods_F",
 			"Land_CncWall4_F",
 			"Land_Mil_ConcreteWall_F",
 			"Land_Mil_WallBig_4m_F",
-			"RampConcrete",
 			"Land_Shoot_House_Wall_F",
 			"Land_BarGate_F"];
                                          

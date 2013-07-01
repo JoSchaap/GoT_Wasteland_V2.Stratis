@@ -266,14 +266,32 @@ player createDiaryRecord["changelog",
 		[Changed] missions last longer before timing out<br/>
 		[Changed] mission starts at 8pm for evening edition<br/>
 		[Removed] Names when in vehicle in StreamFriendlyUI<br/>
-		*- your idea here? let us know!<br/>
-		*- please bare with me if there are still issues<br/>
-		   beta just got out and i wanted this out asap<br/>
 "
 ]
 ];
 
-
+player createDiaryRecord["changelog",
+[
+"v2.3 (GoT)",
+"
+		***TESTBUILD DO NOT DISTRIBUTE***<br/>	
+		[Added] 3 general stores<br/>
+		[Added] working repairkits that can be dropped<br/>
+		[Added] working fuelcans that can be dropped<br/>
+		[Added] new interface for general stores<br/>
+		[Added] more variaty in base building parts<br/>
+		[Fixed] balance between weapon/item spawns in buildings<br/>
+		[Fixed] added fuelcans and repairkits to cleanup<br/>
+		[Fixed] Height issue with scaffolding basepart<br/>
+		[Changed] Fuel cans (full or empty) can be dropped<br/>
+		[Changed] Repairkits added to loot-table<br/>
+		[Changed] Empty fuel cans added to loot-table<br/>
+		[Changed] players spawn without a fuelcan<br/>
+		*- please bare with me if there are still issues<br/>
+		   This is a TESTBUILD and should not be used by others<br/>
+"
+]
+];
 
 player createDiaryRecord["404games",
 [
@@ -304,9 +322,10 @@ player createDiaryRecord["404games",
 	* SPJESTER (404forums)<br/>
 	* Hub (404forums)<br/>
 	* Tonic-_- (BIS-forums)<br/>
-	* spunFIN (BIS-forum)<br/><br/>
+	* spunFIN (BIS-forums)<br/><br/>
 	* AWA (OpenDayZ.Net)<br/>
-	* * Thanks ALOT everyone!<br/>
+	* Sa-Matra (BIS-forums)</br>
+	* * Thanks ALOT for the help/inspiration!<br/>
 	<br/>
 "
 ]

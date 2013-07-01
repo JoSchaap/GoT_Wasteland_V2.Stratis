@@ -142,7 +142,7 @@ class Mission
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -1266,7 +1266,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore1";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_1');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_B_SpecopsUniform_sgg""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_1');";
 				};
 			};
 		};
@@ -1286,7 +1286,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_2');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_I_OfficerUniform""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_2');";
 				};
 			};
 		};
@@ -1306,7 +1306,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore3";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_3');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_O_SpecopsUniform_ocamo""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_3');";
 				};
 			};
 		};
@@ -5292,7 +5292,7 @@ class Intro
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -5322,7 +5322,7 @@ class OutroWin
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -5352,7 +5352,7 @@ class OutroLoose
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;

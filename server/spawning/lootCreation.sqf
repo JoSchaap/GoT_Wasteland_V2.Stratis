@@ -1,10 +1,9 @@
     //Random weapons and items spawning script for wasteland missions.
     //Author : Ed!, [GoT] JoSchaap
 
-    _odd1 = 55;       //The odds that a building is selected to place loot.
+    _odd1 = 50;       //The odds that a building is selected to place loot.
     _odd2 = 30;       //The odds that the selected building's spots will have loot(almost like odds per room).
-    _itemtoweaponratio = 40;    //The chances of an item like food,water will spawn instead of a weapon.
-    _itemtorareratio = 40;    //The chances of rare item to spawn instead of food/water
+    _itemtoweaponratio = 35;    //The chances of an item like food,water will spawn instead of a weapon.
     randomweapontestint = 0.01;   //Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
 
 
@@ -28,10 +27,7 @@ randomweapon_weaponlist = [
  
 randomweapon_itemlist = [
 "Land_Basket_F",			//Water
-"Land_Bucket_F"				//Food
-];
-
-randomrare_itemlist = [
+"Land_Bucket_F",				//Food
 "Land_Suitcase_F",			//repairkit
 "Land_CanisterFuel_F"				//fuelcan (empty)
 ];
@@ -57,20 +53,11 @@ randomrare_itemlist = [
      _selectedgroup = (floor(random(count randomweapon_itemlist)));
      _class = randomweapon_itemlist select _selectedgroup;
      _item = createVehicle [_class, _position, [], 0, "CAN_COLLIDE"];
-     _item setPos _position;
-    };
-
-    randomweaponspawnitemrare = {
-     _position = _this;
-     _selectedgroup = (floor(random(count randomrare_itemlist)));
-     _class = randomweapon_itemlist select _selectedgroup;
 	if(_class == "Land_CanisterFuel_F") then {
 		_item setVariable["fuel", false, true];	
 	};
-     _item = createVehicle [_class, _position, [], 0, "CAN_COLLIDE"];
      _item setPos _position;
     };
-
 
     _pos = [0,0];
     randomweapon_buildings = nearestObjects [_pos, ["house"], 60000];
@@ -104,7 +91,7 @@ randomrare_itemlist = [
           _pos = [_pos select 0, _pos select 1, 1];
          };
          _z = 0;
-         _testpos = true;
+	   _testpos = true;
          while {_testpos} do {
           if((!lineIntersects[ATLtoASL(_pos), ATLtoASL([_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)])]) && (!terrainIntersect[(_pos), ([_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)])]) && (_pos select 2 > 0)) then {
            _posnew = [_pos select 0, _pos select 1, (_pos select 2) - (randomweapontestint * _z)];
@@ -118,15 +105,11 @@ randomrare_itemlist = [
          if(_woi < _itemtoweaponratio) then {
           _posnew call randomweaponspawnitem;
          } else {
-		_woi2 = floor(random(100));
-		if(_woi2 < _itemtorareratio) then {
-          		_posnew call randomweaponspawnitemrare;
-         	} else {
-          		_posnew call randomweaponspawnitem;
-		};
+          _posnew call randomweaponspawnweapon;
          };
         };
        };
-      };    
+      };
      };
     }foreach randomweapon_buildings;
+
