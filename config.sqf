@@ -93,6 +93,7 @@ accessoriesArray = [
     ["Medkit","Medikit", 150,"item"],
     ["Toolkit","ToolKit", 150,"item"],
   	["Suppressor 9mm","muzzle_snds_L", 50,"item"],
+	["Suppressor .45acp","muzzle_snds_acp", 70,"item"],
     ["Suppressor 5.56mm","muzzle_snds_M", 90,"item"],
     ["Suppressor 6.5mm","muzzle_snds_H", 150,"item"],
     ["Suppressor 6.5mm(LMG)","muzzle_snds_H_MG", 150,"item"],

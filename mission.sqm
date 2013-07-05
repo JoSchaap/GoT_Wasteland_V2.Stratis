@@ -47,6 +47,7 @@ class Mission
 		"A3_Structures_F_Households_House_Big01",
 		"a3_structures_f_mil_bagfence",
 		"a3_structures_f_mil_bagbunker",
+		"a3_structures_f_items_luggage",
 		"A3_Air_F_Heli_Light_01",
 		"A3_Air_F_Beta_Heli_Attack_01",
 		"A3_Air_F_Beta_Heli_Transport_02",
@@ -82,6 +83,7 @@ class Mission
 		"a3_soft_f_beta_quadbike",
 		"A3_Soft_F_MRAP_03",
 		"a3_soft_f_truckheavy",
+		"a3_structures_f_items_luggage",
 		"A3_Structures_F_Households_House_Small01",
 		"A3_Structures_F_Households_House_Small02",
 		"a3_structures_f_households_stone_big",
@@ -129,8 +131,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v2.21 (GoT/JoSchaap)";
-		briefingDescription="GoT Wasteland Survival Sandbox v2.21 (beta-edition) - Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingName="GoT Wasteland v2.3 (GoT/JoSchaap)";
+		briefingDescription="GoT Wasteland Survival Sandbox v2.3 -  Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;

@@ -152,6 +152,7 @@ else
 			// this addition comes from Sa-Matra (fixes the heigt of some of the objects) - all credits for this fix go to him!
 
 			_adjustPOS=-1;
+
 			switch(typeOf _objet) do {
 				case "Land_Scaffolding_F":
 				{

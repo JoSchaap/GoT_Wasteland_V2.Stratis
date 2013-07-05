@@ -1,5 +1,5 @@
-//  @file Version: 1.0
-//	@file Name: setup.sqf
+//	@file Version: 1.0
+//	@file Name: generateKey.sqf
 //	@file Author: AgentRev
 //	@file Created: 08/06/2013 01:07
 

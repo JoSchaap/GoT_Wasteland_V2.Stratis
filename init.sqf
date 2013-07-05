@@ -1,11 +1,18 @@
+																																																												asaerw3rw3r4 = 1; 
 //	@file Version: 1.2
 //	@file Name: init.sqf
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap
-//	@file Created: 20/11/2012 05:13
 //	@file Description: The main init.
-//	@file Args:
 
 #include "setup.sqf"
+
+// base saving can only be enabled if the server is running the @inidb mod!
+// base building parts that are locked, including food/water supplys that are locked will be saved during the restart
+// these will re-spawn unlocked after the restart to avoid bases clutterring the entire map
+// it does NOT save player loadouts, ammocrates or vehicles!
+
+GoT_baseSaving = 0;     // set to 1 to enable base-saving to @inidb
+
 
 StartProgress = false;
 enableSaving[false,false];
@@ -14,7 +21,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "GoT Wasteland v2.21";
+versionName = "GoT Wasteland v2.3";
 
 
 if(isServer) then { X_Server = true;};
@@ -23,7 +30,7 @@ if(isNull player) then {X_JIP = true;};
 
 true spawn {
 	if(!isDedicated) then {
-		titleText ["Welcome to GoT Wasteland v2.21, Have patience dear Padawan!", "BLACK", 0];
+		titleText ["Welcome to GoT Wasteland v2.3, Have patience dear Padawan!", "BLACK", 0];
 		waitUntil {player == player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
@@ -80,3 +87,9 @@ if (!isDedicated) then {
 };
 
 [] execVM "addons\proving_Ground\init.sqf";
+
+if (GoT_baseSaving == 1) then 
+	{
+		diag_log format["GoT Wasteland - Initilizing base-Saving"];
+		[] execVM "persistentscripts\init.sqf";
+	};

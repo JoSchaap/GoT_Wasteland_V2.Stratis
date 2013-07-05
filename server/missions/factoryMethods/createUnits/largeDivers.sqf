@@ -13,7 +13,7 @@ _pos = _this select 1;
 _leader = _group createunit ["C_man_polo_1_F", [(_pos select 0) + 10, _pos select 1, 0], [], 0.5, "Form"];
 _leader addVest "V_RebreatherB"; 
 _leader addUniform "U_B_Wetsuit"; 
-_leader addBackpack "B_FieldPack_blk_DiverTL";
+_leader addBackpack "B_FieldPack_blk";
 _leader addGoggles "G_Diving";
 backpa = unitBackpack _leader;  
 	clearMagazineCargo backpa;  

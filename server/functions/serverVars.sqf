@@ -58,7 +58,7 @@ mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_
 
 
 //boat - Random Boats.
-BoatList = ["O_Boat_Transport_01_F","B_Boat_Transport_01_F","O_Lifeboat","B_Lifeboat","C_Rubberboat","B_SDV_01_F","O_SDV_01_F"];
+BoatList = ["O_Boat_Transport_01_F","B_Boat_Transport_01_F","O_Lifeboat","B_Lifeboat","C_Rubberboat","B_SDV_01_F","O_SDV_01_F","I_SDV_01_F"];
                             
 //Object List - Random Spawns.
 objectList = ["Land_Sacks_goods_F",
@@ -127,6 +127,7 @@ vehicleAddition = [
 			"muzzle_snds_M",
 			"muzzle_snds_B",
 			"muzzle_snds_H_MG",
+			"muzzle_snds_acp",
 			"optic_Arco",
 			"optic_MRCO",
 			"optic_Hamr", 

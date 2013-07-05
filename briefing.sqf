@@ -280,6 +280,9 @@ player createDiaryRecord["changelog",
 		[Added] working fuelcans that can be dropped<br/>
 		[Added] new interface for general stores<br/>
 		[Added] more variaty in base building parts<br/>
+		[Added] 45acp suppressor<br/>
+		[Added] Independent SDV<br/>
+		[Added] camo blackhawk<br/>
 		[Fixed] balance between weapon/item spawns in buildings<br/>
 		[Fixed] added fuelcans and repairkits to cleanup<br/>
 		[Fixed] Height issue with scaffolding basepart<br/>
@@ -287,6 +290,8 @@ player createDiaryRecord["changelog",
 		[Changed] Repairkits added to loot-table<br/>
 		[Changed] Empty fuel cans added to loot-table<br/>
 		[Changed] players spawn without a fuelcan<br/>
+		[Changed] Locked baseparts will be saved on server restart<br/>
+		*- After restart the baseparts will be spawned UNLOCKED!<br/>
 		*- please bare with me if there are still issues<br/>
 		   This is a TESTBUILD and should not be used by others<br/>
 "
@@ -325,6 +330,8 @@ player createDiaryRecord["404games",
 	* spunFIN (BIS-forums)<br/><br/>
 	* AWA (OpenDayZ.Net)<br/>
 	* Sa-Matra (BIS-forums)</br>
+	* SicSemperTyrannis (iniDB)<br/>
+	* {ZAG}Ed!<br/>
 	* * Thanks ALOT for the help/inspiration!<br/>
 	<br/>
 "
