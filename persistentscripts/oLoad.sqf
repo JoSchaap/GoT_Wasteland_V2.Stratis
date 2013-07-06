@@ -32,22 +32,23 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 			_obj setVariable["water",_supplyleft,true];
 		};
 		// fix for rissen/sunken objects
-		_adjustPOS=-1;
-		switch(_class) do {
-			case "Land_Scaffolding_F":
-			{
-				_adjustPOS=-3; 
-			};
-			case "Land_Canal_WallSmall_10m_F":
-			{
-				_adjustPOS=3;
-			};
-			case "Land_Canal_Wall_Stairs_F":
-			{
-				_adjustPOS=3;
-			};
-		};
-		_obj setpos [getpos _obj select 0,getpos _obj select 1, (getposATL _obj select 2)+_adjustPOS];
+		// seems not to be needed here, so disabled again
+// 		_adjustPOS=-1;
+// 		switch(_class) do {
+// 			case "Land_Scaffolding_F":
+// 			{
+// 				_adjustPOS=-3; 
+// 			};
+// 			case "Land_Canal_WallSmall_10m_F":
+// 			{
+// 				_adjustPOS=3;
+// 			};
+// 			case "Land_Canal_Wall_Stairs_F":
+// 			{
+// 				_adjustPOS=3;
+// 			};
+//		};
+//		_obj setpos [getpos _obj select 0,getpos _obj select 1, (getposATL _obj select 2)+_adjustPOS];
 
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
