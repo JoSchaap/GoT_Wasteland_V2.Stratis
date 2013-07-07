@@ -27,7 +27,7 @@ switch (_Objtype) do
 _obj setVariable["R3F_LOG_disabled",false];
 
 // fix for sunken/rissen objects :)
-_adjustPOS=-1;
+_adjustPOS=0;
 switch(typeOf _obj) do {
 		case "Land_Scaffolding_F":
 		{
