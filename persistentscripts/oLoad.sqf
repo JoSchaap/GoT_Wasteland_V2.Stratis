@@ -64,3 +64,4 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 		// _obj setVariable ["objectLocked", true, true]; //force lock
 	};
 };
+	diag_log format["GoT Wasteland - baseSaving loaded %1 parts from iniDB", _objectscount];
