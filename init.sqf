@@ -11,6 +11,7 @@
 // these will re-spawn unlocked after the restart to avoid bases clutterring the entire map
 // it does NOT save player loadouts, ammocrates or vehicles!
 
+PDB_ServerID = "one";	   // if running multiple servers set a new value for each server! inidb will prefix this to the filename used to store bases
 GoT_baseSaving = 0;     // set to 1 to enable base-saving to @inidb
 
 
