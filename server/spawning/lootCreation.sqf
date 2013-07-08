@@ -1,8 +1,7 @@
     //Random weapons and items spawning script for wasteland missions.
     //Author : Ed!, [GoT] JoSchaap
-
-    _odd1 = 50;       //The odds that a building is selected to place loot.
-    _odd2 = 30;       //The odds that the selected building's spots will have loot(almost like odds per room).
+    _odd1 = 45;       //The odds that a building is selected to place loot.
+    _odd2 = 25;       //The odds that the selected building's spots will have loot(almost like odds per room).
     _itemtoweaponratio = 35;    //The chances of an item like food,water will spawn instead of a weapon.
     randomweapontestint = 0.01;   //Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
 
@@ -60,7 +59,7 @@ randomweapon_itemlist = [
     };
 
     _pos = [0,0];
-    randomweapon_buildings = nearestObjects [_pos, ["house"], 60000];
+    randomweapon_buildings = nearestObjects [_pos, ["Land_LightHouse_F", "Land_Lighthouse_small_F", "Land_Metal_Shed_F", "Land_i_House_Big_01_V1_F", "Land_i_House_Big_01_V1_dam_F", "Land_i_House_Big_02_V1_F", "Land_i_House_Big_02_V1_dam_F", "Land_i_Shop_01_V1_F", "Land_u_Addon_01_V1_F", "Land_Addon_01_V1_dam_F", "Land_u_Addon_02_V1_F", "Land_i_Addon_03_V1_F", "Land_i_Addon_03mid_V1_F", "Land_i_Addon_04_V1_F", "Land_i_Garage_V1_F", "Land_Garage_V1_dam_F", "Land_i_Shop_01_V1_dam_F", "Land_i_Shop_02_V1_F", "Land_i_Shop_02_V1_dam_F", "Land_i_House_Small_01_V1_F", "Land_i_House_Small_01_V1_dam_F", "Land_i_House_Small_01_V2_dam_F", "Land_i_House_Small_01_V2_F", "Land_u_House_Small_01_V1_F", "Land_u_House_Small_01_V1_dam_F", "Land_i_House_Small_02_V1_F", "Land_i_House_Small_02_V1_dam_F", "Land_u_House_Small_02_V1_F", "Land_u_House_Small_02_V1_dam_F", "Land_i_House_Small_03_V1_F", "Land_i_House_Small_03_V1_dam_F", "Land_cargo_addon01_V1_F", "Land_cargo_addon01_V2_F", "Land_cargo_addon02_V2_F", "Land_Slum_House01_F", "Land_Slum_House02_F", "Land_Slum_House03_F", "Land_i_Stone_HouseBig_V1_F", "Land_i_Stone_HouseBig_V1_dam_F", "Land_i_Stone_Shed_V1_F", "Land_i_Stone_Shed_V1_dam_F", "Land_d_Stone_Shed_V1_F", "Land_i_Stone_HouseSmall_V1_F", "Land_i_Stone_HouseSmall_V1_dam_F", "Land_Unfinished_Building_01_F", "Land_Airport_Tower_F", "Land_Airport_Tower_dam_F", "Land_dp_bigTank_F", "Land_dp_smallFactory_F", "Land_dp_smallTank_F", "Land_dp_transformer_F", "Land_FuelStation_Build_F", "Land_FuelStation_Shed_F", "Land_FuelStation_Sign_F", "Land_ReservoirTank_Airport_F", "Land_Shed_Big_F", "Land_Shed_Small_F", "Land_spp_Transformer_F", "Land_Communication_anchor_F", "Land_Communication_F", "Land_TBox_F", "Land_TTowerBig_1_F", "Land_TTowerBig_2_F", "Land_i_Barracks_V1_F", "Land_MilOffices_V1_F", "Land_Radar_F", "Land_Radar_Small_F", "Land_TentHangar_V1_F"], 60000];
     sleep 30;
     {
      _building = _x;
