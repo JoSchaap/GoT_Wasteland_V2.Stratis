@@ -6,10 +6,14 @@
 //	@file Args: [int (0 = buy to player 1 = buy to crate)]
 
 #include "dialog\gunstoreDefines.sqf";
-disableSerialization;
+if(_Purchaseactive == 1) exitWith {hint "Please do not spam the purschase button.. Wait for the transaction to complete"};
 if(gunStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
-
+_Purchaseactive = 1;
 private ["_name"];
+disableSerialization;
+
+
+
 
 //Initialize Values
 _switch = _this select 0;
@@ -175,12 +179,11 @@ switch (_switch) do
 				};
             } forEach accessoriesArray;
 		};
-
 		player setVariable["cmoney",_playerMoney - gunStoreCart,true];
 		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
-
+		lbClear _cartlist;
 		gunStoreCart = 0;
 		_totalText CtrlsetText format["Total: $%1", gunStoreCart];
-		lbClear _cartlist;
+		_Purchaseactive = 0;
 	};
 };

@@ -7,10 +7,11 @@
 
 #include "dialog\genstoreDefines.sqf";
 disableSerialization;
-
+if(_Purchaseactive == 1) exitWith {hint "Please do not spam the purschase button.. Wait for the transaction to complete"};
 if(genStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
 
 //Initialize Values
+_Purchaseactive = 1;
 _playerMoney = player getVariable "cmoney";
 _size = 0;
 
@@ -125,3 +126,4 @@ _playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
 genStoreCart = 0;
 _totalText CtrlsetText format["Total: $%1", genStoreCart];
 lbClear _cartlist;
+_Purchaseactive = 0;
