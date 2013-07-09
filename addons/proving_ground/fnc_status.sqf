@@ -3,7 +3,7 @@
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
 if PG_get(STATUS) then {
 	PG_set(STATUS,false);
-//	hint "Status display disabled";
+	hint "Status display disabled";
 }else{
 	hint "Status display enabled";
 	PG_set(STATUS,true);
