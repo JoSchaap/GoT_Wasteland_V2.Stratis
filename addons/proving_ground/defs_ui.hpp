@@ -76,13 +76,13 @@
 #define LB_TEXTURES       0x10
 #define LB_MULTI          0x20
 
-#define FontM             "TahomaB"
+#define FontM             "PuristaMedium"
 
 
 #define safezoneX 0.1
 #define safezoneY 0.1
 #define display_weight 0.9
-#define display_height 1
+#define display_height 0.9
 #define border_offsetX 0.03
 #define border_offsetY 0.01
 #define offset_top 0.05
@@ -94,4 +94,6 @@
 #define str_height 0.04
 #define btn_height 0.05
 #define btn_weight 0.2
+#define color_background {0.1, 0.1,0.1, 0.7}
+#define color_background_item {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.1}
 

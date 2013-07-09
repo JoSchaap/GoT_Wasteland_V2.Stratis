@@ -2,6 +2,11 @@
 #define GET_DISPLAY (findDisplay balca_debug_console_IDD)
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
 #define GET_SELECTED_DATA(a) ([##a] call {_idc = _this select 0;_selection = (lbSelection GET_CTRL(_idc) select 0);if (isNil {_selection}) then {_selection = 0};(GET_CTRL(_idc) lbData _selection)})
+
+if (!__consoleCondition) exitWith {
+	hint "You are not allowed to use console";
+	closeDialog 0;
+};
 _mode = _this select 0;
 switch (_mode) do {
 	case 0: {//init
@@ -61,8 +66,7 @@ switch (_mode) do {
 			GET_CTRL(balca_debug_console_history_IDC) lbAdd str _command;
 			GET_CTRL(balca_debug_console_history_IDC) lbSetData [(lbSize GET_CTRL(balca_debug_console_history_IDC))-1,_command];
 		};
-		[player, _command] spawn fn_vehicleInit;
-		//processInitCommands;
+		["{"+_command+"}", "BIS_fnc_spawn", true, false] spawn BIS_fnc_MP;
 	};
 	case 5: {//exec on server
 		GET_CTRL(balca_debug_console_result_IDC) ctrlSetText '';
@@ -74,19 +78,12 @@ switch (_mode) do {
 			GET_CTRL(balca_debug_console_history_IDC) lbAdd str _command;
 			GET_CTRL(balca_debug_console_history_IDC) lbSetData [(lbSize GET_CTRL(balca_debug_console_history_IDC))-1,_command];
 		};
-		player setVariable ['PG_result',[]];
-		[player, ("if isServer then {this setVariable [""PG_result"",[call {"+_command+"}],true]}")] spawn fn_vehicleInit;
-		//processInitCommands;
+		_playerId = owner player;
+		PG_result = [];
+		"PG_result" addPublicVariableEventHandler {GET_CTRL(balca_debug_console_result_IDC) ctrlSetText str(_this select 0);PG_result = [];};
 
-		[] spawn {
-			_time = time+2;
-			waitUntil{
-				((count(player getVariable ['PG_result',[]])==1)||_time>time)
-			};
-			_res = player getVariable ['PG_result',[""]];
-			GET_CTRL(balca_debug_console_result_IDC) ctrlSetText str(_res select 0);
-			player setVariable ['PG_result',[]];
-		};
+		["{""PG_result"" = call {"+_command+"};"+_playerId+" publicVariableClient ""PG_result""}", "BIS_fnc_spawn", false, false] spawn BIS_fnc_MP;
+
 	};
 	case 6: {//run tracker
 		GET_CTRL(balca_debug_console_result_IDC) ctrlSetText '';

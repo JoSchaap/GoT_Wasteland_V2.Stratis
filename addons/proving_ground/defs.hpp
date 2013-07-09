@@ -55,17 +55,24 @@
 
 #define balca_hint_text_IDC __idCounter(81)
 #define balca_hint_text2_IDC __idCounter(82)
+#define balca_hint_text3_IDC __idCounter(83)
 
 #define balca_stat_display_IDD __idCounter(85)
 #define balca_stat_text_IDC __idCounter(86)
 
 #define balca_environment_IDD __idCounter(87)
 #define balca_env_VD_IDC __idCounter(88)
-#define balca_env_grass_IDC __idCounter(89)
-#define balca_env_fog_IDC __idCounter(90)
-#define balca_env_overcast_IDC __idCounter(91)
-#define balca_env_rain_IDC __idCounter(92)
-#define balca_env_wind_IDC __idCounter(93)
-#define balca_env_wind_dir_IDC __idCounter(94)
+#define balca_env_VD_val_IDC __idCounter(89)
+#define balca_env_grass_IDC __idCounter(90)
+#define balca_env_grass_val_IDC __idCounter(91)
+#define balca_env_fog_IDC __idCounter(92)
+#define balca_env_fog_val_IDC __idCounter(93)
+#define balca_env_overcast_IDC __idCounter(94)
+#define balca_env_overcast_val_IDC __idCounter(95)
+#define balca_env_rain_IDC __idCounter(96)
+#define balca_env_rain_val_IDC __idCounter(97)
+#define balca_env_wind_IDC __idCounter(98)
+#define balca_env_wind_val_IDC __idCounter(99)
+#define balca_env_wind_dir_IDC __idCounter(100)
 
 

@@ -7,7 +7,7 @@ class balca_loader_main
 	name = "balca_loader_main";
 	movingEnable = false;
 	
-	controlsBackground[] = {balca_loader_background_veh,balca_loader_background_ammo};
+	controlsBackground[] = {balca_loader_background};
 	objects[] = {};
 	controls[] =
 	{
@@ -34,33 +34,21 @@ class balca_loader_main
 	};
 	
 //background
-	class balca_loader_background_veh
+	class balca_loader_background
 	{
 		idc = -1;
 		type = CT_STATIC;
-		style = ST_PICTURE;
+		style = 512;
 		x = safezoneX; w = display_weight;
-		y = safezoneY; h = display_height/2;
+		y = safezoneY; h = display_height-offset_bottom;
 		colorText[] = {1, 1, 1, 1};
-		colorBackground[] = {0,0,0,0};
+		colorBackground[] = {0.1, 0.1,0.1, 0.7}; 
+		background = 1;
 		text = "";
-		font = "TahomaB";
+		font = "PuristaMedium";
 		sizeEx = 0.032;
 	};
 
-	class balca_loader_background_ammo
-	{
-		idc = -1;
-		type = CT_STATIC;
-		style = ST_PICTURE;
-		x = safezoneX; w = display_weight;
-		y = display_height/2+border_offsetY; h = display_height/2;
-		colorText[] = {1, 1, 1, 1};
-		colorBackground[] = {0,0,0,0};
-		text = "";
-		font = "TahomaB";
-		sizeEx = 0.032;
-	};
 //abstract classes
 
 	class balca_loader_text
@@ -73,7 +61,7 @@ class balca_loader_main
 		sizeEx = 0.023;
 		colorBackground[] = {0.5, 0.5, 0.5, 0};
 		colorText[] = {0.85, 0.85, 0.85, 1};
-		font = "TahomaB";
+		font = "PuristaMedium";
 		text = "";
 	};
 
@@ -81,21 +69,21 @@ class balca_loader_main
 	{
 		idc = -1;
 		type = CT_STATIC;
-		style = ST_PICTURE;
+		style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
 		x = 0.25; w = 0.1;
 		y = 0.1; h = 0.1;
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "PuristaMedium";
 		sizeEx = 0.032;
 	};
 
 	class balca_loader_btn
 	{
 		idc = -1;
-		type = 16;
-		style = 0;
+		type = 1;
+		style = 2;
 		
 		text = "btn";
 		action = "";
@@ -104,73 +92,31 @@ class balca_loader_main
 		y = 0;
 		
 		w = 0.23;
-		h = 0.11;
+		h = 0.04;
 		
-		size = 0.03921;
-		sizeEx = 0.03921;
-		
-		color[] = {0.543, 0.5742, 0.4102, 1.0};
-		color2[] = {0.95, 0.95, 0.95, 1};
-		colorBackground[] = {1, 1, 1, 1};
-		colorbackground2[] = {1, 1, 1, 0.4};
+		shadow = 2;
+		font = FontM;
+		size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		colorText[] = {1, 1, 1, 1.0};
+		colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.7};
+		colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
+		colorBackgroundDisabled[] = {0.95, 0.95, 0.95, 1};
 		colorDisabled[] = {1, 1, 1, 0.25};
-		periodFocus = 1.2;
-		periodOver = 0.8;
-		
-		class HitZone 
-		{
-			left = 0.004;
-			top = 0.029;
-			right = 0.004;
-			bottom = 0.029;
-		};
-		
-		class ShortcutPos 
-		{
-			left = 0.0145;
-			top = 0.026;
-			w = 0.0392157;
-			h = 0.0522876;
-		};
-		
-		class TextPos 
-		{
-			left = 0.05;
-			top = 0.034;
-			right = 0.005;
-			bottom = 0.005;
-		};
-		
-		textureNoShortcut = "";
-		animTextureNormal = "\ca\ui\data\ui_button_normal_ca.paa";
-		animTextureDisabled = "\ca\ui\data\ui_button_disabled_ca.paa";
-		animTextureOver = "\ca\ui\data\ui_button_over_ca.paa";
-		animTextureFocused = "\ca\ui\data\ui_button_focus_ca.paa";
-		animTexturePressed = "\ca\ui\data\ui_button_down_ca.paa";
-		animTextureDefault = "\ca\ui\data\ui_button_default_ca.paa";
-		period = 0.4;
-		font = "TahomaB";
-		
-		soundEnter[] = {"\ca\ui\data\sound\mouse2", 0.09, 1};
-		soundPush[] = {"\ca\ui\data\sound\new1", 0.09, 1};
-		soundClick[] = {"\ca\ui\data\sound\mouse3", 0.07, 1};
-		soundEscape[] = {"\ca\ui\data\sound\mouse1", 0.09, 1};
-		
-		class Attributes 
-		{
-			font = "TahomaB";
-			color = "#E5E5E5";
-			align = "left";
-			shadow = "true";
-		};
-		
-		class AttributesImage 
-		{
-			font = "TahomaB";
-			color = "#E5E5E5";
-			align = "left";
-			shadow = "true";
-		};
+		offsetX = 0.003;
+		offsetY = 0.003;
+		offsetPressedX = 0.002;
+		offsetPressedY = 0.002;
+		colorFocused[] = {1, 1, 1, 0.5};
+		colorFocused2[] = {1, 1, 1, 0.1};
+		colorShadow[] = {0, 0, 0, 1};
+		colorBorder[] = {0, 0, 0, 1};
+		borderSize = 0.0;
+		soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
+		soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
+		soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
+		soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};	
+		period = 1.2;
 	};
 
 	class balca_loader_list
@@ -186,14 +132,12 @@ class balca_loader_main
 		colorBackground[] = {0.8,0.8,0.8,1};
 		colorSelectBackground[] = {0.40, 0.43, 0.28, 0.5};
 		colorScrollbar[] = {0.2, 0.2, 0.2, 1};
-		arrowEmpty = "\ca\ui\data\ui_arrow_combo_ca.paa";
-		arrowFull = "\ca\ui\data\ui_arrow_combo_active_ca.paa";
 		wholeHeight = 0.45;
 		rowHeight = 0.04;
 		color[] = {0.30, 0.32, 0.21, 1};
 		colorActive[] = {0,0,0,1};
 		colorDisabled[] = {0,0,0,0.3};
-		font = "TahomaB";
+		font = "PuristaMedium";
 		sizeEx = 0.023;
 		soundSelect[] = {"",0.1,1};
 		soundExpand[] = {"",0.1,1};
@@ -208,10 +152,10 @@ class balca_loader_main
 			color[] = {0.30, 0.32, 0.21, 0.6};
 			colorActive[] = {0.30, 0.32, 0.21, 1};
 			colorDisabled[] = {0.30, 0.32, 0.21, 0.3};
-			thumb = "\ca\ui\data\ui_scrollbar_thumb_ca.paa";
-			arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
-			arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
-			border = "\ca\ui\data\ui_border_scroll_ca.paa";
+			thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+			arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+			arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+			border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 		};
 	};
 
@@ -225,7 +169,7 @@ class balca_loader_main
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "PuristaMedium";
 		sizeEx = 0.032;
 	};
 
@@ -344,7 +288,7 @@ class balca_loader_main
 		h = img_height;
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
-		text = "\ca\ui\data\ui_action_getingunner_ca.paa";
+		text = "";
 	};
 ////////
 	class balca_loader_vehicle_list : balca_loader_list

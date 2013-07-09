@@ -10,37 +10,33 @@ _item_type = _this select 1;
 switch (_mode) do {
 case 0: {//fill weapon list
 		_cfgweapons = configFile >> "cfgWeapons";
-		_type = 1;
-		switch (_item_type) do {
-			case 0: {_type = [1];};//rifles
-			case 1: {_type = [1];};//scoped rifles
-			case 2: {_type = [1,5];};//heavy
-			case 3: {_type = [4];};//secondary weapon
-			case 4: {_type = [2];};//pistol
-			case 5: {_type = [0];};//put/throw
-			case 6: {_type = [4096];};//BinocularSlot
-			case 7: {_type = [131072];};//SmallItems
-			default {_type = [1];};
+		_generalCondition = {
+			((getNumber(_this >> "scope")==2)&&(getNumber(_this >> "access")!=0)&&(getText(_this >> "model")!="")&&(getText(_this >> "displayName")!=""))
+		};
+		_haveOptics = {
+			(getText(_this >> "ModelOptics")!="-")||(getNumber(configFile >> "cfgWeapons" >> getText(_this >> "LinkedItems" >> "LinkedItemsOptic" >> "item") >> "ItemInfo" >> "OpticType")>0)
+		};
+		_condition = switch (_item_type) do {
+			case 0: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==1)&&(getNumber(_this >> "WeaponSlotsInfo" >> "mass")<70)&&!(_this call _haveOptics)}};//rifles
+			case 1: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==1)&&(getNumber(_this >> "WeaponSlotsInfo" >> "mass")<70)&&(_this call _haveOptics)}};//scoped rifles
+			case 2: {{ (_this call _generalCondition)&&(getNumber(_this >> "type") in [1,5])&&(getNumber(_this >> "WeaponSlotsInfo" >> "mass")>=70)}};//heavy
+			case 3: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==4)}};//secondary weapon
+			case 4: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==2)}};//pistol
+			case 5: {{ (getNumber(_this >> "type")==0)&&(getText(_this >> "ModelOptics")=="")}};//put/throw
+			case 6: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==4096)}};//BinocularSlot
+			case 7: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==131072)&&(getNumber(_this >> "ItemInfo" >> "type")==0)}};//SmallItems
+			case 8: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==131072)&&(getNumber(_this >> "ItemInfo" >> "type") in [701,801,605,619, 607, 401])}};//wear
+			case 9: {{ (_this call _generalCondition)&&(getNumber(_this >> "type")==131072)&&(getNumber(_this >> "ItemInfo" >> "type") in [201, 301, 101])}};//attachments
+			default {{ true}};
 		};
 		lbClear GET_CTRL(balca_WC_weaplist_IDC);
 		for "_i" from 0 to (count _cfgweapons)-1 do {
 			_weapon = _cfgweapons select _i;
 			if (isClass _weapon) then {
-				_weap_type = configName(_weapon);
-				_cur_type = getNumber(_weapon >> "type");
-				_display_name = getText(_weapon >> "displayName");
-				_no_pack = getNumber(_weapon >> "ACE_nopack");
-				_optics = getText(_weapon >> "ModelOptics");
-				//diag_log format ["%1",[_weap_type,_cur_type,_no_pack]];
-				if (((((getNumber(_weapon >> "scope")==2)&&(getText(_weapon >> "model")!="")&&(_display_name!=""))||((_item_type==5)&&(getNumber(_weapon >> "scope")>0)))&&(_cur_type in _type)&&(_display_name!=""))
-				&&
-				((_item_type in [3,4,5,6,7])||((_item_type==0)&&(_no_pack!=1)&&((_optics=="-")))||((_item_type==1)&&(_no_pack!=1)&&((_optics!="-")))||((_item_type==2)&&((_cur_type==5)||((_no_pack==1)&&(_cur_type in _type)))))) then {
-					GET_CTRL(balca_WC_weaplist_IDC) lbAdd _display_name;
-					GET_CTRL(balca_WC_weaplist_IDC) lbSetData [(lbSize GET_CTRL(balca_WC_weaplist_IDC))-1,_weap_type];
+				if (_weapon call _condition) then {
+					GET_CTRL(balca_WC_weaplist_IDC) lbAdd getText(_weapon >> "displayName");
+					GET_CTRL(balca_WC_weaplist_IDC) lbSetData [(lbSize GET_CTRL(balca_WC_weaplist_IDC))-1,configName _weapon];
 					GET_CTRL(balca_WC_weaplist_IDC) lbSetPicture [(lbSize GET_CTRL(balca_WC_weaplist_IDC))-1,getText(_weapon >> "picture")];
-				
-				
-				
 				};
 			};
 		};
@@ -80,9 +76,19 @@ case 1: {//weap info, fill magazines
 	};
 
 case 2: {//addweapon
-		PG_set(MAGS,[]);
-		[GET_SELECTED_DATA(balca_WC_weaplist_IDC)] call PG_get(FNC_ADD_WEAPON);
-		PG_set(WEAPONS,weapons player);
+		_weapon = GET_SELECTED_DATA(balca_WC_weaplist_IDC);
+		switch true do {
+			case (getNumber(configFile >> "cfgWeapons" >> _weapon >> "ItemInfo" >> "type")==801): { player addUniform _weapon};
+			case (getNumber(configFile >> "cfgWeapons" >> _weapon >> "ItemInfo" >> "type")==701): { player addVest _weapon};
+			case (getNumber(configFile >> "cfgWeapons" >> _weapon >> "ItemInfo" >> "type")==605): { player addHeadgear _weapon};
+			case (getNumber(configFile >> "cfgWeapons" >> _weapon >> "ItemInfo" >> "type")==603): { player addGoggles _weapon};
+			case (getNumber(configFile >> "cfgWeapons" >> _weapon >> "ItemInfo" >> "type")>0): { player addItem _weapon};
+			default {
+				PG_set(MAGS,[]);
+				[_weapon] call PG_get(FNC_ADD_WEAPON);
+				PG_set(WEAPONS,weapons player);
+			};
+		};
 	};
 
 case 3: {//ammo info

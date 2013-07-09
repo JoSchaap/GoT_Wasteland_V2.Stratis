@@ -133,15 +133,15 @@ class HJ_ConfigExplorer
 
 	class RSC_HJ_ShortcutButton: RscIGUIShortcutButton 
 	{
-		w = 0.1 * SafeZoneW;
-		h = 0.05 * SafeZoneW;
+		//w = 0.1 * SafeZoneW;
+		//h = 0.05 * SafeZoneW;
 		size = TextSize_normal;
 		sizeEx = TextSize_normal;
-		class TextPos: TextPos
+		/*class TextPos: TextPos
 		{
-			top = ((0.05 * SafeZoneW) - TextSize_normal) / 4);
+			//top = ((0.05 * SafeZoneW) - TextSize_normal) / 4);
 			//top = 0.004;
-		}
+		};*/
 	};
 
 
@@ -356,7 +356,7 @@ class HJ_ConfigExplorer
 		tooltip = "copy all text to clipboard";
 		
 		action = "copyToClipboard ctrlText 113;";
-	}
+	};
 	
 	class tVersion:RscText 
 	{

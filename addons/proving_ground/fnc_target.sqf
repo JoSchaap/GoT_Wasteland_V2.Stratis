@@ -37,6 +37,7 @@ _drawMarkers = {
 
 _mode = _this select 0;
 _opt = _this select 1;
+
 switch (_mode) do {
 case 0: {//init;
 		_target_mode = if isNil{_opt} then {//restore values
@@ -115,11 +116,12 @@ case 1: {
 		
 		_kindOf = ["TargetBase"];
 		_filter = [];
+		if isNil{_opt} then {_opt = -1};
 		switch (_opt) do {
 			case 0: {_kindOf = ["CAManBase"];};
-			case 1: {_kindOf = ["car"];_filter = ["truck","Wheeled_APC"];};
+			case 1: {_kindOf = ["car"];_filter = ["truck","truck_F","Wheeled_APC","Wheeled_APC_F"];};
 			case 2: {_kindOf = ["truck"];};
-			case 3: {_kindOf = ["Wheeled_APC","Tracked_APC"];};
+			case 3: {_kindOf = ["Wheeled_APC","Wheeled_APC_F","Tracked_APC"];};
 			case 4: {_kindOf = ["tank"];_filter = ["Tracked_APC"];};
 			case 5: {_kindOf = ["helicopter"];_filter = ["ParachuteBase"];};
 			case 6: {_kindOf = ["plane"];_filter = ["ParachuteBase"];};
@@ -235,7 +237,7 @@ case 6: {//apply
 		switch PG_get(target_mode) do {
 			case 0: {//land static
 				GVAR(target_props) = [parseNumber ctrlText GET_CTRL(balca_target_distance_IDC),parseNumber ctrlText GET_CTRL(balca_target_speed_IDC),(parseNumber ctrlText GET_CTRL(balca_target_direction_IDC))%360];
-				call PG_get(FNC_MOVE_LAND_TARGETS);//reset position of targets
+				[0,-1] call PG_get(FNC_MOVE_LAND_TARGETS);//reset position of targets
 				if ((PG_get(TARGET_PROPS) select 1)>0) then {//if speed>0 start moving
 					[] spawn {
 						_shift = 0;

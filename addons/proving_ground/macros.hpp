@@ -20,7 +20,8 @@
 #define __callFnc(name) call PG_get(name)
 #define __getCrc (call {_crc = 1;{_crc = ((_crc+_x)^(_x%3+1))%1000000} forEach toArray getPlayerUID player;_crc})
 
-#define __launchCondition (isClass(missionConfigFile >> 'balca_debug_main')||isServer||(__getCrc in [1,747008]))
-#define __consoleCondition ((__getCrc in [1,747008,780288])||(serverCommandAvailable '#shutdown')||isServer)
+#define __launchCondition (true)
+#define __consoleCondition ((serverCommandAvailable '#shutdown')||isServer)
 
-#define __onLoad onLoad = "if !((isClass(missionConfigFile >> 'balca_debug_main')||isServer||((call {_crc = 1;{_crc = ((_crc+_x)^(_x%3+1))%1000000} forEach toArray getPlayerUID player;_crc}) in [1,747008,780288]))) then {[] spawn {closeDialog 0}};";
+#define __onLoad onLoad = "";
+
