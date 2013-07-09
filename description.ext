@@ -34,8 +34,7 @@ overviewPicture = "Loading.jpg";
 #include "addons\proving_ground\PG_config.hpp"
 
 class RscTitles {
-	#include "addons\proving_ground\PG_rsctitles.hpp"
-    	#include "client\systems\hud\dialog\hud.hpp"
+    #include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\newicons.hpp"
 };
