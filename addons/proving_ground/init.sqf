@@ -129,60 +129,6 @@ if (isClass(configFile >> "cfgVehicles" >> "An2_1_TK_CIV_EP1")) then {
 
 [] call PG_get(fnc_status);
 
-titleText["Use action menu or Ctrl+LeftWin to call proving ground interface","plain down"];
-[] spawn {//EH
-	while {true} do {
-		_veh = vehicle player;
-		_firedEH = _veh addEventHandler["fired","_this call c_proving_ground_fnc_bullettrack"];
-		_act = _veh addAction ["<t color='#C0C0C0'>Proving ground</t>",__scriptPath(show_dialog),[],0.1];
-		_keyhandler = (findDisplay 46) displayAddEventHandler ["keyDown", 'if (!(_this select 2)&&(_this select 3)&&!(_this select 4)&&((_this select 1) == 219)&&!dialog) then {createDialog "balca_debug_main";};false'];
-		waitUntil {sleep 1;(_veh != (vehicle player))};
-		_veh removeAction _act;
-		_veh removeEventHandler ["fired", _firedEH];
-		(findDisplay 46) displayRemoveEventHandler ["keyDown",_keyhandler];
-	};
-};
-[] spawn {//replace dead targets
-	_is_crew_alive = {
-		_crew_alive = false;
-		{if (alive _x) exitWith {_crew_alive = true}} forEach crew(_this);
-		_crew_alive
-	};
-	while {true} do {
-		sleep 3;
-		{
-			_unit = _x select 0;
-			_type = _x select 1;
-			_grp = _x select 2;
-			_offset = _x select 3;
-			switch true do {
-				case ((alive _unit)&&(_unit isKindOf "Man")): {};
-				case ((alive _unit)&&(_unit call _is_crew_alive)): {};
-				default {
-					deleteVehicle _unit;
-					if !(_unit isKindOf "Man") then {
-						{deleteVehicle _x} forEach (units _grp);
-					};
-					deleteGroup _grp;
-					[_forEachIndex,_type,_offset] call PG_get(fnc_create_land_target);
-				};
-			};
-		} forEach PG_get(land_targets);
-		{
-			_unit = _x select 0;
-			_type = _x select 1;
-			_grp = _x select 2;
-			switch true do {
-				case ((alive _unit)&&(_unit call _is_crew_alive)): {};
-				default {
-					{deleteVehicle _x} forEach units _grp;
-					deleteGroup _grp;
-					[_forEachIndex,_type] call PG_get(fnc_create_air_target);
-				};
-			};
-		} forEach PG_get(air_targets);
-	};
-};
 GVAR(init) = true;
 
 //init functions for HJ_cfgExplorer
