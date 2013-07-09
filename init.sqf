@@ -79,7 +79,7 @@ if (!isDedicated) then {
 	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
 };
 
-[] call compile preprocessFileLineNumbers "proving_Ground\init.sqf";
+[] call compile preprocessFileLineNumbers "addons\proving_Ground\init.sqf";
 
 if (GoT_baseSaving == 1) then 
 	{
