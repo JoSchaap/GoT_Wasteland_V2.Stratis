@@ -286,9 +286,12 @@ player createDiaryRecord["changelog",
 		[Fixed] balance between weapon/item spawns in buildings<br/>
 		[Fixed] added fuelcans and repairkits to cleanup<br/>
 		[Fixed] Height issue with scaffolding basepart<br/>
+		[Changed] Loot in buildings is spawned when a player enters town<br/>
+		[Changed] Loot in buildings now respawns after 30mins<br/>
+		[Changed] Loot in buildings 25% chance of fuel inside fuelcans<br/>
 		[Changed] Fuel cans (full or empty) can be dropped<br/>
 		[Changed] Repairkits added to loot-table<br/>
-		[Changed] Empty fuel cans added to loot-table<br/>
+		[Changed] fuel cans added to loot-table<br/>
 		[Changed] players spawn without a fuelcan<br/>
 		[Changed] Locked baseparts will be saved on server restart<br/>
 		*- After restart the baseparts will be spawned UNLOCKED!<br/>
@@ -323,7 +326,7 @@ player createDiaryRecord["404games",
 	* afroVoodo (ArmaHolic)<br/>
 	* Sanjo (GitHub)<br/>
 	* Ed! (404forums)<br/>
-	* AgentREV (GitHub)<br/>
+	* AgentREV (GitHub/TPG - antihax coder!)<br/>
 	* SPJESTER (404forums)<br/>
 	* Hub (404forums)<br/>
 	* Tonic-_- (BIS-forums)<br/>
@@ -332,6 +335,7 @@ player createDiaryRecord["404games",
 	* Sa-Matra (BIS-forums)</br>
 	* SicSemperTyrannis (iniDB)<br/>
 	* {ZAG}Ed!<br/>
+	* Na-Palm (BIS-Forums)<br/>
 	* * Thanks ALOT for the help/inspiration!<br/>
 	<br/>
 "
