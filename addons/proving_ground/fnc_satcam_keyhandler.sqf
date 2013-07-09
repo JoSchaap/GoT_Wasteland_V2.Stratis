@@ -120,6 +120,6 @@ switch (_dikCode) do {
 		camDestroy _cam;
 	};
 	default {
-		titleText["WASD - move, Num-/Num+ - zoom, V - NV, N - normal view, Q - exit","plain down"];
+		//titleText["WASD - move, Num-/Num+ - zoom, V - NV, N - normal view, Q - exit","plain down"];
 	};
 };//end switch

@@ -77,13 +77,13 @@ switch (_dikCode) do {
 		GVAR(balca_satcam) = [_cam,_keyhandler,_newpos,[_dir,_pitch,_fov]];
 		};
 /*	case 78:{	//Num +
-		_fov = _fov/1.1 max 0.1;
+		_fov = _fov*1.1;
 		_cam camSetFov _fov;
 		_cam camCommit 0.1;
 		GVAR(balca_satcam) = [_cam,_keyhandler,_campos,[_dir,_pitch,_fov]];
 		};
 	case 74:{	//Num -
-		_fov = _fov*1.1 min 2;
+		_fov = _fov/1.1;
 		_cam camSetFov _fov;
 		_cam camCommit 0.1;
 		GVAR(balca_satcam) = [_cam,_keyhandler,_campos,[_dir,_pitch,_fov]];
@@ -142,6 +142,6 @@ switch (_dikCode) do {
 		camDestroy _cam;
 	};
 	default {
-		titleText["WASD - move, Q/Z - altitude, V - NV, N - normal view","plain down"];
+		//titleText["WASD - move, Q/Z - altitude, V - NV, N - normal view","plain down"];
 	};
 };//end switch

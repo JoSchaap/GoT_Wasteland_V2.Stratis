@@ -1,29 +1,8 @@
-	class balca_debug_slider
-	{
-		idc = -1; 
-
-		type = CT_XSLIDER; 
-		style = 0x400	+ 0x10;
-		shadow = 2;
-		x = 0;
-		y = 0;
-		h = 0.029412;
-		w = 0.4;
-		color[] = {1, 1, 1, 0.4};
-		colorActive[] = {1, 1, 1, 1};
-		colorDisabled[] = {1, 1, 1, 0.2};
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
-		thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
-	};
-	
 	class balca_debug_control_group
 	{
 		idc = -1;
 		type = 15;
 		style = 0;
-		colorBackground[] = {0, 0, 0, 0};
 		class VScrollbar 
 		{
 			color[] = {1, 1, 1, 1};
@@ -55,8 +34,7 @@
 		h = 1;
 	};
 
-	class balca_debug_combo
-	{
+	class balca_debug_combo {
 		idc = -1;
 		type = 4;
 		style = 0;
@@ -66,7 +44,7 @@
 		w = 0.12;
 		h = str_height;
 
-		font = FontM;
+		font = "TahomaB";
 		sizeEx = 0.03;
 
 		rowHeight = 0.1;
@@ -94,8 +72,8 @@
 		soundCollapse[] = {"", 0.1, 1};
 		maxHistoryDelay = 1;
 
-		arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
-		arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
+		arrowEmpty = "";
+		arrowFull = "";
 		color[] = {0.1, 0.1, 0.1, 1};
 		colorActive[] = {0,0,0,1};
 		colorDisabled[] = {0,0,0,0.3};
@@ -109,10 +87,9 @@
 		x = 0.0; w = 0.3;
 		y = 0.0; h = 0.03;
 		sizeEx = 0.023;
-		colorBackground[] = {0, 0, 0, 0};
+		colorBackground[] = {0.5, 0.5, 0.5, 0};
 		colorText[] = {0.85, 0.85, 0.85, 1};
-		colorDisabled[] = {1,1,1,0.3};
-		font = FontM;
+		font = "TahomaB";
 		text = "";
 	};
 
@@ -121,18 +98,17 @@
 		type = CT_EDIT;
 		style = ST_LEFT+ST_MULTI;
 		idc = -1;
-		font = FontM;
+		font = "TahomaB";
 		sizeEx = 0.026;
 		htmlControl = true;
 		lineSpacing = 0.004;
 		x = 0.0; w = 0.3;
 		y = 0.0; h = 0.06;
-		colorBackground[] = color_background_item;
 		colorText[] = {0.85, 0.85, 0.85, 1};
 		colorSelection[] = {1, 1, 1, 1};
 		colorDisabled[] = {1,1,1,0.3};
 		autocomplete = "scripting";
-		text = "";
+		//text = "";
 	};
 
 	class balca_debug_image
@@ -145,15 +121,15 @@
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = FontM;
+		font = "TahomaB";
 		sizeEx = 0.032;
 	};
 
 	class balca_debug_btn
 	{
 		idc = -1;
-		type = 1;
-		style = 2;
+		type = 16;
+		style = 0;
 		
 		text = "btn";
 		action = "";
@@ -162,37 +138,79 @@
 		y = 0;
 		
 		w = 0.23;
-		h = 0.04;
+		h = 0.11;
 		
-		shadow = 2;
-		font = FontM;
-		size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-		colorText[] = {1, 1, 1, 1.0};
-		colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.7};
-		colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-		colorBackgroundDisabled[] = {0.95, 0.95, 0.95, 1};
+		size = 0.03921;
+		sizeEx = 0.03921;
+		
+		color[] = {0.543, 0.5742, 0.4102, 1.0};
+		color2[] = {0.95, 0.95, 0.95, 1};
+		colorBackground[] = {1, 1, 1, 1};
+		colorbackground2[] = {1, 1, 1, 0.4};
 		colorDisabled[] = {1, 1, 1, 0.25};
-		offsetX = 0.003;
-		offsetY = 0.003;
-		offsetPressedX = 0.002;
-		offsetPressedY = 0.002;
-		colorFocused[] = {1, 1, 1, 0.5};
-		colorFocused2[] = {1, 1, 1, 0.1};
-		colorShadow[] = {0, 0, 0, 1};
-		colorBorder[] = {0, 0, 0, 1};
-		borderSize = 0.0;
-		soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-		soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-		soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-		soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};	
-		period = 1.2;
+		periodFocus = 1.2;
+		periodOver = 0.8;
+		
+		class HitZone 
+		{
+			left = 0.004;
+			top = 0.029;
+			right = 0.004;
+			bottom = 0.029;
+		};
+		
+		class ShortcutPos 
+		{
+			left = 0.0145;
+			top = 0.026;
+			w = 0.0392157;
+			h = 0.0522876;
+		};
+		
+		class TextPos 
+		{
+			left = 0.05;
+			top = 0.034;
+			right = 0.005;
+			bottom = 0.005;
+		};
+		
+		textureNoShortcut = "";
+		animTextureNormal = "client\ui\ui_button_normal_ca.paa";
+		animTextureDisabled = "client\ui\ui_button_disabled_ca.paa";
+		animTextureOver = "client\ui\ui_button_over_ca.paa";
+		animTextureFocused = "client\ui\ui_button_down_ca.paa";
+		animTexturePressed = "client\ui\ui_button_down_ca.paa";
+		animTextureDefault = "client\ui\ui_button_default_ca.paa";
+		period = 0.4;
+		font = "TahomaB";
+		
+		soundEnter[] = {"\A3\ui_f\data\Sound\MOUSE2", 0.09, 1};
+		soundPush[] = {"\A3\ui_f\data\Sound\NEW1", 0.09, 1};
+		soundClick[] = {"\A3\ui_f\data\Sound\MOUSE3", 0.07, 1};
+		soundEscape[] = {"\A3\ui_f\data\Sound\MOUSE1", 0.09, 1};
+		
+		class Attributes 
+		{
+			font = "TahomaB";
+			color = "#E5E5E5";
+			align = "left";
+			shadow = "true";
+		};
+		
+		class AttributesImage 
+		{
+			font = "TahomaB";
+			color = "#E5E5E5";
+			align = "left";
+			shadow = "true";
+		};
 	};
 
 	class balca_debug_list
 	{
 		type = CT_LISTBOX;
-		style = ST_LEFT;
+		style = 16;
 		idc = -1;
 		text = "";
 		w = 0.275;
@@ -202,12 +220,14 @@
 		colorBackground[] = {0.8,0.8,0.8,1};
 		colorSelectBackground[] = {0.40, 0.43, 0.28, 0.5};
 		colorScrollbar[] = {0.2, 0.2, 0.2, 1};
+		arrowEmpty = "client\ui\ui_arrow_combo_ca.paa";
+        arrowFull = "client\ui\ui_arrow_combo_active_ca.paa";
 		wholeHeight = 0.45;
 		rowHeight = 0.04;
-		color[] = {0.30, 0.32, 0.21, 1};
+		color[] = {0.7, 0.7, 0.7, 1};
 		colorActive[] = {0,0,0,1};
 		colorDisabled[] = {0,0,0,0.3};
-		font = FontM;
+		font = "TahomaB";
 		sizeEx = 0.023;
 		soundSelect[] = {"",0.1,1};
 		soundExpand[] = {"",0.1,1};
@@ -219,13 +239,13 @@
 
 		class ScrollBar
 		{
-			color[] = {0.30, 0.32, 0.21, 0.6};
-			colorActive[] = {0.30, 0.32, 0.21, 1};
-			colorDisabled[] = {0.30, 0.32, 0.21, 0.3};
-			thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-			arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-			arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-			border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+			color[] = {1, 1, 1, 1};
+			colorActive[] = {1, 1, 1, 1};
+			colorDisabled[] = {1, 1, 1, 1};
+			thumb = "client\ui\ui_scrollbar_thumb_ca.paa";
+            arrowFull = "client\ui\ui_arrow_top_active_ca.paa";
+            arrowEmpty = "client\ui\ui_arrow_top_ca.paa";
+            border = "client\ui\ui_border_scroll_ca.paa";
 		};
 	};
 
@@ -239,118 +259,324 @@
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = FontM;
+		font = "TahomaB";
 		sizeEx = 0.032;
 	};
 
 	class balca_debug_map {
 		idc = -1;
+
 		type=101;
 		style=48;
 
-		sizeEx = 0.026;
+		x = 0;
+		y = 0;
+		w = 1;
+		h = 1;
 
-		moveOnEdges = 1;
-		x = "SafeZoneXAbs";
-		y = "SafeZoneY + 1.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-		w = "SafeZoneWAbs";
-		h = "SafeZoneH - 1.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-		font = FontM;
-		shadow = false;
-		ptsPerSquareSea = 5;
-		ptsPerSquareTxt = 3;
-		ptsPerSquareCLn = 10;
-		ptsPerSquareExp = 10;
-		ptsPerSquareCost = 10;
-		ptsPerSquareFor = 9;
-		ptsPerSquareForEdge = 9;
-		ptsPerSquareRoad = 6;
-		ptsPerSquareObj = 9;
-		showCountourInterval = 0;
-		scaleMin = 0.001;
-		scaleMax = 1.0;
-		scaleDefault = 0.16;
-		maxSatelliteAlpha = 0.85;
-		alphaFadeStartScale = 0.35;
-		alphaFadeEndScale = 0.4;
-		colorBackground[] = {0.969, 0.957, 0.949, 1.0};
-		colorText[] = {0.00, 0.00, 0.00, 1.00};		
-		colorSea[] = {0.467, 0.631, 0.851, 0.5};
-		colorForest[] = {0.624, 0.78, 0.388, 0.5};
-		colorForestBorder[] = {0.0, 0.0, 0.0, 0.0};
-		colorRocks[] = {0.0, 0.0, 0.0, 0.3};
-		colorRocksBorder[] = {0.0, 0.0, 0.0, 0.0};
-		colorLevels[] = {0.286, 0.177, 0.094, 0.5};
-		colorMainCountlines[] = {0.572, 0.354, 0.188, 0.5};
-		colorCountlines[] = {0.572, 0.354, 0.188, 0.25};
-		colorMainCountlinesWater[] = {0.491, 0.577, 0.702, 0.6};
-		colorCountlinesWater[] = {0.491, 0.577, 0.702, 0.3};
-		colorPowerLines[] = {0.1, 0.1, 0.1, 1.0};
-		colorRailWay[] = {0.8, 0.2, 0.0, 1.0};
-		colorNames[] = {0.1, 0.1, 0.1, 0.9};
-		colorInactive[] = {1.0, 1.0, 1.0, 0.5};
-		colorOutside[] = {0.0, 0.0, 0.0, 1.0};
-		colorTracks[] = {0.84, 0.76, 0.65, 0.15};
-		colorTracksFill[] = {0.84, 0.76, 0.65, 1.0};
-		colorRoads[] = {0.7, 0.7, 0.7, 1.0};
-		colorRoadsFill[] = {1.0, 1.0, 1.0, 1.0};
-		colorMainRoads[] = {0.9, 0.5, 0.3, 1.0};
-		colorMainRoadsFill[] = {1.0, 0.6, 0.4, 1.0};
-		colorGrid[] = {0.1, 0.1, 0.1, 0.6};
-		colorGridMap[] = {0.1, 0.1, 0.1, 0.6};
-		fontLabel = FontM;
-		sizeExLabel = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+		colorBackground[] = {1.00, 1.00, 1.00, 1.00};
+		colorText[] = {0.00, 0.00, 0.00, 1.00};
+		colorSea[] = {0.56, 0.80, 0.98, 0.50};
+		colorForest[] = {0.60, 0.80, 0.20, 0.50};
+		colorRocks[] = {0.50, 0.50, 0.50, 0.50};
+		colorCountlines[] = {0.65, 0.45, 0.27, 0.50};
+		colorMainCountlines[] = {0.65, 0.45, 0.27, 1.00};
+		colorCountlinesWater[] = {0.00, 0.53, 1.00, 0.50};
+		colorMainCountlinesWater[] = {0.00, 0.53, 1.00, 1.00};
+		colorForestBorder[] = {0.40, 0.80, 0.00, 1.00};
+		colorRocksBorder[] = {0.50, 0.50, 0.50, 1.00};
+		colorPowerLines[] = {0.00, 0.00, 0.00, 1.00};
+		colorNames[] = {0.00, 0.00, 0.00, 1.00};
+		colorInactive[] = {1.00, 1.00, 1.00, 0.50};
+		colorLevels[] = {0.00, 0.00, 0.00, 1.00};
+		colorRailWay[] = {0.00, 0.00, 0.00, 1.00};
+		colorOutside[] = {0.00, 0.00, 0.00, 1.00};
+
+		font = "TahomaB";
+		sizeEx = 0.040000;
+
+		stickX[] = {0.20, {"Gamma", 1.00, 1.50} };
+		stickY[] = {0.20, {"Gamma", 1.00, 1.50} };
+		ptsPerSquareSea = 6;
+		ptsPerSquareTxt = 8;
+		ptsPerSquareCLn = 8;
+		ptsPerSquareExp = 8;
+		ptsPerSquareCost = 8;
+		ptsPerSquareFor = "4.0f";
+		ptsPerSquareForEdge = "10.0f";
+		ptsPerSquareRoad = 2;
+		ptsPerSquareObj = 10;
+
+		fontLabel = "TahomaB";
+		sizeExLabel = 0.034000;
 		fontGrid = "TahomaB";
-		sizeExGrid = 0.02;
+		sizeExGrid = 0.034000;
 		fontUnits = "TahomaB";
-		sizeExUnits = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
-		fontNames = FontM;
-		sizeExNames = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8) * 2";
-		fontInfo = FontM;
-		sizeExInfo = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+		sizeExUnits = 0.034000;
+		fontNames = "TahomaB";
+		sizeExNames = 0.056000;
+		fontInfo = "TahomaB";
+		sizeExInfo = 0.034000;
 		fontLevel = "TahomaB";
-		sizeExLevel = 0.02;
-		text = "#(argb,8,8,3)color(1,1,1,1)";
+		sizeExLevel = 0.034000;
 		
-		class Legend {
-			x = "SafeZoneX + 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			y = "SafeZoneY + safezoneH - 4.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-			w = "10 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "3.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-			font = FontM;
-			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
-			colorBackground[] = {1, 1, 1, 0.5};
-			color[] = {0, 0, 0, 1};
-		};
+		text = "\ca\ui\data\map_background2_co.paa";
 		
-		class Task {
-			icon = "\A3\ui_f\data\map\mapcontrol\taskIcon_CA.paa";
-			iconCreated = "\A3\ui_f\data\map\mapcontrol\taskIconCreated_CA.paa";
-			iconCanceled = "\A3\ui_f\data\map\mapcontrol\taskIconCanceled_CA.paa";
-			iconDone = "\A3\ui_f\data\map\mapcontrol\taskIconDone_CA.paa";
-			iconFailed = "\A3\ui_f\data\map\mapcontrol\taskIconFailed_CA.paa";
-			color[] = {"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])", "(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])", "(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])", "(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"};
-			colorCreated[] = {1, 1, 1, 1};
-			colorCanceled[] = {0.7, 0.7, 0.7, 1};
-			colorDone[] = {0.7, 1, 0.3, 1};
-			colorFailed[] = {1, 0.3, 0.2, 1};
-			size = 27;
+		maxSatelliteAlpha = 0;	 // Alpha to 0 by default
+		alphaFadeStartScale = 1.0; 
+		alphaFadeEndScale = 1.1;   // Prevent div/0
+
+		showCountourInterval=2;
+		scaleDefault = 0.1;
+		onMouseButtonClick = "";
+		onMouseButtonDblClick = "";
+
+		class CustomMark {
+			icon = "\ca\ui\data\map_waypoint_ca.paa";
+			color[] = {0, 0, 1, 1};
+			size = 18;
 			importance = 1;
 			coefMin = 1;
 			coefMax = 1;
 		};
 
+		class Legend {
+			x = -1;
+			y = -1;
+			w = 0.340000;
+			h = 0.152000;
+			font = "TahomaB";
+			sizeEx = 0.039210;
+			colorBackground[] = {0.906000, 0.901000, 0.880000, 0.800000};
+			color[] = {0, 0, 0, 1};
+		};
+
+		class Bunker {
+			icon = "\ca\ui\data\map_bunker_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 14;
+			importance = "1.5 * 14 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Bush {
+			icon = "\ca\ui\data\map_bush_ca.paa";
+			color[] = {0.550000, 0.640000, 0.430000, 1};
+			size = 14;
+			importance = "0.2 * 14 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class BusStop {
+			icon = "\ca\ui\data\map_busstop_ca.paa";
+			color[] = {0, 0, 1, 1};
+			size = 10;
+			importance = "1 * 10 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Command {
+			icon = "\ca\ui\data\map_waypoint_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 18;
+			importance = 1;
+			coefMin = 1;
+			coefMax = 1;
+		};
+
+		class Cross {
+			icon = "\ca\ui\data\map_cross_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 16;
+			importance = "0.7 * 16 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Fortress {
+			icon = "\ca\ui\data\map_bunker_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 16;
+			importance = "2 * 16 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Fuelstation {
+			icon = "\ca\ui\data\map_fuelstation_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 16;
+			importance = "2 * 16 * 0.05";
+			coefMin = 0.750000;
+			coefMax = 4;
+		};
+
+		class Fountain {
+			icon = "\ca\ui\data\map_fountain_ca.paa";
+			color[] = {0, 0.350000, 0.700000, 1};
+			size = 12;
+			importance = "1 * 12 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Hospital {
+			icon = "\ca\ui\data\map_hospital_ca.paa";
+			color[] = {0.780000, 0, 0.050000, 1};
+			size = 16;
+			importance = "2 * 16 * 0.05";
+			coefMin = 0.500000;
+			coefMax = 4;
+		};
+
+		class Chapel {
+			icon = "\ca\ui\data\map_chapel_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 16;
+			importance = "1 * 16 * 0.05";
+			coefMin = 0.900000;
+			coefMax = 4;
+		};
+
+		class Church {
+			icon = "\ca\ui\data\map_church_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 16;
+			importance = "2 * 16 * 0.05";
+			coefMin = 0.900000;
+			coefMax = 4;
+		};
+
+		class Lighthouse {
+			icon = "\ca\ui\data\map_lighthouse_ca.paa";
+			color[] = {0.780000, 0, 0.050000, 1};
+			size = 20;
+			importance = "3 * 16 * 0.05";
+			coefMin = 0.900000;
+			coefMax = 4;
+		};
+
+		class Quay {
+			icon = "\ca\ui\data\map_quay_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 16;
+			importance = "2 * 16 * 0.05";
+			coefMin = 0.500000;
+			coefMax = 4;
+		};
+
+		class Rock {
+			icon = "\ca\ui\data\map_rock_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 12;
+			importance = "0.5 * 12 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Ruin {
+			icon = "\ca\ui\data\map_ruin_ca.paa";
+			color[] = {0.780000, 0, 0.050000, 1};
+			size = 16;
+			importance = "1.2 * 16 * 0.05";
+			coefMin = 1;
+			coefMax = 4;
+		};
+
+		class SmallTree {
+			icon = "\ca\ui\data\map_smalltree_ca.paa";
+			color[] = {0.550000, 0.640000, 0.430000, 1};
+			size = 12;
+			importance = "0.6 * 12 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Stack {
+			icon = "\ca\ui\data\map_stack_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 20;
+			importance = "2 * 16 * 0.05";
+			coefMin = 0.900000;
+			coefMax = 4;
+		};
+
+		class Tree {
+			icon = "\ca\ui\data\map_tree_ca.paa";
+			color[] = {0.550000, 0.640000, 0.430000, 1};
+			size = 12;
+			importance = "0.9 * 16 * 0.05";
+			coefMin = 0.250000;
+			coefMax = 4;
+		};
+
+		class Tourism {
+			icon = "\ca\ui\data\map_tourism_ca.paa";
+			color[] = {0.780000, 0, 0.050000, 1};
+			size = 16;
+			importance = "1 * 16 * 0.05";
+			coefMin = 0.700000;
+			coefMax = 4;
+		};
+
+		class Transmitter {
+			icon = "\ca\ui\data\map_transmitter_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 20;
+			importance = "2 * 16 * 0.05";
+			coefMin = 0.900000;
+			coefMax = 4;
+		};
+
+		class ViewTower {
+			icon = "\ca\ui\data\map_viewtower_ca.paa";
+			color[] = {0, 0.900000, 0, 1};
+			size = 16;
+			importance = "2.5 * 16 * 0.05";
+			coefMin = 0.500000;
+			coefMax = 4;
+		};
+
+		class Watertower {
+			icon = "\ca\ui\data\map_watertower_ca.paa";
+			color[] = {0, 0.350000, 0.700000, 1};
+			size = 32;
+			importance = "1.2 * 16 * 0.05";
+			coefMin = 0.900000;
+			coefMax = 4;
+		};
+
 		class Waypoint {
-			icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
+			icon = "\ca\ui\data\map_waypoint_ca.paa";
 			size = 20;
 			color[] = {0, 0.900000, 0, 1};
 			importance = "1.2 * 16 * 0.05";
 			coefMin = 0.900000;
 			coefMax = 4;
-		};	
+		};
 		
+		class Task {
+			icon = "\ca\ui\data\map_waypoint_ca.paa";
+			iconCreated = "#(argb,8,8,3)color(1,1,1,1)";
+			iconCanceled = "#(argb,8,8,3)color(0,0,1,1)";
+			iconDone = "#(argb,8,8,3)color(0,0,0,1)";
+			iconFailed = "#(argb,8,8,3)color(1,0,0,1)";
+			colorCreated[] = {1,1,1,1};
+			colorCanceled[] = {1,1,1,1};
+			colorDone[] = {1,1,1,1};
+			colorFailed[] = {1,1,1,1};
+			size = 20;
+			color[] = {0, 0.900000, 0, 1};
+			importance = "1.2 * 16 * 0.05";
+			coefMin = 0.900000;
+			coefMax = 4;
+		};
+
 		class WaypointCompleted {
-			icon = "\A3\ui_f\data\map\mapcontrol\waypointCompleted_ca.paa";
+			icon = "\ca\ui\data\map_waypoint_completed_ca.paa";
 			size = 20;
 			color[] = {0, 0.900000, 0, 1};
 			importance = "1.2 * 16 * 0.05";
@@ -359,263 +585,11 @@
 		};
 
 		class ActiveMarker {
-			icon = "\A3\ui_f\data\map\mapcontrol\waypointCompleted_ca.paa";
+			icon = "\ca\ui\data\map_waypoint_completed_ca.paa";
 			size = 20;
 			color[] = {0, 0.900000, 0, 1};
 			importance = "1.2 * 16 * 0.05";
 			coefMin = 0.900000;
 			coefMax = 4;
-		};		
-
-		class CustomMark {
-			icon = "\A3\ui_f\data\map\mapcontrol\custommark_ca.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 1;
-			coefMax = 1;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Command {
-			icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
-			size = 18;
-			importance = 1;
-			coefMin = 1;
-			coefMax = 1;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class Bush {
-			icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
-			color[] = {0.45, 0.64, 0.33, 0.4};
-			size = 14/2;
-			importance = 0.2 * 14 * 0.05 * 0.05;
-			coefMin = 0.25;
-			coefMax = 4;
-		};
-		
-		class Rock {
-			icon = "\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
-			color[] = {0.1, 0.1, 0.1, 0.8};
-			size = 12;
-			importance = 0.5 * 12 * 0.05;
-			coefMin = 0.25;
-			coefMax = 4;
-		};
-		
-		class SmallTree {
-			icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
-			color[] = {0.45, 0.64, 0.33, 0.4};
-			size = 12;
-			importance = 0.6 * 12 * 0.05;
-			coefMin = 0.25;
-			coefMax = 4;
-		};
-		
-		class Tree {
-			icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
-			color[] = {0.45, 0.64, 0.33, 0.4};
-			size = 12;
-			importance = 0.9 * 16 * 0.05;
-			coefMin = 0.25;
-			coefMax = 4;
-		};
-		
-		class busstop {
-			icon = "\A3\ui_f\data\map\mapcontrol\busstop_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class fuelstation {
-			icon = "\A3\ui_f\data\map\mapcontrol\fuelstation_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class hospital {
-			icon = "\A3\ui_f\data\map\mapcontrol\hospital_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class church {
-			icon = "\A3\ui_f\data\map\mapcontrol\church_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class lighthouse {
-			icon = "\A3\ui_f\data\map\mapcontrol\lighthouse_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class power {
-			icon = "\A3\ui_f\data\map\mapcontrol\power_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class powersolar {
-			icon = "\A3\ui_f\data\map\mapcontrol\powersolar_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class powerwave {
-			icon = "\A3\ui_f\data\map\mapcontrol\powerwave_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class powerwind {
-			icon = "\A3\ui_f\data\map\mapcontrol\powerwind_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class quay {
-			icon = "\A3\ui_f\data\map\mapcontrol\quay_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class shipwreck {
-			icon = "\A3\ui_f\data\map\mapcontrol\shipwreck_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class transmitter {
-			icon = "\A3\ui_f\data\map\mapcontrol\transmitter_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class watertower {
-			icon = "\A3\ui_f\data\map\mapcontrol\watertower_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {1, 1, 1, 1};
-		};
-		
-		class Cross {
-			icon = "\A3\ui_f\data\map\mapcontrol\Cross_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Chapel {
-			icon = "\A3\ui_f\data\map\mapcontrol\Chapel_CA.paa";
-			size = 24;
-			importance = 1;
-			coefMin = 0.85;
-			coefMax = 1.0;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Bunker {
-			icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
-			size = 14;
-			importance = 1.5 * 14 * 0.05;
-			coefMin = 0.25;
-			coefMax = 4;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Fortress {
-			icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
-			size = 16;
-			importance = 2 * 16 * 0.05;
-			coefMin = 0.25;
-			coefMax = 4;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Fountain {
-			icon = "\A3\ui_f\data\map\mapcontrol\fountain_ca.paa";
-			size = 11;
-			importance = 1 * 12 * 0.05;
-			coefMin = 0.25;
-			coefMax = 4;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Ruin {
-			icon = "\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
-			size = 16;
-			importance = 1.2 * 16 * 0.05;
-			coefMin = 1;
-			coefMax = 4;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Stack {
-			icon = "\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
-			size = 20;
-			importance = 2 * 16 * 0.05;
-			coefMin = 0.9;
-			coefMax = 4;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class Tourism {
-			icon = "\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
-			size = 16;
-			importance = 1 * 16 * 0.05;
-			coefMin = 0.7;
-			coefMax = 4;
-			color[] = {0, 0, 0, 1};
-		};
-		
-		class ViewTower {
-			icon = "\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
-			size = 16;
-			importance = 2.5 * 16 * 0.05;
-			coefMin = 0.5;
-			coefMax = 4;
-			color[] = {0, 0, 0, 1};
 		};
 	};

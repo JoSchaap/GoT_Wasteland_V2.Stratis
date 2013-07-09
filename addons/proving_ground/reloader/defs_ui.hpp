@@ -76,7 +76,7 @@
 #define LB_TEXTURES       0x10
 #define LB_MULTI          0x20
 
-#define FontM             "Zeppelin32"
+#define FontM             "TahomaB"
 
 
 #define safezoneX 0.1

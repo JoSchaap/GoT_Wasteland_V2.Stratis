@@ -9,7 +9,7 @@ class RscBackground {
 	text = ""; 
 	ColorBackground[] = {0.48, 0.5, 0.35, 1}; 
 	ColorText[] = {0.1, 0.1, 0.1, 1}; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	SizeEx = 1; 
 };
 
@@ -30,23 +30,22 @@ class RscCombo {
 	w = 0.12; 
 	h = 0.035; 
 	colorSelectBackground[] = {0.543, 0.5742, 0.4102, 1}; 
-	arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
-	arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
+	arrowEmpty = "\ca\ui\data\ui_arrow_combo_ca.paa"; 
+	arrowFull = "\ca\ui\data\ui_arrow_combo_active_ca.paa"; 
 	wholeHeight = 0.45; 
 	color[] = {0, 0, 0, 0.6}; 
 	colorActive[] = {0, 0, 0, 1}; 
 	colorDisabled[] = {0, 0, 0, 0.3}; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	sizeEx = 0.03921; 
-	class ScrollBar
-	{
-		color[] = {1,1,1,0.6};
-		colorActive[] = {1,1,1,1};
-		colorDisabled[] = {1,1,1,0.3};
-		thumb = "#(argb,8,8,3)color(1,1,1,1)";
-		arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
-		arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
-		border = "#(argb,8,8,3)color(1,1,1,1)";
+	class ScrollBar { 
+		color[] = {1, 1, 1, 0.6}; 
+		colorActive[] = {1, 1, 1, 1}; 
+		colorDisabled[] = {1, 1, 1, 0.3}; 
+		thumb = "\ca\ui\data\ui_scrollbar_thumb_ca.paa"; 
+		arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa"; 
+		arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa"; 
+		border = "\ca\ui\data\ui_border_scroll_ca.paa"; 
 	};
 
 };
@@ -62,7 +61,7 @@ class RscEdit {
 	text = ""; 
 	size = 0.2; 
 	style = "0x00 + 0x40"; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	sizeEx = 0.03921; 
 };
 
@@ -74,8 +73,6 @@ class RscIGUIListBox {
 	colorSelect2[] = {0.023529, 0, 0.0313725, 1}; 
 	colorSelectBackground[] = {0.6, 0.8392, 0.4706, 1}; 
 	colorSelectBackground2[] = {0.6, 0.8392, 0.4706, 1}; 
-	colorActive[] = {0,0,0,1};
-	colorDisabled[] = {0,0,0,0.3};
 	period = 0; 
 	colorBackground[] = {0, 0, 0, 1}; 
 	sizeEx = 0.034; 
@@ -91,7 +88,7 @@ class RscIGUIListBox {
 	arrowFull = "#(argb,8,8,3)color(1,1,1,1)"; 
 	type = 5; 
 	style = 16; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	maxHistoryDelay = 1; 
 	autoScrollSpeed = -1; 
 	autoScrollDelay = 5; 
@@ -101,10 +98,10 @@ class RscIGUIListBox {
 		color[] = {1, 1, 1, 0.6}; 
 		colorActive[] = {1, 1, 1, 1}; 
 		colorDisabled[] = {1, 1, 1, 0.3}; 
-		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+		thumb = "\ca\ui\data\igui_scrollbar_thumb_ca.paa"; 
+		arrowFull = "\ca\ui\data\igui_arrow_top_active_ca.paa"; 
+		arrowEmpty = "\ca\ui\data\igui_arrow_top_ca.paa"; 
+		border = "\ca\ui\data\igui_border_scroll_ca.paa"; 
 	};
 };
 
@@ -127,7 +124,7 @@ class RscText {
 	h = 0.037; 
 	w = 0.3; 
 	style = 256; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	SizeEx = 0.03921; 
 };
 
@@ -146,7 +143,7 @@ class RscTitle : RscText {
 	colorText[] = {0.543, 0.5742, 0.4102, 1}; 
 	text = ""; 
 	h = 0.037; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	SizeEx = 0.03921; 
 };
 
@@ -165,35 +162,35 @@ class RscShortcutButton {
 	style = 0; 
 	default = 0; 
 	w = 0.183825; 
-	h = 0.0522876; 
+	h = 0.104575; 
 	periodFocus = 1.2; 
 	periodOver = 0.8; 
-	animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
-	animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
-	animTextureDisabled = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
-	animTextureOver = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\over_ca.paa";
-	animTextureFocused = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\focus_ca.paa";
-	animTexturePressed = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\down_ca.paa";
+	animTextureNormal = "\ca\ui\data\ui_button_normal_ca.paa"; 
+	animTextureDisabled = "\ca\ui\data\ui_button_disabled_ca.paa"; 
+	animTextureOver = "\ca\ui\data\ui_button_over_ca.paa"; 
+	animTextureFocused = "\ca\ui\data\ui_button_focus_ca.paa"; 
+	animTexturePressed = "\ca\ui\data\ui_button_down_ca.paa"; 
+	animTextureDefault = "\ca\ui\data\ui_button_default_ca.paa"; 
 	period = 0.4; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	size = 0.03921; 
 	sizeEx = 0.03921; 
 	text = ""; 
-	soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-	soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-	soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-	soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};	
+	soundEnter[] = {"", 0.09, 1}; 
+	soundPush[] = {"", 0.09, 1}; 
+	soundClick[] = {"\ca\ui\data\sound\new1", 0.07, 1}; 
+	soundEscape[] = {"", 0.09, 1}; 
 	action = ""; 
 
 	class Attributes { 
-		font = "PuristaMedium"; 
+		font = "TahomaB"; 
 		color = "#E5E5E5"; 
 		align = "left"; 
 		shadow = "true"; 
 	};
 
 	class AttributesImage { 
-		font = "PuristaMedium"; 
+		font = "TahomaB"; 
 		color = "#E5E5E5"; 
 		align = "left"; 
 	};
@@ -214,7 +211,7 @@ class RscShortcutButton {
 
 	class TextPos { 
 		left = 0.025; 
-		top = 0.004; 
+		top = 0.034; 
 		right = 0.005; 
 		bottom = 0.005; 
 	};
@@ -229,12 +226,12 @@ class RscIGUIShortcutButton : RscShortcutButton {
 	colorBackground[] = {1, 1, 1, 1}; 
 	colorbackground2[] = {1, 1, 1, 0.85}; 
 	colorDisabled[] = {1, 1, 1, 0.4}; 
-	animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
-	animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
-	animTextureDisabled = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
-	animTextureOver = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\over_ca.paa";
-	animTextureFocused = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\focus_ca.paa";
-	animTexturePressed = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\down_ca.paa";
+	animTextureNormal = "\ca\ui\data\igui_button_normal_ca.paa"; 
+	animTextureDisabled = "\ca\ui\data\igui_button_disabled_ca.paa"; 
+	animTextureOver = "\ca\ui\data\igui_button_over_ca.paa"; 
+	animTextureFocused = "\ca\ui\data\igui_button_focus_ca.paa"; 
+	animTexturePressed = "\ca\ui\data\igui_button_down_ca.paa"; 
+	animTextureDefault = "\ca\ui\data\igui_button_normal_ca.paa"; 
 
 	// Values from class: RscShortcutButton //
 
@@ -248,18 +245,18 @@ class RscIGUIShortcutButton : RscShortcutButton {
 	periodFocus = 1.2; 
 	periodOver = 0.8; 
 	period = 0.4; 
-	font = "PuristaMedium"; 
+	font = "TahomaB"; 
 	size = 0.03921; 
 	sizeEx = 0.03921; 
 	text = ""; 
-	soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-	soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-	soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-	soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};	
+	soundEnter[] = {"", 0.09, 1}; 
+	soundPush[] = {"", 0.09, 1}; 
+	soundClick[] = {"\ca\ui\data\sound\new1", 0.07, 1}; 
+	soundEscape[] = {"", 0.09, 1}; 
 	action = ""; 
 
 	class Attributes { 
-		font = "PuristaMedium"; 
+		font = "TahomaB"; 
 		color = "#E5E5E5"; 
 		align = "center"; 
 		shadow = "true"; 
