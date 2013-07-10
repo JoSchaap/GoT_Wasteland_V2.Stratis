@@ -3,7 +3,6 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 08/12/2012 03:25
 //	@file Args:
-#include "setup.sqf"
 #include "mainMissionDefines.sqf";
 
 if(!isServer) exitwith {};
@@ -13,11 +12,7 @@ private ["_result","_missionMarkerName","_missionType","_startTime","_returnData
 _result = 0;
 _missionMarkerName = "Outpost_Marker";
 _missionType = "Enemy outpost";
-#ifdef __A2NET__
-_startTime = floor(netTime);
-#else
 _startTime = floor(time);
-#endif
 
 diag_log format["WASTELAND SERVER - Main Mission Started: %1",_missionType];
 
@@ -39,26 +34,19 @@ _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
 _vehicleName = "Outpost";
 _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>An<t color='%3'> %2</t>, with special weapons has been spotted near the marker, go capture it. They also seem to have some nice base building materials!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor];
-[nil,nil,rHINT,_hint] call RE;
+messageSystem = _hint;
+publicVariable "messageSystem";
 
 CivGrpM = createGroup civilian;
 [CivGrpM,_randomPos] spawn createMidGroup;
 
 diag_log format["WASTELAND SERVER - Main Mission Waiting to be Finished: %1",_missionType];
-#ifdef __A2NET__
-_startTime = floor(netTime);
-#else
 _startTime = floor(time);
-#endif
 waitUntil
 {
     sleep 1; 
 	_playerPresent = false;
-	#ifdef __A2NET__
-	_currTime = floor(netTime);
-	#else
-    _currTime = floor(time);
-	#endif
+	_currTime = floor(time);
     if(_currTime - _startTime >= mainMissionTimeout) then {_result = 1;};
     _unitsAlive = ({alive _x} count units CivGrpM);
     (_result == 1) OR (_unitsAlive < 1)
@@ -72,13 +60,15 @@ if(_result == 1) then
     {deleteVehicle _x;}forEach units CivGrpM;
     deleteGroup CivGrpM;
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed, better luck next time</t>", _missionType, _vehicleName, failMissionColor, subTextColor];
-	[nil,nil,rHINT,_hint] call RE;
+	messageSystem = _hint;
+	publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
     deleteGroup CivGrpM;
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost has been captured, the special weapons and base parts are now yours to take. Did you bring a truck? Great work!</t>", _missionType, _vehicleName, successMissionColor, subTextColor];
-	[nil,nil,rHINT,_hint] call RE;
+	messageSystem = _hint;
+	publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
 };
 
