@@ -109,7 +109,7 @@ class FSM
     class clean_dead
     {
       name = "clean_dead";
-      init = /*%FSM<STATEINIT""">*/"//diag_log (""CLEANUP: PERFORMING BODY CLEANUP"");" \n
+      init = /*%FSM<STATEINIT""">*/"diag_log (""GoT Wasteland CLEANUP: PERFORMING BODY CLEANUP"");" \n
        "" \n
        "_delQtyP = 0;" \n
        "_delQtyAI = 0;" \n
@@ -137,7 +137,7 @@ class FSM
        "	};" \n
        "} forEach allDead;" \n
        "" \n
-       "diag_log (""GoT Wasteland maintenance: Deleted "" + str(_delQtyP) + "" players, "" + str(_delQtyAI) + "" AI, "" +  str(_delQtyTP) + "" Water, "");" \n
+       "diag_log (""GoT Wasteland maintenance: Deleted "" + str(_delQtyP) + "" players, "" + str(_delQtyAI) + "" AI, "" +  str(_delQtyTP) + "" cluttered items from the dead."");" \n
        "" \n
        "{" \n
        "	//diag_log (""CLEANUP: CHECKING GROUP WITH "" + str(count units _x) + "" UNITS"");" \n
