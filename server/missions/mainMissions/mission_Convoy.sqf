@@ -133,12 +133,12 @@ if(_failed) then
     publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
+	_vehicle setVehicleLock "UNLOCKED";
+	_vehicle setVariable ["R3F_LOG_disabled", false, true];
     // Mission complete
-	{if (vehicle _x != _x) then { vehicle setVehicleLock "UNLOCKED"; }; _x setVehicleLock "UNLOCKED";}forEach units _group;
-    _ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
+	_ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox;
     clearWeaponCargoGlobal _ammobox; 
-	_vehicle setVehicleLock "UNLOCKED";
     [_ammobox,"mission_USSpecial2"] call fn_refillbox;
     _ammobox2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox2;
