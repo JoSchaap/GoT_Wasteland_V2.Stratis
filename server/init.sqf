@@ -31,7 +31,7 @@ diag_log format["WASTELAND SERVER - Server Compile Finished"];
 if (buildingsloot == 1) then {
 	diag_log format["GOT WASTELAND - Placing loot in buildings"];
 	_lootspawnz = [] execVM "server\spawning\lootCreation.sqf";
-	waitUntil{sleep 0.1; scriptDone _lootspawnz};
+//	waitUntil{sleep 0.1; scriptDone _lootspawnz};
 	diag_log format["GOT WASTELAND - Done placing loot in buildings"];
 	};
 
