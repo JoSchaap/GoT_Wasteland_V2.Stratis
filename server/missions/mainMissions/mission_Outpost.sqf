@@ -27,8 +27,7 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
-//_veh = ["outpostUS1","smallbase1"] call BIS_fnc_selectRandom;
-_veh = "JoSchaap01";
+_veh = ["JoSchaap01","JoSchaap02","JoSchaap03"] call BIS_fnc_selectRandom;
 
 _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
