@@ -27,6 +27,8 @@ _display = uiNamespace getVariable "RespawnSelectionDialog";
 _display displayAddEventHandler ["KeyDown", "_return = false; if(respawnDialogActive && (_this select 1) == 1) then {_return = true;}; _return"];
 _respawnText = _display displayCtrl respawn_Content_Text;
 _missionUptimeText = _display displayCtrl respawn_MissionUptime_Text;
+_friendlyCount = 0;
+_enemyCount = 0;
 
 if(playerSide in [west]) then {_side = "Blufor"};
 if(playerSide in [east]) then {_side = "Opfor"};
