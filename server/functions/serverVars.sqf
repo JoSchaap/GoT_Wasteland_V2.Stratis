@@ -14,13 +14,6 @@ if(!X_Server) exitWith {};
 
 diag_log format["WASTELAND SERVER - Initilizing Server Vars"];
 
-CVG_weapons = [];
-CVG_weapons = CVG_rifles;
-CVG_weapons = CVG_weapons + CVG_Scoped;
-CVG_weapons = CVG_weapons + CVG_Heavy;
-CVG_weapons = CVG_weapons + CVG_pistols;
-CVG_weapons = CVG_weapons + CVG_Launchers;
-
 sideMissionPos = "";
 mainMissionPos = "";
 

@@ -1,7 +1,4 @@
-if (!isNill playerMenuHandle) then {
-	terminate playerMenuHandle;
-};
-
+terminate playerMenuHandle;
 playerMenuHandle = [] spawn {
 	waituntil {!isnull player};
 	private ["_veh"];
