@@ -306,7 +306,6 @@ player createDiaryRecord["404games",
 	* Tonic-_- (BIS-forums)<br/>
 	* spunFIN (BIS-forum)<br/><br/>
 	* AWA (OpenDayZ.Net)<br/>
-	* MercyfulFate (GitHub)<br/>
 	* * Thanks ALOT everyone!<br/>
 	<br/>
 "
