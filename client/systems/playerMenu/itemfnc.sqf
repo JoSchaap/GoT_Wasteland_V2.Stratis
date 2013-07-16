@@ -1,4 +1,3 @@
-
 //	@file Version: 1.1
 //	@file Name: itemfnc.sqf
 //	@file Original Author: TAW_Tonic
@@ -60,7 +59,7 @@ switch(_switch) do
                 
                 if (!(doCancelAction)) then {
                 	player setVariable["canfood",(player getVariable "canfood")-1,true];
-					hungerLevel = hungerLevel + 30;
+					hungerLevel = hungerLevel + 50;
 					if(hungerLevel > 100) then {hungerLevel = 100};
                 	mutexScriptInProgress = false;
                 } else {
@@ -90,7 +89,7 @@ switch(_switch) do
                 
                 if (!(doCancelAction)) then {
                 	player setVariable["water",(player getVariable "water")-1,true];
-					thirstLevel = thirstLevel + 50;
+					thirstLevel = thirstLevel + 70;
 					if(thirstLevel > 100) then {thirstLevel = 100};
                 	mutexScriptInProgress = false;
                 } else {
