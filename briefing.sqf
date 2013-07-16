@@ -336,6 +336,7 @@ player createDiaryRecord["404games",
 	* SicSemperTyrannis (iniDB)<br/>
 	* {ZAG}Ed!<br/>
 	* Na-Palm (BIS-Forums)<br/>
+	* MercyfulFate (GitHub)<br/>
 	* * Thanks ALOT for the help/inspiration!<br/>
 	<br/>
 "
