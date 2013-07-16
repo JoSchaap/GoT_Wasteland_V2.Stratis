@@ -16,12 +16,11 @@ while {true} do
     
     //Calculate Health 0 - 100
     _decimalPlaces = 2;
-    _health = damage player;
-    _health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
-    _health = 100 - (_health * 100);
+    _health = 1 - damage player;
+    _health = round (_health * 100);
     
-//  _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\1.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%4 <img size='0.8' image='client\icons\money.paa'/>", _health, hungerLevel, thirstLevel, (player getVariable "cmoney")];
-	_vitals ctrlSetStructuredText parseText format ["%1 <img size='0.7' image='client\icons\money.paa'/><br/>%2 <img size='0.7' image='client\icons\water.paa'/><br/>%3 <img size='0.7' image='client\icons\food.paa'/><br/>%4 <img size='0.7' image='client\icons\1.paa'/>", (player getVariable "cmoney"), thirstLevel, hungerLevel, _health];
+//  _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\1.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%4 <img size='0.8' image='client\icons\money.paa'/>", round _health, round hungerLevel, round thirstLevel, (player getVariable "cmoney")];
+	_vitals ctrlSetStructuredText parseText format ["%1 <img size='0.7' image='client\icons\money.paa'/><br/>%2 <img size='0.7' image='client\icons\water.paa'/><br/>%3 <img size='0.7' image='client\icons\food.paa'/><br/>%4 <img size='0.7' image='client\icons\1.paa'/>", (player getVariable "cmoney"), round thirstLevel, round hungerLevel, round _health];
     _vitals ctrlCommit 0;
         
     if(player != vehicle player) then
