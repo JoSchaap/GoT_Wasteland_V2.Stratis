@@ -20,9 +20,9 @@ disableSerialization;
 private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","_namestr","_index","_groupCreate","_groupInvite","_groupKick","_groupDisband","_groupLeaveButton","_inGroup","_isLeader","_name"];
 
 closeDialog 0;
-_start = createDialog "GroupManagement";			
+_start = createDialog "GroupManagement";	
+waitUntil{!isNull(findDisplay groupManagementDialog)};		
 _dialog = findDisplay groupManagementDialog;
-if not(isNil "_this") then {_display displayAddEventHandler ["KeyDown", "_return = false; if(groupManagmentActive && (_this select 1) == 1) then {_return = true;}; _return"];};
 groupManagmentActive = true;
 _playerListBox = _dialog displayCtrl groupManagementPlayerList;
 _groupListBox = _dialog displayCtrl groupManagementGroupList;

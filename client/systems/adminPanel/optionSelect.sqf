@@ -23,7 +23,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	if not(isNil "_displayMod") then {_modSelect = _displayMod displayCtrl modMenu_option;};
 	if not(isNil "_displayAdmin") then {_adminSelect = _displayAdmin displayCtrl adminMenu_option;};
 	if not(isNil "_displayServerAdmin") then {_serverAdminSelect = _displayServerAdmin displayCtrl serverAdminMenu_option;};
-	if not(isNil "_displayDebug") then {_debugSelect = _displayDebug displayCtrl debugMenu_option;}
+	if not(isNil "_displayDebug") then {_debugSelect = _displayDebug displayCtrl debugMenu_option;};
 	
 	switch (_panelType) do
 	{
