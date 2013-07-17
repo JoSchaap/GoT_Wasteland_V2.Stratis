@@ -63,7 +63,7 @@ _vehicle setVariable ["R3F_LOG_disabled", false, true];
 if(_result == 1) then
 {
 	//Mission Failed.
-    if not(isNil _vehicle) then {deleteVehicle _vehicle;};
+    if not(isNil "_vehicle") then {deleteVehicle _vehicle;};
     {deleteVehicle _x;}forEach units CivGrpM;
     deleteGroup CivGrpM;
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
