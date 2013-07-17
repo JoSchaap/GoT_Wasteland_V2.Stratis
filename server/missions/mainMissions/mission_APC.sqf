@@ -72,8 +72,13 @@ if(_result == 1) then
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
-    deleteGroup CivGrpM;
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The APC has been captured, you can now repair and refuel it. Good work!</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
+	// check if the vehicle is broken, if so delete it and the units
+	if ((damage _vehicle) == 1) then {
+		deleteVehicle _vehicle;
+		{deleteVehicle _x;}forEach units CivGrpM;
+	};
+	deleteGroup CivGrpM;
+    	_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The APC has been captured, you can now repair and refuel it. Good work!</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
 	messageSystem = _hint;
 	publicVariable "messageSystem";
 	//Reset the mission spawn bool
