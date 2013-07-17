@@ -26,7 +26,7 @@ while {true} do
 				if(getPlayerUID _target in _tempArray) then
                 {
                 	_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
-					[_nameString,0,0.8,__REFRESH,0,0,3] spawn bis_fnc_dynamicText;	    
+					[_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText;	    
                 };				
 			};
 		};
@@ -38,7 +38,7 @@ while {true} do
 				if(getPlayerUID _target in _tempArray) then
                 {
 					_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
-					[_nameString,0,0.8,__REFRESH,0,0,3] spawn bis_fnc_dynamicText;		    
+					[_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText;		    
                 };				
 			};
 		}; 	

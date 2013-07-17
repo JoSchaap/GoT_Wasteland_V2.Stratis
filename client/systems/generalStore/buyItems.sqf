@@ -7,7 +7,7 @@
 
 #include "dialog\genstoreDefines.sqf";
 disableSerialization;
-if(_Purchaseactive == 1) exitWith {hint "Please do not spam the purschase button.. Wait for the transaction to complete"};
+if not(isNil "_Purchaseactive") then {if(_Purchaseactive == 1) exitWith {hint "Please do not spam the purschase button.. Wait for the transaction to complete"};};
 if(genStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
 
 //Initialize Values

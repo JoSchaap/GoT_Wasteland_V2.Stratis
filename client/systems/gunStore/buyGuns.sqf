@@ -6,7 +6,7 @@
 //	@file Args: [int (0 = buy to player 1 = buy to crate)]
 
 #include "dialog\gunstoreDefines.sqf";
-if(_Purchaseactive == 1) exitWith {hint "Please do not spam the purschase button.. Wait for the transaction to complete"};
+if not(isNil "_Purchaseactive") then {if(_Purchaseactive == 1) exitWith {hint "Please do not spam the purschase button.. Wait for the transaction to complete"};};
 if(gunStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
 _Purchaseactive = 1;
 private ["_name"];
