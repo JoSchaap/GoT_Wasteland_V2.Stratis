@@ -5,7 +5,7 @@
 //	@file Args:
 
 disableSerialization;
-private["_ui","_hud","_food","_water"];
+private["_ui","_hud","_food","_water","_vitals","_hudVehicle","_health","_decimalPlaces","_tempString","_yOffset","_vehicle"];
 
 while {true} do
 {
@@ -52,7 +52,8 @@ while {true} do
 
         if(isStreamFriendlyUIEnabled) then
         {
-        	_tempString = format ["<img image='client\icons\logo.paa'/>"];
+        	_tempString = format ["<img image='client\icons\logo.paa'/><br/>GoT<br/>Wasteland<br/>v2.3<br/>[StreamFriendly:ON]<br/>"];
+			_yOffset = _yOffset + 0.20;
         	_hudVehicle ctrlSetStructuredText parseText _tempString;
         } else {
         	_hudVehicle ctrlSetStructuredText parseText _tempString;

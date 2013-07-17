@@ -123,7 +123,7 @@ waitUntil
 if(_failed) then
 {
     // Mission failed
-    deleteVehicle _vehicle;
+    if not(isNil _vehicle) then {deleteVehicle _vehicle;};
 	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units _group;
 	{deleteVehicle _x;}forEach units _group;
 	deleteGroup _group; 
