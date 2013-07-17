@@ -14,16 +14,16 @@ private ["_panelType","_displayAdmin","_displayMod","_displayServerAdmin","_disp
 _uid = getPlayerUID player;
 if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
 	_panelType = _this select 0;
-	
+
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
 	_displayMod = uiNamespace getVariable "ModMenu";
 	_displayServerAdmin = uiNamespace getVariable "ServerAdminMenu";
 	_displayDebug = uiNamespace getVariable "DebugMenu";
 	
-	_modSelect = _displayMod displayCtrl modMenu_option;
-	_adminSelect = _displayAdmin displayCtrl adminMenu_option;
-	_serverAdminSelect = _displayServerAdmin displayCtrl serverAdminMenu_option;
-	_debugSelect = _displayDebug displayCtrl debugMenu_option;
+	if not(isNil "_displayMod") then {_modSelect = _displayMod displayCtrl modMenu_option;};
+	if not(isNil "_displayAdmin") then {_adminSelect = _displayAdmin displayCtrl adminMenu_option;};
+	if not(isNil "_displayServerAdmin") then {_serverAdminSelect = _displayServerAdmin displayCtrl serverAdminMenu_option;};
+	if not(isNil "_displayDebug") then {_debugSelect = _displayDebug displayCtrl debugMenu_option;}
 	
 	switch (_panelType) do
 	{
