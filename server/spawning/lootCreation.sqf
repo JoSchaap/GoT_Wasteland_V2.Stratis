@@ -4,8 +4,8 @@
 //	Adjusted for Arma3 Wasteland use by: [GoT] JoSchaap (GoT2DayZ.nl), 
 //	Player near town spawning concept by: Na_Palm (BIS-Forums)
 
-    _odd1 = 35;						//The odds that a building is selected to place loot.
-    _odd2 = 25;						//The odds that the selected building's spots will have loot(almost like odds per room).
+    _odd1 = 45;						//The odds that a building is selected to place loot.
+    _odd2 = 30;						//The odds that the selected building's spots will have loot(almost like odds per room).
 	_odditem = 40;					//Chance of item instead of weapon
 	_oddfuelcan = 25;				//Chance of a spawned fuelcan to be full instead of empty
 	_spawnradius = 50;				//Distance added to the radius around city's original marker to spawn loot (expands the radius with this value)
