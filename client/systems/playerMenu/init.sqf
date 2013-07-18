@@ -15,17 +15,8 @@ _moneytext = _Dialog displayCtrl money_text;
 _mvalue = _Dialog displayCtrl money_value;
 _rogue = _Dialog displayCtrl rogue_text;
 _uptime = _Dialog displayCtrl uptime_text;
-
-// streamfriendly users should not get the group dialog
-if(isStreamFriendlyUIEnabled) then
-	{
-		_groupButton ctrlShow false;
-		_streamtext = _Dialog displayCtrl stream_text;
-	} else {
-		_streamtext = _Dialog ctrlShow false;
-		_groupButton = _Dialog displayCtrl groupButton;
-	};
-
+_streamtext = _Dialog displayCtrl stream_text;
+_groupButton = _Dialog displayCtrl groupButton;
 _foodtext ctrlSettext format["%1 / 100", round(hungerLevel)];
 _watertext ctrlSetText format["%1 / 100", round(thirstLevel)];
 _moneytext ctrlSetText format["%1", player getVariable "cmoney"];
@@ -51,3 +42,7 @@ _mIndex = _mvalue lbadd "$5000"; _mvalue lbSetData [(lbSize _mvalue)-1, "5000"];
 // {
 // 	_groupButton ctrlShow false;    
 // };
+
+// streamfriendly users should not get the group dialog
+if(isStreamFriendlyUIEnabled) then {_groupButton ctrlShow false;} else {_streamtext = _Dialog ctrlShow false;};
+
