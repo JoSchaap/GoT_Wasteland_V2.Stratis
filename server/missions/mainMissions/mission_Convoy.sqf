@@ -25,6 +25,7 @@ _createVehicle = {
     _vehicle setDir _direction;
     clearMagazineCargoGlobal _vehicle;
     clearWeaponCargoGlobal _vehicle;
+	_vehicle setVariable ["vehicleChecksum",call vChecksum,true];
     _group addVehicle _vehicle;
     
     _soldier = [_group, _position] call createRandomSoldier; 

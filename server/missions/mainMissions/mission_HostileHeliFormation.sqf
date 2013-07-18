@@ -23,6 +23,7 @@ _createVehicle = {
     
     _vehicle = _type createVehicle _position;
     _vehicle setDir _direction;
+	_vehicle setVariable ["vehicleChecksum",call vChecksum,true];
     _grouphsq addVehicle _vehicle;
     
     _soldier = [_grouphsq, _position] call createRandomSoldier; 

@@ -25,6 +25,7 @@ _createVehicle = {
     _vehicle setDir _direction;
     clearMagazineCargoGlobal _vehicle;
     clearWeaponCargoGlobal _vehicle;
+	_vehicle setVariable ["vehicleChecksum",call vChecksum,true];
     _groupsm addVehicle _vehicle;
     
     _soldier = [_groupsm, _position] call createRandomSoldier; 
@@ -71,7 +72,7 @@ _waypoints = [
 {
     _waypoint = _groupsm addWaypoint [_x, 0];
     _waypoint setWaypointType "MOVE";
-    _waypoint setWaypointCompletionRadius 65;
+    _waypoint setWaypointCompletionRadius 70;
     _waypoint setWaypointCombatMode "GREEN"; // Defensiv behaviour
     _waypoint setWaypointBehaviour "SAFE"; // Force convoy to normaly drive on the street.
     _waypoint setWaypointFormation "STAG COLUMN";
