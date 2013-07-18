@@ -19,7 +19,7 @@ _veh setVehicleAmmo _ammo;
 _veh setdamage _damage;
 
 _veh setVehicleLock "LOCKED";
-_veh setVariable["vehicleChecksum",call vChecksum,true]; 
+_veh setVariable ["vehicleChecksum",call vChecksum,true]; 
 _veh setVariable ["R3F_LOG_disabled", false, true];
 
 clearMagazineCargoGlobal _veh;
