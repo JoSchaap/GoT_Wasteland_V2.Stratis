@@ -77,15 +77,7 @@ class playerSettings {
 			sizeEx = 0.025;
 			x = 0.03; y = 0.40;
 			w = 0.3; h = 0.02;
-		};	
-
-        class streamText : w_RscText {
-			idc = stream_text;
-            text = "StreamFriendlyUI:(ON)";
-			sizeEx = 0.03;
-			x = 0.150; y = 0.68;
-			w = 0.3; h = 0.05;
-		};
+		};			
 	};
 	
 	class controls {
@@ -138,7 +130,7 @@ class playerSettings {
 			x = 0.150; y = 0.68;
 			w = 0.225; h = 0.033 * safezoneH;
 		};
-        
+
 		class btnDistanceNear : w_RscButton {
 			text = "Near";
 			onButtonClick = "setViewDistance 1100;";
