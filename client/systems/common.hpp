@@ -143,7 +143,7 @@ class w_RscEdit
 
     text = "";
     colorText[] = {1,1,1,1};
-
+    colorDisabled[] = {0,0,0,0.3}; 
     autocomplete = false;
     colorSelection[] = {0,0,0,1};
 };
