@@ -56,7 +56,7 @@ FZF_IC_Icons =
     };
     if (_make_icons)then {
         _pIcons = [];
-		private "_Plicon";
+		private ["_Plicon"];
 		switch(str(playerSide)) do {
 			case "WEST": {
 				_Plicon = "client\icons\igui_side_blufor_ca.paa";
@@ -76,7 +76,7 @@ FZF_IC_Icons =
         player setVariable ["FZF_IC_Hud_pIcons", _pIcons];
     };
 
-	private "_index";
+	private ["_index"];
 	_index = 0;
     {
         private ["_pos","_unit", "_distance", "_name"];

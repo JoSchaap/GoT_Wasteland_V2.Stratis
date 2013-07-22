@@ -32,7 +32,7 @@ if (isServer) then
 		
 	[_unit, _packetKey, _assignPacketKey, _checksum, _assignChecksum] spawn
 	{
-		private "_unit";
+		private ["_unit"];
 		_unit = _this select 0;
 		
 		while { alive _unit } do { sleep 1 };

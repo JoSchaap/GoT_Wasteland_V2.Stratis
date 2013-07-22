@@ -6,7 +6,7 @@
 
 if (typeName _this == "ARRAY" && {count _this > 4}) then
 {
-	private "_sentChecksum";
+	private ["_sentChecksum"];
 	_sentChecksum = _this select 4;
 
 	if (_sentChecksum == _flagChecksum) then

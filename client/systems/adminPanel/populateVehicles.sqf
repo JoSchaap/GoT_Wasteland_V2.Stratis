@@ -100,7 +100,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	    };
 	    case 4:
 	    {
-			private "_hackedVehicles";
+			private ["_hackedVehicles"];
 			_hackedVehicles = call findHackedVehicles;
 			
 	    	{

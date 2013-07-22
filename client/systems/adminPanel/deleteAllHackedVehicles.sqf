@@ -3,7 +3,7 @@ private ["_hackedVehicles","_check","_vehicleType"];
 _hackedVehicles = call findHackedVehicles;
 
 {
-	private "_hackedVehicle";
+	private ["_hackedVehicle"];
 	_hackedVehicle = _x select 0;
 	
 	_vehicleType = typeOf _hackedVehicle;

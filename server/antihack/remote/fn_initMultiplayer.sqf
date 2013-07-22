@@ -16,7 +16,7 @@
 
 if (isnil _mpPacketKey) then {
 	[_mpPacketKey] spawn {
-		private "_mpPacketKey";
+		private ["_mpPacketKey"];
 		_mpPacketKey = _this select 0;
 		
 		waituntil {!isnull cameraon || isDedicated || !hasInterface};
