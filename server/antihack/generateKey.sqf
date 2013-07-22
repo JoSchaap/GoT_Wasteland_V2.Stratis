@@ -1,23 +1,32 @@
-//	@file Version: 1.0
+//	@file Version: 1.1
 //	@file Name: generateKey.sqf
 //	@file Author: AgentRev
 //	@file Created: 08/06/2013 01:07
 
-private "_key";
+private ["_key", "_char"];
 _key = [];
 
-for "_x" from 1 to 64 do
+for "_x" from 0 to (floor random 33 + 31) do
 {
-	_char = floor (random 36);
-	
-	if (_char < 10) then {
-		_char = _char + 48;
+	if (_x != 0) then
+	{
+		_char = floor random 36;
 	}
-	else {
-		_char = _char - 10 + 65;
+	else
+	{
+		_char = floor random 26 + 10;
 	};
 	
-	_key set [(_x - 1), _char];		
+	if (_char < 10) then
+	{
+		_char = _char + 48;
+	}
+	else
+	{
+		_char = _char + 55;
+	};
+	
+	_key set [_x, _char];		
 };
 
 toString _key

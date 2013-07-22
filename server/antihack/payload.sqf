@@ -1,27 +1,42 @@
+
 //	@file Version: 1.0
 //	@file Name: payload.sqf
-//	@file Author: AgentRev (also many thanks to the unknown author of the original ANTI-HACK v0.6.3)
+//	@file Author: Originally made by AXA from OpenDayZ.net, improved by AgentRev
 //	@file Created: 01/06/2013 21:31
 
-if (isServer) exitWith {};
+if (isDedicated) exitWith {};
+
+private ["_cheatFlag", "_cfgPatches", "_patchClass", "_defaultRecoil", "_currentRecoil", "_recoilDifference", "_sign"];
+
 waitUntil {!isNull player};
-private ["_cheatFlag", "_defaultRecoil"];
 _defaultRecoil = unitRecoilCoefficient player;
 
-// diag_log "ANTI-HACK 0.7.2 starting...";
+// diag_log "ANTI-HACK 0.8.0 starting...";
+
+_cfgPatches = configFile >> "CfgPatches";
+
+for "_i" from 0 to (count _cfgPatches - 1) do
+{
+    _patchClass = _cfgPatches select _i;
+	
+    if (isClass _patchClass && {(toLower configName _patchClass) in ["devcon","loki_lost_key"]}) then
+    {
+        _cheatFlag = ["hacking addon", configName _patchClass];
+    };
+};
 
 {
 	if (loadFile _x != "") exitWith
 	{
-		// diag_log "ANTI-HACK 0.7.2: Found a hack menu!";
+		// diag_log "ANTI-HACK 0.8.0: Found a hack menu!";
 
 		_cheatFlag = ["hack menu", _x];
 	};
-} forEach ["used for hacking", "@DevCon\DevCon.pbo", "@ExtData\addons\loki_lost_key.pbo", "@ExtData\addons\loki_lost_key_models.pbo", "@ExtData\loki_lost_key.pbo", "@ExtData\loki_lost_key_models.pbo", "addons\@DevCon\DevCon.pbo", "addons\@ExtData\addons\loki_lost_key.pbo", "addons\@ExtData\addons\loki_lost_key_models.pbo", "addons\@ExtData\loki_lost_key.pbo", "addons\@ExtData\loki_lost_key_models.pbo", "crinkly\keymenu.sqf", "DevCon.pbo", "fazeddays.sqf", "jestersMENU\exec.sqf", "LystoArma3\start.sqf", "menu\exec.sqf", "menu\initmenu.sqf", "scripts\ajmenu.sqf", "scripts\defaultmenu.sqf", "scripts\exec.sqf", "scr\start.sqf", "ShadowyFaze\exec.sqf", "startup.sqf", "vet@folder\vet@start.sqf", "WookieMenu.sqf", "Wookie_Beta\start.sqf", "wookie_wuat\startup.sqf", "wuat\exec.sqf", "wuat\screen.sqf", "ShitMyNigga\Normal\player\makers.sqf", "ShitMyNigga\Normal\targetplayer\explode_target.sqf", "ShitMyNigga\Normal\all\buildSwastika.sqf", "WookieMenuV5.sqf"];
+} forEach ["used for hacking", "wuat\screen.sqf", "menu\exec.sqf", "scripts\fazeddays.sqf", "vet@folder\vet@start.sqf", "WookieMenuV5.sqf", "menu\initmenu.sqf", "scripts\WookieMenuFinal.sqf", "LystoArma3\start.sqf", "fazeddays.sqf", "ShadowyFaze\exec.sqf", "WookieMenuFinal.sqf", "wuat\exec.sqf", "crinkly\keymenu.sqf", "scripts\ajmenu.sqf", "Wookie_Beta\start.sqf", "jestersMENU\exec.sqf", "scripts\WookieMenuV5.sqf", "scripts\WookieMenu.sqf", "scr\start.sqf", "WookieMenu.sqf", "wookie_wuat\startup.sqf", "scripts\defaultmenu.sqf"];
 
-// diag_log "ANTI-HACK 0.7.2: Starting loop!";
+// diag_log "ANTI-HACK 0.8.0: Starting loop!";
 
-// diag_log "ANTI-HACK 0.7.2: Detection of hack variables started!";
+// diag_log "ANTI-HACK 0.8.0: Detection of hack variables started!";
 
 while { true } do
 {			
@@ -29,18 +44,24 @@ while { true } do
 	
 	if (isNil "_cheatFlag") then 
 	{
-		// diag_log "ANTI-HACK 0.7.2: Recoil hack check started!";
+		// diag_log "ANTI-HACK 0.8.0: Recoil hack check started!";
 		
-		private ["_currentRecoil", "_recoilDifference"];
 		_currentRecoil = unitRecoilCoefficient player;
 		
-		if (_currentRecoil != _defaultRecoil) then
+		if ((_currentRecoil < _defaultRecoil - 0.001 || _currentRecoil > _defaultRecoil + 0.001) && {_defaultRecoil != -1 && _currentRecoil != -1}) then
 		{
-			// diag_log "ANTI-HACK 0.7.2: Detected recoil hack!";
+			// diag_log "ANTI-HACK 0.8.0: Detected recoil hack!";
 			
 			_recoilDifference = ((_currentRecoil / _defaultRecoil) - 1) * 100;
+			_sign = "";
 			
-			_cheatFlag = ["no recoil", (if (_recoilDifference > 0) then { "+" } else { "" }) + (format ["%1", _recoilDifference]) + "% difference"];
+			switch (true) do
+			{
+				case (_recoilDifference > 0): { _sign = "+" };
+				case (_recoilDifference < 0): { _sign = "-" };
+			};
+			
+			_cheatFlag = ["recoil hack", _sign + (str ceil abs _recoilDifference) + "% difference"];
 		};
 	};
 	
@@ -48,12 +69,12 @@ while { true } do
 	{
 		waitUntil {time > 0.1};
 		
-		[[name player, getPlayerUID player, _cheatFlag select 0, _cheatFlag select 1, _flagChecksum], "flagHandler", false, false] call BIS_fnc_MP;
+		diag_log str [profileName, getPlayerUID player, _cheatFlag select 0, _cheatFlag select 1];
 		
-		// Where is your god now?
+		[[profileName, getPlayerUID player, _cheatFlag select 0, _cheatFlag select 1, _flagChecksum], "flagHandler", false, false] call TPG_fnc_MP;
 		
 		endMission "LOSER";
-				
+		
 		for "_i" from 0 to 99 do
 		{
 			(findDisplay _i) closeDisplay 0;
