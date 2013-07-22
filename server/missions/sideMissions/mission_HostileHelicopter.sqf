@@ -29,8 +29,9 @@ _createVehicle = {
     _soldier = [_groupsm, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
     _soldier = [_groupsm, _position] call createRandomSoldier; 
-	_soldier assignAsGunner _vehicle;
+    _soldier assignAsGunner _vehicle;
     _soldier moveInTurret [_vehicle, [0]];  
+    _vehicle setVehicleLock "LOCKED";
     _vehicle
 };
 
@@ -119,7 +120,7 @@ if(_failed) then
     diag_log format["WASTELAND SERVER - Side Mission Failed: %1",_missionType];
 } else {
     // Mission complete
-
+    if not(isNil "_vehicle") then {_vehicle setVehicleLock "UNLOCKED";};
     _ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox;
     clearWeaponCargoGlobal _ammobox; 

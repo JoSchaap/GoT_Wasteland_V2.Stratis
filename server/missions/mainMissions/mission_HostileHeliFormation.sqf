@@ -38,7 +38,7 @@ _createVehicle = {
 	   _soldier assignAsGunner _vehicle;
        _soldier moveInTurret [_vehicle, [0]];
     };
-    
+    _vehicle setVehicleLock "LOCKED";
     _vehicle
 };
 
@@ -149,6 +149,7 @@ if(_failed) then
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
     // Mission complete
+	if not(isNil "_vehicle") then {_vehicle setVehicleLock "UNLOCKED";};
     _ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox;
     clearWeaponCargoGlobal _ammobox; 
