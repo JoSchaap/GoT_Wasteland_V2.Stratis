@@ -280,19 +280,42 @@ player createDiaryRecord["changelog",
 		[Added] working fuelcans that can be dropped<br/>
 		[Added] new interface for general stores<br/>
 		[Added] more variaty in base building parts<br/>
-		[Added] 45acp suppressor<br/>
+		[Added] new handguns and surpressors<br/>
+		[Added] new SMG's and optics/surpressors<br/>
 		[Added] Independent SDV<br/>
 		[Added] camo blackhawk<br/>
+		[Added] New APC's<br/>
+		[Added] New outposts for the outpost mission<br/>
+		[Added] New antihack script by AWA, AgentREV and Tonic<br/>
+		[Added] Improv. roof to general stores<br/>
+		[Added] Name censoring in group-menu for StreamFriendlys<br/>
+		[Fixed] Name censoring when in a vehicle for StreamFriendlys<br/>
+		[Fixed] Some missions did not announce themselves<br/>
+		[Fixed] AI not despawning on APC mission<br/>
 		[Fixed] balance between weapon/item spawns in buildings<br/>
 		[Fixed] added fuelcans and repairkits to cleanup<br/>
 		[Fixed] Height issue with scaffolding basepart<br/>
+		[Fixed] Undefined variable errors in the original code<br/>
+		[Fixed] Group invite not announcing to invited player<br/>
+		[Fixed] Server cleanup now fully functional<br/>
+		[Fixed] Various performance improvements in the scripts<br/>
+		[Fixed] Various issues with unlocked mission vehicles<br/>
+		[Fixed] Selling prices of rifles (no more 25 bucks)<br/>
+		[Fixed] Gunstore purchase exploit (spamming buy button)<br/>
+		[Changed] Gametype: changed to SANDBOX <br/>
+		[Changed] Survival system from decimals to percentages<br/>
+		[Changed] Death of hunger/thirst by HPdrain instead of instant<br/>
+		[Changed] Food/Water drainage and gain from items<br/>
+		[Changed] Stores can also be openned from actionmenu<br/>
 		[Changed] Loot in buildings is spawned when a player enters town<br/>
 		[Changed] Loot in buildings now respawns after 30mins<br/>
 		[Changed] Loot in buildings 25% chance of fuel inside fuelcans<br/>
 		[Changed] Fuel cans (full or empty) can be dropped<br/>
 		[Changed] Repairkits added to loot-table<br/>
-		[Changed] fuel cans added to loot-table<br/>
+		[Changed] fuel cans empty and full added to loot-table<br/>
 		[Changed] players spawn without a fuelcan<br/>
+		[Changed] Hostile helicopter misisons use random helicopters<br/>
+		[Changed] amount of objects and vehicles reduced and more random<br/>
 		[Changed] Locked baseparts will be saved on server restart<br/>
 		*- After restart the baseparts will be spawned UNLOCKED!<br/>
 		*- please bare with me if there are still issues<br/>
