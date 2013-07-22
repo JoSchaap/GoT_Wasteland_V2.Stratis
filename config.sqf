@@ -99,9 +99,11 @@ accessoriesArray = [
     ["Suppressor 6.5mm(LMG)","muzzle_snds_H_MG", 150,"item"],
 	["Suppressor 7.62mm","muzzle_snds_B", 150,"item"],
     ["Flash Light","acc_flashlight", 40,"item"],
-    ["Holosight","optic_Holosight", 90,"item"],
 	["ACO Sight","optic_Aco", 80,"item"],
     ["ACO Sight(Green)","optic_ACO_grn", 80,"item"], 
+	["ACO Sight(SMG)","optic_aco_smg", 70,"item"],
+    ["Holosight","optic_Holosight", 90,"item"],
+	["Holosight(SMG)","optic_Holosight_smg", 80,"item"],
 	["RCO Sight","optic_Hamr", 190,"item"],
     ["ARCO Sight","optic_Arco", 190,"item"],
     ["MRCO Sight","optic_MRCO", 190,"item"],
@@ -159,10 +161,10 @@ accessoriesArray = [
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
+	["Bottled Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
 	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",30,15],
 	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa",500,500],
-//	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
+	["Improv. roof","camonet",localize "STR_WL_ShopDescriptions_Camo","client\icons\logo.paa",50,20],
 	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",150,75],
     ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",50,25]
 ];
