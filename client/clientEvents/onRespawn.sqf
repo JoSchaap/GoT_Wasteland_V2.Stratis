@@ -16,6 +16,7 @@ _corpse removeAction playerMenuId;
 {
 	_corpse removeAction _x;
 } forEach aActionsIDs;
+// The actions from mf_player_actions are removed in onKilled.
 
 player call playerSetup;
 waitUntil {playerSetupComplete};

@@ -1,6 +1,6 @@
 //	@file Version: 1.0
 //	@file Name: onKilled.sqf
-//	@file Author: [404] Deadbeat
+//	@file Author: [404] Deadbeat, MercyfulFate
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
@@ -68,6 +68,7 @@ private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
 _to_delete = [];
 _to_delete_quick = [];
+[_player, objNull] call mf_player_actions_refresh;
 
 if((_player getVariable "cmoney") > 0) then {
 	_m = "Land_Sack_F" createVehicle (position _player);
@@ -76,40 +77,11 @@ if((_player getVariable "cmoney") > 0) then {
 	_to_delete = _to_delete + [_m];
 };
 
-if((_player getVariable "canfood") > 0) then {
-	for "_a" from 1 to (_player getVariable "canfood") do {	
-		_a = "Land_Basket_F" createVehicle (position _player);
-		_to_delete = _to_delete + [_a];
+{
+	for "_i" from 1 to (_x select 1) do {
+		(_x select 0) call mf_inventory_drop;
 	};
-};
-
-if((_player getVariable "water") > 0) then {
-	for "_b" from 1 to (_player getVariable "water") do {	
-		_b = "Land_Bucket_F" createVehicle (position _player);
-		_to_delete = _to_delete + [_b];
-	};
-};
-
-if((_player getVariable "repairkits") > 0) then {
-	for "_c" from 1 to (_player getVariable "repairkits") do {	
-		_c = "Land_Suitcase_F" createVehicle (position _player);
-		_to_delete = _to_delete + [_c];
-	};
-};
-
-if((_player getVariable "fuelFull") > 0) then {
-	_d = "Land_CanisterFuel_F" createVehicle (position _player);
-	_d setVariable["fuel", true, true];
-	_d setVariable ["owner", "world", true];
-	_to_delete = _to_delete + [_d];
-};
-
-if((_player getVariable "fuelEmpty") > 0) then {
-	_e = "Land_CanisterFuel_F" createVehicle (position _player);
-	_e setVariable["fuel", false, true];
-	_e setVariable ["owner", "world", true];
-	_to_delete = _to_delete + [_e];
-};
+} forEach call mf_inventory_all;
 
 true spawn {
 	waitUntil {playerRespawnTime < 2};

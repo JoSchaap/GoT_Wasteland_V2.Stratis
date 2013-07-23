@@ -5,6 +5,7 @@
 //	@file Description: The main init.
 
 #include "setup.sqf"
+#define DEBUG true
 
 // base saving can only be enabled if the server is running the @inidb mod!
 // base building parts that are locked, including food/water supplys that are locked will be saved during the restart
@@ -24,6 +25,42 @@ X_JIP = false;
 hitStateVar = false;
 versionName = "GoT Wasteland v2.3";
 
+// Compile a function from a file.
+// if in debug mode, the function will be dyncamically compiled every call.
+// if not in debug mode, the function will be compileFinal'd
+// example1: my_fnc_name = ["path/to/folder", "my_fnc.sqf"] call mf_compile;
+// example1: my_fnc_name = ["path/to/folder/my_fnc.sqf"] call mf_compile;
+// later in the code you can simply use call my_fnc_name;
+mf_compile = {
+	private "_path";
+	_path = "";
+	if (typeName _this == "STRING") then {
+		_path = _this;
+	} else {
+		_path = format["%1\%2", _this select 0, _this select 1];
+	};
+	
+	if (DEBUG) then {
+		compile format['call compile preProcessFileLineNumbers "%1"', _path];
+	} else {
+		compileFinal preProcessFileLineNumbers _path;
+	};
+};
+
+// Simple command I use to make initialization scripts clean and simple.
+// uses mf_ namespace to avoid any issues.
+// TODO compilefinal this shit.
+mf_init = {
+	private "_path";
+	_path = "";
+	if (typeName _this == "STRING") then {
+		_path = _this;
+	} else {
+		_path = format["%1\%2", _this select 0, _this select 1];
+	};
+
+	_path call compile preProcessFileLineNumbers format["%1\init.sqf", _path];
+};
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
