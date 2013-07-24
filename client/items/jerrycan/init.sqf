@@ -16,6 +16,12 @@ _path = _this;
 _refill = [_path, "refill.sqf"] call mf_compile;
 _refuel = [_path, "refuel.sqf"] call mf_compile;
 _icon = "client\icons\jerrycan.paa";
+_max = {
+    private ["_empty", "_full"];
+    _empty = MF_ITEMS_JERRYCAN_EMPTY call mf_inventory_count;
+    _full = MF_ITEMS_JERRYCAN_FULL call mf_inventory_count;
+    (_empty + _full) >= MF_ITEMS_JERRYCAN_MAX;
+};
 
 mf_jerrycan_nearest_pump = {
     _objects = nearestobjects [player, ["Land_FuelStation_Feed_F", "Land_MetalBarrel_F"],  3];
@@ -46,8 +52,8 @@ mf_remote_refuel = {
 	_vehicle setFuel _fuel;
 };
 
-[MF_ITEMS_JERRYCAN_EMPTY, "Empty Jerrycan", _refill, "Land_CanisterFuel_F", _icon, MF_ITEMS_JERRYCAN_MAX] call mf_inventory_create;
-[MF_ITEMS_JERRYCAN_FULL, "Full Jerrycan", _refuel, "Land_CanisterFuel_F", _icon, MF_ITEMS_JERRYCAN_MAX] call mf_inventory_create;
+[MF_ITEMS_JERRYCAN_EMPTY, "Empty Jerrycan", _refill, "Land_CanisterFuel_F", _icon, _max] call mf_inventory_create;
+[MF_ITEMS_JERRYCAN_FULL, "Full Jerrycan", _refuel, "Land_CanisterFuel_F", _icon, _max] call mf_inventory_create;
 
 mf_jerrycan_can_refill = compile preProcessFileLineNumbers format["%1\can_refill.sqf", _path];
 mf_jerrycan_can_refuel = compile preProcessFileLineNumbers format["%1\can_refuel.sqf", _path];
