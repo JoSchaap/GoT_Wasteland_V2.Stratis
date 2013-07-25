@@ -5,7 +5,7 @@
 //	@file Description: The main init.
 
 #include "setup.sqf"
-#define DEBUG true
+#define DEBUG false
 
 // base saving can only be enabled if the server is running the @inidb mod!
 // base building parts that are locked, including food/water supplys that are locked will be saved during the restart
@@ -31,7 +31,7 @@ versionName = "GoT Wasteland v2.3";
 // example1: my_fnc_name = ["path/to/folder", "my_fnc.sqf"] call mf_compile;
 // example1: my_fnc_name = ["path/to/folder/my_fnc.sqf"] call mf_compile;
 // later in the code you can simply use call my_fnc_name;
-mf_compile = {
+mf_compile = compileFinal '
 	private "_path";
 	_path = "";
 	if (typeName _this == "STRING") then {
@@ -41,16 +41,16 @@ mf_compile = {
 	};
 	
 	if (DEBUG) then {
-		compile format['call compile preProcessFileLineNumbers "%1"', _path];
+		compile format["call compile preProcessFileLineNumbers ""%1""", _path];
 	} else {
 		compileFinal preProcessFileLineNumbers _path;
 	};
-};
+';
 
 // Simple command I use to make initialization scripts clean and simple.
 // uses mf_ namespace to avoid any issues.
 // TODO compilefinal this shit.
-mf_init = {
+mf_init = compileFinal '
 	private "_path";
 	_path = "";
 	if (typeName _this == "STRING") then {
@@ -60,7 +60,7 @@ mf_init = {
 	};
 
 	_path call compile preProcessFileLineNumbers format["%1\init.sqf", _path];
-};
+';
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
