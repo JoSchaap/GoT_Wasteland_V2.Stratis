@@ -19,6 +19,8 @@ mission_Convoy = compile preprocessFileLineNumbers "server\missions\mainMissions
 mission_ArmedDiversquad = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_ArmedDiversquad.sqf";
 mission_APC = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_APC.sqf";
 mission_Outpost = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Outpost.sqf";
+mission_Coastal_Convoy = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Coastal_Convoy.sqf";
+
 /*
 mission_LightTank = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_LightTank.sqf";
 mission_MBT = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_MBT.sqf";
@@ -44,6 +46,7 @@ createClientMarker = compile preprocessFileLineNumbers "server\missions\factoryM
 createWaitCondition = compile preprocessFileLineNumbers "server\missions\factoryMethods\createWaitCondition.sqf";
 deleteClientMarker = compile preprocessFileLineNumbers "server\missions\factoryMethods\deleteClientMarker.sqf";
 createRandomSoldier = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\createRandomSoldier.sqf";
+createRandomSoldierC = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\createRandomSoldierC.sqf";
 createSmallGroup = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\smallGroup.sqf";
 createSmallDivers = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\smallDivers.sqf";
 createLargeDivers = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\largeDivers.sqf";
