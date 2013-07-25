@@ -9,8 +9,8 @@ _button = _this select 1;
 
 player removeAllEventHandlers "HandleDamage";
 player setVariable["cmoney",95,true];
-[MF_ITEMS_CANNED_FOOD, 2] call mf_inventory_add;
-[MF_ITEMS_WATER, 2] call mf_inventory_add;
+player setVariable["canfood",1,true];
+player setVariable["water",1,true];
 
 switch(_switch) do 
 {

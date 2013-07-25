@@ -1,6 +1,6 @@
 //	@file Version: 1.0
 //	@file Name: buyGuns.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, MercyfulFate
+//	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 20/11/2012 05:13
 //	@file Args: [int (0 = buy to player 1 = buy to crate)]
 
@@ -29,8 +29,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
     switch (_itemText) do {
         
         case "Water": {
-			if not(MF_ITEMS_WATER call mf_inventory_is_full) then {
-				[MF_ITEMS_WATER, 1] call mf_inventory_add;
+            if((player getVariable "water") + 1 <= 4) then {
+                player setVariable["water",(player getVariable "water") + 1,true];	
             } else {
                 _price = 0;
                 {if(_x select 0 == "Water") then{_price = _x select 4;};}forEach generalStore;
@@ -39,8 +39,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
         };
         
 		case "Canned Food":	{
-			if not(MF_ITEMS_CANNED_FOOD call mf_inventory_is_full) then {
-				[MF_ITEMS_CANNED_FOOD, 1] call mf_inventory_add;
+            if((player getVariable "canfood") + 1 <= 4) then {
+                player setVariable["canfood",(player getVariable "canfood") + 1,true];
             } else {
             	_price = 0;
                 {if(_x select 0 == "Canned Food") then{_price = _x select 4;};}forEach generalStore;
@@ -49,9 +49,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
         };
         
 		case "Medical Kit": {
-			if not(MF_ITEMS_MEDKIT call mf_inventory_is_full) then {
-				[MF_ITEMS_MEDKIT, 1] call mf_inventory_add;
-			} else {
+            if((player getVariable "medkits") + 1 <= 2) then {
+                player setVariable["medkits",(player getVariable "medkits") + 1,true];
+            } else {
             	_price = 0;
                 {if(_x select 0 == "Medical Kit") then{_price = _x select 4;};}forEach generalStore;
             	genStoreCart = genStoreCart - _price;    
@@ -59,8 +59,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
         };
         
 		case "Repair Kit": {
-			if not(MF_ITEMS_REPAIR_KIT call mf_inventory_is_full) then {
-				[MF_ITEMS_REPAIR_KIT, 1] call mf_inventory_add;
+            if((player getVariable "repairkits") + 1 <= 2) then {
+                player setVariable["repairkits",(player getVariable "repairkits") + 1,true];
             } else {
             	_price = 0;
                 {if(_x select 0 == "Repair Kit") then{_price = _x select 4;};}forEach generalStore;
@@ -69,27 +69,38 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
         };
         
         case "Jerry Can (Full)": {
-			if not(MF_ITEMS_JERRYCAN_FULL call mf_inventory_is_full) then {
-				[MF_ITEMS_JERRYCAN_FULL, 1] call mf_inventory_add;
+            if(((player getVariable "fuelFull") + 1 <= 1) AND ((player getVariable "fuelEmpty") + 1 <= 1)) then {
+            	diag_log "full < 1 and empty < 1";
+                player setVariable["fuelFull",(player getVariable "fuelFull") + 1,true];
             } else {
-				_price = 0;
-				{if(_x select 0 == "Jerry Can (Full)") then{_price = _x select 4;};}forEach generalStore;
-				genStoreCart = genStoreCart - _price;
+            	if (!((player getVariable "fuelFull") + 1 <= 1)) then {
+	            	_price = 0;
+	                {if(_x select 0 == "Jerry Can (Full)") then{_price = _x select 4;};}forEach generalStore;
+	            	genStoreCart = genStoreCart - _price;    
+                } else {
+                    player setVariable["fuelEmpty",0,true];
+                    player setVariable["fuelFull",1,true];
+                };
             };
         };
         
         case "Jerry Can (Empty)": {
-			if not(MF_ITEMS_JERRYCAN_EMPTY call mf_inventory_is_full) then {
-				[MF_ITEMS_JERRYCAN_EMPTY, 1] call mf_inventory_add;
+            if(((player getVariable "fuelFull") + 1 <= 1) AND ((player getVariable "fuelEmpty") + 1 <= 1)) then {
+                player setVariable["fuelEmpty",(player getVariable "fuelEmpty") + 1,true];
             } else {
-            	_price = 0;
-                {if(_x select 0 == "Jerry Can (Empty)") then{_price = _x select 4;};}forEach generalStore;
-            	genStoreCart = genStoreCart - _price;
+            	if (((player getVariable "fuelFull") + 1 <= 1)) then {
+	            	_price = 0;
+	                {if(_x select 0 == "Jerry Can (Empty)") then{_price = _x select 4;};}forEach generalStore;
+	            	genStoreCart = genStoreCart - _price;    
+                } else {
+                    player setVariable["fuelEmpty",1,true];
+                    player setVariable["fuelFull",0,true];
+                };
             };
         };
         case "Spawn Beacon": {
-			if not(MF_ITEMS_SPAWN_BEACON call mf_inventory_is_full) then {
-				[MF_ITEMS_SPAWN_BEACON, 1] call mf_inventory_add;
+            if(((player getVariable "spawnBeacon") + 1 <= 1) AND ((player getVariable "spawnBeacon") + 1 <= 1)) then {
+                player setVariable["spawnBeacon",(player getVariable "spawnBeacon") + 1,true];
             } else {
             	_price = 0;
                 {if(_x select 0 == "Spawn Beacon") then{_price = _x select 4;};}forEach generalStore;
@@ -97,15 +108,15 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             };
         };
         case "Improv. roof": {
-			if not(MF_ITEMS_CAMO_NET call mf_inventory_is_full) then {
-				[MF_ITEMS_CAMO_NET, 1] call mf_inventory_add;
+            if(((player getVariable "camonet") + 1 <= 1) AND ((player getVariable "camonet") + 1 <= 1)) then {
+                player setVariable["camonet",(player getVariable "camonet") + 1,true];
             } else {
             	_price = 0;
                 {if(_x select 0 == "Improv. roof") then{_price = _x select 4;};}forEach generalStore;
             	genStoreCart = genStoreCart - _price;    
             };
         };
-	};
+		};
 };
 
 player setVariable["cmoney",_playerMoney - genStoreCart,true];

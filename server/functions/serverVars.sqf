@@ -1,6 +1,6 @@
 //	@file Version: 1.1
 //	@file Name: serverVars.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse, [GoT] JoSchaap, MercyfulFate
+//	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse, [GoT] JoSchaap
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 // --------------------------------------------------------------------------------------------------- \\
@@ -23,8 +23,10 @@ pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
 publicVariable "pvar_teamKillList";
-pvar_spawn_beacons = [];
-publicVariable "pvar_spawn_beacons";
+pvar_beaconListBlu = []; 
+publicVariable "pvar_beaconListBlu";
+pvar_beaconListRed = []; 
+publicVariable "pvar_beaconListRed";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
 clientRadarMarkers = [];
@@ -124,8 +126,10 @@ vehicleAddition = [
 			"optic_MRCO",
 			"optic_Hamr", 
 			"optic_Aco", 
-			"optic_ACO_grn", 
-			"optic_Holosight", 
+			"optic_ACO_grn",
+			"optic_aco_smg", 
+			"optic_Holosight",
+			"optic_Holosight_smg", 
 			"acc_flashlight", 
 			"acc_pointer_IR",
 			"Medikit",

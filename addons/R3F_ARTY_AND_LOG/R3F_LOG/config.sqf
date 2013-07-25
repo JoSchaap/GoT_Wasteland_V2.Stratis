@@ -21,7 +21,9 @@ R3F_LOG_CFG_remorqueurs = [
 	"B_Truck_01_covered_F",
 	"B_Truck_01_transport_F",
 	"B_APC_Wheeled_01_cannon_F",
-	"O_APC_Wheeled_02_rcws_F"
+	"O_APC_Wheeled_02_rcws_F",
+	"O_APC_Tracked_02_cannon_F",
+	"B_APC_Tracked_01_rcws_F"
 ];
 
 /**
@@ -43,7 +45,9 @@ R3F_LOG_CFG_objets_remorquables = [
 	"O_Truck_02_transport_F",
 	"I_Truck_02_transport_F",
 	"B_APC_Wheeled_01_cannon_F",
-	"O_APC_Wheeled_02_rcws_F"
+	"O_APC_Wheeled_02_rcws_F",
+	"O_APC_Tracked_02_cannon_F",
+	"B_APC_Tracked_01_rcws_F"
 ];
 
 /****** LIFT WITH VEHICLE  ******/
@@ -86,7 +90,9 @@ R3F_LOG_CFG_objets_heliportables = [
 	"O_Truck_02_transport_F",
 	"I_Truck_02_transport_F",
 	"B_APC_Wheeled_01_cannon_F",
-	"O_APC_Wheeled_02_rcws_F"
+	"O_APC_Wheeled_02_rcws_F",
+	"O_APC_Tracked_02_cannon_F",
+	"B_APC_Tracked_01_rcws_F"
 ];
 
 
@@ -129,7 +135,9 @@ R3F_LOG_CFG_transporteurs = [
 	["I_Heli_Transport_02_F", 20],
 	["B_Heli_Transport_01_camo_F", 20],
 	["B_APC_Wheeled_01_cannon_F", 10],
-	["O_APC_Wheeled_02_rcws_F", 10]
+	["O_APC_Wheeled_02_rcws_F", 10],
+	["O_APC_Tracked_02_cannon_F", 10],
+	["B_APC_Tracked_01_rcws_F", 10]
 ];
 
  

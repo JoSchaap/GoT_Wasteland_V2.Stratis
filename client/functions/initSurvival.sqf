@@ -7,7 +7,7 @@
 #define TIME_DELTA 1 //seconds between each "check"
 #define HEALTH_TIME 180 //seconds till death
 #define HUNGER_TIME 1800 //seconds till starving
-#define THIRST_TIME 1400 //seconds till dehydrated
+#define THIRST_TIME 1500 //seconds till dehydrated
 #define HEALTH_DELTA TIME_DELTA*(100/HEALTH_TIME)/100
 #define HUNGER_DELTA TIME_DELTA*(100/HUNGER_TIME)
 #define THIRST_DELTA TIME_DELTA*(100/THIRST_TIME)

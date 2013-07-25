@@ -22,14 +22,14 @@ _size = lbSize _cartlist;
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
 	_itemText = _cartlist lbText _x;
-	if(_itemText == "Water") then {[MF_ITEMS_WATER, 1] call mf_inventory_remove;};
-	if(_itemText == "Canned Food") then {[MF_ITEMS_CANNED_FOOD, 1] call mf_inventory_remove;};
-	if(_itemText == "Medical Kit") then {[MF_ITEMS_MEDKIT, 1] call mf_inventory_remove;};
-	if(_itemText == "Repair Kit") then {[MF_ITEMS_REPAIR_KIT, 1] call mf_inventory_remove;};
-    if(_itemText == "Jerry Can (Full)") then {[MF_ITEMS_JERRYCAN_FULL, 1] call mf_inventory_remove;};
-    if(_itemText == "Jerry Can (Empty)") then {[MF_ITEMS_JERRYCAN_EMPTY, 1] call mf_inventory_remove;};
-    if(_itemText == "Spawn Beacon") then {[MF_ITEMS_SPAWN_BEACON, 1] call mf_inventory_remove;};
-	if(_itemText == "Camo Net") then {[MF_ITEMS_CAMO_NET, 1] call mf_inventory_remove;};
+	if(_itemText == "Water") then {player setVariable["water",(player getVariable "water") - 1,false];};
+	if(_itemText == "Canned Food") then {player setVariable["canfood",(player getVariable "canfood") - 1,false];};
+	if(_itemText == "Medical Kit") then {player setVariable["medkits",(player getVariable "medkits") - 1,false];};
+	if(_itemText == "Repair Kit") then {player setVariable["repairkits",(player getVariable "repairkits") - 1,false];};
+    if(_itemText == "Jerry Can (Full)") then {player setVariable["fuelFull",(player getVariable "fuelFull") - 1,false];};
+    if(_itemText == "Jerry Can (Empty)") then {player setVariable["fuelEmpty",(player getVariable "fuelEmpty") - 1,false];};
+    if(_itemText == "Spawn Beacon") then {player setVariable["spawnBeacon",(player getVariable "spawnBeacon") - 1,false];};
+	if(_itemText == "Camo Net") then {player setVariable["camonet",(player getVariable "camonet") - 1,false];};
 };
 
 player setVariable["cmoney",_playerMoney + genStoreCart,true];

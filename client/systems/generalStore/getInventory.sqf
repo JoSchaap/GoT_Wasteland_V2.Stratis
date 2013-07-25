@@ -32,55 +32,55 @@ playerInventory = [];
 _amount = 0;
 _index = 0;
 
-_amount = MF_ITEMS_CANNED_FOOD call mf_inventory_count;
+_amount = (player getVariable "canfood");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Canned Food"];
 	_index = _index + 1;
 };
 
-_amount = MF_ITEMS_WATER call mf_inventory_count;
+_amount = (player getVariable "water");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Water"];
 	_index = _index + 1;
 };
 
-_amount = MF_ITEMS_MEDKIT call mf_inventory_count;
+_amount = (player getVariable "medkits");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Medical Kit"];
 	_index = _index + 1;
 };
 
-_amount = MF_ITEMS_REPAIR_KIT call mf_inventory_count;
+_amount = (player getVariable "repairkits");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Repair Kit"];
 	_index = _index + 1;
 };
 
-_amount = MF_ITEMS_JERRYCAN_FULL call mf_inventory_count;
+_amount = (player getVariable "fuelFull");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Jerry Can (Full)"];
 	_index = _index + 1;
 };
 
-_amount = MF_ITEMS_JERRYCAN_EMPTY call mf_inventory_count;
+_amount = (player getVariable "fuelEmpty");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Jerry Can (Empty)"];
 	_index = _index + 1;
 };
 
-_amount = MF_ITEMS_SPAWN_BEACON call mf_inventory_count;
+_amount = (player getVariable "spawnBeacon");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Spawn Beacon"];
 	_index = _index + 1;
 };
-_amount = MF_ITEMS_CAMO_NET call mf_inventory_count;
+_amount = (player getVariable "camonet");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {
 	playerInventory set [_index, "Camo Net"];

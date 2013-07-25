@@ -89,7 +89,14 @@ _player switchMove "AmovPknlMstpSrasWpstDnon_gear";
 thirstLevel = 100;
 hungerLevel = 100;
 
-[objNull, _player] call mf_player_actions_refresh;
+_player setVariable["medkits",0,false];
+_player setVariable["fuel",0,false];
+_player setVariable["repairkits",0,false];
+_player setVariable["fuelFull", 0, false];
+_player setVariable["fuelEmpty", 0, false];
+_player setVariable["spawnBeacon",0,false];
+_player setVariable["camonet",0,false];
+
 [] execVM "client\functions\playerActions.sqf";
 
 _player groupChat format["GoT Wasteland v2.3 - Initialization Complete"];
