@@ -67,9 +67,6 @@ FZF_IC_Icons =
       		case INDEPENDENT: {
 				_Plicon = "client\icons\igui_side_indep_ca.paa";
 			};
-			case sideEnemy: {
-				_Plicon = "client\icons\igui_side_indep_ca.paa";
-			};
 		};
         for "_marker_index" from 0 to (_uc - 1) do {
             
