@@ -2,7 +2,7 @@ waitUntil {!isNull player && isPlayer player};
 
 player createDiarySubject ["Wasteland", "HOW-TO-PLAY??"];
 player createDiarySubject ["changelog", "The Changelog"];
-player createDiarySubject ["404games", "404 Info"];
+player createDiarySubject ["info", "Mission Info"];
 player createDiarySubject ["GoT2DayZ", "GoT2DayZ Info"];
 
 player createDiaryRecord["changelog",
@@ -288,8 +288,9 @@ player createDiaryRecord["changelog",
 		[Added] New outposts for the outpost mission<br/>
 		[Added] New antihack script by AWA, AgentREV and Tonic<br/>
 		[Added] Improv. roof to general stores<br/>
-		[Added] Name censoring in group-menu for StreamFriendlys<br/>
-		[Fixed] Name censoring when in a vehicle for StreamFriendlys<br/>
+		[Added] Name censoring in group-menu for StreamFriendly<br/>
+		[Added] Main mission: Coastal patrol
+		[Fixed] Name censoring when in vehicle for StreamFriendly<br/>
 		[Fixed] Some missions did not announce themselves<br/>
 		[Fixed] AI not despawning on APC mission<br/>
 		[Fixed] balance between weapon/item spawns in buildings<br/>
@@ -304,18 +305,18 @@ player createDiaryRecord["changelog",
 		[Fixed] Gunstore purchase exploit (spamming buy button)<br/>
 		[Changed] Gametype: changed to SANDBOX <br/>
 		[Changed] Survival system from decimals to percentages<br/>
-		[Changed] Death of hunger/thirst by HPdrain instead of instant<br/>
+		[Changed] hunger/thirst death by HPdrain (not instant)<br/>
 		[Changed] Food/Water drainage and gain from items<br/>
 		[Changed] Stores can also be openned from actionmenu<br/>
-		[Changed] Loot in buildings is spawned when a player enters town<br/>
+		[Changed] Loot in buildings spawned when a player enters town<br/>
 		[Changed] Loot in buildings now respawns after 30mins<br/>
 		[Changed] Loot in buildings 25% chance of fuel inside fuelcans<br/>
 		[Changed] Fuel cans (full or empty) can be dropped<br/>
 		[Changed] Repairkits added to loot-table<br/>
 		[Changed] fuel cans empty and full added to loot-table<br/>
 		[Changed] players spawn without a fuelcan<br/>
-		[Changed] Hostile helicopter misisons use random helicopters<br/>
-		[Changed] amount of objects and vehicles reduced and more random<br/>
+		[Changed] Hostile helicopter missions use random helicopters<br/>
+		[Changed] amount of objects and vehicles reduced<br/>
 		[Changed] Locked baseparts will be saved on server restart<br/>
 		*- After restart the baseparts will be spawned UNLOCKED!<br/>
 		*- please bare with me if there are still issues<br/>
@@ -324,7 +325,7 @@ player createDiaryRecord["changelog",
 ]
 ];
 
-player createDiaryRecord["404games",
+player createDiaryRecord["info",
 [
 "Credits",
 "
@@ -344,6 +345,7 @@ player createDiaryRecord["404games",
 	<br/>
 	Development after v1.06 was taken on by:<br/>
 	* JoSchaap (GoT/Tweakers.Net)<br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	<br/>
 	Others that contributed:<br/>
 	* afroVoodo (ArmaHolic)<br/>
@@ -366,13 +368,50 @@ player createDiaryRecord["404games",
 ]
 ];
 
-player createDiaryRecord["404games",
+player createDiaryRecord["info",
 [
-"More Info?",
+"Original version",
+"
+<br/>
+	Visit the original thread by Tonic in the BISforums:<br/><br/>
+	http://forums.bistudio.com/showthread.php?140070-TVT-CO-55-Wasteland<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"Sa-Matra edition",
+"
+<br/>
+	Find Sa-Matra's version on the BISforums:<br/><br/>
+	http://forums.bistudio.com/showthread.php?154610-MP-Team-Sa-Matra-s-Wasteland<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"404Games info",
 "
 <br/>
 	Visit the 404games Team at their website/forums:<br/><br/>
 	http://404games.co.uk<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"GoT/GoT2DayZ",
+"
+<br/>
+	Visit our website at:<br/><br/>
+	http://www.got2dayz.nl<br/>
+	<img size='5' image='client\icons\logo.paa'/><br/>
 	<br/>
 "
 ]
@@ -384,6 +423,7 @@ player createDiaryRecord["GoT2DayZ",
 "
 <br/>
 	What is GoT/GoT2DayZ?<br/><br/>
+	<img size='5' image='client\icons\logo.paa'/><br/>
 	GoT2DayZ started as a DayZ community for Tweakers.Net<br/>
 	As time passed on we also started playing wasteland.<br/>
 	Now we run some public servers.<br/>
@@ -394,9 +434,6 @@ player createDiaryRecord["GoT2DayZ",
 	* ArmA3 Alpha Wasteland on Stratis (day)<br/>
 	* ArmA3 Alpha Wasteland on Stratis (night)<br/>
 	<br/>
-	I cant urge enough that all credits for releasing this mission go<br/>
-	to the re-developers at 404Games.co.uk!<br/>
-	<br/>
 "
 ]
 ];
@@ -406,6 +443,9 @@ player createDiaryRecord["GoT2DayZ",
 "Contact Admin",
 "
 <br/>
+	First of all make sure you are on the official server</br>
+	Servername: [NL] GoT Wasteland v2.3<br/><br/>
+	<img size='5' image='client\icons\logo.paa'/><br/>
 	You can try to get an admins attention in global chat.<br/>
 	If unsuccessfull you can contact us on:<br/>
 	facebook: fb.me/GoT2DayZ<br/>
@@ -421,6 +461,7 @@ player createDiaryRecord["GoT2DayZ",
 "Server info",
 "
 <br/>
+	<img size='5' image='client\icons\logo.paa'/><br/>
 	Server is hosted on a dual XEON 3.2Ghz machine<br/><br/>
 	- 8GB DDR3<br/>
 	- 2x Samsung 120GB SSD<br/>
@@ -434,6 +475,7 @@ player createDiaryRecord["wasteland",
 [
 "Hints/Tips",
 "
+<img size='5' image='client\icons\logo.paa'/> GoT Wasteland v2.3<br/>
 <br/>
 * At the start of the game, spread out and find supplies before worrying about where to establish a meeting place or a base, supplies are important and very valuable.<br/><br/>
 * When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, map-bound bases, etc. remember, players randomly spawn in and around towns and could even spawn inside your base should you set it up in a town.<br/><br/>
