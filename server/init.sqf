@@ -43,7 +43,7 @@ if (!isNil "GoT_baseSaving" && {GoT_baseSaving > 0}) then
     execVM "persistentscripts\init.sqf";
 };
 
-if (!isNill "GoT_buildingsloot" && {GoT_buildingsloot > 0}) then 
+if (!isNil "GoT_buildingsloot" && {GoT_buildingsloot > 0}) then 
 {
 	diag_log format["GOT WASTELAND - Lootspawner started"];
 	execVM "server\spawning\lootCreation.sqf";
