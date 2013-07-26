@@ -26,4 +26,6 @@ _soldier addUniform (_uniformTypes call BIS_fnc_selectRandom);
 _soldier addVest (_vestTypes call BIS_fnc_selectRandom);
 [_soldier, _weaponTypes call BIS_fnc_selectRandom, 3] call BIS_fnc_addWeapon;
 
+_soldier addEventHandler ["Killed",{(_this select 1) call removeNegativeScore;}];
+
 _soldier

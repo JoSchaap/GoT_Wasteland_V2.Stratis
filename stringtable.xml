@@ -85,25 +85,25 @@
 	</Package>
 	<Package name="ShopDescriptions">
 		<Key ID="STR_WL_ShopDescriptions_Water">
-			<English>Avoid dehydration on this hot Greek wasteland. Drink some of this water!.</English>
+			<English>Greece is a hot place! Drink plenty!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_Camo">
 			<English>An improvised roof. 4 sticks and a blanket!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_CanFood">
-			<English>Travelling the Greek wastelands may get you hungry! Dont starve! just eat some canned food!</English>
+			<English>The Greek wastelands may get you hungry!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_RepairKit">
-			<English>No technician around? With this kit you wont need one!.</English>
+			<English>With this kit you wont need a technician!.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_MedKit">
-			<English>Medical Tool kit for the Medics in your team, needed to perform 100hp Heals.</English>
+			<English>Nope not selling..</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_fuelFull">
-			<English>25 litres of pure unleaded fuel! Powers nearly any vehicle!</English>
+			<English>25 litres of pure unleaded fuel!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_fuelEmpty">
-			<English>Empty 25 litre fuel can. Useful in case you come across a fuel station</English>
+			<English>Empty fuel can. You can re-fill it!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_spawnBeacon">
 			<English>Choose your spawn location. Disclaimer: This product does not guarantee safe delivery of goods.</English>

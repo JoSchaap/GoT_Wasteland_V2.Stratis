@@ -134,6 +134,7 @@ while {true} do
 		R3F_LOG_action_contenu_vehicule_valide = false;
 		R3F_LOG_action_remorquer_deplace_valide = false;
 		R3F_LOG_action_remorquer_selection_valide = false;
+		R3F_LOG_action_selectionner_objet_remorque_valide = false; 
 		
 		// Condition action heliporter
 		R3F_LOG_action_heliporter_valide = (driver R3F_LOG_objet_addAction == player &&

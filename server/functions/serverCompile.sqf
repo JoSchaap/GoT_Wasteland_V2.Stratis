@@ -74,3 +74,6 @@ fn_refillbox = compile preprocessFileLineNumbers "server\functions\fn_refillbox.
 
 //Player Management
 server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";
+
+if (isNil "TPG_fnc_MP") then { TPG_fnc_MP = compileFinal str BIS_fnc_MP };
+if (isNil "TPG_fnc_MPexec") then { TPG_fnc_MPexec = compileFinal str BIS_fnc_MPexec }; 

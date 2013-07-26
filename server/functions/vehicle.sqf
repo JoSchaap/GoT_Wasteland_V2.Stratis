@@ -106,12 +106,11 @@ while {_run} do
 	};
 	
 	
-	// Check if the vehicle is deserted.
-	if (_deserted > 0 && 
-	   {getPosASL _unit distance _position > 10} && 
-	   {{alive _unit} count crew _unit == 0} && 
-	   {isNull (_unit getVariable ["R3F_LOG_est_transporte_par", objNull])} && 
-	   {isNull (_unit getVariable ["R3F_LOG_est_deplace_par", objNull])}) then 
+// Check if the vehicle is deserted, and that it's not being towed or moved.
+  
+  if (((_deserted > 0 && {getPosASL _unit distance _position > 10} && {{alive _unit} count crew _unit == 0}) || 
+    {isNull (_unit getVariable ["R3F_LOG_est_transporte_par", objNull])} && 
+    {isNull (_unit getVariable ["R3F_LOG_est_deplace_par", objNull])}) then  
 	{
 		if (_desertedTimeout == 0) then {
 			_desertedTimeout = time + _deserted;

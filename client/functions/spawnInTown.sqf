@@ -39,7 +39,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		}forEach (call cityList);
     };
     case 1:
     {
@@ -56,7 +56,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		}forEach (call cityList);
     };
     case 2:
     {
@@ -73,7 +73,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		}forEach (call cityList);
     };
     case 3:
     {
@@ -90,7 +90,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		}forEach (call cityList);
     };
     case 4:
     {
@@ -107,7 +107,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		}forEach (call cityList);
     };
 };
 sleep 5;

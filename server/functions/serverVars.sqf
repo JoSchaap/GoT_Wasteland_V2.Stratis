@@ -124,6 +124,7 @@ vehicleAddition = [
 			"muzzle_snds_acp",
 			"optic_Arco",
 			"optic_MRCO",
+			"optic_SOS",
 			"optic_Hamr", 
 			"optic_Aco", 
 			"optic_ACO_grn",
@@ -133,8 +134,9 @@ vehicleAddition = [
 			"acc_flashlight", 
 			"acc_pointer_IR",
 			"Medikit",
-            "FirstAidKit",
-            "ToolKit"
+			"Medikit",
+			"FirstAidKit",
+            	"ToolKit"
 ];
 
 vehicleAddition2 = [

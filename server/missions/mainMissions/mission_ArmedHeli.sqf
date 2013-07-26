@@ -67,6 +67,14 @@ switch (_vehicleClass) do
 	};
 };
 
+	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _vehicleClass >> "weapons")) then
+	{
+		_vehicle removeMagazinesTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["192Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle addMagazineTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
+	};
+
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
 _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t>, has stranded! go get it for your team.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];

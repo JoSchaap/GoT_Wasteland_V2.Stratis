@@ -5,7 +5,7 @@
                                                                                                 
 //Gunstore Weapon List - Gun Store Base List
 // Text name, classname, buy cost, sell amount
-weaponsArray = [
+weaponsArray = compileFinal str [
 		//Handgun
 	["ACP-C2","hgun_ACPC2_F",90,50],
 	["P07","hgun_P07_F",70,40],
@@ -45,7 +45,7 @@ weaponsArray = [
 
 //Gun Store Ammo List
 //Text name, classname, buy cost
-ammoArray = [
+ammoArray = compileFinal str [
 	["Laserdes. Battery","Laserbatteries",30],
 	["9mm 16Rnd Mag","16Rnd_9x21_Mag",12],
 	["9mm 30Rnd Mag","30Rnd_9x21_Mag",22],
@@ -83,7 +83,7 @@ ammoArray = [
 
 //Gun Store Equipment List
 //Text name, classname, buy cost
-accessoriesArray = [
+accessoriesArray = compileFinal str [
 	["GPS","ItemGPS", 30,"item"],
 	["Binoculars","Binocular", 20,"binoc"],
 //	["NV Goggles","NVGoggles", 100,"item"],
@@ -160,7 +160,7 @@ accessoriesArray = [
 
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
-generalStore = [
+generalStore = compileFinal str [
 	["Bottled Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
 	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",30,15],
 	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa",500,500],
@@ -171,7 +171,7 @@ generalStore = [
 
 // Stratis town and city array
 //Marker Name, Radius, City Name
-cityList = [
+cityList = compileFinal str [
 		["Town_1",200,"Air Station Mike-28"],
 		["Town_2",100,"Agios Loannis"],
 		["Town_3",100,"Agios Cephas"],
@@ -194,4 +194,5 @@ cityList = [
 		["Town_20",290,"ol-Jay"]
 
 ];
+
 cityLocations = [];

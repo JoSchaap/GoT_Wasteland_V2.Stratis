@@ -21,7 +21,7 @@ FZF_IC_Icons =
 	_remove_icon = false;
     _units = [];
     _uc = 0;
-	if (playerSide == resistance)then{ //decide what method to check who needs icons
+	if (playerSide == in [INDEPENDENT,sideEnemy])then{ //decide what method to check who needs icons
 		{
 			if ((!isNull(_x)) ) then {
 				if (alive(_x)) then {
@@ -57,14 +57,17 @@ FZF_IC_Icons =
     if (_make_icons)then {
         _pIcons = [];
 		private ["_Plicon"];
-		switch(str(playerSide)) do {
-			case "WEST": {
-				_Plicon = "client\icons\igui_side_blufor_ca.paa";
+    switch(playerSide) do {
+		case BLUFOR: {				
+			_Plicon = "client\icons\igui_side_blufor_ca.paa";
 			};
-			case "EAST": {
+			case OPFOR: {
 				_Plicon = "client\icons\igui_side_opfor_ca.paa";
 			};
-			case "GUER": {
+      		case INDEPENDENT: {
+				_Plicon = "client\icons\igui_side_indep_ca.paa";
+			};
+			case sideEnemy: {
 				_Plicon = "client\icons\igui_side_indep_ca.paa";
 			};
 		};

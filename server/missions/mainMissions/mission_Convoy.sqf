@@ -25,7 +25,7 @@ _createVehicle = {
     _vehicle setDir _direction;
     clearMagazineCargoGlobal _vehicle;
     clearWeaponCargoGlobal _vehicle;
-	_vehicle setVariable ["vehicleChecksum",call vChecksum,true];
+	_vehicle setVariable [call vChecksum, true, false];
     _group addVehicle _vehicle;
     
     _soldier = [_group, _position] call createRandomSoldier; 
@@ -92,7 +92,7 @@ _marker = createMarker [_missionMarkerName, position leader _group];
 _marker setMarkerType "mil_destroy";
 _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
-_marker setMarkerText "Convoy";
+_marker setMarkerText "Armed Convoy";
 
 _picture = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_F" >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> "I_MRAP_03_F" >> "displayName");

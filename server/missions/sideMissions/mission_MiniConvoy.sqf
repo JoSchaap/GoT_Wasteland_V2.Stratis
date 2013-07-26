@@ -3,7 +3,7 @@ private ["_missionMarkerName","_missionType","_picture","_vehicleName","_hint","
 #include "sideMissionDefines.sqf"
 
 _missionMarkerName = "MiniConvoy_Marker";
-_missionType = "Offroad Convoy";
+_missionType = "Truck Convoy";
 
 diag_log format["WASTELAND SERVER - Side Mission Started: %1", _missionType];
 
@@ -25,7 +25,7 @@ _createVehicle = {
     _vehicle setDir _direction;
     clearMagazineCargoGlobal _vehicle;
     clearWeaponCargoGlobal _vehicle;
-	_vehicle setVariable ["vehicleChecksum",call vChecksum,true];
+	_vehicle setVariable [call vChecksum, true, false];
     _groupsm addVehicle _vehicle;
     
     _soldier = [_groupsm, _position] call createRandomSoldier; 
@@ -83,7 +83,7 @@ _marker = createMarker [_missionMarkerName, position leader _groupsm];
 _marker setMarkerType "mil_destroy";
 _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
-_marker setMarkerText "MiniConvoy";
+_marker setMarkerText "Truck Convoy";
 
 _picture = getText (configFile >> "CfgVehicles" >> "I_Truck_02_covered_F" >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> "I_Truck_02_covered_F" >> "displayName");

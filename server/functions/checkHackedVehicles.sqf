@@ -10,9 +10,9 @@ _checksum = _this select 1;
 _hackedVehicles = [];
 
 {
-	_check = _x getVariable ["vehicleChecksum","0"];
+	_check = _x getVariable [call vChecksum, false];
 	
-	if ((_x isKindOf "ReammoBox_F" && owner _x > 1) || (!(_x isKindOf "ReammoBox_F") && typeName _check == typeName "" && _check != call vChecksum)) then
+	if ((_x isKindOf "ReammoBox_F" && {owner _x > 1}) || {!(_x isKindOf "ReammoBox_F") && {typeName _check == typeName true} && {!_check}}) then
 	{
 		_owner = [owner _x] call findClientPlayer;
 		
@@ -27,4 +27,4 @@ _hackedVehicles = [];
 	};
 } forEach vehicles;
 
-[compile format ["hackedVehicles = [%1, '%2']", _hackedVehicles, _checksum], "BIS_fnc_spawn", _client, false] call BIS_fnc_MP;
+[compile format ["hackedVehicles = [%1, '%2']", _hackedVehicles, _checksum], "BIS_fnc_spawn", _client, false] call TPG_fnc_MP;

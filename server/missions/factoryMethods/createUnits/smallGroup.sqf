@@ -50,5 +50,14 @@ _man4 addMagazine "20Rnd_762x51_Mag";
 _man4 addMagazine "20Rnd_762x51_Mag";
 _man4 addWeapon "srifle_EBR_F";
 
+{
+	_x addrating 9999999;
+	_x addEventHandler ["Killed",
+	{
+		(_this select 1) call removeNegativeScore;
+	}];
+} forEach units _group;
+
+
 _leader = leader _group;
 [_group, _pos] call defendArea;

@@ -87,7 +87,7 @@ class w_RscText {
 	style = ST_LEFT;
 	colorBackground[] = { 1 , 1 , 1 , 0 };
 	colorText[] = { 1 , 1 , 1 , 1 };
-	font = "PuristaSemibold";
+	font = "PuristaMedium";
 	sizeEx = 0.025;
 	h = 0.25;
 	text = "";
@@ -143,9 +143,11 @@ class w_RscEdit
 
     text = "";
     colorText[] = {1,1,1,1};
-    colorDisabled[] = {0,0,0,0.3}; 
+
     autocomplete = false;
     colorSelection[] = {0,0,0,1};
+	colorActive[] = {0,0,0,1};
+    colorDisabled[] = {0,0,0,0.3};
 };
 
 class w_RscListBox
@@ -168,8 +170,8 @@ class w_RscListBox
     color[] = {0.7, 0.7, 0.7, 1};
     colorActive[] = {0,0,0,1};
     colorDisabled[] = {0,0,0,0.3};
-    font = "PuristaSemibold";
-    sizeEx = 0.023;
+    font = "PuristaMedium";
+    sizeEx = 0.026;
     soundSelect[] = {"",0.1,1};
     soundExpand[] = {"",0.1,1};
     soundCollapse[] = {"",0.1,1};
@@ -177,7 +179,7 @@ class w_RscListBox
     autoScrollSpeed = -1;
     autoScrollDelay = 5;
     autoScrollRewind = 0;
-
+	
     class ScrollBar
     {
 		color[] = {1, 1, 1, 1};
@@ -300,15 +302,15 @@ class w_RscButtonBase {
 	animTextureNormal = "client\ui\ui_button_normal_ca.paa";
 	animTextureDisabled = "client\ui\ui_button_disabled_ca.paa";
 	animTextureOver = "client\ui\ui_button_over_ca.paa";
-	animTextureFocused = "client\ui\ui_button_down_ca.paa";
+	animTextureFocused = "client\ui\ui_button_focus_ca.paa";
 	animTexturePressed = "client\ui\ui_button_down_ca.paa";
 	animTextureDefault = "client\ui\ui_button_default_ca.paa";
 	textureNoShortcut = "";
 	
 	period = 0.4;
-	font = "PuristaSemibold";
+	font = "PuristaMedium";
 	size = 0.023;
-	sizeEx = 0.023;
+	sizeEx = 0.024;
 	text = "";
 	
 	soundEnter[] = {"\A3\ui_f\data\Sound\MOUSE2", 0.09, 1};

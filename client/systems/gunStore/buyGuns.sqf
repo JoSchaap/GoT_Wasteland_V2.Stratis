@@ -60,7 +60,7 @@ switch (_switch) do
 						hint format [_alreadyHaveType,_name];  
 					};
 				};
-			} forEach weaponsArray;
+			} forEach (call weaponsArray);
 
 			{
 				_name = _x select 0;
@@ -80,7 +80,7 @@ switch (_switch) do
 						hint format [_notEnoughSpace,_name];
 					};
 				}
-			} forEach ammoArray;
+			} forEach (call ammoArray);
 
 			{
 				_name = _x select 0;
@@ -177,7 +177,7 @@ switch (_switch) do
                         };
                     };
 				};
-            } forEach accessoriesArray;
+            } forEach (call accessoriesArray);
 		};
 		player setVariable["cmoney",_playerMoney - gunStoreCart,true];
 		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];

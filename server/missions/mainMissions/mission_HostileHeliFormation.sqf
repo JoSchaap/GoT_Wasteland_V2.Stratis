@@ -23,7 +23,7 @@ _createVehicle = {
     
     _vehicle = _type createVehicle _position;
     _vehicle setDir _direction;
-	_vehicle setVariable ["vehicleChecksum",call vChecksum,true];
+	_vehicle setVariable [call vChecksum, true, false];
     _grouphsq addVehicle _vehicle;
     
     _soldier = [_grouphsq, _position] call createRandomSoldier; 
@@ -38,6 +38,14 @@ _createVehicle = {
 	   _soldier assignAsGunner _vehicle;
        _soldier moveInTurret [_vehicle, [0]];
     };
+
+	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _type >> "weapons")) then
+	{
+		_vehicle removeMagazinesTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["192Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]];
+	};
+
     _vehicle setVehicleLock "LOCKED";
     _vehicle
 };

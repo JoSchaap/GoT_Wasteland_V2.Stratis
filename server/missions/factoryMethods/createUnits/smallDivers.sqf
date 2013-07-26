@@ -46,5 +46,13 @@ _man3 addmagazine "20Rnd_556x45_UW_Mag";
 _man3 addmagazine "20Rnd_556x45_UW_Mag";
 _man3 addweapon "arifle_SDAR_F";
 
+{
+	_x addrating 9999999;
+	_x addEventHandler ["Killed",
+	{
+		(_this select 1) call removeNegativeScore;
+	}];
+} forEach units _group;
+
 _leader = leader _group;
 [_group, _pos] call defendArea;

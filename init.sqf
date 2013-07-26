@@ -11,10 +11,6 @@
 // these will re-spawn unlocked after the restart to avoid bases clutterring the entire map
 // it does NOT save player loadouts, ammocrates or vehicles!
 
-PDB_ServerID = "one";	   // if running multiple servers set a new value for each server! inidb will prefix this to the filename used to store bases
-GoT_baseSaving = 0;     // set to 1 to enable base-saving to @inidb
-
-
 StartProgress = false;
 enableSaving[false,false];
 
@@ -29,10 +25,11 @@ if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
 if(isNull player) then {X_JIP = true;};
 
+
 true spawn {
 	if(!isDedicated) then {
 		titleText ["Welcome to GoT Wasteland v2.3, Have patience dear Padawan!", "BLACK", 0];
-		waitUntil {player == player};
+		waitUntil {!isNull player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
 };
@@ -43,9 +40,10 @@ true spawn {
 
 generateKey = compileFinal preprocessFileLineNumbers "server\antihack\generateKey.sqf"; 
 fn_vehicleInit = compile preprocessFileLineNumbers "server\functions\fn_vehicleInit.sqf";
+removeNegativeScore = compile preprocessFileLineNumbers "server\functions\removeNegativeScore.sqf";
 
-if(X_Client) then {
-	waitUntil {player == player};
+if(!isDedicated) then {
+	waitUntil {!isNull player};
 
 	//Wipe Group.
 	if(count units group player > 1) then
@@ -80,9 +78,3 @@ if(X_Server) then {
 // };
 
 [] execVM "addons\proving_Ground\init.sqf";
-
-if (GoT_baseSaving == 1) then 
-	{
-		diag_log format["GoT Wasteland - Initilizing base-Saving"];
-		[] execVM "persistentscripts\init.sqf";
-	};

@@ -15,7 +15,7 @@ disableSerialization;
 
 private ["_switch","_vehicleType","_vehicleSummary","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_check"];
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if (_uid call isAdmin) then {
 	_switch = _this select 0;
 	_allVehicles = vehicles;
 	
@@ -45,13 +45,13 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			        	_vehicleListBox lbSetData [_index, str(_x)];    
 	                };
 	                
-	                if(_vehicleType isKindOf "Truck") then {
+	                if(_vehicleType isKindOf "Truck_F") then {
 	                	_vehicleSummary = format["[Class: Truck] [Type: %1]",_vehicleType];
 			        	_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
 			        	_vehicleListBox lbSetData [_index, str(_x)];    
 	                };
 	                
-	                if(!(_vehicleType isKindOf "Truck") AND !(_vehicleType isKindOf "MotorCycle") AND !(_vehicleType isKindOf "Wheeled_APC")) then {
+	                if(!(_vehicleType isKindOf "Truck_F") AND !(_vehicleType isKindOf "MotorCycle") AND !(_vehicleType isKindOf "Wheeled_APC_F")) then {
 	                	_vehicleSummary = format["[Class: Car] [Type: %1]",_vehicleType];
 				        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
 				        _vehicleListBox lbSetData [_index, str(_x)];    
@@ -91,7 +91,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			        _vehicleListBox lbSetData [_index, str(_x)];
 			    };
 	            
-	            if(_vehicleType isKindOf "Wheeled_APC") then {
+	            if(_vehicleType isKindOf "Wheeled_APC_F") then {
 			        _vehicleSummary = format["[Class: APC] [Type: %1]",_vehicleType];
 			        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
 			        _vehicleListBox lbSetData [_index, str(_x)];
@@ -100,7 +100,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	    };
 	    case 4:
 	    {
-			private ["_hackedVehicles"];
+			private "_hackedVehicles";
 			_hackedVehicles = call findHackedVehicles;
 			
 	    	{
@@ -131,12 +131,17 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
 						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
 					};
-					if(_vehicleType isKindOf "Truck") then {
+					if(_vehicleType isKindOf "Truck_F") then {
 						_vehicleSummary = format["[Class: Truck] [Type: %1] %2", _vehicleType, _ownerInfo];
 						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
 						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
 					};
-					if(!(_vehicleType isKindOf "Truck") AND !(_vehicleType isKindOf "MotorCycle") AND !(_vehicleType isKindOf "Wheeled_APC")) then {
+					if(_vehicleType isKindOf "Wheeled_APC_F") then {
+						_vehicleSummary = format["[Class: APC] [Type: %1] %2", _vehicleType, _ownerInfo];
+						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
+					};
+					if(!(_vehicleType isKindOf "Truck_F") AND !(_vehicleType isKindOf "MotorCycle") AND !(_vehicleType isKindOf "Wheeled_APC_F")) then {
 						_vehicleSummary = format["[Class: Car] [Type: %1] %2", _vehicleType, _ownerInfo];
 						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
 						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
@@ -149,7 +154,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
 						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];
 					};
-				} forEach ["Helicopter", "Plane", "Tank", "Wheeled_APC"];
+				} forEach ["Helicopter", "Plane", "Tank"];
 				
 				if(_vehicleType isKindOf "ReammoBox_F") then {
 					_vehicleSummary = format["[Class: Ammo Box] [Type: %1] %2", _vehicleType, _ownerInfo];

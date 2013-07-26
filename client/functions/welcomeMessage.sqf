@@ -9,18 +9,23 @@ _control = _display displayCtrl welcomeText;
 
 private ["_teamrules", "_teamicon", "_teamcol"];
 
-switch(str(side player)) do {
-	case "WEST": {
+switch (playerSide) do {
+	case BLUFOR: { 
 		_teamrules = "STR_WL_YouAreInTeam";
 		_teamicon = "client\icons\igui_side_blufor_ca.paa";
 		_teamcol = "#3333ff";
 	};
-	case "EAST": {
+	case OPFOR: {
 		_teamrules = "STR_WL_YouAreInTeam";
 		_teamicon = "client\icons\igui_side_opfor_ca.paa";
 		_teamcol = "#cc0000";
 	};
-	case "GUER": {
+	case INDEPENDENT: {
+     _teamrules = "STR_WL_YouAreInFFA";
+     _teamicon = "client\icons\igui_side_indep_ca.paa";
+     _teamcol = "#00cc00";
+	};
+	case sideEnemy: { 
 		_teamrules = "STR_WL_YouAreInFFA";
 		_teamicon = "client\icons\igui_side_indep_ca.paa";
 		_teamcol = "#00cc00";
@@ -33,8 +38,8 @@ _message = format ["<t shadow=""1""><t size=""2"">%1</t> (%2)<br/>%4<br/>%3<br/>
 	format [localize _teamrules, 
 		_teamicon,
 		_teamcol,
-		localize format ["STR_WL_Gen_Team%1", str(side player)],
-		localize format ["STR_WL_Gen_Team%1_2", str(side player)]
+		localize format ["STR_WL_Gen_Team%1", str playerSide],
+		localize format ["STR_WL_Gen_Team%1_2", str playerSide] 
 	],
 	localize "STR_WL_MapMoreInfo"
 ];

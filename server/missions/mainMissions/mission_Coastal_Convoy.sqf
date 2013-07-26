@@ -12,9 +12,9 @@ diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1", _missionTy
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1", _missionType];
 
 _group = createGroup civilian;
-_randomboat = ["O_Boat_Armed_01_hmg_F", "B_Boat_Armed_01_minigun_F","I_Boat_Armed_01_minigun_F"] call BIS_fnc_selectRandom;
-_randomheli = ["B_Heli_Transport_01_camo_F", "O_Heli_Light_02_F","B_Heli_Light_01_armed_F","B_Heli_Attack_01_F","O_Heli_Attack_02_F","B_Heli_Transport_01_F"] call BIS_fnc_selectRandom;
-_randomsub = ["B_SDV_01_F", "O_SDV_01_F","I_SDV_01_F"] call BIS_fnc_selectRandom;
+_randomboat = ["O_Boat_Armed_01_hmg_F","B_Boat_Armed_01_minigun_F","I_Boat_Armed_01_minigun_F"] call BIS_fnc_selectRandom;
+_randomheli = ["O_Heli_Attack_02_black_F","O_Heli_Light_02_F","B_Heli_Transport_01_F","B_Heli_Light_01_armed_F"] call BIS_fnc_selectRandom;
+_randomsub = ["B_SDV_01_F","O_SDV_01_F","I_SDV_01_F"] call BIS_fnc_selectRandom;
 
 _createVehicle = {
     private ["_type","_position","_direction","_group","_vehicle","_soldier"];
@@ -28,7 +28,7 @@ _createVehicle = {
     _vehicle setDir _direction;
     clearMagazineCargoGlobal _vehicle;
     clearWeaponCargoGlobal _vehicle;
-	_vehicle setVariable ["vehicleChecksum",call vChecksum,true];
+	_vehicle setVariable [call vChecksum, true, false];
     _group addVehicle _vehicle;
     
     _soldier = [_group, _position] call createRandomSoldierC; 
@@ -40,14 +40,22 @@ _createVehicle = {
 	   _soldier assignAsGunner _vehicle;
         _soldier moveInTurret [_vehicle, [0]];
     };
+
+	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _type >> "weapons")) then
+	{
+		_vehicle removeMagazinesTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["192Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]];
+	};
+
     _vehicle setVehicleLock "LOCKED";
     _vehicle
 };
 
 _vehicles = [];
 _vehicles set [0, [_randomheli, [1877.32, 6284.56, 0.00134969], 9, _group] call _createVehicle];
-_vehicles set [1, [_randomboat, [1878.34, 6320.34, 1.88152], 76, _group] call _createVehicle];
-_vehicles set [2, [_randomsub, [1897.54,6314.98,0.586683], 60, _group] call _createVehicle];
+_vehicles set [1, [_randomboat, [1865.25, 6341.89,10.1567], 0, _group] call _createVehicle]; 
+_vehicles set [2, [_randomsub, [1908.83, 6312.36, 4.12915], 117, _group] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _group selectLeader _leader;
@@ -169,6 +177,10 @@ if(_failed) then
     publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
+	if ((damage _vehicle) == 1) then {
+		deleteVehicle _vehicle;
+		{deleteVehicle _x;}forEach units _group;
+	};
 	_vehicle setVehicleLock "UNLOCKED";
 	_vehicle setVariable ["R3F_LOG_disabled", false, true];
     // Mission complete
@@ -180,6 +192,7 @@ if(_failed) then
     clearMagazineCargoGlobal _ammobox2;
     clearWeaponCargoGlobal _ammobox2; 
     [_ammobox2,"mission_USLaunchers2"] call fn_refillbox;
+    deleteGroup _group;
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The patrol has been stopped. The weapon crates and vehicles are yours to take. O.M.G.! did they just sink!?</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
     messageSystem = _hint;
     if (!isDedicated) then { call serverMessage };

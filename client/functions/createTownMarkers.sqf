@@ -13,4 +13,4 @@
 	_marker setMarkerColorLocal "ColorBlack";
     _marker setMarkerBrushLocal "SolidBorder";
 	_marker setMarkerAlphaLocal 0.3;   
-}forEach cityList;
+}forEach (call cityList);

@@ -20,13 +20,13 @@ removeHeadgear _player;
 removeGoggles _player;
 
 
-switch (str(playerSide)) do
+switch (playerSide) do
 {
-	case "WEST": 
+	case BLUFOR: 
 		{
 			if (typeof _player == "B_sniper_F") then { 
 				_player addUniform "U_B_Ghilliesuit"; 
-				_player addVest "V_PlateCarrier1_rgr"; 
+				_player addVest "V_PlateCarrier2_rgr"; 
 			};
 			if (typeof _player == "B_diver_F") then { 
 				_player addUniform "U_B_Wetsuit"; 
@@ -35,15 +35,15 @@ switch (str(playerSide)) do
 			};
 			if (typeof _player != "B_diver_F" && typeof _player != "B_sniper_F") then { 
 				_player addUniform "U_B_CombatUniform_mcam";
-				_player addVest "V_PlateCarrier1_rgr";
+				_player addVest "V_PlateCarrier2_rgr";
 				_player addHeadgear "H_HelmetB";
 			};
 		};
-	case "EAST":
+	case OPFOR:
 		{
 			if (typeof _player == "O_sniper_F") then { 
 				_player addUniform "U_O_Ghilliesuit"; 
-				_player addVest "V_PlateCarrier1_rgr"; 
+				_player addVest "V_PlateCarrier2_rgr"; 
 			};
 			if (typeof _player == "O_diver_F") then { 
 				_player addUniform "U_O_Wetsuit"; 
@@ -52,15 +52,15 @@ switch (str(playerSide)) do
 			};
 			if (typeof _player != "O_diver_F" && typeof _player != "O_sniper_F") then { 
 				_player addUniform "U_O_CombatUniform_ocamo";
-				_player addVest "V_PlateCarrier1_rgr";
+				_player addVest "V_PlateCarrier2_rgr";
 				_player addHeadgear "H_HelmetO_ocamo";
 			};
 		};
-	case "GUER":
+	default
 		{
 			if (typeof _player == "I_sniper_F") then { 
 				_player addUniform "U_I_Ghilliesuit"; 
-				_player addVest "V_PlateCarrier1_rgr"; 
+				_player addVest "V_PlateCarrier2_rgr"; 
 			};
 			if (typeof _player == "I_diver_F") then { 
 				_player addUniform "U_I_Wetsuit"; 
@@ -69,7 +69,7 @@ switch (str(playerSide)) do
 			};
 			if (typeof _player != "I_diver_F" && typeof _player != "I_sniper_F") then { 
 				_player addUniform "U_I_CombatUniform";
-				_player addVest "V_PlateCarrier1_rgr";
+				_player addVest "V_PlateCarrier2_rgr";
 				_player addHeadgear "H_MilCap_ocamo";
 			};
 		};
@@ -82,9 +82,9 @@ _player addMagazine "16Rnd_9x21_Mag";
 _player addMagazine "16Rnd_9x21_Mag";
 _player addWeapon "hgun_P07_F";
 _player selectWeapon "hgun_P07_F";
+_player addItem "FirstAidKit";
+_player addrating 9999999;
 
-_player addrating 1000000;
-_player switchMove "AmovPknlMstpSrasWpstDnon_gear";
 
 thirstLevel = 100;
 hungerLevel = 100;

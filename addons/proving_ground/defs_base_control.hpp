@@ -44,7 +44,7 @@
 		w = 0.12;
 		h = str_height;
 
-		font = "TahomaB";
+		font = "PuristaBold";
 		sizeEx = 0.03;
 
 		rowHeight = 0.1;
@@ -89,7 +89,7 @@
 		sizeEx = 0.023;
 		colorBackground[] = {0.5, 0.5, 0.5, 0};
 		colorText[] = {0.85, 0.85, 0.85, 1};
-		font = "TahomaB";
+		font = "PuristaBold";
 		text = "";
 	};
 
@@ -98,7 +98,7 @@
 		type = CT_EDIT;
 		style = ST_LEFT+ST_MULTI;
 		idc = -1;
-		font = "TahomaB";
+		font = "PuristaMedium";
 		sizeEx = 0.026;
 		htmlControl = true;
 		lineSpacing = 0.004;
@@ -106,7 +106,7 @@
 		y = 0.0; h = 0.06;
 		colorText[] = {0.85, 0.85, 0.85, 1};
 		colorSelection[] = {1, 1, 1, 1};
-		colorDisabled[] = {1,1,1,0.3};
+		colorDisabled[] = {0,0,0,0.3};
 		autocomplete = "scripting";
 		//text = "";
 	};
@@ -121,7 +121,7 @@
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "PuristaBold";
 		sizeEx = 0.032;
 	};
 
@@ -138,12 +138,12 @@
 		y = 0;
 		
 		w = 0.23;
-		h = 0.11;
+		h = 0.06;
 		
 		size = 0.03921;
 		sizeEx = 0.03921;
 		
-		color[] = {0.543, 0.5742, 0.4102, 1.0};
+		color[] = {0.8314, 0.8784, 0.6275, 1.0};
 		color2[] = {0.95, 0.95, 0.95, 1};
 		colorBackground[] = {1, 1, 1, 1};
 		colorbackground2[] = {1, 1, 1, 0.4};
@@ -154,36 +154,43 @@
 		class HitZone 
 		{
 			left = 0.004;
-			top = 0.029;
+			top = 0.004;
 			right = 0.004;
-			bottom = 0.029;
+			bottom = 0.004;
 		};
 		
 		class ShortcutPos 
 		{
 			left = 0.0145;
-			top = 0.026;
-			w = 0.0392157;
-			h = 0.0522876;
+			top = 0.016;
+			w = 0.03631;
+			h = 0.01;
 		};
 		
 		class TextPos 
 		{
-			left = 0.05;
-			top = 0.034;
+			left = 0.03;
+			top = 0.001;
 			right = 0.005;
-			bottom = 0.005;
+			bottom = 0.001;
 		};
 		
 		textureNoShortcut = "";
-		animTextureNormal = "client\ui\ui_button_normal_ca.paa";
+		/*animTextureNormal = "client\ui\ui_button_normal_ca.paa";
 		animTextureDisabled = "client\ui\ui_button_disabled_ca.paa";
 		animTextureOver = "client\ui\ui_button_over_ca.paa";
-		animTextureFocused = "client\ui\ui_button_down_ca.paa";
+		animTextureFocused = "client\ui\ui_button_focus_ca.paa";
 		animTexturePressed = "client\ui\ui_button_down_ca.paa";
-		animTextureDefault = "client\ui\ui_button_default_ca.paa";
+		animTextureDefault = "client\ui\ui_button_default_ca.paa";*/
+		animTextureNormal = "client\ui\igui_button_normal_ca.paa";
+		animTextureDisabled = "client\ui\igui_button_disabled_ca.paa";
+		animTextureOver = "client\ui\igui_button_over_ca.paa";
+		animTextureFocused = "client\ui\igui_button_focus_ca.paa";
+		animTexturePressed = "client\ui\igui_button_down_ca.paa";
+		animTextureDefault = "client\ui\igui_button_normal_ca.paa";
+		animTextureNoShortcut = "client\ui\igui_button_normal_ca.paa";
 		period = 0.4;
-		font = "TahomaB";
+		font = "PuristaBold";
 		
 		soundEnter[] = {"\A3\ui_f\data\Sound\MOUSE2", 0.09, 1};
 		soundPush[] = {"\A3\ui_f\data\Sound\NEW1", 0.09, 1};
@@ -192,7 +199,7 @@
 		
 		class Attributes 
 		{
-			font = "TahomaB";
+			font = "PuristaBold";
 			color = "#E5E5E5";
 			align = "left";
 			shadow = "true";
@@ -200,7 +207,7 @@
 		
 		class AttributesImage 
 		{
-			font = "TahomaB";
+			font = "PuristaBold";
 			color = "#E5E5E5";
 			align = "left";
 			shadow = "true";
@@ -227,7 +234,7 @@
 		color[] = {0.7, 0.7, 0.7, 1};
 		colorActive[] = {0,0,0,1};
 		colorDisabled[] = {0,0,0,0.3};
-		font = "TahomaB";
+		font = "PuristaBold";
 		sizeEx = 0.023;
 		soundSelect[] = {"",0.1,1};
 		soundExpand[] = {"",0.1,1};
@@ -251,16 +258,24 @@
 
 	class balca_debug_pict
 	{
-		idc = -1;
+		/*idc = -1;
 		type = CT_STATIC;
-		style = ST_PICTURE;
+		style = ST_PICTURE;*/
 		x = 0.25; w = 0.5;
 		y = 0.1; h = 0.8;
-		colorText[] = {1, 1, 1, 1};
+		/*colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
-		text = "";
-		font = "TahomaB";
-		sizeEx = 0.032;
+		text = "\ca\ui\data\ui_gameoptions_background_ca.paa";
+		font = "PuristaBold";
+		sizeEx = 0.032;*/
+		colorBackground[] = {0, 0, 0, 0.6};
+		text              = "";
+		type              = CT_STATIC;
+		idc               = -1;
+		style             = ST_LEFT;
+		font              = "";
+		colorText[]       = {1, 1, 1, 1};
+		sizeEx            = 0.04;
 	};
 
 	class balca_debug_map {
@@ -307,17 +322,17 @@
 		ptsPerSquareRoad = 2;
 		ptsPerSquareObj = 10;
 
-		fontLabel = "TahomaB";
+		fontLabel = "PuristaBold";
 		sizeExLabel = 0.034000;
-		fontGrid = "TahomaB";
+		fontGrid = "PuristaBold";
 		sizeExGrid = 0.034000;
-		fontUnits = "TahomaB";
+		fontUnits = "PuristaBold";
 		sizeExUnits = 0.034000;
-		fontNames = "TahomaB";
+		fontNames = "PuristaBold";
 		sizeExNames = 0.056000;
-		fontInfo = "TahomaB";
+		fontInfo = "PuristaBold";
 		sizeExInfo = 0.034000;
-		fontLevel = "TahomaB";
+		fontLevel = "PuristaBold";
 		sizeExLevel = 0.034000;
 		
 		text = "\ca\ui\data\map_background2_co.paa";
@@ -345,7 +360,7 @@
 			y = -1;
 			w = 0.340000;
 			h = 0.152000;
-			font = "TahomaB";
+			font = "PuristaBold";
 			sizeEx = 0.039210;
 			colorBackground[] = {0.906000, 0.901000, 0.880000, 0.800000};
 			color[] = {0, 0, 0, 1};
