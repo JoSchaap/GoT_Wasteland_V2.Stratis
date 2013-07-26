@@ -41,11 +41,6 @@ if (isNil "ahSetupDone") then
 	TPG_fnc_MP = compileFinal (_assignPacketKey + (preprocessFileLineNumbers "server\antihack\remote\fn_MP.sqf"));
 	call compile (_assignPacketKey + (preprocessFileLineNumbers "server\antihack\remote\fn_initMultiplayer.sqf"));
 	
-	if (loadFile "scripts\serverRules.sqf" != "") then
-	{
-		[[[call compile preprocessFileLineNumbers "scripts\serverRules.sqf"], "client\functions\defineServerRules.sqf"], "BIS_fnc_execVM", true, true] call BIS_fnc_MP;
-	};
-	
 	flagHandler = compileFinal (_assignChecksum + (preprocessFileLineNumbers "server\antihack\flagHandler.sqf"));
 	
 	_scriptHandle = [_packetKey, _assignPacketKey, _checksum, _assignChecksum] execVM "server\antihack\createUnit.sqf";
