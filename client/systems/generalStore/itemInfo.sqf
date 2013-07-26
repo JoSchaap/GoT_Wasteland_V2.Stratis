@@ -37,7 +37,7 @@ if(_switchText == "Buy") then
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));
 			_itemlisttext ctrlSetText format ["Price: $%1", _price];	
 		}
-	}forEach generalStore;
+	}forEach (call generalStore);
 } else {	
 	{
 	    if(_itemText == _x select 0) then{
@@ -47,5 +47,5 @@ if(_switchText == "Buy") then
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));
 			_itemlisttext ctrlSetText format ["Price: $%1", _price];	
 		}
-	}forEach generalStore;
+	}forEach (call generalStore);
 };
