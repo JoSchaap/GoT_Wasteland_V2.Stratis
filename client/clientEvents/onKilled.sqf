@@ -7,14 +7,18 @@
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,true];};
-
+//diag_log (unitBackpack _player);
+clearMagazineCargoGlobal (unitBackpack _player);
+removebackpack _player;
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {
 	_id = PlayerCDeath spawn serverPlayerDied; 
 };
 
-if(!local _player) exitwith {};
+if(!local _player) exitwith {
+	closeDialog 0;
+};
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
@@ -55,16 +59,16 @@ if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide =
 	};
 };
 
-if (side _killer == INDEPENDENT && {side _player == INDEPENDENT} && {_killer != _player} && {vehicle _killer != vehicle _player}) then
-{
-	requestCompensateNegativeScore = _killer;
-	publicVariableServer "requestCompensateNegativeScore";
-};
-
 if(!isNull(pvar_PlayerTeamKiller)) then {
 	publicVar_teamkillMessage = pvar_PlayerTeamKiller;
 	publicVariable "publicVar_teamkillMessage";
 };
+
+if (side _killer == INDEPENDENT && {side _player == INDEPENDENT} && {_killer != _player} && {vehicle _killer != vehicle _player}) then
+	{
+		requestCompensateNegativeScore = _killer;
+		publicVariableServer "requestCompensateNegativeScore";
+	}; 
 
 private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
@@ -74,26 +78,47 @@ _to_delete_quick = [];
 if((_player getVariable "cmoney") > 0) then {
 	_m = "Land_Sack_F" createVehicle (position _player);
 	_m setVariable["money", (_player getVariable "cmoney"), true];
-	_player setVariable["cmoney",0,true];
 	_m setVariable ["owner", "world", true];
+	_player setVariable["cmoney",0,true];
 	_to_delete = _to_delete + [_m];
 };
 
-if((_player getVariable "medkits") > 0) then {
-	for "_a" from 1 to (_player getVariable "medkits") do {	
-		_m = "CZ_VestPouch_EP1" createVehicle (position _player);
-		_to_delete = _to_delete + [_m];
+if((_player getVariable "canfood") > 0) then {
+	for "_a" from 1 to (_player getVariable "canfood") do {	
+		_a = "Land_Basket_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_a];
+	};
+};
+
+if((_player getVariable "water") > 0) then {
+	for "_b" from 1 to (_player getVariable "water") do {	
+		_b = "Land_Bucket_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_b];
 	};
 };
 
 if((_player getVariable "repairkits") > 0) then {
-	for "_b" from 1 to (_player getVariable "repairkits") do {	
-		_m = "Suitcase" createVehicle (position _player);
-		_to_delete = _to_delete + [_m];
+	for "_c" from 1 to (_player getVariable "repairkits") do {	
+		_c = "Land_Suitcase_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_c];
 	};
+};
+
+if((_player getVariable "fuelFull") > 0) then {
+	_d = "Land_CanisterFuel_F" createVehicle (position _player);
+	_d setVariable["fuel", true, true];
+	_d setVariable ["owner", "world", true];
+	_to_delete = _to_delete + [_d];
+};
+
+if((_player getVariable "fuelEmpty") > 0) then {
+	_e = "Land_CanisterFuel_F" createVehicle (position _player);
+	_e setVariable["fuel", false, true];
+	_e setVariable ["owner", "world", true];
+	_to_delete = _to_delete + [_e];
 };
 
 true spawn {
 	waitUntil {playerRespawnTime < 2};
-	titleText ["", "BLACK OUT", 1];
+//	titleText ["", "BLACK OUT", 1];
 };

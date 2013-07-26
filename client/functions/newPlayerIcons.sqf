@@ -21,7 +21,7 @@ FZF_IC_Icons =
 	_remove_icon = false;
     _units = [];
     _uc = 0;
-	if (playerSide == in [INDEPENDENT,sideEnemy])then{ //decide what method to check who needs icons
+	if (playerSide == INDEPENDENT) then { 
 		{
 			if ((!isNull(_x)) ) then {
 				if (alive(_x)) then {
@@ -32,7 +32,7 @@ FZF_IC_Icons =
 		} forEach (units(player));	
 	} else {
 		{  //decide who needs icons
-			if ((!isNull(_x)) && ((side _x) ==playerSide)) then {
+			if ((!isNull(_x)) && ((side _x) == playerSide)) then {
 				if (alive(_x)) then {
 					_units set [_uc, _x];
 					_uc = _uc + 1;
@@ -58,7 +58,7 @@ FZF_IC_Icons =
         _pIcons = [];
 		private ["_Plicon"];
     switch(playerSide) do {
-		case BLUFOR: {				
+			case BLUFOR: {				
 			_Plicon = "client\icons\igui_side_blufor_ca.paa";
 			};
 			case OPFOR: {
