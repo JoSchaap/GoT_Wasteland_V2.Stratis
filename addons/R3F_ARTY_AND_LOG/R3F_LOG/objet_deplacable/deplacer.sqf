@@ -30,7 +30,7 @@ else
 	
 	_objet = _this select 0;
 	if(isNil {_objet getVariable "R3F_Side"}) then {
-		_objet setVariable ["R3F_Side", {playerSide), true];
+		_objet setVariable ["R3F_Side", (playerSide), true];
 	};
 	_tempVar = false;
 	if(!isNil {_objet getVariable "R3F_Side"}) then {
@@ -41,7 +41,7 @@ else
 	if(_tempVar) exitwith {
 		hint format["This object belongs to %1 and they're nearby you cannot take this.", _objet getVariable "R3F_Side"]; R3F_LOG_mutex_local_verrou = false;
 	};
-	_objet setVariable ["R3F_Side", {playerSide), true];
+	_objet setVariable ["R3F_Side", (playerSide), true];
 	
 	// Si l'objet est un calculateur d'artillerie, on laisse le script spécialisé gérer
 	_est_calculateur = _objet getVariable "R3F_ARTY_est_calculateur";
