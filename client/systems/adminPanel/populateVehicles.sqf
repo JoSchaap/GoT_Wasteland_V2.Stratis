@@ -15,7 +15,7 @@ disableSerialization;
 
 private ["_switch","_vehicleType","_vehicleSummary","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_check"];
 _uid = getPlayerUID player;
-if (_uid call isAdmin) then {
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
 	_switch = _this select 0;
 	_allVehicles = vehicles;
 	
