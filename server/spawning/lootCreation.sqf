@@ -6,11 +6,11 @@
 
 _odd1 = 60;					//The odds that a building is selected to place loot.
 _odd2 = 50;					//The odds that the selected building's spots will have loot(almost like odds per room).
-_odditem = 40;					//Chance of item instead of weapon
-_oddfuelcan = 25;				//Chance of a spawned fuelcan to be full instead of empty
+_odditem = 45;					//Chance of item instead of weapon
+_oddfuelcan = 35;				//Chance of a spawned fuelcan to be full instead of empty
 _spawnradius = 50;				//Distance added to the radius around city's original marker to spawn loot (expands the radius with this value)
-_interval = 3600;				//Time (in sec.) to pass before a city spawns new loot
-randomweapontestint = 0.02;		//Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
+_interval = 5400;				//Time (in sec.) to pass before a city spawns new loot
+randomweapontestint = 0.01;			//Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
 									
 //Array of buildings that are eligeble to spawn loot in :)
 _spawnlootIN = [
@@ -64,14 +64,11 @@ _spawnlootIN = [
 "Land_dp_bigTank_F", 
 "Land_dp_smallFactory_F", 
 "Land_dp_smallTank_F", 
-"Land_dp_transformer_F", 
 "Land_FuelStation_Build_F", 
 "Land_FuelStation_Shed_F", 
-"Land_FuelStation_Sign_F", 
 "Land_ReservoirTank_Airport_F", 
 "Land_Shed_Big_F", 
-"Land_Shed_Small_F", 
-"Land_spp_Transformer_F", 
+"Land_Shed_Small_F",  
 "Land_Communication_anchor_F", 
 "Land_Communication_F", 
 "Land_TBox_F", 
@@ -79,9 +76,7 @@ _spawnlootIN = [
 "Land_TTowerBig_2_F", 
 "Land_i_Barracks_V1_F", 
 "Land_MilOffices_V1_F", 
-"Land_Radar_F", 
-"Land_Radar_Small_F", 
-"Land_TentHangar_V1_F"
+"Land_Radar_F"
 ];
 
 
