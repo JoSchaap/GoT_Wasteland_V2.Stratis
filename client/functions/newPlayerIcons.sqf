@@ -100,7 +100,7 @@ FZF_IC_Icons =
 					_scale = 1 min ((1 - ((_distance) - 3) / 15) max 0.3); 
 				};
 							
-				with uinamespace do{  //update posistion
+				with uiNamespace do{  //update posistion
 					HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
 					HUD_ICON ctrlSetStructuredText parseText _picon;
 					HUD_ICON ctrlSetPosition [_sx, _sy, 0.4, 0.65];
@@ -110,14 +110,14 @@ FZF_IC_Icons =
 					HUD_ICON ctrlShow true;
 				};			
 			} else {
-				with uinamespace do{  //stop displaying the icon of the unit
+				with uiNamespace do{  //stop displaying the icon of the unit
 					HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
 					HUD_ICON ctrlShow false;
 				};		
 			};
 			
 		} else {
-			with uinamespace do{
+			with uiNamespace do{
 				HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
 				HUD_ICON ctrlShow false;
 			};		
@@ -126,7 +126,7 @@ FZF_IC_Icons =
 		//sleep 0.0001;
     } forEach(_units);
 		if (_remove_icon) then {
-			with uinamespace do{
+			with uiNamespace do{
 			HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index );
 			HUD_ICON ctrlShow false;
 			};	

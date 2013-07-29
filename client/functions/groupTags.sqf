@@ -1,11 +1,13 @@
-//	@file Version: 1.0
 //	@file Name: groupIcons.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 28/11/2012 05:19
+//	@file Author: [404] Deadbeat, [404] Costlyy, [GoT] JoSchaap
+
 
 private["_inGroup","_isLeader","_refresh","_distance","_myGroup","_tempArray","_icon"];
 
 _tempArray = [];
+_refresh = 0.34;  //lol they forgot to define the duration :)  also added streamfriendly support
+
+
 
 while {true} do
 {
@@ -25,20 +27,30 @@ while {true} do
             {
 				if(getPlayerUID _target in _tempArray) then
                 {
-                	_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
+					if(isStreamFriendlyUIEnabled) then 
+					{
+						_namestring = "<t size='0.3' shadow='2' color='#7FFF00'>[PLAYER]</t>";
+					} else {
+						_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
+					};
 					[_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText;	    
                 };				
 			};
 		};
 	    
-	    if ((_target isKindOf "Car" || _target isKindOf "Motorcycle" || _target isKindOf "Tank") && player == vehicle player) then 
+	    if ((_target isKindOf "Car" || _target isKindOf "Helicopter" || _target isKindOf "Ship" || _target isKindOf "Wheeled_APC_F" || _target isKindOf "Truck_F") && player == vehicle player) then 
         {
 			if(player distance _target < 300)then 
             {
 				if(getPlayerUID _target in _tempArray) then
                 {
-					_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
-					[_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText;		    
+				if(isStreamFriendlyUIEnabled) then 
+					{
+						_namestring = "<t size='0.3' shadow='2' color='#7FFF00'>[VEHICLE]</t>";
+					} else {
+						_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
+					};	
+					[_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText;					
                 };				
 			};
 		}; 	
