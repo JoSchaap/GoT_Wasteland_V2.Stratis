@@ -7,4 +7,4 @@
 
 player setVariable ["fuelFull",1,false]; 
 player setVariable["fuelEmpty",0,false];
-hint "<img image='client\icons\jerrycan.paa'><br/>Your jerry can is now full";
+hint "Your jerry can is now full";
