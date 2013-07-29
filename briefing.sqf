@@ -289,7 +289,7 @@ player createDiaryRecord["changelog",
 		[Added] New antihack script by AWA, AgentREV and Tonic<br/>
 		[Added] Improv. roof to general stores<br/>
 		[Added] Name censoring in group-menu for StreamFriendly<br/>
-		[Added] Main mission: Coastal patrol
+		[Added] Main mission: Coastal patrol<br/>
 		[Fixed] Name censoring when in vehicle for StreamFriendly<br/>
 		[Fixed] Some missions did not announce themselves<br/>
 		[Fixed] AI not despawning on APC mission<br/>
