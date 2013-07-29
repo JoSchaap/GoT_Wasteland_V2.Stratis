@@ -29,11 +29,11 @@ while {true} do
                 {
 					if(isStreamFriendlyUIEnabled) then 
 					{
-						_namestring = "<t size='0.3' shadow='2' color='#7FFF00'>[PLAYER]</t>";
+						_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>[PLAYER]</t>";
 					} else {
 						_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
 					};
-					[_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText;	    
+					if not(isNil "_nameString") then { [_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText; };
                 };				
 			};
 		};
@@ -46,11 +46,11 @@ while {true} do
                 {
 				if(isStreamFriendlyUIEnabled) then 
 					{
-						_namestring = "<t size='0.3' shadow='2' color='#7FFF00'>[VEHICLE]</t>";
+						_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>[VEHICLE]</t>";
 					} else {
 						_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
 					};	
-					[_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText;					
+					if not(isNil "_nameString") then { [_nameString,0,0.8,_refresh,0,0,3] spawn bis_fnc_dynamicText; };
                 };				
 			};
 		}; 	
@@ -73,7 +73,7 @@ while {true} do
        	_absoluteDir = abs _relativeDir;      
         
         if (_absoluteDir < _storeInteractionBuffer OR _absoluteDir > (360 - _storeInteractionBuffer)) then {
-        	_nameString = "<t size='0.5' shadow='2' color='#FFFFFF'>" + "Gun Store (Press E)" + "</t>";
+        	_nameString = "<t size='0.5' shadow='2' color='#FFFFFF'>" + "Gun Store (Press E, or use scroll wheel)" + "</t>";
        		[_nameString,0,0.8,0.5,0,0,3] spawn bis_fnc_dynamicText;
         };
     }; 
@@ -83,7 +83,7 @@ while {true} do
        	_absoluteDir = abs _relativeDir;      
         
         if (_absoluteDir < _storeInteractionBuffer OR _absoluteDir > (360 - _storeInteractionBuffer)) then {
-        	_nameString = "<t size='0.5' shadow='2' color='#FFFFFF'>" + "General Store (Press E)" + "</t>";
+        	_nameString = "<t size='0.5' shadow='2' color='#FFFFFF'>" + "General Store (Press E, or use scroll wheel)" + "</t>";
        		[_nameString,0,0.8,0.5,0,0,3] spawn bis_fnc_dynamicText;
         };
     };         

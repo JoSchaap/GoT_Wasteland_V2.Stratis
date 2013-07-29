@@ -11,25 +11,25 @@ while{true}do{
 			
 			if(isStreamFriendlyUIEnabled) then 
 				{
-					_namestring = "<t size='0.3' shadow='2' color='#7FFF00'>[PLAYER]</t>";
+					_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>[PLAYER]</t>";
 				} else {
 					_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
 				};
-			[_nameString,0,0.8,__REFRESH,0,0,3] spawn bis_fnc_dynamicText;
+			if not(isNil "_nameString") then { [_nameString,0,0.8,__REFRESH,0,0,3] spawn bis_fnc_dynamicText; };
 		};
 	};
     
-    if ((_target isKindOf "Car" || _target isKindOf "Motorcycle" || _target isKindOf "Tank") && player == vehicle player) then{
+    if ((_target isKindOf "Car" || _target isKindOf "Helicopter" || _target isKindOf "Ship" || _target isKindOf "Wheeled_APC_F" || _target isKindOf "Truck_F") && player == vehicle player) then{
 		if((side _target == playerSide || playerSide in [INDEPENDENT,sideEnemy]) && (player distance _target) < __DISTANCE && ((count crew _target) > 0))then{
             _unit = crew _target select 0;
 			
 			if(isStreamFriendlyUIEnabled) then 
 				{
-					_namestring = "<t size='0.3' shadow='2' color='#7FFF00'>[VEHICLE]</t>";
+					_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>[VEHICLE]</t>";
 				} else {
 					_nameString = "<t size='0.3' shadow='2' color='#7FFF00'>" + format['%1',_unit getVariable ['unitname', name _target]] + "</t>";
 				};
-			[_nameString,0,0.8,__REFRESH,0,0,3] spawn bis_fnc_dynamicText;
+			if not(isNil "_nameString") then { [_nameString,0,0.8,__REFRESH,0,0,3] spawn bis_fnc_dynamicText; };
 		};
 	};
     
