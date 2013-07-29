@@ -58,7 +58,7 @@ objectList = ["Land_Sacks_goods_F",
 			"Land_HBarrierBig_F",
 			"Land_HBarrier_5_F",
 			"Land_LampShabby_F",
-			"Land_Scaffolding_F",
+//			"Land_Scaffolding_F", disabled due to physics issues
 			"Land_HBarrierBig_F",
 			"Land_BagBunker_Small_F",
 			"Land_HBarrier_1_F",
