@@ -1,4 +1,4 @@
-private ["_missionMarkerName","_missionType","_picture","_vehicleName","_hint","_waypoint","_waypoints","_group","_vehicles","_marker","_failed","_startTime","_numWaypoints","_ammobox","_createVehicle","_leader","_randomboat","_randomheli","_randomsub"];
+private ["_missionMarkerName","_missionType","_picture","_vehicleName","_hint","_waypoint","_waypoints","_group","_vehicles","_marker","_failed","_startTime","_numWaypoints","_ammobox","_createVehicle","_leader","_randomboat","_randomheli"];
 
 #include "mainMissionDefines.sqf"
 
@@ -14,7 +14,6 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1", _missionType];
 _group = createGroup civilian;
 _randomboat = ["O_Boat_Armed_01_hmg_F","B_Boat_Armed_01_minigun_F","I_Boat_Armed_01_minigun_F"] call BIS_fnc_selectRandom;
 _randomheli = ["O_Heli_Attack_02_black_F","O_Heli_Light_02_F","B_Heli_Transport_01_F","B_Heli_Light_01_armed_F"] call BIS_fnc_selectRandom;
-_randomsub = ["B_SDV_01_F","O_SDV_01_F","I_SDV_01_F"] call BIS_fnc_selectRandom;
 
 _createVehicle = {
     private ["_type","_position","_direction","_group","_vehicle","_soldier"];
@@ -34,12 +33,8 @@ _createVehicle = {
     _soldier = [_group, _position] call createRandomSoldierC; 
     _soldier moveInDriver _vehicle;
     _soldier = [_group, _position] call createRandomSoldierC; 
-    if (_vehicle isKindOf _randomsub) then {
-        _soldier moveInCargo [_vehicle, 2];
-    } else {
-	   _soldier assignAsGunner _vehicle;
-        _soldier moveInTurret [_vehicle, [0]];
-    };
+    _soldier assignAsGunner _vehicle;
+    _soldier moveInTurret [_vehicle, [0]];
 
 	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _type >> "weapons")) then
 	{
@@ -55,7 +50,6 @@ _createVehicle = {
 _vehicles = [];
 _vehicles set [0, [_randomheli, [1877.32, 6284.56, 0.00134969], 9, _group] call _createVehicle];
 _vehicles set [1, [_randomboat, [1865.25, 6341.89,10.1567], 0, _group] call _createVehicle]; 
-_vehicles set [2, [_randomsub, [1908.83, 6312.36, 4.12915], 117, _group] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _group selectLeader _leader;
@@ -137,9 +131,9 @@ _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText "Coastal Patrol";
 
-_picture = getText (configFile >> "CfgVehicles" >> _randomsub >> "picture");
-_vehicleName = getText (configFile >> "cfgVehicles" >> _randomsub >> "displayName");
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> transporting 2 weapon crates, is patroling the coast with a heli and a armed boat. Stop them!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
+_picture = getText (configFile >> "CfgVehicles" >> _randomboat >> "picture");
+_vehicleName = getText (configFile >> "cfgVehicles" >> _randomboat >> "displayName");
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> transporting 2 weapon crates, is patroling the coast with air-support. Stop them!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };
 publicVariable "messageSystem";
@@ -177,9 +171,12 @@ if(_failed) then
     publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
-	if ((damage _vehicle) == 1) then {
-		deleteVehicle _vehicle;
-		{deleteVehicle _x;}forEach units _group;
+	if not(isNil "_vehicle") then 
+	{
+		if ((damage _vehicle) == 1) then {
+			deleteVehicle _vehicle;
+			{deleteVehicle _x;}forEach units _group;
+		};
 	};
 	if (!isNil "_vehicle") then { _vehicle setVehicleLock "UNLOCKED"; };
 	if (!isNil "_vehicle") then { _vehicle setVariable ["R3F_LOG_disabled", false, true]; };
