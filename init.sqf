@@ -6,11 +6,6 @@
 
 #include "setup.sqf"
 
-// base saving can only be enabled if the server is running the @inidb mod!
-// base building parts that are locked, including food/water supplys that are locked will be saved during the restart
-// these will re-spawn unlocked after the restart to avoid bases clutterring the entire map
-// it does NOT save player loadouts, ammocrates or vehicles!
-
 StartProgress = false;
 enableSaving[false,false];
 
