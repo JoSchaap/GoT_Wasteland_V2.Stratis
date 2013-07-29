@@ -308,9 +308,9 @@ player createDiaryRecord["changelog",
 		[Changed] hunger/thirst death by HPdrain (not instant)<br/>
 		[Changed] Food/Water drainage and gain from items<br/>
 		[Changed] Stores can also be openned from actionmenu<br/>
-		[Changed] Loot in buildings spawned when a player enters town<br/>
+		[Changed] Loot in buildings spawned when player in town<br/>
 		[Changed] Loot in buildings now respawns after 30mins<br/>
-		[Changed] Loot in buildings 25% chance of fuel inside fuelcans<br/>
+		[Changed] Loot in buildings 35% chance of fuel in fuelcan<br/>
 		[Changed] Fuel cans (full or empty) can be dropped<br/>
 		[Changed] Repairkits added to loot-table<br/>
 		[Changed] fuel cans empty and full added to loot-table<br/>
