@@ -135,19 +135,21 @@ while {_run} do
 		// Clean-up if vehicle is towing via R3F
 		
 		_towedUnit = _unit getVariable ["R3F_LOG_remorque", objNull];
-		
-		if (!isNull _towedUnit) then
+		if (!isNil "_towedUnit") then  //might sound stupid but the game still might think its undefined..
 		{
-			detach _towedUnit;
-			_towedUnit setVariable ["R3F_LOG_est_transporte_par", objNull, true];
-			_unit setVariable ["R3F_LOG_remorque", objNull, true];
-			
-			_pos = getPosATL _towedUnit;
-			
-			if (_pos select 2 < 1) then {
-				_towedUnit setPosATL [_pos select 0, _pos select 1, 1];
+			if (!isNull _towedUnit) then
+			{
+				detach _towedUnit;
+				_towedUnit setVariable ["R3F_LOG_est_transporte_par", objNull, true];
+				_unit setVariable ["R3F_LOG_remorque", objNull, true];
+				
+				_pos = getPosATL _towedUnit;
+				
+				if (_pos select 2 < 1) then {
+					_towedUnit setPosATL [_pos select 0, _pos select 1, 1];
+				};
+				_towedUnit setVelocity [0,0,0];
 			};
-			_towedUnit setVelocity [0,0,0];
 		};
 		
 		if (typename _static == typeName []) then { _position = _static; }
