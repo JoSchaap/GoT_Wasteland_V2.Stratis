@@ -181,8 +181,8 @@ if(_failed) then
 		deleteVehicle _vehicle;
 		{deleteVehicle _x;}forEach units _group;
 	};
-	_vehicle setVehicleLock "UNLOCKED";
-	_vehicle setVariable ["R3F_LOG_disabled", false, true];
+	if (!isNil "_vehicle") then { _vehicle setVehicleLock "UNLOCKED"; };
+	if (!isNil "_vehicle") then { _vehicle setVariable ["R3F_LOG_disabled", false, true]; };
     // Mission complete
 	_ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox;
