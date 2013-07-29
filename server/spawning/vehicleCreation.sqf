@@ -9,6 +9,7 @@ if(!X_Server) exitWith {};
 private ["_markerPos","_pos","_type","_num","_cartype","_car"];
 
 _markerPos = _this select 0;
+_type = 0;  //test due to undefined variable errors..
 
 
 if (count _this > 1) then
