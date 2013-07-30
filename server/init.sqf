@@ -38,7 +38,6 @@ if (loadFile "GoT_Wasteland-config.sqf" == "") exitWith
 		diag_log "[ERROR] GoT Wasteland v2.3 requires additional files";
 		diag_log "[ERROR] You can download the full package on: www.got2dayz.nl";
 	};
-};
 
 if (!isNil "GoT_nightTime" && {GoT_nightTime > 0}) then
 {
