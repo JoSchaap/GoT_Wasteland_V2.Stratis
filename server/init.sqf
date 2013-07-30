@@ -30,8 +30,9 @@ diag_log format["WASTELAND SERVER - Server Compile Finished"];
 if (loadFile "GoT_Wasteland-config.sqf" != "") then
 {
     call compile preprocessFileLineNumbers "GoT_Wasteland-config.sqf";
-} else {
-	exitWith 
+};
+ 
+if (loadFile "GoT_Wasteland-config.sqf" == "") exitWith 
 	{
 		diag_log "[ERROR] GoT Wasteland v2.3 configuration could not be loaded";
 		diag_log "[ERROR] GoT Wasteland v2.3 requires additional files";
