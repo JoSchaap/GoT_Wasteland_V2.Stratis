@@ -63,7 +63,8 @@ ammoArray = compileFinal str [
 	["5.56mm 20Rnd (UW) Mag","20Rnd_556x45_UW_mag",8],
 	["5.56mm 30Rnd Stanag Mag","30Rnd_556x45_Stanag",14],
     	
-    	["6.5mm 30Rnd CL Mag","30Rnd_65x39_caseless_mag",30],
+    	["6.5mm 30Rnd Stanag Mag","30Rnd_65x39_caseless_mag",30],
+		["6.5mm 30Rnd C.L. Mag","30Rnd_65x39_caseless_green",30],
 	["6.5mm 200Rnd Belt","200Rnd_65x39_cased_Box",190],
 	
 	["7.62mm 20Rnd Mag","20Rnd_762x51_Mag",45],
