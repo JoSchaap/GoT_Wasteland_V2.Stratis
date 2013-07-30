@@ -284,11 +284,12 @@ player createDiaryRecord["changelog",
 		[Added] new SMG's and optics/surpressors<br/>
 		[Added] Independent SDV<br/>
 		[Added] camo blackhawk<br/>
-		[Added] New APC's<br/>
+		[Added] New APC's (Wheeled and Tracked)<br/>
 		[Added] New outposts for the outpost mission<br/>
 		[Added] New antihack script by AWA, AgentREV and Tonic<br/>
 		[Added] Improv. roof to general stores<br/>
 		[Added] Name censoring in group-menu for StreamFriendly<br/>
+		[Added] Name censoring in group/side tags for StreamFriendly<br/>
 		[Added] Main mission: Coastal patrol<br/>
 		[Fixed] Name censoring when in vehicle for StreamFriendly<br/>
 		[Fixed] Some missions did not announce themselves<br/>
@@ -298,11 +299,13 @@ player createDiaryRecord["changelog",
 		[Fixed] Height issue with scaffolding basepart<br/>
 		[Fixed] Undefined variable errors in the original code<br/>
 		[Fixed] Group invite not announcing to invited player<br/>
-		[Fixed] Server cleanup now fully functional<br/>
+		[Fixed] Server cleanup rewritten and working!<br/>
 		[Fixed] Various performance improvements in the scripts<br/>
 		[Fixed] Various issues with unlocked mission vehicles<br/>
 		[Fixed] Selling prices of rifles (no more 25 bucks)<br/>
 		[Fixed] Gunstore purchase exploit (spamming buy button)<br/>
+		[Fixed] No katiba ammo in gunstores<br/>
+		[Changed] Existing missions now contain randomized elements!<br/>
 		[Changed] Gametype: changed to SANDBOX <br/>
 		[Changed] Survival system from decimals to percentages<br/>
 		[Changed] hunger/thirst death by HPdrain (not instant)<br/>
@@ -345,7 +348,7 @@ player createDiaryRecord["info",
 	<br/>
 	Development after v1.06 was taken on by:<br/>
 	* JoSchaap (GoT/Tweakers.Net)<br/>
-	<img size='4' image='client\icons\logo.paa'/><br/>
+	<img size='2' image='client\icons\logo.paa'/><br/>
 	<br/>
 	Others that contributed:<br/>
 	* afroVoodo (ArmaHolic)<br/>
@@ -411,7 +414,7 @@ player createDiaryRecord["info",
 <br/>
 	Visit our website at:<br/><br/>
 	http://www.got2dayz.nl<br/>
-	<img size='5' image='client\icons\logo.paa'/><br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	<br/>
 "
 ]
@@ -423,7 +426,7 @@ player createDiaryRecord["GoT2DayZ",
 "
 <br/>
 	What is GoT/GoT2DayZ?<br/><br/>
-	<img size='5' image='client\icons\logo.paa'/><br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	GoT2DayZ started as a DayZ community for Tweakers.Net<br/>
 	As time passed on we also started playing wasteland.<br/>
 	Now we run some public servers.<br/>
@@ -445,7 +448,7 @@ player createDiaryRecord["GoT2DayZ",
 <br/>
 	First of all make sure you are on the official server</br>
 	Servername: [NL] GoT Wasteland v2.3<br/><br/>
-	<img size='5' image='client\icons\logo.paa'/><br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	You can try to get an admins attention in global chat.<br/>
 	If unsuccessfull you can contact us on:<br/>
 	facebook: fb.me/GoT2DayZ<br/>
@@ -461,7 +464,7 @@ player createDiaryRecord["GoT2DayZ",
 "Server info",
 "
 <br/>
-	<img size='5' image='client\icons\logo.paa'/><br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	Server is hosted on a dual XEON 3.2Ghz machine<br/><br/>
 	- 8GB DDR3<br/>
 	- 2x Samsung 120GB SSD<br/>
@@ -475,7 +478,7 @@ player createDiaryRecord["wasteland",
 [
 "Hints/Tips",
 "
-<img size='5' image='client\icons\logo.paa'/> GoT Wasteland v2.3<br/>
+<img size='4' image='client\icons\logo.paa'/> GoT Wasteland v2.3<br/>
 <br/>
 * At the start of the game, spread out and find supplies before worrying about where to establish a meeting place or a base, supplies are important and very valuable.<br/><br/>
 * When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, map-bound bases, etc. remember, players randomly spawn in and around towns and could even spawn inside your base should you set it up in a town.<br/><br/>
