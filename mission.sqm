@@ -64,6 +64,8 @@ class Mission
 		"a3_boat_f_beta_boat_transport_01",
 		"A3_Boat_F_Boat_Armed_01",
 		"a3_boat_f_beta_boat_armed_01",
+		"a3_armor_f_panther",
+		"a3_armor_f_beta_apc_tracked_02",
 		"A3_Boat_F_SDV_01"
 	};
 	addOnsAuto[]=
@@ -83,6 +85,8 @@ class Mission
 		"a3_soft_f_beta_quadbike",
 		"A3_Soft_F_MRAP_03",
 		"a3_soft_f_truckheavy",
+		"a3_armor_f_panther",
+		"a3_armor_f_beta_apc_tracked_02",
 		"a3_structures_f_items_luggage",
 		"A3_Structures_F_Households_House_Small01",
 		"A3_Structures_F_Households_House_Small02",
