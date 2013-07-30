@@ -30,6 +30,13 @@ diag_log format["WASTELAND SERVER - Server Compile Finished"];
 if (loadFile "GoT_Wasteland-config.sqf" != "") then
 {
     call compile preprocessFileLineNumbers "GoT_Wasteland-config.sqf";
+} else {
+	exitWith 
+	{
+		diag_log "[ERROR] GoT Wasteland v2.3 configuration could not be loaded";
+		diag_log "[ERROR] GoT Wasteland v2.3 requires additional files";
+		diag_log "[ERROR] You can download the full package on: www.got2dayz.nl";
+	};
 };
 
 if (!isNil "GoT_nightTime" && {GoT_nightTime > 0}) then
