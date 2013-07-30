@@ -1192,7 +1192,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore1";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Mk200_MRCO_F""; this addUniform ""U_I_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_1');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Mk200_MRCO_F""; this addUniform ""U_I_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_1'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1212,7 +1212,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore2";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Zafir_pointer_F""; this addUniform ""U_I_HeliPilotCoveralls""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_2');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Zafir_pointer_F""; this addUniform ""U_I_HeliPilotCoveralls""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_2'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1232,7 +1232,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore3";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_GM6_SOS_F""; this addUniform ""U_I_CombatUniform_tshirt""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_3');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_GM6_SOS_F""; this addUniform ""U_I_CombatUniform_tshirt""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_3'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1252,7 +1252,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore4";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""arifle_Mk20_GL_MRCO_pointer_F""; this addUniform ""U_I_Wetsuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_4');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""arifle_Mk20_GL_MRCO_pointer_F""; this addUniform ""U_I_Wetsuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_4'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1272,7 +1272,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore1";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_B_SpecopsUniform_sgg""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_1');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_B_SpecopsUniform_sgg""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_1'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1292,7 +1292,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_I_OfficerUniform""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_2');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_I_OfficerUniform""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_2'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1312,7 +1312,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore3";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_O_SpecopsUniform_ocamo""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_3');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_O_SpecopsUniform_ocamo""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_3'); this enableSimulation false;";
 				};
 			};
 		};
