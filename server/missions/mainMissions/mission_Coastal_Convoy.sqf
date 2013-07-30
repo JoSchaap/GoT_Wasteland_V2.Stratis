@@ -13,7 +13,7 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1", _missionType];
 
 _group = createGroup civilian;
 _randomboat = ["O_Boat_Armed_01_hmg_F","B_Boat_Armed_01_minigun_F","I_Boat_Armed_01_minigun_F"] call BIS_fnc_selectRandom;
-_randomheli = ["O_Heli_Attack_02_black_F","O_Heli_Light_02_F","B_Heli_Transport_01_F","B_Heli_Light_01_armed_F"] call BIS_fnc_selectRandom;
+_randomheli = ["O_Heli_Attack_02_black_F","O_Heli_Light_02_F","B_Heli_Transport_01_F","B_Heli_Light_01_armed_F","B_Heli_Transport_01_camo_F"] call BIS_fnc_selectRandom;
 
 _createVehicle = {
     private ["_type","_position","_direction","_group","_vehicle","_soldier"];
@@ -32,19 +32,24 @@ _createVehicle = {
     
     _soldier = [_group, _position] call createRandomSoldierC; 
     _soldier moveInDriver _vehicle;
-    _soldier = [_group, _position] call createRandomSoldierC; 
+    _soldier = [_group, _position] call createRandomSoldierC;
     _soldier assignAsGunner _vehicle;
     _soldier moveInTurret [_vehicle, [0]];
-
+	if ((_vehicle isKindOf "O_Boat_Armed_01_hmg_F") || (_vehicle isKindOf "B_Boat_Armed_01_minigun_F") || (_vehicle isKindOf "I_Boat_Armed_01_minigun_F") || (_vehicle isKindOf "B_Heli_Transport_01_F") || (_vehicle isKindOf "B_Heli_Transport_01_camo_F")) then 
+	{
+		_soldier = [_group, _position] call createRandomSoldierC; 
+		_soldier assignAsGunner _vehicle;
+		_soldier moveInTurret [_vehicle, [1]];
+	};
+	
 	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _type >> "weapons")) then
 	{
 		_vehicle removeMagazinesTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
 		_vehicle removeMagazinesTurret ["192Rnd_CMFlare_Chaff_Magazine", [-1]];
 		_vehicle removeMagazinesTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]];
 	};
-
-    _vehicle setVehicleLock "LOCKED";
-    _vehicle
+	_vehicle setVehicleLock "LOCKED";
+	_vehicle
 };
 
 _vehicles = [];
@@ -184,7 +189,7 @@ if(_failed) then
 	_ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox;
     clearWeaponCargoGlobal _ammobox; 
-    [_ammobox,"mission_USSpecial2"] call fn_refillbox;
+    [_ammobox,"mission_Main_A3snipers"] call fn_refillbox;
     _ammobox2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox2;
     clearWeaponCargoGlobal _ammobox2; 
