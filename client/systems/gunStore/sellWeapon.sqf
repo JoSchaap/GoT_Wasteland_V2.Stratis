@@ -41,7 +41,7 @@ _magasines set [count _magasines, currentMagazine player];
 		
 		_weapon_value = _weapon_value + _magValue;
     };
-} forEach _magazines;
+} forEach _magasines;
 
 player removeWeapon _primary;
 { player removeMagazines _x } forEach _weaponMags;
