@@ -106,7 +106,7 @@ if (ismultiplayer && _mode == 0) then {
 		
 		_allowedFunctions = ["chatBroadcast", "checkHackedVehicles", "flagHandler", "clientFlagHandler", "adminMessage"];
 		
-		_blockedParam = [["creat","money","toString","publicVariableClient","AAN","3dCredits","spawnCrew","spawnEnemy","spawnGroup","spawnVehicle","BIS_fnc_MP_packet"], [str _params] call fn_filterString] call fn_findString;
+		_blockedParam = [["createMine","createUnit","createVehicle","money","toString","publicVariableClient","AAN","3dCredits","spawnCrew","spawnEnemy","spawnGroup","spawnVehicle","BIS_fnc_MP_packet"], [str _params] call fn_filterString] call fn_findString;
 		_blockedFunction = [["creat","spawning","AAN","3dCredits","spawnCrew","spawnEnemy","spawnGroup","spawnVehicle"], [_functionName] call fn_filterString] call fn_findString;
 		
 		_defineServerRules = (_functionName == "BIS_fnc_execVM" && {typeName _params == typeName []} && {count _params > 1} && {typeName (_params select 1) == typeName ""} && {_params select 1 == "client\functions\defineServerRules.sqf"});

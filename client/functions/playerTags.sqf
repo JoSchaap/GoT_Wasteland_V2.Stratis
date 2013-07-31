@@ -18,8 +18,8 @@ while{true}do{
 			if not(isNil "_nameString") then { [_nameString,0,0.8,__REFRESH,0,0,3] spawn bis_fnc_dynamicText; };
 		};
 	};
-    
-    if ((_target isKindOf "Car" || _target isKindOf "Helicopter" || _target isKindOf "Ship" || _target isKindOf "Wheeled_APC_F" || _target isKindOf "Truck_F") && player == vehicle player) then{
+		
+    if (!(_target isKindOf "Man") && {_target isKindOf "AllVehicles"} && {player == vehicle player}) then{
 		if((side _target == playerSide || playerSide in [INDEPENDENT,sideEnemy]) && (player distance _target) < __DISTANCE && ((count crew _target) > 0))then{
             _unit = crew _target select 0;
 			

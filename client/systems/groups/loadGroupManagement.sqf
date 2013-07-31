@@ -23,6 +23,7 @@ closeDialog 0;
 _start = createDialog "GroupManagement";	
 waitUntil{!isNull(findDisplay groupManagementDialog)};		
 _dialog = findDisplay groupManagementDialog;
+_dialog displayAddEventHandler ["KeyDown", "_return = false; if(groupManagmentActive && (_this select 1) == 1) then {_return = true;}; _return"];
 groupManagmentActive = true;
 _playerListBox = _dialog displayCtrl groupManagementPlayerList;
 _groupListBox = _dialog displayCtrl groupManagementGroupList;
@@ -91,7 +92,7 @@ while{groupManagmentActive} do
 	        {
 			    //Add to list
 			    if(isStreamFriendlyUIEnabled) then {
-					_namestr = "Censored(StreamFriendly)";
+					_namestr = "[PLAYER]";
 				} else {
 					_namestr = name(_x);
 				};
@@ -104,7 +105,7 @@ while{groupManagmentActive} do
     //Update group player list
     {
     	if(isStreamFriendlyUIEnabled) then {
-			_namestr = "Censored(StreamFriendly)";
+			_namestr = "[PLAYER]";
 		} else {
 			_namestr = name(_x);
 		};             

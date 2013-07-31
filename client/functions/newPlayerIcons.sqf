@@ -79,8 +79,9 @@ FZF_IC_Icons =
         player setVariable ["FZF_IC_Hud_pIcons", _pIcons];
     };
 
-	private ["_index"];
+	private ["_index", "_FZF_IC_Hud_Disp", "_HUD_ICON"];
 	_index = 0;
+	_FZF_IC_Hud_Disp = uiNamespace getVariable "FZF_IC_Hud_Disp";
     {
         private ["_pos","_unit", "_distance", "_name"];
         _unit = _x;
@@ -103,20 +104,16 @@ FZF_IC_Icons =
 					_scale = 1 min ((1 - ((_distance) - 3) / 15) max 0.3); 
 				};
 							
-				with uiNamespace do{  //update posistion
-					HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
-					HUD_ICON ctrlSetStructuredText parseText _picon;
-					HUD_ICON ctrlSetPosition [_sx, _sy, 0.4, 0.65];
-					HUD_ICON ctrlSetScale _scale;
-					HUD_ICON ctrlSetFade ((1- _scale ) / 2);
-					HUD_ICON ctrlCommit 0;
-					HUD_ICON ctrlShow true;
-				};			
+				HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
+				HUD_ICON ctrlSetStructuredText parseText _picon;
+				HUD_ICON ctrlSetPosition [_sx, _sy, 0.4, 0.65];
+				HUD_ICON ctrlSetScale _scale;
+				HUD_ICON ctrlSetFade ((1- _scale ) / 2);
+				HUD_ICON ctrlCommit 0;
+				HUD_ICON ctrlShow true;		
 			} else {
-				with uiNamespace do{  //stop displaying the icon of the unit
-					HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
-					HUD_ICON ctrlShow false;
-				};		
+				HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
+				HUD_ICON ctrlShow false;
 			};
 			
 		} else {
@@ -129,11 +126,8 @@ FZF_IC_Icons =
 		//sleep 0.0001;
     } forEach(_units);
 		if (_remove_icon) then {
-			with uiNamespace do{
 			HUD_ICON = FZF_IC_Hud_Disp displayCtrl (icons_idc + _index );
 			HUD_ICON ctrlShow false;
-			};	
-//			player sideChat "Removed Unit From screen " + str(_index );
 		};
 	
 };

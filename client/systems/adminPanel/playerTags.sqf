@@ -21,6 +21,4 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 		sleep 1;
 	};
 	{clearGroupIcons group _x;} forEach entities "AllVehicles";
-} else {
-  exit;  
 };

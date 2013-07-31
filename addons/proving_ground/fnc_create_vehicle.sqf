@@ -13,10 +13,10 @@ case 0: {
 		_filter = [];
 		switch (_veh_type) do {
 			case 0: {_kindOf = ["staticWeapon"];};
-			case 1: {_kindOf = ["car","Motorcycle"];_filter = ["truck","Wheeled_APC_F"];};
-			case 2: {_kindOf = ["truck"];};
-			case 3: {_kindOf = ["Wheeled_APC_F","Tracked_APC"];};
-			case 4: {_kindOf = ["tank"];_filter = ["Tracked_APC"];};
+			case 1: {_kindOf = ["car","Motorcycle"];_filter = ["Truck_F","Wheeled_APC_F"];};
+			case 2: {_kindOf = ["Truck_F"];};
+			case 3: {_kindOf = ["Wheeled_APC_F","Tracked_APC_F"];};
+			case 4: {_kindOf = ["tank"];_filter = ["Tracked_APC_F"];};
 			case 5: {_kindOf = ["helicopter"];_filter = ["ParachuteBase"];};
 			case 6: {_kindOf = ["plane"];_filter = ["ParachuteBase"];};
 			case 7: {_kindOf = ["ship"];};

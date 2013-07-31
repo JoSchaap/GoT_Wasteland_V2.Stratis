@@ -28,9 +28,9 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			_target = _x;
 			_check = 1;
 		};
-	}forEach playableUnits;
+	} forEach playableUnits;
 	
-	if (_check == 0) then {exit;};
+	if (_check == 0) then exitWith{};
 	
 	switch (_switch) do
 	{

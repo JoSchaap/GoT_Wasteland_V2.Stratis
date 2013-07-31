@@ -8,8 +8,6 @@ _player setVariable ["BIS_noCoreConversations", true];
 _player addEventHandler ["HandleDamage", {false}];
 
 enableSentences false;
-_player removeWeapon "ItemRadio";
-_player removeWeapon "ItemGPS";
 _player unassignItem "NVGoggles";
 _player removeItem "NVGoggles";
 removeAllWeapons _player;
@@ -75,13 +73,18 @@ switch (playerSide) do
 		};
 };
 
+// seems ghillysuit comes with a GPS so moved this here:
+_player removeWeapon "ItemRadio";
+_player removeWeapon "ItemGPS";
+
 _player addItem "NVGoggles";
 _player assignItem "NVGoggles";
 _player addBackpack "B_Kitbag_Base";
-_player addMagazine "16Rnd_9x21_Mag";
-_player addMagazine "16Rnd_9x21_Mag";
-_player addWeapon "hgun_P07_F";
-_player selectWeapon "hgun_P07_F";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addWeapon "hgun_ACPC2_F";
+_player selectWeapon "hgun_ACPC2_F";
 _player addItem "FirstAidKit";
 _player addrating 9999999;
 

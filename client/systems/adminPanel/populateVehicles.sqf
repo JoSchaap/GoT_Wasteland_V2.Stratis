@@ -13,9 +13,9 @@
 
 disableSerialization;
 
-private ["_switch","_vehicleType","_vehicleSummary","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_check"];
+private ["_switch","_vehicle","_vehicleType","_vehicleClass","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_check"];
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if (_uid call isAdmin) then {
 	_switch = _this select 0;
 	_allVehicles = vehicles;
 	
@@ -34,77 +34,92 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	
 	switch (_switch) do
 	{
-	    case 0:
+		case 0:
 		{
-	    	{
-			   	_vehicleType = Format["%1",typeOf _x];
-			    if(_vehicleType isKindOf "Car") then {
-	            	if(_vehicleType isKindOf "MotorCycle") then {
-	                	_vehicleSummary = format["[Class: MotorCycle] [Type: %1]",_vehicleType];
-			        	_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-			        	_vehicleListBox lbSetData [_index, str(_x)];    
-	                };
-	                
-	                if(_vehicleType isKindOf "Truck_F") then {
-	                	_vehicleSummary = format["[Class: Truck] [Type: %1]",_vehicleType];
-			        	_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-			        	_vehicleListBox lbSetData [_index, str(_x)];    
-	                };
-	                
-	                if(!(_vehicleType isKindOf "Truck_F") AND !(_vehicleType isKindOf "MotorCycle") AND !(_vehicleType isKindOf "Wheeled_APC_F")) then {
-	                	_vehicleSummary = format["[Class: Car] [Type: %1]",_vehicleType];
-				        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-				        _vehicleListBox lbSetData [_index, str(_x)];    
-	                }
-			    };
-			} forEach _allVehicles;           	    	
+			{
+				_vehicleType = typeOf _x;
+				_vehicleClass = "";
+				
+				switch (true) do
+				{
+					case (_vehicleType isKindOf "MotorCycle"):
+					{
+						_vehicleClass = "Motorcycle";
+					};
+					case (_vehicleType isKindOf "Truck_F"):
+					{
+						_vehicleClass = "Truck";
+					};
+					case (_vehicleType isKindOf "Car" && !(_vehicleType isKindOf "Wheeled_APC_F")):
+					{
+						_vehicleClass = "Car";
+					};
+				};
+				
+				if (_vehicleClass != "") then
+				{
+					_index = _vehicleListBox lbAdd format ["[Class: %1] [Type: %2]", _vehicleClass, _vehicleType];
+					_vehicleListBox lbSetData [_index, str _x];
+				};
+				
+			} forEach _allVehicles;
 		};
 		case 1:
 		{
-	    	{
-			   	_vehicleType = Format["%1",typeOf _x];
-			    if(_vehicleType isKindOf "Helicopter") then {
-				    _vehicleSummary = format["[Class: Helicopter] [Type: %1]",_vehicleType];
-				    _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-					_vehicleListBox lbSetData [_index, str(_x)];
-			    };
-			} forEach _allVehicles;		    
+			{
+				_vehicleType = typeOf _x;
+				
+				if (_vehicleType isKindOf "Helicopter") then
+				{
+					_index = _vehicleListBox lbAdd format ["[Class: Helicopter] [Type: %1]", _vehicleType];
+					_vehicleListBox lbSetData [_index, str _x];
+				};
+				
+			} forEach _allVehicles;
 		};
-	    case 2:
-	    {
+		case 2:
+		{
 			{
-			   	_vehicleType = Format["%1",typeOf _x];
-			    if(_vehicleType isKindOf "Plane") then {
-			        _vehicleSummary = format["[Class: Plane] [Type: %1]",_vehicleType];
-			        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-			        _vehicleListBox lbSetData [_index, str(_x)];
-			    };
-			} forEach _allVehicles;	
-	    };
-	    case 3:
-	    {
+				_vehicleType = typeOf _x;
+				
+				if (_vehicleType isKindOf "Plane") then
+				{
+					_index = _vehicleListBox lbAdd format ["[Class: Plane] [Type: %1]", _vehicleType];
+					_vehicleListBox lbSetData [_index, str _x];
+				};
+				
+			} forEach _allVehicles;
+		};
+		case 3:
+		{
 			{
-			   	_vehicleType = Format["%1",typeOf _x];
-			    if(_vehicleType isKindOf "Tank") then {
-			        _vehicleSummary = format["[Class: Tank] [Type: %1]",_vehicleType];
-			        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-			        _vehicleListBox lbSetData [_index, str(_x)];
-			    };
-	            
-	            if(_vehicleType isKindOf "Wheeled_APC_F") then {
-			        _vehicleSummary = format["[Class: APC] [Type: %1]",_vehicleType];
-			        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-			        _vehicleListBox lbSetData [_index, str(_x)];
-			    };
+			   	_vehicleType = typeOf _x;
+				_vehicleClass = "";
+				
+				if (_vehicleType isKindOf "Tank") then
+				{
+					_vehicleClass = "Tank";
+				};
+				
+				if (_vehicleType isKindOf "Wheeled_APC_F" || _vehicleType isKindOf "Tracked_APC_F") then
+				{
+					_vehicleClass = "APC";
+				};
+				
+				if (_vehicleClass != "") then
+				{
+					_index = _vehicleListBox lbAdd format ["[Class: %1] [Type: %2]", _vehicleClass, _vehicleType];
+					_vehicleListBox lbSetData [_index, str _x];
+				};
+				
 			} forEach _allVehicles;   	
-	    };
-	    case 4:
-	    {
-			private "_hackedVehicles";
+		};
+		case 4:
+		{
+			private ["_hackedVehicles", "_hackedVehicle", "_vehicleOwner", "_ownerInfo"];
 			_hackedVehicles = call findHackedVehicles;
 			
-	    	{
-				private ["_hackedVehicle", "_vehicleOwner", "_ownerInfo"];
+			{
 				_hackedVehicle = _x select 0;
 				_vehicleOwner = _x select 1;
 				
@@ -125,46 +140,45 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 				};
 				
 				_vehicleType = typeOf _hackedVehicle;
-				if(_vehicleType isKindOf "Car") then {					
-					if(_vehicleType isKindOf "MotorCycle") then {
-						_vehicleSummary = format["[Class: Motorcycle] [Type: %1] %2", _vehicleType, _ownerInfo];
-						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
-					};
-					if(_vehicleType isKindOf "Truck_F") then {
-						_vehicleSummary = format["[Class: Truck] [Type: %1] %2", _vehicleType, _ownerInfo];
-						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
-					};
-					if(_vehicleType isKindOf "Wheeled_APC_F") then {
-						_vehicleSummary = format["[Class: APC] [Type: %1] %2", _vehicleType, _ownerInfo];
-						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
-					};
-					if(!(_vehicleType isKindOf "Truck_F") AND !(_vehicleType isKindOf "MotorCycle") AND !(_vehicleType isKindOf "Wheeled_APC_F")) then {
-						_vehicleSummary = format["[Class: Car] [Type: %1] %2", _vehicleType, _ownerInfo];
-						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
-					};
-				};
+				_vehicleClass = "";
 				
+				switch (true) do
 				{
-					if(_vehicleType isKindOf _x) then {
-						_vehicleSummary = format["[Class: %1] [Type: %2] %3", _x, _vehicleType, _ownerInfo];
-						_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-						_vehicleListBox lbSetData [_index, str(_hackedVehicle)];
+					case (_vehicleType isKindOf "MotorCycle"):
+					{
+						_vehicleClass = "Motorcycle";
 					};
-				} forEach ["Helicopter", "Plane", "Tank"];
-				
-				if(_vehicleType isKindOf "ReammoBox_F") then {
-					_vehicleSummary = format["[Class: Ammo Box] [Type: %1] %2", _vehicleType, _ownerInfo];
-					_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
-					_vehicleListBox lbSetData [_index, str(_hackedVehicle)];    
+					case (_vehicleType isKindOf "Truck_F"):
+					{
+						_vehicleClass = "Truck";
+					};
+					case (_vehicleType isKindOf "Wheeled_APC_F" || _vehicleType isKindOf "Tracked_APC_F"):
+					{
+						_vehicleClass = "APC";
+					};
+					default
+					{
+						{
+							if (_vehicleType isKindOf _x) exitWith
+							{
+								_vehicleClass = _x;
+							};
+						} forEach ["Car", "Helicopter", "Plane", "Tank"];
+						
+						if (_vehicleType isKindOf "ReammoBox_F") then
+						{
+							_vehicleClass = "Ammo Box";
+						};
+					};
 				};
-					
-			} forEach _hackedVehicles;    
-	    };
+				
+				if (_vehicleClass != "") then
+				{
+					_index = _vehicleListBox lbAdd format ["[Class: %1] [Type: %2] %3", _vehicleClass, _vehicleType, _ownerInfo];
+					_vehicleListBox lbSetData [_index, str _hackedVehicle];
+				};
+				
+			} forEach _hackedVehicles;
+		};
 	};
-} else {
-  exit;  
 };

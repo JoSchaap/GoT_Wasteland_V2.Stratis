@@ -26,6 +26,4 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	{
 		_debugSelect lbAdd _x;
 	} forEach _panelOptions;
-} else {
-  exit;  
 };

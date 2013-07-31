@@ -45,7 +45,7 @@ weaponsArray = compileFinal str [
     	["Titan","launch_Titan_F",500,320],
     	
     	//Sniper
-    	["EBR","srifle_EBR_F",375,150],
+    	["MK18 ABR","srifle_EBR_F",375,150],
     	["Lynx 12.7c GM6","srifle_GM6_SOS_F",1500,650],
     	["M320 LRR Rifle","srifle_LRR_SOS_F",1500,650]
 ];

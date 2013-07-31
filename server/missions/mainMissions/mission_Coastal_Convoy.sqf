@@ -44,9 +44,12 @@ _createVehicle = {
 	
 	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _type >> "weapons")) then
 	{
-		_vehicle removeMagazinesTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
-		_vehicle removeMagazinesTurret ["192Rnd_CMFlare_Chaff_Magazine", [-1]];
-		_vehicle removeMagazinesTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]];
+		{
+			if (_x isKindOf "60Rnd_CMFlare_Chaff_Magazine") then
+			{
+				_vehicle removeMagazinesTurret [_x, [-1]];
+			};
+		} forEach (_vehicle magazinesTurret [-1]);
 	};
 	_vehicle setVehicleLock "LOCKED";
 	_vehicle

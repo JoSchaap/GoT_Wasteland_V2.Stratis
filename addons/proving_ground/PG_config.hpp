@@ -29,7 +29,7 @@ class balca_debug_main
 				x = 0; w = column_weight-column_div;
 				y = 0;
 				text = "Create vehicle";
-				action = "closeDialog 0;createDialog ""balca_debug_veh_creator"";[0] call c_proving_ground_fnc_create_vehicle"; 
+				action = "if (isServer) then { closeDialog 0; createDialog ""balca_debug_veh_creator""; [0] call c_proving_ground_fnc_create_vehicle } else { ['This option is disabled on clients due to BattlEye.','Notice'] spawn BIS_fnc_guiMessage }"; 
 			};
 
 			class balca_cWeap_btn : balca_debug_btn
@@ -85,7 +85,7 @@ class balca_debug_main
 				x = 0; w = column_weight-column_div;
 				y = btn_height*8;
 				text = "Delete vehicle";
-				action = "deleteVehicle cursorTarget;closeDialog 0;"; 
+				action = "deleteVehicle cursorTarget;"; 
 			};
 
 
@@ -103,7 +103,7 @@ class balca_debug_main
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*1;
 				text = "Autoheal";
-				action = "[] call c_proving_ground_fnc_autoheal"; 
+				action = "player setDamage 0"; 
 			};
 
 			class balca_booster_btn : balca_debug_btn
@@ -159,7 +159,7 @@ class balca_debug_main
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*8;
 				text = "Console";
-				action = "closeDialog 0;createDialog ""balca_debug_console"";[0] call c_proving_ground_fnc_exec_console;"; 
+				action = "closeDialog 0;createDialog ""balca_debug_console"";[0] call c_proving_ground_fnc_exec_console; if (!isServer) then { ['Using this may get you kicked by BattlEye.','WARNING'] spawn BIS_fnc_guiMessage }";
 			};
 		//column 3
 			class balca_sound_btn : balca_debug_btn
@@ -351,7 +351,7 @@ class balca_debug_veh_creator
 	{
 		x = safezoneX + border_offsetX + btn_weight*2; w = btn_weight-column_div;
 		y = safezoneY;
-		text = "Chopper";
+		text = "Helicopter";
 		action = "[0,5] call c_proving_ground_fnc_create_vehicle"; 
 	};
 
@@ -407,8 +407,8 @@ class balca_debug_veh_creator
 	{
 		x = safezoneX+column_weight*2; w = btn_weight;
 		y = display_height-safezoneY- offset_bottom;
-		text = "Close";
-		action = "closeDialog 0;"; 
+        text = "Back";
+        action = "closeDialog 0; createDialog 'balca_debug_main'";
 	};
 };
 
@@ -757,8 +757,8 @@ class balca_debug_console
 			{
 				x = column_weight*2; w = btn_weight;
 				y = btn_height;
-				text = "Close";
-				action = "closeDialog 0;"; 
+				text = "Back";
+                action = "closeDialog 0; createDialog 'balca_debug_main'"; 
 			};
 		};
 	};
@@ -903,7 +903,7 @@ class balca_target_display
 			{
 				x = btn_weight*2; w = btn_weight-column_div;
 				y = btn_height;
-				text = "Chopper";
+				text = "Helicopter";
 				action = "[1,5] call c_proving_ground_fnc_target;"; 
 			};
 

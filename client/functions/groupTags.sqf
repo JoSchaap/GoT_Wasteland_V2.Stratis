@@ -38,7 +38,7 @@ while {true} do
 			};
 		};
 	    
-	    if ((_target isKindOf "Car" || _target isKindOf "Helicopter" || _target isKindOf "Ship" || _target isKindOf "Wheeled_APC_F" || _target isKindOf "Truck_F") && player == vehicle player) then 
+	    if (!(_target isKindOf "Man") && {_target isKindOf "AllVehicles"} && {player == vehicle player}) then
         {
 			if(player distance _target < 300)then 
             {
