@@ -159,9 +159,3 @@ changelog for v2.3
 		[Changed] amount of objects and vehicles reduced
 		[Changed] Locked baseparts will be saved on server restart
 		*- After restart the baseparts will be spawned UNLOCKED!
-
-
-
-
-
-
