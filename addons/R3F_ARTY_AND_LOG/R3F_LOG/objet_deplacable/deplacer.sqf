@@ -194,8 +194,8 @@ else
 			player removeAction _action_menu_release_relative;
 			player removeAction _action_menu_release_horizontal;
 			player removeAction _action_menu_45;
-			player removeAction _action_menu_90;
-			player removeAction _action_menu_180;
+			//player removeAction _action_menu_90;
+			//player removeAction _action_menu_180;
 			R3F_LOG_joueur_deplace_objet = objNull;
 			
 			_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];
