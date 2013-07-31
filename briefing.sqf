@@ -365,6 +365,9 @@ player createDiaryRecord["info",
 	* {ZAG}Ed!<br/>
 	* Na-Palm (BIS-Forums)<br/>
 	* MercyfulFate (GitHub)<br/>
+	* SCETheFuzz (GitHub)<br/>
+	* s3kShUn61 (GitHub)<br/>
+	* RockHound (BierAG)<br/>
 	* * Thanks ALOT for the help/inspiration!<br/>
 	<br/>
 "
