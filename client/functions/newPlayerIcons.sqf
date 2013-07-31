@@ -6,6 +6,8 @@
 
 #define icons_idc 46300
 
+disableSerialization; 
+
 FZF_ICHud_Zoom = 0.05;
 FZF_ICHud_Scale = 1.0;
 FZF_ICHud_Centre = [150, 150];
