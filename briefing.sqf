@@ -273,8 +273,7 @@ player createDiaryRecord["changelog",
 player createDiaryRecord["changelog",
 [
 "v2.3 (GoT)",
-"
-		***TESTBUILD DO NOT DISTRIBUTE***<br/>	
+"	
 		[Added] 3 general stores<br/>
 		[Added] working repairkits that can be dropped<br/>
 		[Added] working fuelcans that can be dropped<br/>
@@ -288,10 +287,12 @@ player createDiaryRecord["changelog",
 		[Added] New outposts for the outpost mission<br/>
 		[Added] New antihack script by AWA, AgentREV and Tonic<br/>
 		[Added] Improv. roof to general stores<br/>
-		[Added] Name censoring in group-menu for StreamFriendly<br/>
-		[Added] Name censoring in group/side tags for StreamFriendly<br/>
+		[Added] Name censor in group-menu for StreamFriendly<br/>
+		[Added] Name censor in group/side tags in StreamFriendly<br/>
 		[Added] Main mission: Coastal patrol<br/>
-		[Fixed] Name censoring when in vehicle for StreamFriendly<br/>
+		[Added] Katiba ammo to gunstore <br/>
+		[Added] Nicer action-icons from the KoS version<br/>
+		[Fixed] Name censor when in vehicle in StreamFriendly<br/>
 		[Fixed] Some missions did not announce themselves<br/>
 		[Fixed] AI not despawning on APC mission<br/>
 		[Fixed] balance between weapon/item spawns in buildings<br/>
@@ -305,20 +306,24 @@ player createDiaryRecord["changelog",
 		[Fixed] Selling prices of rifles (no more 25 bucks)<br/>
 		[Fixed] Gunstore purchase exploit (spamming buy button)<br/>
 		[Fixed] No katiba ammo in gunstores<br/>
-		[Changed] Existing missions now contain randomized elements!<br/>
+		[Fixed] Some classes spawned with GPS/Radio>br/>
+		[Changed] Existing missions now contain random elements<br/>
 		[Changed] Gametype: changed to SANDBOX <br/>
 		[Changed] Survival system from decimals to percentages<br/>
 		[Changed] hunger/thirst death by HPdrain (not instant)<br/>
 		[Changed] Food/Water drainage and gain from items<br/>
 		[Changed] Stores can also be openned from actionmenu<br/>
 		[Changed] Loot in buildings spawned when player in town<br/>
-		[Changed] Loot in buildings now respawns after 30mins<br/>
+		[Changed] Loot in buildings now respawns after 60mins<br/>
 		[Changed] Loot in buildings 35% chance of fuel in fuelcan<br/>
 		[Changed] Fuel cans (full or empty) can be dropped<br/>
 		[Changed] Repairkits added to loot-table<br/>
 		[Changed] fuel cans empty and full added to loot-table<br/>
 		[Changed] players spawn without a fuelcan<br/>
-		[Changed] Hostile helicopter missions use random helicopters<br/>
+		[Changed] players spawn with a First-aid-kit<br/>
+		[Changed] Spawn weapon changed to ACP with 3 clips<br/>
+		[Changed] Hostile helicopter missions use random heli's<br/>
+		[Changed] Helicopters flown by AI no longer can use flares<br/>
 		[Changed] amount of objects and vehicles reduced<br/>
 		[Changed] Locked baseparts will be saved on server restart<br/>
 		*- After restart the baseparts will be spawned UNLOCKED!<br/>
@@ -334,7 +339,7 @@ player createDiaryRecord["info",
 "
 <br/>
 	First things first: <br/>
-	The idea of wasteland and the first original in arma2:<br/> 
+	The idea of wasteland and the first originals in arma2:<br/> 
 	* TAW_Tonic<br/>
 	* Sa-Matra<br/>
 	* Marker<br/>
@@ -368,6 +373,7 @@ player createDiaryRecord["info",
 	* SCETheFuzz (GitHub)<br/>
 	* s3kShUn61 (GitHub)<br/>
 	* RockHound (BierAG)<br/>
+	* KoS-Clan (kosclan.org)<br/>
 	* * Thanks ALOT for the help/inspiration!<br/>
 	<br/>
 "
@@ -376,7 +382,7 @@ player createDiaryRecord["info",
 
 player createDiaryRecord["info",
 [
-"Original version",
+"Tonic's Original version",
 "
 <br/>
 	Visit the original thread by Tonic in the BISforums:<br/><br/>
@@ -393,6 +399,30 @@ player createDiaryRecord["info",
 <br/>
 	Find Sa-Matra's version on the BISforums:<br/><br/>
 	http://forums.bistudio.com/showthread.php?154610-MP-Team-Sa-Matra-s-Wasteland<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"KoS-Clan edition",
+"
+<br/>
+	Find the KoS-Clan version on the KOS-Clan website:<br/><br/>
+	www.kosclan.org<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"TPG edition",
+"
+<br/>
+	Find the TeamPlayerGaming version on the TPG website:<br/><br/>
+	http://teamplayergaming.com/arma-3/<br/>
 	<br/>
 "
 ]
