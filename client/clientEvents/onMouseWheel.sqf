@@ -9,6 +9,6 @@ playerMenuHandle = [] spawn {
 		waituntil {vehicle player != player};
 		player removeaction playerMenuId;
 		_veh = vehicle player;
-		playerMenuId = _veh addAction [format ["<img image=""client\icons\playerMenu.paa""/> <t color='#ff7f00'>%1</t>", "[<t color='#FFFFFF'>Player Menu/Items</t><t color='#ff7f00'>]</t>], "client\systems\playerMenu\init.sqf",[],-10,false,false,"","local player"];
+		playerMenuId = _veh addAction [format ["<img image=""client\icons\playerMenu.paa""/> <t color='#ff7f00'>%1</t>", "[<t color='#FFFFFF'>Player Menu/Items</t><t color='#ff7f00'>]</t>"], "client\systems\playerMenu\init.sqf",[],-10,false,false,"","local player"];
 	};
 };
