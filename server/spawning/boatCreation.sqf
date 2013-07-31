@@ -30,6 +30,6 @@ _boat setDir (random 360);
 _boat disableTIEquipment true;
 
 //Set original posistion then add to vehicle array
-_boat setVariable ["vehicleChecksum",call vChecksum,true]; 
+_boat setVariable [call vChecksum, true, false]; 
 _boat setPosASL [getpos _boat select 0,getpos _boat select 1,0];
 _boat setVelocity [0,0,0];

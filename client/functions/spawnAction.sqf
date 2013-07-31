@@ -12,6 +12,9 @@ player setVariable["cmoney",95,true];
 player setVariable["canfood",1,true];
 player setVariable["water",1,true];
 
+ppEffectDestroy BIS_fnc_feedback_fatigueBlur;
+ppEffectDestroy BIS_fnc_feedback_damageBlur; 
+
 switch(_switch) do 
 {
     case 0:{execVM "client\functions\spawnRandom.sqf"};
@@ -50,12 +53,12 @@ if(isNil{client_firstSpawn}) then {
 				publicVariable "pvar_teamSwitchList";
                 
                 _side = "";
-                if(str(playerSide) == "WEST") then {
-                    _side = "Blufor";
+                if (playerSide == BLUFOR) then {
+                    _side = "BLUFOR"; 
                 };
-                
-                if(str(playerSide) == "EAST") then {
-                    _side = "Opfor";
+           
+                if (playerSide == OPFOR) then {
+                    _side = "OPFOR"; 
                 };
                 
 				titleText [format["You have been locked to %1",_side],"PLAIN",0];

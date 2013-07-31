@@ -83,6 +83,4 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	        };
 	    } foreach playableUnits;
 	};
-} else {
-  exit;  
 };

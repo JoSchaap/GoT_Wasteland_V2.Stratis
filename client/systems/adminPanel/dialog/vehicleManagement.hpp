@@ -111,7 +111,7 @@ class VehicleManagement {
 		{
 			idc = vehicleManagementCivButton;
 			onButtonClick = "[0] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Cars/Trucks";
+			text = "Cars+Trucks";
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;

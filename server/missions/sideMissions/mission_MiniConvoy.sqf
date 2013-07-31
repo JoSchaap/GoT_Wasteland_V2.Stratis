@@ -3,7 +3,7 @@ private ["_missionMarkerName","_missionType","_picture","_vehicleName","_hint","
 #include "sideMissionDefines.sqf"
 
 _missionMarkerName = "MiniConvoy_Marker";
-_missionType = "Offroad Convoy";
+_missionType = "Truck Convoy";
 
 diag_log format["WASTELAND SERVER - Side Mission Started: %1", _missionType];
 
@@ -25,6 +25,7 @@ _createVehicle = {
     _vehicle setDir _direction;
     clearMagazineCargoGlobal _vehicle;
     clearWeaponCargoGlobal _vehicle;
+	_vehicle setVariable [call vChecksum, true, false];
     _groupsm addVehicle _vehicle;
     
     _soldier = [_groupsm, _position] call createRandomSoldier; 
@@ -35,7 +36,7 @@ _createVehicle = {
 };
 
 _vehicles = [];
-_vehicles set [0, ["C_Offroad_01_F", [2614.0962, 623.4976, 64.137111], 110, _groupsm] call _createVehicle];
+_vehicles set [0, ["I_Truck_02_covered_F", [2614.0962, 623.4976, 64.137111], 110, _groupsm] call _createVehicle];
 _vehicles set [1, ["C_Quadbike_01_F", [2619.0709, 613.5274, 64.271773], 110, _groupsm] call _createVehicle];
 _vehicles set [2, ["I_Quadbike_01_F", [2607.2347, 627.8529, 63.935479], 110, _groupsm] call _createVehicle];
 
@@ -71,7 +72,7 @@ _waypoints = [
 {
     _waypoint = _groupsm addWaypoint [_x, 0];
     _waypoint setWaypointType "MOVE";
-    _waypoint setWaypointCompletionRadius 65;
+    _waypoint setWaypointCompletionRadius 70;
     _waypoint setWaypointCombatMode "GREEN"; // Defensiv behaviour
     _waypoint setWaypointBehaviour "SAFE"; // Force convoy to normaly drive on the street.
     _waypoint setWaypointFormation "STAG COLUMN";
@@ -82,10 +83,10 @@ _marker = createMarker [_missionMarkerName, position leader _groupsm];
 _marker setMarkerType "mil_destroy";
 _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
-_marker setMarkerText "MiniConvoy";
+_marker setMarkerText "Truck Convoy";
 
-_picture = getText (configFile >> "CfgVehicles" >> "C_Offroad_01_F" >> "picture");
-_vehicleName = getText (configFile >> "cfgVehicles" >> "C_Offroad_01_F" >> "displayName");
+_picture = getText (configFile >> "CfgVehicles" >> "I_Truck_02_covered_F" >> "picture");
+_vehicleName = getText (configFile >> "cfgVehicles" >> "I_Truck_02_covered_F" >> "displayName");
 _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> transporting a crate of GL weapons and ammo is convoyed by two ATV squads. Stop them!</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };
@@ -114,7 +115,7 @@ waitUntil
 if(_failed) then
 {
     // Mission failed
-    deleteVehicle _vehicle;
+    if not(isNil "_vehicle") then {deleteVehicle _vehicle;};
 	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units _groupsm;
 	{deleteVehicle _x;}forEach units _groupsm;
 	deleteGroup _groupsm; 

@@ -41,7 +41,7 @@ _marker = createMarkerLocal ["ArmedHeli_Marker", _randomPos];
 "ArmedHeli_Marker" setMarkerSizeLocal [1,1];
 "ArmedHeli_Marker" setMarkerTextLocal "Mission Here";
 */
-_vehicleClass = ["O_Heli_Light_02_F","B_Heli_Light_01_armed_F","B_Heli_Attack_01_F","O_Heli_Attack_02_F","B_Heli_Transport_01_F"] call BIS_fnc_selectRandom;
+_vehicleClass = ["B_Heli_Transport_01_camo_F", "O_Heli_Light_02_F","B_Heli_Light_01_armed_F","B_Heli_Attack_01_F","O_Heli_Attack_02_F","B_Heli_Transport_01_F"] call BIS_fnc_selectRandom;
 
 // Vehicle spawning: Name, Position, Fuel, Ammo, Damage, "NONE"
 
@@ -50,7 +50,7 @@ switch (_vehicleClass) do
 	case "B_Heli_Light_01_armed_F": {
 		_vehicle = [_vehicleClass,_randomPos,0,0.5,0,"NONE"] call createMissionVehicle;
 	};
-	case "O_Heli_Light_02_F": {	// Ka60 has twice less default ammo capacity than AH9
+	case "O_Heli_Light_02_F": {	
 		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
 	};
 	case "B_Heli_Attack_01_F": {	
@@ -62,10 +62,18 @@ switch (_vehicleClass) do
 	case "B_Heli_Transport_01_F": {	
 		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
 	};
-//	case "B_Heli_Transport_01_camo_F": {	
-//		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
-//	};
+	case "B_Heli_Transport_01_camo_F": {	
+		_vehicle = [_vehicleClass,_randomPos,0,1,0,"NONE"] call createMissionVehicle;
+	};
 };
+
+	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _vehicleClass >> "weapons")) then
+	{
+		_vehicle removeMagazinesTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["192Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle removeMagazinesTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]];
+		_vehicle addMagazineTurret ["168Rnd_CMFlare_Chaff_Magazine", [-1]];
+	};
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
@@ -103,7 +111,7 @@ _vehicle setVariable ["R3F_LOG_disabled", false, true];
 if(_result == 1) then
 {
 	//Mission Failed.
-    deleteVehicle _vehicle;
+    if not(isNil "_vehicle") then {deleteVehicle _vehicle;};
     {deleteVehicle _x;}forEach units CivGrpM;
     deleteGroup CivGrpM;
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];

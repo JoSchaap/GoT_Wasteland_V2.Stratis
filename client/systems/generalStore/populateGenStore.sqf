@@ -27,4 +27,4 @@ _itemInfo ctrlSetStructuredText parseText "";
 // Populate the gun shop weapon list
 {
 	_itemlistIndex = _itemlist lbAdd format["%1",_x select 0];
-} forEach generalStore;		
+} forEach (call generalStore);		

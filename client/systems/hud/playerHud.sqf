@@ -5,7 +5,7 @@
 //	@file Args:
 
 disableSerialization;
-private["_ui","_hud","_food","_water"];
+private["_ui","_hud","_food","_water","_vitals","_hudVehicle","_health","_decimalPlaces","_tempString","_yOffset","_vehicle"];
 
 while {true} do
 {
@@ -16,12 +16,11 @@ while {true} do
     
     //Calculate Health 0 - 100
     _decimalPlaces = 2;
-    _health = damage player;
-    _health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
-    _health = 100 - (_health * 100);
+    _health = 1 - damage player;
+    _health = round (_health * 100);
     
-//  _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\1.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%4 <img size='0.8' image='client\icons\money.paa'/>", _health, hungerLevel, thirstLevel, (player getVariable "cmoney")];
-	_vitals ctrlSetStructuredText parseText format ["%1 <img size='0.7' image='client\icons\money.paa'/><br/>%2 <img size='0.7' image='client\icons\water.paa'/><br/>%3 <img size='0.7' image='client\icons\food.paa'/><br/>%4 <img size='0.7' image='client\icons\1.paa'/>", (player getVariable "cmoney"), thirstLevel, hungerLevel, _health];
+//  _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\1.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%4 <img size='0.8' image='client\icons\money.paa'/>", round _health, round hungerLevel, round thirstLevel, (player getVariable "cmoney")];
+	_vitals ctrlSetStructuredText parseText format ["%1 <img size='0.7' image='client\icons\money.paa'/><br/>%2 <img size='0.7' image='client\icons\water.paa'/><br/>%3 <img size='0.7' image='client\icons\food.paa'/><br/>%4 <img size='0.7' image='client\icons\1.paa'/>", (player getVariable "cmoney"), round thirstLevel, round hungerLevel, round _health];
     _vitals ctrlCommit 0;
         
     if(player != vehicle player) then
@@ -53,7 +52,8 @@ while {true} do
 
         if(isStreamFriendlyUIEnabled) then
         {
-        	_tempString = format ["<img image='client\icons\logo.paa'/>"];
+        	_tempString = format ["<img image='client\icons\logo.paa'/><br/>GoT<br/>Wasteland<br/>v2.3<br/>[StreamFriendly:ON]<br/>"];
+			_yOffset = _yOffset + 0.20;
         	_hudVehicle ctrlSetStructuredText parseText _tempString;
         } else {
         	_hudVehicle ctrlSetStructuredText parseText _tempString;

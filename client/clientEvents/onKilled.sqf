@@ -16,7 +16,9 @@ if (isServer) then {
 	_id = PlayerCDeath spawn serverPlayerDied; 
 };
 
-if(!local _player) exitwith {};
+if(!local _player) exitwith {
+	closeDialog 0;
+};
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
@@ -62,6 +64,12 @@ if(!isNull(pvar_PlayerTeamKiller)) then {
 	publicVariable "publicVar_teamkillMessage";
 };
 
+if (side _killer == INDEPENDENT && {side _player == INDEPENDENT} && {_killer != _player} && {vehicle _killer != vehicle _player}) then
+	{
+		requestCompensateNegativeScore = _killer;
+		publicVariableServer "requestCompensateNegativeScore";
+	}; 
+
 private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
 _to_delete = [];
@@ -71,21 +79,43 @@ if((_player getVariable "cmoney") > 0) then {
 	_m = "Land_Sack_F" createVehicle (position _player);
 	_m setVariable["money", (_player getVariable "cmoney"), true];
 	_m setVariable ["owner", "world", true];
+	_player setVariable["cmoney",0,true];
 	_to_delete = _to_delete + [_m];
 };
 
 if((_player getVariable "canfood") > 0) then {
 	for "_a" from 1 to (_player getVariable "canfood") do {	
-		_m = "Land_Basket_F" createVehicle (position _player);
-		_to_delete = _to_delete + [_m];
+		_a = "Land_Basket_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_a];
 	};
 };
 
 if((_player getVariable "water") > 0) then {
 	for "_b" from 1 to (_player getVariable "water") do {	
-		_m = "Land_Bucket_F" createVehicle (position _player);
-		_to_delete = _to_delete + [_m];
+		_b = "Land_Bucket_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_b];
 	};
+};
+
+if((_player getVariable "repairkits") > 0) then {
+	for "_c" from 1 to (_player getVariable "repairkits") do {	
+		_c = "Land_Suitcase_F" createVehicle (position _player);
+		_to_delete = _to_delete + [_c];
+	};
+};
+
+if((_player getVariable "fuelFull") > 0) then {
+	_d = "Land_CanisterFuel_F" createVehicle (position _player);
+	_d setVariable["fuel", true, true];
+	_d setVariable ["owner", "world", true];
+	_to_delete = _to_delete + [_d];
+};
+
+if((_player getVariable "fuelEmpty") > 0) then {
+	_e = "Land_CanisterFuel_F" createVehicle (position _player);
+	_e setVariable["fuel", false, true];
+	_e setVariable ["owner", "world", true];
+	_to_delete = _to_delete + [_e];
 };
 
 true spawn {

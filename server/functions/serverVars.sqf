@@ -14,13 +14,6 @@ if(!X_Server) exitWith {};
 
 diag_log format["WASTELAND SERVER - Initilizing Server Vars"];
 
-CVG_weapons = [];
-CVG_weapons = CVG_rifles;
-CVG_weapons = CVG_weapons + CVG_Scoped;
-CVG_weapons = CVG_weapons + CVG_Heavy;
-CVG_weapons = CVG_weapons + CVG_pistols;
-CVG_weapons = CVG_weapons + CVG_Launchers;
-
 sideMissionPos = "";
 mainMissionPos = "";
 
@@ -58,37 +51,38 @@ mediumMilitaryVehicles = ["B_MRAP_01_F","O_MRAP_02_F","I_MRAP_03_F","O_Truck_02_
 
 
 //boat - Random Boats.
-BoatList = ["O_Boat_Transport_01_F","B_Boat_Transport_01_F","O_Lifeboat","B_Lifeboat","C_Rubberboat","B_SDV_01_F","O_SDV_01_F"];
+BoatList = ["O_Boat_Transport_01_F","B_Boat_Transport_01_F","O_Lifeboat","B_Lifeboat","C_Rubberboat","B_SDV_01_F","O_SDV_01_F","I_SDV_01_F"];
                             
 //Object List - Random Spawns.
 objectList = ["Land_Sacks_goods_F",
 			"Land_HBarrierBig_F",
 			"Land_HBarrier_5_F",
 			"Land_LampShabby_F",
+//			"Land_Scaffolding_F", disabled due to physics issues
 			"Land_HBarrierBig_F",
 			"Land_BagBunker_Small_F",
 			"Land_HBarrier_1_F",
-//			"Land_LampDecor_F",			shabby lamps are good enough :)
-//			"Land_Ytong_F",				seems broken
 			"Land_WaterBarrel_F",
 			"Land_MetalBarrel_F",
 			"Land_HBarrierBig_F",
-//			"Land_Stone_8m_F",		keeps falling over in MP
+			"Land_Canal_WallSmall_10m_F",
 			"Land_HBarrier_5_F",
 			"Land_Mil_WallBig_4m_F",
-			"Land_ToiletBox_F",
 			"Land_HBarrier_3_F",
-//			"Land_Stone_8m_F",		keeps falling over in MP
+			"Land_Canal_Wall_Stairs_F",
 			"Land_Mil_WallBig_4m_F",
 			"Land_HBarrier_5_F",
-			"Land_Coil_F",
-			"Land_cargo_addon02_V2_F",  // camonet dont put in r3f!
+			"Land_cargo_addon02_V2_F",
 			"Land_HBarrierBig_F",
 			"Land_Pipes_large_F",
 			"Land_BagFence_Long_F",
+			"Land_Canal_WallSmall_10m_F",
 			"Land_BagBunker_Small_F",
 			"Land_CncBarrierMedium4_F",
 			"Land_CncWall4_F",
+			"Land_Mil_ConcreteWall_F",
+			"Land_Mil_WallBig_4m_F",
+			"Land_Shoot_House_Wall_F",
 			"Land_BarGate_F"];
                                          
 //Object List - Random Spawns.
@@ -115,7 +109,7 @@ vehicleWeapons = ["arifle_SDAR_F",
                 "arifle_SDAR_F",
                 "srifle_EBR_F",
                 "LMG_Mk200_F",
-			"LMG_Zafir_F",
+				"LMG_Zafir_F",
                 "hgun_ACPC2_F",
                 "hgun_P07_F",
                 "hgun_Rook40_F"];
@@ -127,17 +121,22 @@ vehicleAddition = [
 			"muzzle_snds_M",
 			"muzzle_snds_B",
 			"muzzle_snds_H_MG",
+			"muzzle_snds_acp",
 			"optic_Arco",
 			"optic_MRCO",
+			"optic_SOS",
 			"optic_Hamr", 
 			"optic_Aco", 
-			"optic_ACO_grn", 
-			"optic_Holosight", 
+			"optic_ACO_grn",
+			"optic_aco_smg", 
+			"optic_Holosight",
+			"optic_Holosight_smg", 
 			"acc_flashlight", 
 			"acc_pointer_IR",
 			"Medikit",
-            "FirstAidKit",
-            "ToolKit"
+			"Medikit",
+			"FirstAidKit",
+            	"ToolKit"
 ];
 
 vehicleAddition2 = [

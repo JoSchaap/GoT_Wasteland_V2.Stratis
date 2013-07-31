@@ -73,7 +73,7 @@ _wp1 setWaypointType "MOVE";
 [_grp, 1] setWaypointBehaviour "AWARE";
 [_grp, 1] setWaypointCombatMode "RED";
 [_grp, 1] setWaypointFormation "STAG COLUMN";
-[_grp, 1] setWaypointCompletionRadius 50;
+[_grp, 1] setWaypointCompletionRadius 25;
 [_grp, 1] setWaypointStatements ["true", "null = [this] spawn {
         _grp = group (_this select 0);
         sleep (30+(random 60));
@@ -99,7 +99,7 @@ _wp3 setWaypointType "SAD";
 [_grp, 3] setWaypointBehaviour "ALERT";
 [_grp, 3] setWaypointCombatMode "RED";
 [_grp, 3] setWaypointFormation "VEE";
-[_grp, 3] setWaypointCompletionRadius 50;
+[_grp, 3] setWaypointCompletionRadius 25;
 [_grp, 3] setWaypointStatements ["true", "null = [this] spawn {
         _grp = group (_this select 0);
         _grp setCurrentWaypoint [_grp, 1];

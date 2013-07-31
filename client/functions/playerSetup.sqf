@@ -8,8 +8,6 @@ _player setVariable ["BIS_noCoreConversations", true];
 _player addEventHandler ["HandleDamage", {false}];
 
 enableSentences false;
-_player removeWeapon "ItemRadio";
-_player removeWeapon "ItemGPS";
 _player unassignItem "NVGoggles";
 _player removeItem "NVGoggles";
 removeAllWeapons _player;
@@ -20,13 +18,13 @@ removeHeadgear _player;
 removeGoggles _player;
 
 
-switch (str(playerSide)) do
+switch (playerSide) do
 {
-	case "WEST": 
+	case BLUFOR: 
 		{
 			if (typeof _player == "B_sniper_F") then { 
 				_player addUniform "U_B_Ghilliesuit"; 
-				_player addVest "V_PlateCarrier1_rgr"; 
+				_player addVest "V_PlateCarrier2_rgr"; 
 			};
 			if (typeof _player == "B_diver_F") then { 
 				_player addUniform "U_B_Wetsuit"; 
@@ -35,15 +33,15 @@ switch (str(playerSide)) do
 			};
 			if (typeof _player != "B_diver_F" && typeof _player != "B_sniper_F") then { 
 				_player addUniform "U_B_CombatUniform_mcam";
-				_player addVest "V_PlateCarrier1_rgr";
+				_player addVest "V_PlateCarrier2_rgr";
 				_player addHeadgear "H_HelmetB";
 			};
 		};
-	case "EAST":
+	case OPFOR:
 		{
 			if (typeof _player == "O_sniper_F") then { 
 				_player addUniform "U_O_Ghilliesuit"; 
-				_player addVest "V_PlateCarrier1_rgr"; 
+				_player addVest "V_PlateCarrier2_rgr"; 
 			};
 			if (typeof _player == "O_diver_F") then { 
 				_player addUniform "U_O_Wetsuit"; 
@@ -52,15 +50,15 @@ switch (str(playerSide)) do
 			};
 			if (typeof _player != "O_diver_F" && typeof _player != "O_sniper_F") then { 
 				_player addUniform "U_O_CombatUniform_ocamo";
-				_player addVest "V_PlateCarrier1_rgr";
+				_player addVest "V_PlateCarrier2_rgr";
 				_player addHeadgear "H_HelmetO_ocamo";
 			};
 		};
-	case "GUER":
+	default
 		{
 			if (typeof _player == "I_sniper_F") then { 
 				_player addUniform "U_I_Ghilliesuit"; 
-				_player addVest "V_PlateCarrier1_rgr"; 
+				_player addVest "V_PlateCarrier2_rgr"; 
 			};
 			if (typeof _player == "I_diver_F") then { 
 				_player addUniform "U_I_Wetsuit"; 
@@ -69,22 +67,27 @@ switch (str(playerSide)) do
 			};
 			if (typeof _player != "I_diver_F" && typeof _player != "I_sniper_F") then { 
 				_player addUniform "U_I_CombatUniform";
-				_player addVest "V_PlateCarrier1_rgr";
+				_player addVest "V_PlateCarrier2_rgr";
 				_player addHeadgear "H_MilCap_ocamo";
 			};
 		};
 };
 
+// seems ghillysuit comes with a GPS so moved this here:
+_player removeWeapon "ItemRadio";
+_player removeWeapon "ItemGPS";
+
 _player addItem "NVGoggles";
 _player assignItem "NVGoggles";
 _player addBackpack "B_Kitbag_Base";
-_player addMagazine "16Rnd_9x21_Mag";
-_player addMagazine "16Rnd_9x21_Mag";
-_player addWeapon "hgun_P07_F";
-_player selectWeapon "hgun_P07_F";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "9Rnd_45ACP_Mag";
+_player addWeapon "hgun_ACPC2_F";
+_player selectWeapon "hgun_ACPC2_F";
+_player addItem "FirstAidKit";
+_player addrating 9999999;
 
-_player addrating 1000000;
-_player switchMove "AmovPknlMstpSrasWpstDnon_gear";
 
 thirstLevel = 100;
 hungerLevel = 100;
@@ -93,11 +96,11 @@ _player setVariable["medkits",0,false];
 _player setVariable["fuel",0,false];
 _player setVariable["repairkits",0,false];
 _player setVariable["fuelFull", 0, false];
-_player setVariable["fuelEmpty", 1, false];
+_player setVariable["fuelEmpty", 0, false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];
 
 [] execVM "client\functions\playerActions.sqf";
 
-_player groupChat format["GoT Wasteland v2.21 - Initialization Complete"];
+_player groupChat format["GoT Wasteland v2.3 - Initialization Complete"];
 playerSetupComplete = true;

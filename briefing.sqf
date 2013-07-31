@@ -2,7 +2,7 @@ waitUntil {!isNull player && isPlayer player};
 
 player createDiarySubject ["Wasteland", "HOW-TO-PLAY??"];
 player createDiarySubject ["changelog", "The Changelog"];
-player createDiarySubject ["404games", "404 Info"];
+player createDiarySubject ["info", "Mission Info"];
 player createDiarySubject ["GoT2DayZ", "GoT2DayZ Info"];
 
 player createDiaryRecord["changelog",
@@ -266,22 +266,80 @@ player createDiaryRecord["changelog",
 		[Changed] missions last longer before timing out<br/>
 		[Changed] mission starts at 8pm for evening edition<br/>
 		[Removed] Names when in vehicle in StreamFriendlyUI<br/>
-		*- your idea here? let us know!<br/>
-		*- please bare with me if there are still issues<br/>
-		   beta just got out and i wanted this out asap<br/>
 "
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"v2.3 (GoT)",
+"	
+		[Added] 3 general stores<br/>
+		[Added] working repairkits that can be dropped<br/>
+		[Added] working fuelcans that can be dropped<br/>
+		[Added] new interface for general stores<br/>
+		[Added] more variaty in base building parts<br/>
+		[Added] new handguns and surpressors<br/>
+		[Added] new SMG's and optics/surpressors<br/>
+		[Added] Independent SDV<br/>
+		[Added] camo blackhawk<br/>
+		[Added] New APC's (Wheeled and Tracked)<br/>
+		[Added] New outposts for the outpost mission<br/>
+		[Added] New antihack script by AWA, AgentREV and Tonic<br/>
+		[Added] Improv. roof to general stores<br/>
+		[Added] Name censor in group-menu for StreamFriendly<br/>
+		[Added] Name censor in group/side tags in StreamFriendly<br/>
+		[Added] Main mission: Coastal patrol<br/>
+		[Added] Katiba ammo to gunstore <br/>
+		[Added] Nicer action-icons from the KoS version<br/>
+		[Fixed] Name censor when in vehicle in StreamFriendly<br/>
+		[Fixed] Some missions did not announce themselves<br/>
+		[Fixed] AI not despawning on APC mission<br/>
+		[Fixed] balance between weapon/item spawns in buildings<br/>
+		[Fixed] added fuelcans and repairkits to cleanup<br/>
+		[Fixed] Height issue with scaffolding basepart<br/>
+		[Fixed] Undefined variable errors in the original code<br/>
+		[Fixed] Group invite not announcing to invited player<br/>
+		[Fixed] Server cleanup rewritten and working!<br/>
+		[Fixed] Various performance improvements in the scripts<br/>
+		[Fixed] Various issues with unlocked mission vehicles<br/>
+		[Fixed] Selling prices of rifles (no more 25 bucks)<br/>
+		[Fixed] Gunstore purchase exploit (spamming buy button)<br/>
+		[Fixed] No katiba ammo in gunstores<br/>
+		[Fixed] Some classes spawned with GPS/Radio>br/>
+		[Changed] Existing missions now contain random elements<br/>
+		[Changed] Gametype: changed to SANDBOX <br/>
+		[Changed] Survival system from decimals to percentages<br/>
+		[Changed] hunger/thirst death by HPdrain (not instant)<br/>
+		[Changed] Food/Water drainage and gain from items<br/>
+		[Changed] Stores can also be openned from actionmenu<br/>
+		[Changed] Loot in buildings spawned when player in town<br/>
+		[Changed] Loot in buildings now respawns after 60mins<br/>
+		[Changed] Loot in buildings 35% chance of fuel in fuelcan<br/>
+		[Changed] Fuel cans (full or empty) can be dropped<br/>
+		[Changed] Repairkits added to loot-table<br/>
+		[Changed] fuel cans empty and full added to loot-table<br/>
+		[Changed] players spawn without a fuelcan<br/>
+		[Changed] players spawn with a First-aid-kit<br/>
+		[Changed] Spawn weapon changed to ACP with 3 clips<br/>
+		[Changed] Hostile helicopter missions use random heli's<br/>
+		[Changed] Helicopters flown by AI no longer can use flares<br/>
+		[Changed] amount of objects and vehicles reduced<br/>
+		[Changed] Locked baseparts will be saved on server restart<br/>
+		*- After restart the baseparts will be spawned UNLOCKED!<br/>
+		*- please bare with me if there are still issues<br/>
+		   This is a TESTBUILD and should not be used by others<br/>
+"
+]
+];
 
-
-player createDiaryRecord["404games",
+player createDiaryRecord["info",
 [
 "Credits",
 "
 <br/>
 	First things first: <br/>
-	The idea of wasteland and the first original in arma2:<br/> 
+	The idea of wasteland and the first originals in arma2:<br/> 
 	* TAW_Tonic<br/>
 	* Sa-Matra<br/>
 	* Marker<br/>
@@ -295,30 +353,101 @@ player createDiaryRecord["404games",
 	<br/>
 	Development after v1.06 was taken on by:<br/>
 	* JoSchaap (GoT/Tweakers.Net)<br/>
+	<img size='2' image='client\icons\logo.paa'/><br/>
 	<br/>
 	Others that contributed:<br/>
 	* afroVoodo (ArmaHolic)<br/>
 	* Sanjo (GitHub)<br/>
 	* Ed! (404forums)<br/>
-	* AgentREV (GitHub)<br/>
+	* AgentREV (GitHub/TPG - antihax coder!)<br/>
 	* SPJESTER (404forums)<br/>
 	* Hub (404forums)<br/>
 	* Tonic-_- (BIS-forums)<br/>
-	* spunFIN (BIS-forum)<br/><br/>
+	* spunFIN (BIS-forums)<br/><br/>
 	* AWA (OpenDayZ.Net)<br/>
-	* * Thanks ALOT everyone!<br/>
+	* Sa-Matra (BIS-forums)</br>
+	* SicSemperTyrannis (iniDB)<br/>
+	* {ZAG}Ed!<br/>
+	* Na-Palm (BIS-Forums)<br/>
+	* MercyfulFate (GitHub)<br/>
+	* SCETheFuzz (GitHub)<br/>
+	* s3kShUn61 (GitHub)<br/>
+	* RockHound (BierAG)<br/>
+	* KoS-Clan (kosclan.org)<br/>
+	* * Thanks ALOT for the help/inspiration!<br/>
 	<br/>
 "
 ]
 ];
 
-player createDiaryRecord["404games",
+player createDiaryRecord["info",
 [
-"More Info?",
+"Tonic's Original version",
+"
+<br/>
+	Visit the original thread by Tonic in the BISforums:<br/><br/>
+	http://forums.bistudio.com/showthread.php?140070-TVT-CO-55-Wasteland<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"Sa-Matra edition",
+"
+<br/>
+	Find Sa-Matra's version on the BISforums:<br/><br/>
+	http://forums.bistudio.com/showthread.php?154610-MP-Team-Sa-Matra-s-Wasteland<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"KoS-Clan edition",
+"
+<br/>
+	Find the KoS-Clan version on the KOS-Clan website:<br/><br/>
+	www.kosclan.org<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"TPG edition",
+"
+<br/>
+	Find the TeamPlayerGaming version on the TPG website:<br/><br/>
+	http://teamplayergaming.com/arma-3/<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"404Games info",
 "
 <br/>
 	Visit the 404games Team at their website/forums:<br/><br/>
 	http://404games.co.uk<br/>
+	<br/>
+"
+]
+];
+
+player createDiaryRecord["info",
+[
+"GoT/GoT2DayZ",
+"
+<br/>
+	Visit our website at:<br/><br/>
+	http://www.got2dayz.nl<br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	<br/>
 "
 ]
@@ -330,6 +459,7 @@ player createDiaryRecord["GoT2DayZ",
 "
 <br/>
 	What is GoT/GoT2DayZ?<br/><br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	GoT2DayZ started as a DayZ community for Tweakers.Net<br/>
 	As time passed on we also started playing wasteland.<br/>
 	Now we run some public servers.<br/>
@@ -340,9 +470,6 @@ player createDiaryRecord["GoT2DayZ",
 	* ArmA3 Alpha Wasteland on Stratis (day)<br/>
 	* ArmA3 Alpha Wasteland on Stratis (night)<br/>
 	<br/>
-	I cant urge enough that all credits for releasing this mission go<br/>
-	to the re-developers at 404Games.co.uk!<br/>
-	<br/>
 "
 ]
 ];
@@ -352,6 +479,9 @@ player createDiaryRecord["GoT2DayZ",
 "Contact Admin",
 "
 <br/>
+	First of all make sure you are on the official server</br>
+	Servername: [NL] GoT Wasteland v2.3<br/><br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	You can try to get an admins attention in global chat.<br/>
 	If unsuccessfull you can contact us on:<br/>
 	facebook: fb.me/GoT2DayZ<br/>
@@ -367,6 +497,7 @@ player createDiaryRecord["GoT2DayZ",
 "Server info",
 "
 <br/>
+	<img size='4' image='client\icons\logo.paa'/><br/>
 	Server is hosted on a dual XEON 3.2Ghz machine<br/><br/>
 	- 8GB DDR3<br/>
 	- 2x Samsung 120GB SSD<br/>
@@ -380,6 +511,7 @@ player createDiaryRecord["wasteland",
 [
 "Hints/Tips",
 "
+<img size='4' image='client\icons\logo.paa'/> GoT Wasteland v2.3<br/>
 <br/>
 * At the start of the game, spread out and find supplies before worrying about where to establish a meeting place or a base, supplies are important and very valuable.<br/><br/>
 * When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, map-bound bases, etc. remember, players randomly spawn in and around towns and could even spawn inside your base should you set it up in a town.<br/><br/>

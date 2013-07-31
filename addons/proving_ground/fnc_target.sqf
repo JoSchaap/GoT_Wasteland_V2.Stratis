@@ -117,9 +117,9 @@ case 1: {
 		_filter = [];
 		switch (_opt) do {
 			case 0: {_kindOf = ["CAManBase"];};
-			case 1: {_kindOf = ["car"];_filter = ["truck","Wheeled_APC"];};
+			case 1: {_kindOf = ["car"];_filter = ["truck","Wheeled_APC_F"];};
 			case 2: {_kindOf = ["truck"];};
-			case 3: {_kindOf = ["Wheeled_APC","Tracked_APC"];};
+			case 3: {_kindOf = ["Wheeled_APC_F","Tracked_APC"];};
 			case 4: {_kindOf = ["tank"];_filter = ["Tracked_APC"];};
 			case 5: {_kindOf = ["helicopter"];_filter = ["ParachuteBase"];};
 			case 6: {_kindOf = ["plane"];_filter = ["ParachuteBase"];};

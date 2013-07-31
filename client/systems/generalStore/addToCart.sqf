@@ -39,14 +39,14 @@ if (local player) then {
                     _price = _x select 4;
                 } 
             };   
-        }forEach generalStore;
+        }forEach (call generalStore);
 	} else {
 		{
         	if(_x select 0 == _itemText) then
             {
                 _price = _x select 5;
             };    
-        }forEach generalStore;
+        }forEach (call generalStore);
 		_itemlist lbDelete _selectedItem;
 	};
 

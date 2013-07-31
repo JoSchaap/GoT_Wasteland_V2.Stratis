@@ -3,6 +3,7 @@
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap
 //	@file Created: DD/MM/YYYY HH:MM
 //	@file Args:
+private ["_adjustPOS"];
 
 if(!X_Server) exitWith {};
 
@@ -24,4 +25,21 @@ switch (_Objtype) do
 };
 
 _obj setVariable["R3F_LOG_disabled",false];
-_obj setpos [getpos _obj select 0,getpos _obj select 1,0];
+
+// fix for sunken/rissen objects :)
+_adjustPOS=0;
+switch(typeOf _obj) do {
+		case "Land_Scaffolding_F":
+		{
+			_adjustPOS=-3; 
+		};
+		case "Land_Canal_WallSmall_10m_F":
+		{
+			_adjustPOS=3;
+		};
+		case "Land_Canal_Wall_Stairs_F":
+		{
+			_adjustPOS=3;
+		};
+	};
+_obj setpos [getpos _obj select 0,getpos _obj select 1, (getposATL _obj select 2)+_adjustPOS];

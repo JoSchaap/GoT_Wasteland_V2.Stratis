@@ -6,10 +6,11 @@
 
 #include "dialog\genstoreDefines.sqf";
 disableSerialization;
-
+if not(isNil "_Purchaseactive") then {if(_Purchaseactive == 1) exitWith {hint "Please do not spam the purschase button.. Wait for the transaction to complete"};};
 if(genStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
 
 //Initialize Values
+_Purchaseactive = 1;
 _playerMoney = player getVariable "cmoney";
 _size = 0;
 
@@ -27,12 +28,12 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_itemText = _cartlist lbText _x;
     switch (_itemText) do {
         
-        case "Water": {
+        case "Bottled Water": {
             if((player getVariable "water") + 1 <= 4) then {
                 player setVariable["water",(player getVariable "water") + 1,true];	
             } else {
                 _price = 0;
-                {if(_x select 0 == "Water") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Bottled Water") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;    
             };
         };
@@ -42,7 +43,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 player setVariable["canfood",(player getVariable "canfood") + 1,true];
             } else {
             	_price = 0;
-                {if(_x select 0 == "Canned Food") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Canned Food") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;    
             };
         };
@@ -52,7 +53,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 player setVariable["medkits",(player getVariable "medkits") + 1,true];
             } else {
             	_price = 0;
-                {if(_x select 0 == "Medical Kit") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Medical Kit") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;    
             };
         };
@@ -62,7 +63,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 player setVariable["repairkits",(player getVariable "repairkits") + 1,true];
             } else {
             	_price = 0;
-                {if(_x select 0 == "Repair Kit") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Repair Kit") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;    
             };
         };
@@ -74,7 +75,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             } else {
             	if (!((player getVariable "fuelFull") + 1 <= 1)) then {
 	            	_price = 0;
-	                {if(_x select 0 == "Jerry Can (Full)") then{_price = _x select 4;};}forEach generalStore;
+	                {if(_x select 0 == "Jerry Can (Full)") then{_price = _x select 4;};}forEach (call generalStore);
 	            	genStoreCart = genStoreCart - _price;    
                 } else {
                     player setVariable["fuelEmpty",0,true];
@@ -89,7 +90,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             } else {
             	if (((player getVariable "fuelFull") + 1 <= 1)) then {
 	            	_price = 0;
-	                {if(_x select 0 == "Jerry Can (Empty)") then{_price = _x select 4;};}forEach generalStore;
+	                {if(_x select 0 == "Jerry Can (Empty)") then{_price = _x select 4;};}forEach (call generalStore);
 	            	genStoreCart = genStoreCart - _price;    
                 } else {
                     player setVariable["fuelEmpty",1,true];
@@ -102,7 +103,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 player setVariable["spawnBeacon",(player getVariable "spawnBeacon") + 1,true];
             } else {
             	_price = 0;
-                {if(_x select 0 == "Spawn Beacon") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Spawn Beacon") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;    
             };
         };
@@ -111,7 +112,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 player setVariable["camonet",(player getVariable "camonet") + 1,true];
             } else {
             	_price = 0;
-                {if(_x select 0 == "Improv. roof") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Improv. roof") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;    
             };
         };
@@ -124,3 +125,4 @@ _playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
 genStoreCart = 0;
 _totalText CtrlsetText format["Total: $%1", genStoreCart];
 lbClear _cartlist;
+_Purchaseactive = 0;

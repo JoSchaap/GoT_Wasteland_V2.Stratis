@@ -81,11 +81,11 @@ for "_iteration" from 1 to _iterationAmount do {
   		player setVariable["fuelFull",0,true];
 		player setVariable["fuelEmpty",1,true];
         
-        if(!(local _currVehicle)) then {
-			[nil, _currVehicle, "loc", rSPAWN, [_currVehicle, _fuelAmount], {(_this select 0) setFuel (fuel(_this select 0) + (_this select 1))}] call RE;
-		} else {
+//        if(!(local _currVehicle)) then {
+//			[nil, _currVehicle, "loc", rSPAWN, [_currVehicle, _fuelAmount], {(_this select 0) setFuel (fuel(_this select 0) + (_this select 1))}] call RE;
+//		} else {
 			_currVehicle setFuel ((fuel _currVehicle) + _fuelAmount);
-		};
+//		};
    	};
 };
 

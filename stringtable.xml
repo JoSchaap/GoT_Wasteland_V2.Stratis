@@ -20,7 +20,7 @@
 			<English>Independent</English>
 		</Key>
 		<Key ID="STR_WL_Gen_Warning">
-			<English>Warning!</English>
+			<English>! Warning !</English>
 		</Key>
 	</Package>
 	<Package name="Loading">
@@ -41,13 +41,13 @@
 			<English>&lt;t color='#FF9E9E' size='2.5' &gt;GoT Wasteland&lt;t color='#FFFFFF' size='1' &gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;FORBIDDEN.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* Server will be restarted when needed.&lt;br/&gt;* You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;FORBIDDEN.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* Server restarts are the task of the server-admin.&lt;br/&gt;* You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInFFA">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* You cannot wear BLUEFOR clothing! &lt;br/&gt;* Server will be restarted when needed.&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* Server restarts are the task of the server-admin.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Report bugs/problems to https://github.com/JoSchaap/GoT_Wasteland_V2.Stratis&lt;br/&gt;Server will be restarted on request.&lt;br/&gt;For more info please see the map&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Report bugs/problems to https://github.com/JoSchaap/GoT_Wasteland_V2.Stratis &lt;br/&gt;Server restarts are the task of the server-admin.&lt;br/&gt;For more info please see the map&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
@@ -80,30 +80,30 @@
 			<English>Enemy and friendly players</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Message_EnemyApproaching">
-			<English>Onoes! Enemy player just entered the area</English>
+			<English>OMG! Enemy player just entered the area</English>
 		</Key>
 	</Package>
 	<Package name="ShopDescriptions">
 		<Key ID="STR_WL_ShopDescriptions_Water">
-			<English>Premium Spring Water. This water contains 200% more flavour than other leading brands.</English>
+			<English>Greece is a hot place! Drink plenty!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_Camo">
-			<English>Become a ninja, hide yourself while camping. Warning this does not make you invisible</English>
+			<English>An improvised roof. 4 sticks and a blanket!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_CanFood">
-			<English>Canned Food. Heat treated and sealed in a 100% steel can for extra long shelf life. Warning: contents may contain organs.</English>
+			<English>The Greek wastelands may get you hungry!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_RepairKit">
-			<English>The ultimate tool for the Technicians in your team, needed to perform repairs.</English>
+			<English>With this kit you wont need a technician!.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_MedKit">
-			<English>Medical Toolkit for the Medics in your team, needed to perform 100hp Heals.</English>
+			<English>Nope not selling..</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_fuelFull">
-			<English>Top quality imported Russian petroleum, now with 10% less Stalin!</English>
+			<English>25 litres of pure unleaded fuel!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_fuelEmpty">
-			<English>Straight off the back of a lorry, this 'can will last a lifetime.</English>
+			<English>Empty fuel can. You can re-fill it!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_spawnBeacon">
 			<English>Choose your spawn location. Disclaimer: This product does not guarantee safe delivery of goods.</English>
@@ -116,7 +116,7 @@
 	</Package>
 	<Package name="Actions">
 		<Key ID="STR_WL_Acts_PlayerMenu">
-			<English>Player Menu [~]</English>
+			<English>Player Settings/Inventory [~]</English>
 		</Key>
 	</Package>
 	<Package name="Errors">

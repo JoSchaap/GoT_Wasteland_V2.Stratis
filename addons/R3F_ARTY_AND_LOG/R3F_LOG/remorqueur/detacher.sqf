@@ -31,11 +31,17 @@ else
 		// On m�morise aussi sur le r�seau que le objet est attach� en remorque
 		_objet setVariable ["R3F_LOG_est_transporte_par", objNull, true];
 		
-		detach _objet;
-		_objet setVelocity [0,0,0];
+		if (_objet isKindOf "Car") then
+		{
+			detach _objet;
+			_objet setVelocity [0,0,0.01];
+		} else {
+			detach _objet;
+			_objet setVelocity [0,0,0];
+		};
 		
 		player playMove "AinvPknlMstpSlayWrflDnon_medic";
-		sleep 7;
+		sleep 5;
 		
 		if ({_objet isKindOf _x} count R3F_LOG_CFG_objets_deplacables > 0) then
 		{

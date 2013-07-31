@@ -42,7 +42,5 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	    _vehicleHeliBtn ctrlShow false;
 	    _vehiclePlaneBtn ctrlShow false;
 	    _vehicleTankBtn ctrlShow false;	    
-	};
-} else {
-  exit;  
+	}; 
 };

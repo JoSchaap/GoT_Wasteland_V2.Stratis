@@ -30,6 +30,7 @@ _vehicleClass = ["O_Boat_Armed_01_hmg_F","B_Boat_Armed_01_minigun_F"] call BIS_f
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
 _vehicle = [_vehicleClass,_randomPos,0.05,1,0,"NONE"] call createMissionVehicle2;
+_vehicle setVariable [call vChecksum, true, false];
 
 _slbox = createVehicle ["Box_NATO_Support_F",[(_randomPos select 0), (_randomPos select 1),0],[], 0, "NONE"];
 [_slbox,"mission_Main_A3snipers"] call fn_refillbox;
@@ -64,9 +65,9 @@ _vehicle setVariable ["R3F_LOG_disabled", false, true];
 if(_result == 1) then
 {
 	//Mission Failed.
-    deleteVehicle _slbox;
-    deleteVehicle _slbox2;
-	deleteVehicle _vehicle;
+	if not(isNil "_slbox") then {deleteVehicle _slbox;};
+	if not(isNil "_slbox2") then {deleteVehicle _slbox2;};
+	if not(isNil "_vehicle") then {deleteVehicle _vehicle;};
 	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units CivGrpS;
 	{deleteVehicle _x;}forEach units CivGrpS;
     deleteGroup CivGrpS;
@@ -84,5 +85,5 @@ if(_result == 1) then
 };
 
 //Reset Mission Spot.
-MissionSpawnMarkers select _randomIndex set[1, false];
+//MissionSpawnMarkers select _randomIndex set[1, false];
 [_missionMarkerName] call deleteClientMarker;

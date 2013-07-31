@@ -1,5 +1,5 @@
 /**
- * Script principal qui initialise les systèmes d'artillerie réaliste et de logistique
+ * Script principal qui initialise les systï¿½mes d'artillerie rï¿½aliste et de logistique
  * 
  * Copyright (C) 2010 madbull ~R3F~
  * 
@@ -18,11 +18,11 @@
  */
 
 /*
- * Nouveau fil d'exécution pour assurer une compatibilité ascendante (v1.0 à v1.2).
- * Ces versions préconisaient un #include plutôt que execVM pour appeler ce script.
- * A partir de la v1.3 l'exécution par execVM prend l'avantage pour 3 raisons :
- *     - permettre des appels conditionnels optimisés (ex : seulement pour des slots particuliers)
- *     - l'execVM est mieux connu et compris par l'éditeur de mission
+ * Nouveau fil d'exï¿½cution pour assurer une compatibilitï¿½ ascendante (v1.0 ï¿½ v1.2).
+ * Ces versions prï¿½conisaient un #include plutï¿½t que execVM pour appeler ce script.
+ * A partir de la v1.3 l'exï¿½cution par execVM prend l'avantage pour 3 raisons :
+ *     - permettre des appels conditionnels optimisï¿½s (ex : seulement pour des slots particuliers)
+ *     - l'execVM est mieux connu et compris par l'ï¿½diteur de mission
  *     - l'init client de l'arty devient bloquant : il attend une PUBVAR du serveur (le point d'attache)
  */
 [] spawn
@@ -36,7 +36,7 @@
 	
 	if (isServer) then
 	{
-		// Service offert par le serveur : orienter un objet (car setDir est à argument local)
+		// Service offert par le serveur : orienter un objet (car setDir est ï¿½ argument local)
 		R3F_ARTY_AND_LOG_FNCT_PUBVAR_setDir =
 		{
 			private ["_objet", "_direction"];
@@ -63,14 +63,18 @@
 		R3F_LOG_joueur_deplace_objet = objNull;
 	#endif
 	
-	// Auto-détection permanente des objets sur le jeu
-	if !(isServer && isDedicated) then
+	// Auto-dï¿½tection permanente des objets sur le jeu
+	if (isDedicated) then
 	{
-		execVM "addons\R3F_ARTY_AND_LOG\surveiller_nouveaux_objets.sqf";
+		// Version allï¿½gï¿½e pour le serveur dï¿½diï¿½
+		execVM "addons\R3F_ARTY_AND_LOG\surveiller_nouveaux_objets_dedie.sqf";
 	}
-	// Version allégée pour le serveur dédié
 	else
 	{
-		execVM "addons\R3F_ARTY_AND_LOG\surveiller_nouveaux_objets_dedie.sqf";
+		execVM "addons\R3F_ARTY_AND_LOG\surveiller_nouveaux_objets.sqf";
 	};
+	
+	{
+		_x setVariable ["R3F_LOG_disabled", true];
+	} forEach ((nearestObjects [[0,0], R3F_LOG_CFG_objets_deplacables, 99999]) - (allMissionObjects "All"));
 };

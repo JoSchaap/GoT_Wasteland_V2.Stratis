@@ -1,4 +1,4 @@
-private ["_missionMarkerName","_missionType","_picture","_vehicleName","_hint","_waypoint","_waypoints","_groupsm","_vehicles","_marker","_failed","_startTime","_numWaypoints","_ammobox","_createVehicle","_leader"];
+private ["_helipick","_missionMarkerName","_missionType","_picture","_vehicleName","_hint","_waypoint","_waypoints","_groupsm","_vehicles","_marker","_failed","_startTime","_numWaypoints","_ammobox","_createVehicle","_leader"];
 
 #include "sideMissionDefines.sqf"
 
@@ -11,6 +11,7 @@ diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1", _missionTy
 [sideMissionDelayTime] call createWaitCondition;
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1", _missionType];
 
+_helipick = ["O_Heli_Attack_02_black_F","O_Heli_Light_02_F","B_Heli_Transport_01_F","B_Heli_Light_01_armed_F"] call BIS_fnc_selectRandom;
 _groupsm = createGroup civilian;
 
 _createVehicle = {
@@ -23,18 +24,30 @@ _createVehicle = {
     
     _vehicle = _type createVehicle _position;
     _vehicle setDir _direction;
+	_vehicle setVariable [call vChecksum, true, false];
     _groupsm addVehicle _vehicle;
     
     _soldier = [_groupsm, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
     _soldier = [_groupsm, _position] call createRandomSoldier; 
-	_soldier assignAsGunner _vehicle;
+    _soldier assignAsGunner _vehicle;
     _soldier moveInTurret [_vehicle, [0]];  
+
+	if ("CMFlareLauncher" in getArray (configFile >> "CfgVehicles" >> _type >> "weapons")) then
+	{
+		{
+			if (_x isKindOf "60Rnd_CMFlare_Chaff_Magazine") then
+			{
+				_vehicle removeMagazinesTurret [_x, [-1]];
+			};
+		} forEach (_vehicle magazinesTurret [-1]);
+	};
+    _vehicle setVehicleLock "LOCKED";
     _vehicle
 };
 
 _vehicles = [];
-_vehicles set [0, ["O_Heli_Attack_02_black_F", [7108.42,5996.3,0.00166416], 284, _groupsm] call _createVehicle];
+_vehicles set [0, [_helipick, [7108.42,5996.3,0.00166416], 284, _groupsm] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _groupsm selectLeader _leader;
@@ -78,8 +91,8 @@ _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText "Hostile Helicopter";
 
-_picture = getText (configFile >> "CfgVehicles" >> "O_Heli_Attack_02_black_F" >> "picture");
-_vehicleName = getText (configFile >> "cfgVehicles" >> "O_Heli_Attack_02_black_F" >> "displayName");
+_picture = getText (configFile >> "CfgVehicles" >> _helipick >> "picture");
+_vehicleName = getText (configFile >> "cfgVehicles" >> _helipick >> "displayName");
 _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>!! WARNING !!</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>An armed <t color='%4'>%3</t> is patrolling the island. Destroy it and steal the weaponcrate inside!</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };
@@ -107,7 +120,7 @@ waitUntil
 if(_failed) then
 {
     // Mission failed
-    deleteVehicle _vehicle;
+    if not(isNil "_vehicle") then {deleteVehicle _vehicle;};
 	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units _groupsm;
 	{deleteVehicle _x;}forEach units _groupsm;
 	deleteGroup _groupsm; 
@@ -118,7 +131,7 @@ if(_failed) then
     diag_log format["WASTELAND SERVER - Side Mission Failed: %1",_missionType];
 } else {
     // Mission complete
-
+    if not(isNil "_vehicle") then {_vehicle setVehicleLock "UNLOCKED";};
     _ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox;
     clearWeaponCargoGlobal _ammobox; 

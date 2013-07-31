@@ -21,7 +21,9 @@ R3F_LOG_CFG_remorqueurs = [
 	"B_Truck_01_covered_F",
 	"B_Truck_01_transport_F",
 	"B_APC_Wheeled_01_cannon_F",
-	"O_APC_Wheeled_02_rcws_F"
+	"O_APC_Wheeled_02_rcws_F",
+	"O_APC_Tracked_02_cannon_F",
+	"B_APC_Tracked_01_rcws_F"
 ];
 
 /**
@@ -43,7 +45,9 @@ R3F_LOG_CFG_objets_remorquables = [
 	"O_Truck_02_transport_F",
 	"I_Truck_02_transport_F",
 	"B_APC_Wheeled_01_cannon_F",
-	"O_APC_Wheeled_02_rcws_F"
+	"O_APC_Wheeled_02_rcws_F",
+	"O_APC_Tracked_02_cannon_F",
+	"B_APC_Tracked_01_rcws_F"
 ];
 
 /****** LIFT WITH VEHICLE  ******/
@@ -60,7 +64,7 @@ R3F_LOG_CFG_heliporteurs = [
 	"O_Heli_Attack_02_F",
 	"B_Heli_Transport_01_F",
 	"I_Heli_Transport_02_F",
-//	"B_Heli_Transport_01_camo_F",
+	"B_Heli_Transport_01_camo_F",
 	"O_Heli_Attack_02_black_F"
 ];
 
@@ -86,7 +90,9 @@ R3F_LOG_CFG_objets_heliportables = [
 	"O_Truck_02_transport_F",
 	"I_Truck_02_transport_F",
 	"B_APC_Wheeled_01_cannon_F",
-	"O_APC_Wheeled_02_rcws_F"
+	"O_APC_Wheeled_02_rcws_F",
+	"O_APC_Tracked_02_cannon_F",
+	"B_APC_Tracked_01_rcws_F"
 ];
 
 
@@ -127,9 +133,11 @@ R3F_LOG_CFG_transporteurs = [
 	["O_Heli_Attack_02_F", 10],
 	["B_Heli_Transport_01_F", 20],
 	["I_Heli_Transport_02_F", 20],
-//	["B_Heli_Transport_01_camo_F", 20],
+	["B_Heli_Transport_01_camo_F", 20],
 	["B_APC_Wheeled_01_cannon_F", 10],
-	["O_APC_Wheeled_02_rcws_F", 10]
+	["O_APC_Wheeled_02_rcws_F", 10],
+	["O_APC_Tracked_02_cannon_F", 10],
+	["B_APC_Tracked_01_rcws_F", 10]
 ];
 
  
@@ -144,7 +152,6 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Land_Sacks_goods_F", 2],
 	["Land_MetalBarrel_F", 2],
 	["Land_HBarrierBig_F", 5],
-	["Land_Mil_WallBig_4m_F", 5],
 	["Land_ToiletBox_F", 6],
 	["Land_LampShabby_F",3],
 	["Land_HBarrier_3_F", 3],
@@ -155,14 +162,19 @@ R3F_LOG_CFG_objets_transportables =  [
     	["B_Quadbike_01_F", 10],
     	["I_Quadbike_01_F", 10],
 	["Land_Stone_8m_F", 5],
-	["Land_LampDecor_F", 3],
-	["Land_Coil_F", 5],
 	["Land_Pipes_large_F", 5],
 	["Land_CargoBox_V1_F", 5],
 	["Land_BagFence_Long_F", 3],
 	["Land_BagBunker_Small_F", 5],
-	["Land_CncBarrierMedium4_F", 5],
 	["Land_CncWall4_F", 5],
+	["Land_CncBarrierMedium4_F", 4],
+	["Land_Mil_ConcreteWall_F", 5],
+	["Land_Mil_WallBig_4m_F", 5],
+	["Land_Shoot_House_Wall_F", 3],
+	["Land_Obstacle_Ramp_F", 5],
+	["Land_Canal_Wall_Stairs_F", 3],
+	["Land_Canal_WallSmall_10m_F", 4],
+	["Land_Scaffolding_F", 3],
 	["Land_BarGate_F", 3]
 ];
 
@@ -181,7 +193,6 @@ R3F_LOG_CFG_objets_deplacables = [
 	"Land_HBarrierBig_F",
 	"Land_ToiletBox_F",
 	"Land_HBarrier_1_F",
-	"Land_Mil_WallBig_4m_F",
 	"Land_Stone_8m_F",
 	"Land_HBarrier_3_F",
     	"Land_HBarrier_5_F",
@@ -191,13 +202,18 @@ R3F_LOG_CFG_objets_deplacables = [
     	"O_Quadbike_01_F",
     	"B_Quadbike_01_F",
     	"I_Quadbike_01_F",
-	"Land_Coil_F",
 	"Land_Pipes_large_F",
 	"Land_BagFence_Long_F",
 	"Land_BagBunker_Small_F",
-	"Land_CncBarrierMedium4_F",
 	"Land_CncWall4_F",
+	"Land_CncBarrierMedium4_F",
+	"Land_Mil_ConcreteWall_F",
+	"Land_Mil_WallBig_4m_F",
+	"Land_Shoot_House_Wall_F",
 	"Land_BarGate_F",
+	"Land_Canal_Wall_Stairs_F",
+	"Land_Canal_WallSmall_10m_F",
+	"Land_Scaffolding_F",
 	"I_Boat_Transport_01_F",
 	"O_Boat_Transport_01_F",
 	"B_Boat_Transport_01_F",

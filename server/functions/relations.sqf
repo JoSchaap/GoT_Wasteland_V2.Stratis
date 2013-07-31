@@ -3,21 +3,23 @@
 //	@file Name: relations.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
-//	@file Args:
 
-if(!X_Server) exitWith {};
+if (!isServer) exitWith {};
 
-diag_log format["WASTELAND SERVER - Initilizing Server Relations"];
+diag_log "WASTELAND SERVER - Initializing Server Relations";
 
-EAST setFriend [WEST, 0];
-EAST setFriend [EAST, 1];
-EAST setFriend [RESISTANCE, 0];
-WEST setFriend [EAST, 0];
-WEST setFriend [WEST, 1];
-WEST setFriend [RESISTANCE, 0];
-RESISTANCE setFriend [EAST, 0];
-RESISTANCE setFriend [RESISTANCE, 1];
-RESISTANCE setFriend [WEST, 0];
-CIVILIAN setFriend [EAST, 0];
-CIVILIAN setFriend [WEST, 0];
-CIVILIAN setFriend [RESISTANCE, 0];
+BLUFOR setFriend [BLUFOR, 1];
+BLUFOR setFriend [OPFOR, 0];
+BLUFOR setFriend [INDEPENDENT, 0];
+
+OPFOR setFriend [BLUFOR, 0];
+OPFOR setFriend [OPFOR, 1];
+OPFOR setFriend [INDEPENDENT, 0];
+
+INDEPENDENT setFriend [BLUFOR, 0];
+INDEPENDENT setFriend [OPFOR, 0];
+INDEPENDENT setFriend [INDEPENDENT, 1];
+
+CIVILIAN setFriend [BLUFOR, 0];
+CIVILIAN setFriend [OPFOR, 0];
+CIVILIAN setFriend [INDEPENDENT, 0];

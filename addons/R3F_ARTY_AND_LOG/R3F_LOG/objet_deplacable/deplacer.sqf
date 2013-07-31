@@ -26,22 +26,22 @@ else
 	
 	R3F_LOG_objet_selectionne = objNull;
 	
-	private ["_objet", "_est_calculateur", "_arme_principale", "_arme_principale_accessoires", "_arme_principale_magasines", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon", "_muzzles", "_magazine", "_ammo"];
+	private ["_objet", "_est_calculateur", "_arme_principale", "_arme_principale_accessoires", "_arme_principale_magasines", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon", "_muzzles", "_magazine", "_ammo", "_adjustPOS"];
 	
 	_objet = _this select 0;
 	if(isNil {_objet getVariable "R3F_Side"}) then {
-		_objet setVariable ["R3F_Side", (side player), true];
+		_objet setVariable ["R3F_Side", (playerSide), true];
 	};
 	_tempVar = false;
 	if(!isNil {_objet getVariable "R3F_Side"}) then {
-		if(side player != (_objet getVariable "R3F_Side")) then {
+		if(playerSide != (_objet getVariable "R3F_Side")) then {
 			{if(side _x ==  (_objet getVariable "R3F_Side") && alive _x && _x distance _objet < 150) exitwith {_tempVar = true;};} foreach AllUnits;
 		};
 	};
 	if(_tempVar) exitwith {
 		hint format["This object belongs to %1 and they're nearby you cannot take this.", _objet getVariable "R3F_Side"]; R3F_LOG_mutex_local_verrou = false;
 	};
-	_objet setVariable ["R3F_Side", (side player), true];
+	_objet setVariable ["R3F_Side", (playerSide), true];
 	
 	// Si l'objet est un calculateur d'artillerie, on laisse le script spécialisé gérer
 	_est_calculateur = _objet getVariable "R3F_ARTY_est_calculateur";
@@ -120,11 +120,11 @@ else
 			R3F_LOG_mutex_local_verrou = false;
 			R3F_LOG_force_horizontally = false;
 			
-			_action_menu_release_relative = player addAction [("<img image='client\ui\ui_arrow_combo_active_ca.paa' width='32' height='32'/> <t color=""#21DE31"">" + STR_R3F_LOG_action_relacher_objet + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", false, 5, true, true];
-			_action_menu_release_horizontal = player addAction [("<img image='client\ui\ui_arrow_combo_active_ca.paa' width='32' height='32'/> <t color=""#21DE31"">" + STR_RELEASE_HORIZONTAL + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", true, 5, true, true];
-			_action_menu_45 = player addAction [("<img image='client\ui\ui_arrow_combo_ca.paa' width='32' height='32'/> <t color=""#dddd00"">Rotate object 45°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
-			_action_menu_90 = player addAction [("<img image='client\ui\ui_arrow_combo_ca.paa' width='32' height='32'/> <t color=""#dddd00"">Rotate object 90°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
-			_action_menu_180 = player addAction [("<img image='client\ui\ui_arrow_combo_ca.paa' width='32' height='32'/> <t color=""#dddd00"">Rotate object 180°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
+			_action_menu_release_relative = player addAction [("<img image=""client\icons\r3f_release.paa""/> <t color=""#06ef00"">" + STR_R3F_LOG_action_relacher_objet + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", false, 5, true, true];
+			_action_menu_release_horizontal = player addAction [("<img image=""client\icons\r3f_releaseh.paa""/> <t color=""#06ef00"">" + STR_RELEASE_HORIZONTAL + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", true, 5, true, true];
+			_action_menu_45 = player addAction [("<img image=""client\icons\r3f_rotate.paa""/> <t color=""#06ef00"">Rotate object 45°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
+			//_action_menu_90 = player addAction [("<img image='client\ui\ui_arrow_combo_ca.paa' width='32' height='32'/> <t color=""#dddd00"">Rotate object 90°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
+			//_action_menu_180 = player addAction [("<img image='client\ui\ui_arrow_combo_ca.paa' width='32' height='32'/> <t color=""#dddd00"">Rotate object 180°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
 			
 			// On limite la vitesse de marche et on interdit de monter dans un véhicule tant que l'objet est porté
 			while {!isNull R3F_LOG_joueur_deplace_objet && alive player} do
@@ -148,6 +148,26 @@ else
 			
 			// L'objet n'est plus porté, on le repose
 			detach _objet;
+
+			// this addition comes from Sa-Matra (fixes the heigt of some of the objects) - all credits for this fix go to him!
+
+			_adjustPOS=0;
+
+			switch(typeOf _objet) do {
+				case "Land_Scaffolding_F":
+				{
+					_adjustPOS=-3; 
+				};
+				case "Land_Canal_WallSmall_10m_F":
+				{
+					_adjustPOS=3;
+				};
+				case "Land_Canal_Wall_Stairs_F":
+				{
+					_adjustPOS=3;
+				};
+			};
+
 			if(R3F_LOG_force_horizontally) then {
 				R3F_LOG_force_horizontally = false;
 
@@ -155,7 +175,7 @@ else
 				_ppos = getPosASL player;
 				_opos set [2, _ppos select 2];
 				_opos2 = +_opos;
-				_opos2 set [2, (_opos2 select 2) - 1];
+				_opos2 set [2, (_opos2 select 2)+ _adjustPOS];
 				if(terrainIntersectASL [_opos, _opos2]) then {
 					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL player select 2];
 				} else {
@@ -163,9 +183,9 @@ else
 				};
 			} else {
 				if((getPosATL player select 2) < 5) then {
-					_objet setPos [getPos _objet select 0, getPos _objet select 1, getPosATL player select 2];
+					_objet setPos [getPos _objet select 0, getPos _objet select 1, (getPosATL player select 2)+_adjustPOS];
 				} else {
-					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL player select 2];
+					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, (getPosATL player select 2)+_adjustPOS];
 				};
 			};
 			
@@ -174,8 +194,8 @@ else
 			player removeAction _action_menu_release_relative;
 			player removeAction _action_menu_release_horizontal;
 			player removeAction _action_menu_45;
-			player removeAction _action_menu_90;
-			player removeAction _action_menu_180;
+			//player removeAction _action_menu_90;
+			//player removeAction _action_menu_180;
 			R3F_LOG_joueur_deplace_objet = objNull;
 			
 			_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];

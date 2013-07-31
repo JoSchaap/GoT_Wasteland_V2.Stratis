@@ -15,12 +15,14 @@ _damage = _this select 4;
 _state = _this select 5;
 
 _veh = createVehicle [_vehicleClass,_randomPos,[], 0, _state];
+_veh setPosATL _randomPos;
+_veh setVelocity [0,0,0];
 _veh setFuel _fuel;
 _veh setVehicleAmmo _ammo;
 _veh setdamage _damage;
 
 _veh setVehicleLock "LOCKED";
-_veh setVariable["vehicleChecksum",call vChecksum,true]; 
+_veh setVariable [call vChecksum, true, false]; 
 _veh setVariable ["R3F_LOG_disabled", true, true];
 
 clearMagazineCargoGlobal _veh;

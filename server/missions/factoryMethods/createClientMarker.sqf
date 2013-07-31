@@ -13,3 +13,8 @@ _markerText = _this select 2;
 
 clientMissionMarkers set [count clientMissionMarkers,[_markerName,_randomPos,_markerText]];
 publicVariable "clientMissionMarkers";
+
+if (!isDedicated) then
+{
+  [] spawn updateMissionsMarkers;
+}; 

@@ -17,6 +17,7 @@ _MainMissions = [[mission_ArmedHeli,"mission_ArmedHeli"],
 	[mission_LightArmVeh,"mission_LightArmVeh"],
 	[mission_HostileHeliFormation,"mission_HostileHeliFormation"],
 	[mission_CivHeli,"mission_CivHeli"],
+	[mission_Coastal_Convoy,"mission_Coastal_Convoy"],
 	[mission_APC,"mission_APC"],
 	[mission_Outpost,"mission_Outpost"],
 	[mission_Convoy,"mission_Convoy"]]; 

@@ -4,7 +4,7 @@
 //@file Created: 20/11/2012 05:19
 //@file Description: The client init.
 
-if(!X_Client) exitWith {};
+if (isDedicated) exitWith {};
 
 mutexScriptInProgress = false;
 respawnDialogActive = false;
@@ -20,12 +20,14 @@ playerSetupComplete = false;
 
 waitUntil {!isNull player};
 waitUntil{time > 2};
+removeAllWeapons player;
+player switchMove "";
 
 //Call client compile list.
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
 
 //Stop people being civ's.
-if(!(playerSide in [west, east, resistance])) then {
+if(!(playerSide in [BLUFOR, OPFOR, INDEPENDENT, sideEnemy])) then { 
 	endMission "LOSER";
 };
 
@@ -49,15 +51,15 @@ waituntil {!(IsNull (findDisplay 46))};
 "clientMissionMarkers" addPublicVariableEventHandler {[] call updateMissionsMarkers};
 "clientRadarMarkers" addPublicVariableEventHandler {[] call updateRadarMarkers};
 "pvar_teamKillList" addPublicVariableEventHandler {[] call updateTeamKiller};
-"publicVar_teamkillMessage" addPublicVariableEventHandler {if(local(_this select 1)) then {[] spawn teamkillMessage;};};
+"publicVar_teamkillMessage" addPublicVariableEventHandler {if (local (_this select 1)) then { [] spawn teamkillMessage }};
+"compensateNegativeScore" addPublicVariableEventHandler { (_this select 1) call removeNegativeScore };
 
 //client Executes
 [] execVM "client\functions\initSurvival.sqf";
 [] execVM "client\systems\hud\playerHud.sqf";
 [] execVM "client\functions\createTownMarkers.sqf";
 [] execVM "client\functions\createGunStoreMarkers.sqf";
-//[] execVM "client\functions\createGeneralStoreMarkers.sqf";
-//true[] execVM "client\functions\loadAtmosphere.sqf";
+[] execVM "client\functions\createGeneralStoreMarkers.sqf";
 [] execVM "client\functions\playerTags.sqf";
 [] execVM "client\functions\groupTags.sqf";
 [] call updateMissionsMarkers;
@@ -69,3 +71,10 @@ if (isNil "FZF_IC_INIT") then   {
 
 true spawn playerSpawn;
 [] spawn FZF_IC_INIT;
+
+{
+	if (isPlayer _x && {!isNil ("addScore_" + (getPlayerUID _x))}) then
+	{
+		_x call removeNegativeScore;
+	};
+} forEach playableUnits; 

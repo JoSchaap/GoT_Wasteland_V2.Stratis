@@ -20,12 +20,10 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 					"Access Respawn Dialog",
 					"Access Proving Grounds",
 	                "Show Server FPS",
-	                "Test Function"
+	                "Trigger Antihack"
 	];
 	
 	{
 		_debugSelect lbAdd _x;
 	} forEach _panelOptions;
-} else {
-  exit;  
 };

@@ -60,9 +60,9 @@ for "_i" from 0 to (_strLen - 1) do
 
 if (isPlayer _unit) then 
 {
-	[[[_unit], compile format ["(_this select 0) call {%1}", toString _command]], "BIS_fnc_spawn", true, _persistence] call BIS_fnc_MP;
+	[[[_unit], compile format ["(_this select 0) call {%1}", toString _command]], "BIS_fnc_spawn", true, _persistence] call TPG_fnc_MP;
 }
 else
 {
-	[compile format ["(objectFromNetId '%1') call {%2}", netId _unit, toString _command], "BIS_fnc_spawn", true, _persistence] call BIS_fnc_MP;
+	[compile format ["(objectFromNetId '%1') call {%2}", netId _unit, toString _command], "BIS_fnc_spawn", true, _persistence] call TPG_fnc_MP;
 };

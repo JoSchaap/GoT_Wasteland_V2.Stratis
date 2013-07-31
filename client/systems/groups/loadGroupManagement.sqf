@@ -20,9 +20,10 @@ disableSerialization;
 private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","_namestr","_index","_groupCreate","_groupInvite","_groupKick","_groupDisband","_groupLeaveButton","_inGroup","_isLeader","_name"];
 
 closeDialog 0;
-_start = createDialog "GroupManagement";			
+_start = createDialog "GroupManagement";	
+waitUntil{!isNull(findDisplay groupManagementDialog)};		
 _dialog = findDisplay groupManagementDialog;
-_display displayAddEventHandler ["KeyDown", "_return = false; if(groupManagmentActive && (_this select 1) == 1) then {_return = true;}; _return"];
+_dialog displayAddEventHandler ["KeyDown", "_return = false; if(groupManagmentActive && (_this select 1) == 1) then {_return = true;}; _return"];
 groupManagmentActive = true;
 _playerListBox = _dialog displayCtrl groupManagementPlayerList;
 _groupListBox = _dialog displayCtrl groupManagementGroupList;
@@ -72,8 +73,11 @@ while{groupManagmentActive} do
         	  	
         //Get Invite Text and Set it.
         {_invite = _x;if(_invite select 1 == getPlayerUID player) then {{if(_invite select 0 == getPlayerUID _x) then {_name = name(_x);};}forEach playableUnits;};}forEach currentInvites;
-        _groupInviteText ctrlSetStructuredText parseText (format ["Group Invite From<br/>%1",_name]);
-        
+        if(isStreamFriendlyUIEnabled) then {
+			_groupInviteText ctrlSetStructuredText parseText (format ["Group Invite From<br/>Censored(StreamFriendly:ON)"]);
+        } else {
+			_groupInviteText ctrlSetStructuredText parseText (format ["Group Invite From<br/>%1",_name]);
+		};
     } else {
     	_groupAcceptInvite ctrlShow false;
         _groupDeclineInvite ctrlShow false;
@@ -87,7 +91,11 @@ while{groupManagmentActive} do
 	        if(getPlayerUID _x != getPlayerUID player) then
 	        {
 			    //Add to list
-			    _namestr = name(_x);             
+			    if(isStreamFriendlyUIEnabled) then {
+					_namestr = "[PLAYER]";
+				} else {
+					_namestr = name(_x);
+				};
 				_index = _playerListBox lbAdd _namestr;
 				_playerListBox lbSetData [_index, str(_x)];  
 	        };
@@ -96,7 +104,11 @@ while{groupManagmentActive} do
     
     //Update group player list
     {
-    	_namestr = name(_x);             
+    	if(isStreamFriendlyUIEnabled) then {
+			_namestr = "[PLAYER]";
+		} else {
+			_namestr = name(_x);
+		};             
 		_index = _groupListBox lbAdd _namestr;
 		_groupListBox lbSetData [_index, str(_x)];	    
     }forEach units group player;

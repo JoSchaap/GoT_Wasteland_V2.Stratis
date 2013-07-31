@@ -9,6 +9,7 @@ if(!X_Server) exitWith {};
 private ["_markerPos","_pos","_type","_num","_cartype","_car"];
 
 _markerPos = _this select 0;
+_type = 0;  //test due to undefined variable errors..
 
 
 if (count _this > 1) then
@@ -27,7 +28,7 @@ else
 	if (_num < 25) then { _cartype = mediumMilitaryVehicles call BIS_fnc_selectRandom; _type = 2 };
 };
 
-_pos = [_markerPos, 1, 35, ( if (_type == 1) then { 2 } else { 5 } ), 0, 60 * (pi / 180), 0, [], [_markerPos]] call BIS_fnc_findSafePos;
+_pos = [_markerPos, 2, 45, ( if (_type == 1) then { 2 } else { 5 } ), 0, 60 * (pi / 180), 0, [], [_markerPos]] call BIS_fnc_findSafePos;
 
 //Car Initialization
 _car = createVehicle [_cartype,_pos, [], 0, "None"];
@@ -55,6 +56,6 @@ _car disableTIEquipment true;
 [_car] call randomWeapons;
 
 //Set original posistion then add to vehicle array
-_car setVariable ["vehicleChecksum",call vChecksum,true]; 
+_car setVariable [call vChecksum, true, false]; 
 _car setPosATL [getpos _car select 0,getpos _car select 1,1];
 _car setVelocity [0,0,0];

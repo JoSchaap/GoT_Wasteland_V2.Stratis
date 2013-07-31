@@ -83,5 +83,13 @@ _man7 addMagazine "1Rnd_HE_Grenade_shell";
 _man7 addMagazine "1Rnd_HE_Grenade_shell";
 _man7 addWeapon "arifle_MX_GL_F";
 
+{
+	_x addrating 9999999;
+	_x addEventHandler ["Killed",
+	{
+		(_this select 1) call removeNegativeScore;
+	}];
+} forEach units _group;
+
 _leader = leader _group;
 [_group, _pos] call defendArea;

@@ -47,6 +47,7 @@ class Mission
 		"A3_Structures_F_Households_House_Big01",
 		"a3_structures_f_mil_bagfence",
 		"a3_structures_f_mil_bagbunker",
+		"a3_structures_f_items_luggage",
 		"A3_Air_F_Heli_Light_01",
 		"A3_Air_F_Beta_Heli_Attack_01",
 		"A3_Air_F_Beta_Heli_Transport_02",
@@ -63,6 +64,8 @@ class Mission
 		"a3_boat_f_beta_boat_transport_01",
 		"A3_Boat_F_Boat_Armed_01",
 		"a3_boat_f_beta_boat_armed_01",
+		"a3_armor_f_panther",
+		"a3_armor_f_beta_apc_tracked_02",
 		"A3_Boat_F_SDV_01"
 	};
 	addOnsAuto[]=
@@ -82,6 +85,9 @@ class Mission
 		"a3_soft_f_beta_quadbike",
 		"A3_Soft_F_MRAP_03",
 		"a3_soft_f_truckheavy",
+		"a3_armor_f_panther",
+		"a3_armor_f_beta_apc_tracked_02",
+		"a3_structures_f_items_luggage",
 		"A3_Structures_F_Households_House_Small01",
 		"A3_Structures_F_Households_House_Small02",
 		"a3_structures_f_households_stone_big",
@@ -129,8 +135,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v2.21 (GoT/JoSchaap)";
-		briefingDescription="GoT Wasteland Survival Sandbox v2.21 (beta-edition) - Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingName="GoT Wasteland v2.3 (GoT/JoSchaap)";
+		briefingDescription="GoT Wasteland Survival Sandbox v2.3 -  Based on 404Wasteland - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;
@@ -142,14 +148,14 @@ class Mission
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
 	};
 	class Groups
 	{
-		items=41;
+		items=44;
 		class Item0
 		{
 			side="WEST";
@@ -1186,7 +1192,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore1";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Mk200_MRCO_F""; this addUniform ""U_I_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_1');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Mk200_MRCO_F""; this addUniform ""U_I_Ghilliesuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_1'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1206,7 +1212,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore2";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Zafir_pointer_F""; this addUniform ""U_I_HeliPilotCoveralls""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_2');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""LMG_Zafir_pointer_F""; this addUniform ""U_I_HeliPilotCoveralls""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_2'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1226,7 +1232,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore3";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_GM6_SOS_F""; this addUniform ""U_I_CombatUniform_tshirt""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_3');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""srifle_GM6_SOS_F""; this addUniform ""U_I_CombatUniform_tshirt""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPosATL(getMarkerPos 'Store_Gun_3'); this enableSimulation false;";
 				};
 			};
 		};
@@ -1246,16 +1252,75 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gunStore4";
-					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""arifle_Mk20_GL_MRCO_pointer_F""; this addUniform ""U_I_Wetsuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_4');";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addWeapon ""arifle_Mk20_GL_MRCO_pointer_F""; this addUniform ""U_I_Wetsuit""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gun_4'); this enableSimulation false;";
 				};
 			};
 		};
-
 		class Item39
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3046.49,4.30898,6005.05};
+					azimut=191;
+					id=69;
+					side="LOGIC";
+					vehicle="C_man_1_2_F";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore1";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_B_SpecopsUniform_sgg""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_1'); this enableSimulation false;";
+				};
+			};
+		};
+		class Item40
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6539.38,0.582188,5043.2};
+					azimut=52;
+					id=70;
+					side="LOGIC";
+					vehicle="C_man_1_2_F";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore2";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_I_OfficerUniform""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_2'); this enableSimulation false;";
+				};
+			};
+		};
+		class Item41
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2000.87,0.315531,2717.57};
+					azimut=30;
+					id=70;
+					side="LOGIC";
+					vehicle="C_man_1_2_F";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore3";
+					init="this addEventHandler['handledamage', {false}]; removeAllWeapons this; this addUniform ""U_O_SpecopsUniform_ocamo""; this disableAI 'MOVE'; this DisableAI 'ANIM'; this disableAI 'FSM'; this setPos(getMarkerPos 'Store_Gen_3'); this enableSimulation false;";
+				};
+			};
+		};
+		class Item42
 		{
 			side="WEST";
 		};
-		class Item40
+		class Item43
 		{
 			side="WEST";
 		};
@@ -3748,7 +3813,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=225;
+		items=228;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -5186,6 +5251,27 @@ class Mission
 			type="Empty";
 			colorName="ColorBrown";
 		};
+		class Item225
+		{
+			position[]={3046.49,4.30898,6005.05};
+			name="Store_Gen_1";
+			type="Empty";
+			colorName="ColorBrown";
+		};
+		class Item226
+		{
+			position[]={6539.38,0.582188,5043.2};
+			name="Store_Gen_2";
+			type="Empty";
+			colorName="ColorBrown";
+		};
+		class Item227
+		{
+			position[]={2000.87,0.315531,2717.57};
+			name="Store_Gen_3";
+			type="Empty";
+			colorName="ColorBrown";
+		};
 	};
 };
 class Intro
@@ -5212,7 +5298,7 @@ class Intro
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -5242,7 +5328,7 @@ class OutroWin
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;
@@ -5272,7 +5358,7 @@ class OutroLoose
 		year=2013;
 		month=6;
 		day=25;
-		hour=4;
+		hour=5;
 		minute=0;
 		startFogDecay=0.0029333;
 		forecastFogDecay=0.0039333;

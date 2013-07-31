@@ -9,7 +9,6 @@ if(!X_Server) exitWith {};
 
 sideMissions = 1;
 serverSpawning = 1;
-buildingsloot = 1;
 
 vChecksum = compileFinal format ["'%1'", call generateKey];
 
@@ -25,15 +24,37 @@ waitUntil{scriptDone _serverCompiledScripts};
 
 
 diag_log format["WASTELAND SERVER - Server Compile Finished"];
+"requestCompensateNegativeScore" addPublicVariableEventHandler { (_this select 1) call removeNegativeScore }; 
 
-
-//Execute Server Spawning.
-if (buildingsloot == 1) then {
-	diag_log format["GOT WASTELAND - Placing loot in buildings"];
-	_lootspawnz = [] execVM "server\spawning\lootCreation.sqf";
-	waitUntil{sleep 0.1; scriptDone _lootspawnz};
-	diag_log format["GOT WASTELAND - Done placing loot in buildings"];
+// load external config
+if (loadFile "GoT_Wasteland-config.sqf" != "") then
+{
+    call compile preprocessFileLineNumbers "GoT_Wasteland-config.sqf";
+};
+ 
+if (loadFile "GoT_Wasteland-config.sqf" == "") exitWith 
+	{
+		diag_log "[ERROR] GoT Wasteland v2.3 configuration could not be loaded";
+		diag_log "[ERROR] GoT Wasteland v2.3 requires additional files";
+		diag_log "[ERROR] You can download the full package on: www.got2dayz.nl";
 	};
+
+if (!isNil "GoT_nightTime" && {GoT_nightTime > 0}) then
+{
+    setDate [date select 0, date select 1, date select 2, 21, 0];
+};
+
+if (!isNil "GoT_baseSaving" && {GoT_baseSaving > 0}) then
+{
+    diag_log "[GoT Wasteland - Initializing base-saving]";
+    execVM "persistentscripts\init.sqf";
+};
+
+if (!isNil "GoT_buildingsloot" && {GoT_buildingsloot > 0}) then 
+{
+	diag_log format["GOT WASTELAND - Lootspawner started"];
+	execVM "server\spawning\lootCreation.sqf";
+};
 
 if (serverSpawning == 1) then {
     diag_log format["WASTELAND SERVER - Initilizing Server Spawning"];
@@ -60,5 +81,5 @@ if (sideMissions == 1) then {
 };
 
 if (isDedicated) then {
-	_id = [] execFSM "server\WastelandServClean.fsm";
+	_id = [] execVM "server\WastelandServClean.sqf";
 };

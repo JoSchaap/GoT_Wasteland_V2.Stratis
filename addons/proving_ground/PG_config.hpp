@@ -29,7 +29,7 @@ class balca_debug_main
 				x = 0; w = column_weight-column_div;
 				y = 0;
 				text = "Create vehicle";
-				action = "closeDialog 0;createDialog ""balca_debug_veh_creator"";[0] call c_proving_ground_fnc_create_vehicle"; 
+				action = "if (isServer) then { closeDialog 0; createDialog ""balca_debug_veh_creator""; [0] call c_proving_ground_fnc_create_vehicle } else { ['This option is disabled on clients due to BattlEye.','Notice'] spawn BIS_fnc_guiMessage }"; 
 			};
 
 			class balca_cWeap_btn : balca_debug_btn
@@ -72,20 +72,20 @@ class balca_debug_main
 				action = "closeDialog 0;_core = c_proving_ground_core;_dir = direction player;_pos = getPos player;_core setPos [(_pos select 0)+10*sin(_dir),(_pos select 1)+10*cos(_dir),0];_core setDir _dir;_marker = createMarkerLocal ['respawn_west',_pos];createMarkerLocal ['respawn_east',_pos];createMarkerLocal ['respawn_guerrila',_pos];createMarkerLocal ['respawn_civilian',_pos];closeDialog 0;"; 
 			};
 
-			class balca_get_bot_btn : balca_debug_btn
+			/*class balca_get_bot_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*7;
 				text = "Get bot in team";
 				action = "((group player) createUnit [typeOf player,getpos player,[],0.1,""FORM""]) setSkill 1"; 
-			};
+			};*/
 
 			class balca_dVeh_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*8;
 				text = "Delete vehicle";
-				action = "deleteVehicle cursorTarget;closeDialog 0;"; 
+				action = "deleteVehicle cursorTarget;"; 
 			};
 
 
@@ -103,7 +103,7 @@ class balca_debug_main
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*1;
 				text = "Autoheal";
-				action = "[] call c_proving_ground_fnc_autoheal"; 
+				action = "player setDamage 0"; 
 			};
 
 			class balca_booster_btn : balca_debug_btn
@@ -146,20 +146,20 @@ class balca_debug_main
 				action = """hitmarker"" call c_proving_ground_fnc_bulletcam;"; 
 			};
 
-			class balca_status_btn : balca_debug_btn
+			/*class balca_status_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*7;
 				text = "Status display";
 				action = "closeDialog 0;call c_proving_ground_fnc_status";
-			};
+			};*/
 
 			class balca_console_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*8;
 				text = "Console";
-				action = "closeDialog 0;createDialog ""balca_debug_console"";[0] call c_proving_ground_fnc_exec_console;"; 
+				action = "closeDialog 0;createDialog ""balca_debug_console"";[0] call c_proving_ground_fnc_exec_console; if (!isServer) then { ['Using this may get you kicked by BattlEye.','WARNING'] spawn BIS_fnc_guiMessage }";
 			};
 		//column 3
 			class balca_sound_btn : balca_debug_btn
@@ -198,16 +198,16 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*4;
-				text = "BIS help";
-				action = "closeDialog 0;[] execVM 'ca\modules\functions\misc\fn_help.sqf'"; 
+				text = "BIS Functions Viewer";
+				action = "closeDialog 0;[] call BIS_fnc_help"; 
 			};
 
 			class balca_BIS_cfgviewer_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "BIS cfgviewer";
-				action = "closeDialog 0;[] execVM 'ca\modules_e\functions\misc\fn_configviewer.sqf'"; 
+				text = "BIS Config Viewer";
+				action = "closeDialog 0;[] call BIS_fnc_configviewer"; 
 			};
 			class balca_close_btn : balca_debug_btn
 			{
@@ -259,7 +259,7 @@ class balca_debug_veh_creator
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "Zeppelin32";
 		sizeEx = 0.032;
 	};
 
@@ -351,7 +351,7 @@ class balca_debug_veh_creator
 	{
 		x = safezoneX + border_offsetX + btn_weight*2; w = btn_weight-column_div;
 		y = safezoneY;
-		text = "Chopper";
+		text = "Helicopter";
 		action = "[0,5] call c_proving_ground_fnc_create_vehicle"; 
 	};
 
@@ -407,8 +407,8 @@ class balca_debug_veh_creator
 	{
 		x = safezoneX+column_weight*2; w = btn_weight;
 		y = display_height-safezoneY- offset_bottom;
-		text = "Close";
-		action = "closeDialog 0;"; 
+        text = "Back";
+        action = "closeDialog 0; createDialog 'balca_debug_main'";
 	};
 };
 
@@ -452,7 +452,7 @@ class balca_debug_weap_creator
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "Zeppelin32";
 		sizeEx = 0.032;
 	};
 
@@ -667,7 +667,7 @@ class balca_debug_console
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "Zeppelin32";
 		sizeEx = 0.032;
 	};
 
@@ -757,8 +757,8 @@ class balca_debug_console
 			{
 				x = column_weight*2; w = btn_weight;
 				y = btn_height;
-				text = "Close";
-				action = "closeDialog 0;"; 
+				text = "Back";
+                action = "closeDialog 0; createDialog 'balca_debug_main'"; 
 			};
 		};
 	};
@@ -792,7 +792,7 @@ class balca_target_display
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "Zeppelin32";
 		sizeEx = 0.032;
 	};
 
@@ -903,7 +903,7 @@ class balca_target_display
 			{
 				x = btn_weight*2; w = btn_weight-column_div;
 				y = btn_height;
-				text = "Chopper";
+				text = "Helicopter";
 				action = "[1,5] call c_proving_ground_fnc_target;"; 
 			};
 
@@ -1285,7 +1285,7 @@ class balca_sound_player
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "Zeppelin32";
 		sizeEx = 0.032;
 	};
 
@@ -1349,7 +1349,7 @@ class balca_statistics
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "Zeppelin32";
 		sizeEx = 0.032;
 	};
 
@@ -1420,7 +1420,7 @@ class balca_environment
 		colorText[] = {1, 1, 1, 1};
 		colorBackground[] = {0,0,0,0};
 		text = "";
-		font = "TahomaB";
+		font = "Zeppelin32";
 		sizeEx = 0.032;
 	};
 

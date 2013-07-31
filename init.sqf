@@ -1,9 +1,8 @@
+																																																												asaerw3rw3r4 = 1; 
 //	@file Version: 1.2
 //	@file Name: init.sqf
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap
-//	@file Created: 20/11/2012 05:13
 //	@file Description: The main init.
-//	@file Args:
 
 #include "setup.sqf"
 
@@ -14,17 +13,18 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "GoT Wasteland v2.21";
+versionName = "GoT Wasteland v2.3";
 
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
 if(isNull player) then {X_JIP = true;};
 
+
 true spawn {
 	if(!isDedicated) then {
-		titleText ["Welcome to GoT Wasteland v2.21, Have patience dear Padawan!", "BLACK", 0];
-		waitUntil {player == player};
+		titleText ["Welcome to GoT Wasteland v2.3, Have patience dear Padawan!", "BLACK", 0];
+		waitUntil {!isNull player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
 };
@@ -35,9 +35,10 @@ true spawn {
 
 generateKey = compileFinal preprocessFileLineNumbers "server\antihack\generateKey.sqf"; 
 fn_vehicleInit = compile preprocessFileLineNumbers "server\functions\fn_vehicleInit.sqf";
+removeNegativeScore = compile preprocessFileLineNumbers "server\functions\removeNegativeScore.sqf";
 
-if(X_Client) then {
-	waitUntil {player == player};
+if(!isDedicated) then {
+	waitUntil {!isNull player};
 
 	//Wipe Group.
 	if(count units group player > 1) then
@@ -60,23 +61,15 @@ if(X_Server) then {
 
 //Disable r3f on map/mission sided buildings (causes desync when moved)
 //props to Tonic-_- at the BIS forums for this find! :)
-if (isServer) then {
-	waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
-	{
-    	if(!(_x in (allMissionObjects "Building"))) then
-    	{
-	        _x setVariable["R3F_LOG_disabled",true];
-    	};
-	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
-};
-if (!isDedicated) then {
-	waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
-	{
-    	if(!(_x in (allMissionObjects "Building"))) then
-    	{
-	        _x setVariable["R3F_LOG_disabled",true];
-    	};
-	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
-};
+// Disabled : should be handled in r3f's init now :)
+// if (!isDedicated) then {
+// 	waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
+// 	{
+//     	if(!(_x in (allMissionObjects "Building"))) then
+//     	{
+// 	        _x setVariable["R3F_LOG_disabled",true];
+//     	};
+// 	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
+// };
 
 [] execVM "addons\proving_Ground\init.sqf";

@@ -12,7 +12,7 @@ else
 {
 	_tempVar = false;
 	if(!isNil {(_this select 0) getVariable "R3F_Side"}) then {
-		if(side player != ((_this select 0) getVariable "R3F_Side")) then {
+		if(playerSide != ((_this select 0) getVariable "R3F_Side")) then {
 			{if(side _x ==  ((_this select 0) getVariable "R3F_Side") && alive _x && _x distance (_this select 0) < 150) exitwith {_tempVar = true;};} foreach AllUnits;
 		};
 	};

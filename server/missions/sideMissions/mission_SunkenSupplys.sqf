@@ -95,5 +95,5 @@ if(_result == 1) then
 };
 
 //Reset Mission Spot.
-MissionSpawnMarkers select _randomIndex set[1, false];
+//MissionSpawnMarkers select _randomIndex set[1, false];
 [_missionMarkerName] call deleteClientMarker;

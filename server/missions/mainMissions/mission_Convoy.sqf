@@ -25,6 +25,7 @@ _createVehicle = {
     _vehicle setDir _direction;
     clearMagazineCargoGlobal _vehicle;
     clearWeaponCargoGlobal _vehicle;
+	_vehicle setVariable [call vChecksum, true, false];
     _group addVehicle _vehicle;
     
     _soldier = [_group, _position] call createRandomSoldier; 
@@ -39,7 +40,7 @@ _createVehicle = {
     } else {
         _soldier moveInTurret [_vehicle, [0]];
     };
-    
+    _vehicle setVehicleLock "LOCKED";
     _vehicle
 };
 
@@ -91,7 +92,7 @@ _marker = createMarker [_missionMarkerName, position leader _group];
 _marker setMarkerType "mil_destroy";
 _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
-_marker setMarkerText "Convoy";
+_marker setMarkerText "Armed Convoy";
 
 _picture = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_F" >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> "I_MRAP_03_F" >> "displayName");
@@ -123,7 +124,7 @@ waitUntil
 if(_failed) then
 {
     // Mission failed
-    deleteVehicle _vehicle;
+    if not(isNil "_vehicle") then {deleteVehicle _vehicle;};
 	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units _group;
 	{deleteVehicle _x;}forEach units _group;
 	deleteGroup _group; 
@@ -133,8 +134,10 @@ if(_failed) then
     publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
+	if (!isNil "_vehicle") then { _vehicle setVehicleLock "UNLOCKED"; };
+	if (!isNil "_vehicle") then { _vehicle setVariable ["R3F_LOG_disabled", false, true]; };
     // Mission complete
-    _ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
+	_ammobox = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
     clearMagazineCargoGlobal _ammobox;
     clearWeaponCargoGlobal _ammobox; 
     [_ammobox,"mission_USSpecial2"] call fn_refillbox;

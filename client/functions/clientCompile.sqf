@@ -1,7 +1,5 @@
-//	@file Version: 1.1
 //	@file Name: clientCompile.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, [GoT] JoSchaap
-//	@file Created: 20/11/2012 05:19
 //	@file Args:
 
 // Event handlers
@@ -10,6 +8,7 @@ onKilled = compile preprocessfile "client\clientEvents\onKilled.sqf";
 onKeyPress = compile preprocessFile "client\clientEvents\onKeyPress.sqf";
 fn_fitsInventory = compile preprocessFileLineNumbers "client\functions\fn_fitsInventory.sqf";
 findHackedVehicles = compileFinal preprocessFileLineNumbers "client\systems\adminPanel\findHackedVehicles.sqf";
+serverMessage = compile preprocessFileLineNumbers "client\functions\serverMessage.sqf";
 
 // Player details and actions
 loadPlayerMenu = compile preprocessFile "client\systems\playerMenu\init.sqf";
@@ -22,7 +21,6 @@ repairVehicle = compile preprocessFile "client\systems\playerMenu\repair.sqf";
 
 // Sync client with server time
 timeSync = compile preprocessFileLineNumbers "client\functions\clientTimeSync.sqf";
-serverMessage = compile preprocessFileLineNumbers "client\functions\serverMessage.sqf";
 
 // Update scripts
 updateMissionsMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerMissionMarkers.sqf";
@@ -38,6 +36,6 @@ client_respawnDialog = compile preprocessFileLineNumbers "client\functions\loadR
 loadGeneralStore = compile preprocessFileLineNumbers "client\systems\generalStore\loadGenStore.sqf";
 loadGunStore = compile preprocessFileLineNumbers "client\systems\gunStore\loadGunStore.sqf";
 
-player groupChat "GoT Wasteland v2.21 - Client Compile Complete";
+player groupChat "GoT Wasteland v2.3 - Client Compile Complete";
 sleep 1;
 playerCompiledScripts = true;

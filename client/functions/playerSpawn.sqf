@@ -30,7 +30,7 @@ doKickTeamSwitcher = false;
 {
 	if(_x select 0 == playerUID) then
     {
-        if(playerSide != (_x select 1) && str(playerSide) != "GUER") then{
+        if(playerSide != (_x select 1) && !(playerSide in [INDEPENDENT,sideEnemy])) then{
         	doKickTeamSwitcher = true;
 			_side = str(_x select 1);
         };	

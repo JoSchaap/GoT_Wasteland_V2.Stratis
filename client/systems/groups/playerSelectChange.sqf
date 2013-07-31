@@ -29,7 +29,11 @@ if(_unitCount == 1) then
 {
     if(player == leader group player) then
     {
-    	_groupInvite ctrlShow true;    
+    	if(isStreamFriendlyUIEnabled) then {
+			_groupInvite ctrlShow false; //streamfriendly users cannot create groups themselves only accept invites
+		} else {
+			_groupInvite ctrlShow true;
+		};
     } else {
 		_groupInvite ctrlShow false;   
     };		    
