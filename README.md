@@ -85,9 +85,7 @@ changelog for v2.2:
 		[Changed] mission starts at 4am for day edition
 		[Changed] mission starts at 7pm for evening edition
 		[Changed] minor changes to player hud
-		*- your idea here? let us know!
-		*- please bare with me if there are still issues
-		   beta just got out and i wanted this out asap
+
 
 changelog for v2.21
 		[Added] Green army (Independent)
@@ -105,6 +103,7 @@ changelog for v2.21
 		[Changed] added debug logging for findsafepos *debug build*
 		[Changed] mission starts at 8pm for evening edition
 		[Removed] Names when in vehicle in StreamFriendlyUI
+		
 
 changelog for v2.3
 		[Added] 3 general stores
@@ -160,5 +159,9 @@ changelog for v2.3
 		[Changed] amount of objects and vehicles reduced
 		[Changed] Locked baseparts will be saved on server restart
 		*- After restart the baseparts will be spawned UNLOCKED!
+
+
+
+
 
 
