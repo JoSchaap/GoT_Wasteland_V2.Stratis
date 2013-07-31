@@ -11,8 +11,7 @@ FZF_ICHud_Scale = 1.0;
 FZF_ICHud_Centre = [150, 150];
 FZF_ICHud_Customised = false;
 FZF_ICHud_Layer = 609;
-FZF_IC_Hud_Disp = 0;
-HUD_ICON = "";
+
 
 
 FZF_IC_Icons = 
