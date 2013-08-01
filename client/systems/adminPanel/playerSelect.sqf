@@ -30,7 +30,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 		};
 	} forEach playableUnits;
 	
-	if (_check == 0) then exitWith{};
+	if (_check == 0) exitWith{};
 	
 	switch (_switch) do
 	{
