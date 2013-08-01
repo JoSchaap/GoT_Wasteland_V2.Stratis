@@ -69,7 +69,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 					_spectateButton ctrlSetText "Spectate";
 					player commandchat format ["No Longer Viewing.", name _target];
 					player cameraEffect ["terminate","back"];
-					camDestroy _camadm;
+					if (!isNil "_camadm") then { camDestroy _camadm; };
 				};
 			};
 		};
