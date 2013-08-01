@@ -38,5 +38,6 @@ diag_log "Invite to group: After the checks";
 currentInvites set [count currentInvites,[getPlayerUID player,getPlayerUID _target]];
 publicVariableServer "currentInvites"; 
 
-_target groupChat format["You have been invited to join %1's group",name player];
-player globalChat format["you have invited %1 to join the group",name _target];
+[format ["You have been invited to join a group!"], "titleTextMessage", _target, false] call TPG_fnc_MP;
+
+player globalChat format["You have invited %1 to join the group", name _target]; 

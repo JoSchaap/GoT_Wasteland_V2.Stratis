@@ -77,7 +77,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 		{
 			_warnText = ctrlText _warnMessage;
 	        _playerName = name player;
-			[_warnText, "adminMessage", _target, false] call TPG_fnc_MP;
+			[format ["Message from Admin: %1", _warnText], "titleTextMessage", _target, false] call TPG_fnc_MP;
 		};
 	    case 2: //Slay
 	    {
