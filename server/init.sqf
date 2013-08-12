@@ -30,14 +30,16 @@ diag_log format["WASTELAND SERVER - Server Compile Finished"];
 if (loadFile "GoT_Wasteland-config.sqf" != "") then
 {
     call compile preprocessFileLineNumbers "GoT_Wasteland-config.sqf";
-};
- 
-if (loadFile "GoT_Wasteland-config.sqf" == "") exitWith 
-	{
+} else {
 		diag_log "[ERROR] GoT Wasteland v2.3 configuration could not be loaded";
 		diag_log "[ERROR] GoT Wasteland v2.3 requires additional files";
 		diag_log "[ERROR] You can download the full package on: www.got2dayz.nl";
-	};
+		diag_log "[INFO] Setting default settings due to lack of config-file";
+		GoT_buildingsloot = 1;
+		GoT_nightTime = 0;
+		GoT_baseSaving = 0;
+		PDB_ServerID = "any";
+};
 
 if (!isNil "GoT_nightTime" && {GoT_nightTime > 0}) then
 {
@@ -57,15 +59,13 @@ if (!isNil "GoT_buildingsloot" && {GoT_buildingsloot > 0}) then
 };
 
 if (serverSpawning == 1) then {
-    diag_log format["WASTELAND SERVER - Initilizing Server Spawning"];
+    diag_log format["WASTELAND SERVER - Initializing Server Spawning"];
 	_vehSpawn = [] ExecVM "server\functions\vehicleSpawning.sqf";
 	waitUntil{sleep 0.1; scriptDone _vehSpawn};
     _objSpawn = [] ExecVM "server\functions\objectsSpawning.sqf";
 	waitUntil{sleep 0.1; scriptDone _objSpawn};
     _objSpawn2 = [] ExecVM "server\functions\objectsSpawning2.sqf";
 	waitUntil{sleep 0.1; scriptDone _objSpawn2};
-//    _boxSpawn = [] ExecVM "server\functions\boxSpawning.sqf";
-//	waitUntil{sleep 0.1; scriptDone _boxSpawn};
     _heliSpawn = [] ExecVM "server\functions\staticHeliSpawning.sqf";
     waitUntil{sleep 0.1; scriptDone _heliSpawn};
     _boatSpawn = [] ExecVM "server\functions\BoatSpawning.sqf";
@@ -74,7 +74,7 @@ if (serverSpawning == 1) then {
 
 //Execute Server Missions.
 if (sideMissions == 1) then {
-	diag_log format["WASTELAND SERVER - Initilizing Missions"];
+	diag_log format["WASTELAND SERVER - Initializing Missions"];
     [] execVM "server\missions\sideMissionController.sqf";
     sleep 5;
     [] execVM "server\missions\mainMissionController.sqf";
