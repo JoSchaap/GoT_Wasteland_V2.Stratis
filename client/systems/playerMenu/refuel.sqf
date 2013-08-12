@@ -85,9 +85,8 @@ if (!isNil "_currVehicleType") then {
 			_currVehicle setFuel ((fuel _currVehicle) + _fuelAmount);
 		};
 	};
-} else {
-	exitWith {hint "No vehicle nearby!";};
 };
 
 mutexScriptInProgress = false;
+if (isNil "_currVehicleType") exitWith {hint "No vehicle nearby!";};
 

@@ -72,10 +72,10 @@ if (!isNil "_currVehicleType") then {
 	} else {
 			hint "Vehicle does not need repairing";
 	};
-} else {
-	exitWith {hint "No vehicle nearby!";};
 };
 
 sleep 1;
 2 cutText ["", "PLAIN DOWN", 1];
 mutexScriptInProgress = false;
+
+if (!isNil "_currVehicleType") exitWith {hint "No vehicle nearby!";};
