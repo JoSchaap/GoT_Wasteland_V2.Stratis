@@ -78,4 +78,4 @@ sleep 1;
 2 cutText ["", "PLAIN DOWN", 1];
 mutexScriptInProgress = false;
 
-if (!isNil "_currVehicleType") exitWith {hint "No vehicle nearby!";};
+if (isNil "_currVehicleType") exitWith {hint "No vehicle nearby!";};
