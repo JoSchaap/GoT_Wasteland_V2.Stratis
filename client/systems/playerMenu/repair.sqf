@@ -70,12 +70,10 @@ if (!isNil "_currVehicleType") then {
 			};
 		};
 	} else {
-		{
 			hint "Vehicle does not need repairing";
-		};
 	};
 } else {
-	exitWith { 2 cutText ["No vehicle nearby...", "PLAIN DOWN", 1]; };
+	exitWith {hint "No vehicle nearby!";};
 };
 
 sleep 1;

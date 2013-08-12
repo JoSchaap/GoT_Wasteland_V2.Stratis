@@ -86,7 +86,7 @@ if (!isNil "_currVehicleType") then {
 		};
 	};
 } else {
-	exitWith {2 cutText ["No refuel-able vehicle nearby..", "PLAIN DOWN", 1];}; 
+	exitWith {hint "No vehicle nearby!";};
 };
 
 mutexScriptInProgress = false;
