@@ -101,30 +101,30 @@ ammoArray = compileFinal str [
 //Gun Store Equipment List
 //Text name, classname, buy cost
 accessoriesArray = compileFinal str [
-	["GPS","ItemGPS", 30,"item"],
-	["Binoculars","Binocular", 20,"binoc"],
-	["Range Finder","Rangefinder", 250,"binoc"],
-	["Laser Designator","Laserdesignator", 300,"binoc"],
+		["GPS","ItemGPS", 30,"item"],
+		["Binoculars","Binocular", 20,"binoc"],
+		["Range Finder","Rangefinder", 250,"binoc"],
+		["Laser Designator","Laserdesignator", 300,"binoc"],
 	
     	["First Aid","FirstAidKit", 20,"item"],
-   	["Medkit","Medikit", 150,"item"],
-   	["Toolkit","ToolKit", 150,"item"],
+   		["Medkit","Medikit", 150,"item"],
+   		["Toolkit","ToolKit", 150,"item"],
    	
-  	["Suppressor 9mm","muzzle_snds_L", 50,"item"],
-	["Suppressor .45acp","muzzle_snds_acp", 70,"item"],
+	  	["Suppressor 9mm","muzzle_snds_L", 50,"item"],
+		["Suppressor .45acp","muzzle_snds_acp", 70,"item"],
     	["Suppressor 5.56mm","muzzle_snds_M", 90,"item"],
     	["Suppressor 6.5mm","muzzle_snds_H", 150,"item"],
     	["Suppressor 6.5mm(LMG)","muzzle_snds_H_MG", 150,"item"],
-	["Suppressor 7.62mm","muzzle_snds_B", 150,"item"],
+		["Suppressor 7.62mm","muzzle_snds_B", 150,"item"],
 
-	["Flash Light","acc_flashlight", 40,"item"],
+		["Flash Light","acc_flashlight", 40,"item"],
 	
-	["ACO Sight(Red)","optic_Aco", 80,"item"],
+		["ACO Sight(Red)","optic_Aco", 80,"item"],
     	["ACO Sight(Green)","optic_ACO_grn", 80,"item"], 
-	["ACO Sight(SMG)","optic_aco_smg", 70,"item"],
+		["ACO Sight(SMG)","optic_aco_smg", 70,"item"],
     	["Holosight","optic_Holosight", 90,"item"],
-	["Holosight(SMG)","optic_Holosight_smg", 80,"item"],
-	["RCO Sight","optic_Hamr", 190,"item"],
+		["Holosight(SMG)","optic_Holosight_smg", 80,"item"],
+		["RCO Sight","optic_Hamr", 190,"item"],
     	["ARCO Sight","optic_Arco", 190,"item"],
     	["MRCO Sight","optic_MRCO", 190,"item"],
     	["SOS Sight","optic_SOS", 290,"item"],
@@ -132,27 +132,20 @@ accessoriesArray = compileFinal str [
     	["Backpack (Large)","B_Bergen_Base", 200,"backpack"],
     	["Backpack (Extra Large)","B_Carryall_Base", 350,"backpack"], 
 
-	["Carrier Lite (Coyote)","V_PlateCarrier1_cbr", 70,"vest"],
+		["Carrier Lite (Coyote)","V_PlateCarrier1_cbr", 70,"vest"],
     	["Carrier Lite (Green)","V_PlateCarrier1_rgr", 70,"vest"],
     	["Chest Rig (Khaki)","V_Chestrig_khk", 70,"vest"],
     	["Chest Rig (Green)","V_ChestrigB_rgr", 70,"vest"],
-	["Tactical Vest (Brown)","V_TacVest_brn", 70,"vest"],
+		["Tactical Vest (Brown)","V_TacVest_brn", 70,"vest"],
     	["Tactical Vest (Khaki)","V_TacVest_khk", 70,"vest"],
     	["Tactical Vest (Olive)","V_TacVest_oli", 70,"vest"],
-	
 	//diving gear
-	["Dive Goggles","G_Diving", 20,"gogg"],
-    	["Dive Rebreather(BLUEFOR)","V_RebreatherB", 50,"vest"],
-	["Dive Rebreather(OPFOR)","V_RebreatherIR", 50,"vest"],
-	["Dive Rebreather(INDEP.)","V_RebreatherIA", 50,"vest"],
-    	["Dive Wetsuit(BLUEFOR)","U_B_Wetsuit", 50,"uni"],
-	["Dive Wetsuit(OPFOR)","U_O_Wetsuit", 50, "uni"],
-	["Dive Wetsuit(INDEP.)","U_I_Wetsuit", 50, "uni"],
-    	
-    	["Ghillie suit(BLUEFOR)","U_B_Ghilliesuit", 90,"uni"],
-	["Ghillie suit(OPFOR)","U_O_Ghilliesuit", 90, "uni"],
-	["Ghillie suit(INDEP.)","U_I_Ghilliesuit", 90, "uni"],
-    
+		["Dive Goggles","G_Diving", 20,"gogg"],
+		["Rebreather","V_RebreatherIA", 50,"vest"],
+    	["Wetsuit","U_I_Wetsuit", 50,"uni"],
+	//camo
+    	["Ghillie Suit","U_I_Ghilliesuit", 90,"uni"],
+	//headgear
     	["Booniehat (Hex)","H_Booniehat_ocamo", 10,"hat"],
     	["Booniehat (Khaki)","H_Booniehat_khk", 10,"hat"],
     	["Booniehat (MTP)","H_Booniehat_mcamo", 10,"hat"],
@@ -160,12 +153,12 @@ accessoriesArray = compileFinal str [
     	["Cap (Red)","H_Cap_red", 10,"hat"],
     	["Cap (SERO)","H_Cap_brn_SERO", 10,"hat"],
     	["Cap (ION)","H_Cap_blk_ION", 10,"hat"],
-	["Cap Military (Hex)","H_MilCap_ocamo", 10,"hat"],
+		["Cap Military (Hex)","H_MilCap_ocamo", 10,"hat"],
     	["Cap Military (MTP)","H_MilCap_mcamo", 10,"hat"],
         ["ECH","H_HelmetB", 10,"hat"],
     	["ECH (Light)","H_HelmetB_light", 10,"hat"],
     	["ECH (Custom)","H_HelmetB_paint", 10,"hat"],
-	["Pilot Helmet(BLUEFOR)","H_PilotHelmetHeli_B", 10,"hat"],
+		["Pilot Helmet(BLUEFOR)","H_PilotHelmetHeli_B", 10,"hat"],
     	["Pilot Helmet(OPFOR)","H_PilotHelmetHeli_O", 10,"hat"],
     	["Pilot Helmet(INDEP.)","H_PilotHelmetHeli_I", 10,"hat"]
 ];

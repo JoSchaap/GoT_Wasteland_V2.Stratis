@@ -136,21 +136,45 @@ switch (_switch) do
                             else
                             {
 								gunStoreCart = gunStoreCart - (_x select 2);
-								hint format["You already have a vest, please drop it before buying a new one"]; 
+								hint format["You already have a vest, please sell it before buying a new one"]; 
                             };
                         };
-                        case "uni":
-                        {
-                            if (uniform player == "") then
-                            {
-                                player addUniform _class;
-                            }
-                            else
-                            {
+						case "uni":
+						{
+							if (uniform player == "") then
+							{
+							switch (_name) do
+								{
+									case "Ghillie Suit":
+									{
+										switch (faction player) do
+										{
+											case "BLU_F": { player addUniform "U_B_GhillieSuit" };
+											case "OPF_F": { player addUniform "U_O_GhillieSuit" };
+											default { player addUniform "U_I_GhillieSuit" };
+										};
+									};
+									case "Wetsuit":
+									{
+										switch (faction player) do
+										{
+											case "BLU_F": { player addUniform "U_B_Wetsuit" };
+											case "OPF_F": { player addUniform "U_O_Wetsuit" };
+											default { player addUniform "U_I_Wetsuit" };
+										};
+									};
+									default
+									{
+										player addUniform _class;
+									};
+								};
+							}
+							else
+							{
 								gunStoreCart = gunStoreCart - (_x select 2);
-								hint format["You already have an uniform, please drop it before buying a new one"]; 
-                            };
-                        };
+								hint format["You already have an uniform, please sell it before buying a new one"];
+							};
+						};
                         case "hat":
                         {
                             if (headgear player == "") then
@@ -167,9 +191,24 @@ switch (_switch) do
                         {
                             if (goggles player == "") then
                             {
-                                player addgoggles _class;
-                            }
-                            else
+								switch (_name) do
+								{
+									case "Rebreather":
+									{
+										switch (faction player) do
+										{
+											case "BLU_F": { player addgoggles "V_RebreatherB" };
+											case "OPF_F": { player addgoggles "V_RebreatherIR" };
+											default { player addgoggles "V_RebreatherIA" };
+										};
+									};
+									default
+									{
+										player addgoggles _class;
+									};
+								};
+							}
+							else
                             {
 								gunStoreCart = gunStoreCart - (_x select 2);
 								hint format["You already have goggles, please drop them before buying a new one"]; 
