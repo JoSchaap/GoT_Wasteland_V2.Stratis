@@ -13,7 +13,7 @@ if(mutexScriptInProgress) exitWith {
 private["_currVehicle","_currVehicleType","_fuelAmount","_stringEscapePercent","_iteration","_loopSpeed","_iterationAmount","_iterationPercentage"];
 
 _currVehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 5] select 0;
-if (!isNil "_currVehicleType") then { 
+if (!isNil "_currVehicle") then { 
 	_currVehicleType = typeOf _currVehicle;
 	_stringEscapePercent = "%"; // Required to get the % sign into a formatted string.
 	_iteration = 0;
