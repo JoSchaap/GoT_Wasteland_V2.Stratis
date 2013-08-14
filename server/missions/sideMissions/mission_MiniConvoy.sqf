@@ -31,7 +31,8 @@ _createVehicle = {
     _soldier = [_groupsm, _position] call createRandomSoldier; 
     _soldier moveInDriver _vehicle;
     _soldier = [_groupsm, _position] call createRandomSoldier; 
-    _soldier moveInCargo [_vehicle, 0];    
+    _soldier moveInCargo [_vehicle, 0]; 
+	_vehicle spawn cleanVehicleWreck;   
     _vehicle
 };
 

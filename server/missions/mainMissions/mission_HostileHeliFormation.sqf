@@ -56,6 +56,7 @@ _createVehicle = {
 	};
 	_classKeep = _type;
     _vehicle setVehicleLock "LOCKED";
+	_vehicle spawn cleanVehicleWreck;
     _vehicle
 };
 

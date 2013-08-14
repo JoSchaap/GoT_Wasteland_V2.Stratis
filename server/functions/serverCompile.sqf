@@ -71,6 +71,7 @@ objectCreation = compile preprocessFileLineNumbers "server\spawning\objectCreati
 staticHeliCreation = compile preprocessFileLineNumbers "server\spawning\staticHeliCreation.sqf";
 boatCreation = compile preprocessFileLineNumbers "server\spawning\boatCreation.sqf";
 fn_refillbox = compile preprocessFileLineNumbers "server\functions\fn_refillbox.sqf";
+cleanVehicleWreck = compile preprocessFileLineNumbers "server\functions\cleanVehicleWreck.sqf";
 
 //Player Management
 server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";

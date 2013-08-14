@@ -41,6 +41,7 @@ _createVehicle = {
         _soldier moveInTurret [_vehicle, [0]];
     };
     _vehicle setVehicleLock "LOCKED";
+	_vehicle spawn cleanVehicleWreck;
     _vehicle
 };
 

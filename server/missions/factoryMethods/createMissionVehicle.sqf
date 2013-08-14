@@ -28,4 +28,6 @@ _veh setVariable ["R3F_LOG_disabled", true, true];
 clearMagazineCargoGlobal _veh;
 clearWeaponCargoGlobal _veh;
 
+_veh spawn cleanVehicleWreck;
+
 _veh

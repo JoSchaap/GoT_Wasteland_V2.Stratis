@@ -43,6 +43,7 @@ _createVehicle = {
 		} forEach (_vehicle magazinesTurret [-1]);
 	};
     _vehicle setVehicleLock "LOCKED";
+	_vehicle spawn cleanVehicleWreck;
     _vehicle
 };
 
