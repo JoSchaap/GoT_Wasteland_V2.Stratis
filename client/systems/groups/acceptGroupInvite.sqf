@@ -18,18 +18,20 @@ _groupExists = false;
 }forEach currentInvites;
 
 //Get the inviter with their UID
-{
-	if(getPlayerUID _x == _inviterUID) then
-    {
-    	_inviter = _x;
-        _groupExists = true;	    
-    };   
+if (!isNil "_inviterUID") then {
+	{
+		if(getPlayerUID _x == _inviterUID) then
+	    {
+    		_inviter = _x;
+			_groupExists = true;	    
+		};   
+	};
 }forEach playableUnits;
 
-if(_groupExists) then
+if(_groupExists == true) then
 {
 	[player] join (group _inviter);
     player globalChat format["you have accepted the invite"];
 } else {
-	player globalChat format["The group no longer exists"];    
+	player globalChat format["The group no longer exists or the leader disconnected"];    
 }; 
