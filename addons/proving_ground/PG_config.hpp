@@ -29,7 +29,7 @@ class balca_debug_main
 				x = 0; w = column_weight-column_div;
 				y = 0;
 				text = "Create vehicle";
-				action = "if (isServer) then { closeDialog 0; createDialog ""balca_debug_veh_creator""; [0] call c_proving_ground_fnc_create_vehicle } else { ['This option is disabled on clients due to BattlEye.','Notice'] spawn BIS_fnc_guiMessage }"; 
+				action = "if (isServer) then { closeDialog 0; createDialog ""balca_debug_veh_creator""; [0] call c_proving_ground_fnc_create_vehicle } else { closeDialog 0; createDialog ""balca_debug_veh_creator""; [0] call c_proving_ground_fnc_create_vehicle; ['WARNING! battleye will kick you if createvehicle is monitored!.','Notice'] spawn BIS_fnc_guiMessage }"; 
 			};
 
 			class balca_cWeap_btn : balca_debug_btn
