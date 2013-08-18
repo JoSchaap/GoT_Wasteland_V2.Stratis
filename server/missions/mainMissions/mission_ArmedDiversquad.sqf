@@ -25,7 +25,7 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
-CivGrpS = createGroup civilian;
+CivGrpM = createGroup civilian;
 _vehicleClass = ["O_Boat_Armed_01_hmg_F","B_Boat_Armed_01_minigun_F"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
@@ -37,7 +37,7 @@ _slbox = createVehicle ["Box_NATO_Support_F",[(_randomPos select 0), (_randomPos
 _slbox2 = createVehicle ["Box_East_Support_F",[(_randomPos select 0), (_randomPos select 1) - 10,0],[], 0, "NONE"];
 [_slbox2,"mission_USSpecial2"] call fn_refillbox;
 
-[CivGrpS,_randomPos] spawn createLargeDivers;
+[CivGrpM,_randomPos] spawn createLargeDivers;
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
@@ -55,7 +55,7 @@ waitUntil
 	_currTime = floor(time);
     if(_currTime - _startTime >= mainMissionTimeout) then {_result = 1;};
     {if((isPlayer _x) AND (_x distance _slbox <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
-    _unitsAlive = ({alive _x} count units CivGrpS);
+    _unitsAlive = ({alive _x} count units CivGrpM);
     (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) OR ((damage _slbox) == 1)
 };
 
@@ -68,16 +68,16 @@ if(_result == 1) then
 	if not(isNil "_slbox") then {deleteVehicle _slbox;};
 	if not(isNil "_slbox2") then {deleteVehicle _slbox2;};
 	if not(isNil "_vehicle") then {deleteVehicle _vehicle;};
-	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units CivGrpS;
-	{deleteVehicle _x;}forEach units CivGrpS;
-    deleteGroup CivGrpS;
+	{if (vehicle _x != _x) then { deleteVehicle vehicle _x; }; deleteVehicle _x;}forEach units CivGrpM;
+	{deleteVehicle _x;}forEach units CivGrpM;
+    deleteGroup CivGrpM;
     _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%2' size='1.25'>%1</t><br/><t align='center' color='%3'>FAIL! The sunken treasures have been taken away by the enemy!</t>", _missionType, failMissionColor, subTextColor];
 	messageSystem = _hint;
     publicVariable "messageSystem";
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
-    deleteGroup CivGrpS;
+    deleteGroup CivGrpM;
     _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>The sunken treasures are yours to take.</t> You might ass-well take their boat to transport it!</t>", _missionType, successMissionColor, subTextColor];
 	messageSystem = _hint;
     publicVariable "messageSystem";
