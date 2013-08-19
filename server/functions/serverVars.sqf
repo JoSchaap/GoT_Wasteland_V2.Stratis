@@ -1,6 +1,6 @@
 //	@file Version: 1.1
 //	@file Name: serverVars.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse, [GoT] JoSchaap
+//	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse, [GoT] JoSchaap, MercyfulFate
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 // --------------------------------------------------------------------------------------------------- \\
@@ -23,10 +23,8 @@ pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
 publicVariable "pvar_teamKillList";
-pvar_beaconListBlu = []; 
-publicVariable "pvar_beaconListBlu";
-pvar_beaconListRed = []; 
-publicVariable "pvar_beaconListRed";
+pvar_spawn_beacons = [];
+publicVariable "pvar_spawn_beacons";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
 clientRadarMarkers = [];
