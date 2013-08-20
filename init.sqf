@@ -5,7 +5,7 @@
 //	@file Description: The main init.
 
 #include "setup.sqf"
-#define DEBUG true
+#define DEBUG false
 
 StartProgress = false;
 enableSaving[false,false];

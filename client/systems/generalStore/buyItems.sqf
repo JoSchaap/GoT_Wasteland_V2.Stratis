@@ -72,7 +72,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 				[MF_ITEMS_JERRYCAN_FULL, 1] call mf_inventory_add;
             } else {
 				_price = 0;
-				{if(_x select 0 == "Jerry Can (Full)") then{_price = _x select 4;};}forEach generalStore;
+				{if(_x select 0 == "Jerry Can (Full)") then{_price = _x select 4;};}forEach (call generalStore);
 				genStoreCart = genStoreCart - _price;
             };
         };
@@ -82,7 +82,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 				[MF_ITEMS_JERRYCAN_EMPTY, 1] call mf_inventory_add;
             } else {
             	_price = 0;
-                {if(_x select 0 == "Jerry Can (Empty)") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Jerry Can (Empty)") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;
             };
         };
@@ -100,7 +100,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 				[MF_ITEMS_CAMO_NET, 1] call mf_inventory_add;
             } else {
             	_price = 0;
-                {if(_x select 0 == "Improv. roof") then{_price = _x select 4;};}forEach generalStore;
+                {if(_x select 0 == "Improv. roof") then{_price = _x select 4;};}forEach (call generalStore);
             	genStoreCart = genStoreCart - _price;    
             };
         };
