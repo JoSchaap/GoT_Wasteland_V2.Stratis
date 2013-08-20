@@ -23,13 +23,19 @@ waitUntil{time > 2};
 removeAllWeapons player;
 player switchMove "";
 
-//Call client compile list.
-player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
-
 //Stop people being civ's.
 if(!(playerSide in [BLUFOR, OPFOR, INDEPENDENT, sideEnemy])) then { 
 	endMission "LOSER";
 };
+
+// initialize actions and inventory
+"client\actions" call mf_init;
+"client\inventory" call mf_init;
+"client\items" call mf_init;
+
+//Call client compile list.
+player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
+
 
 //Player setup
 player call playerSetup;

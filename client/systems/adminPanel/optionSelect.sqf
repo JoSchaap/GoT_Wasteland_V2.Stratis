@@ -127,7 +127,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 					hint format["Server FPS: %1",serverFPS];
 			    };
 	            case 5: //Test Function
-			    {
+				{
                     _group = createGroup civilian;
 					_leader = _group createunit ["C_man_polo_1_F", getPos player, [], 0.5, "Form"];
                     
