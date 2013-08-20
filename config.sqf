@@ -81,8 +81,8 @@ ammoArray = compileFinal str [
 	["GL HEgrn 40mm","1Rnd_HE_Grenade_shell",75],
 	
 	["NLAW Missile","NLAW_F",140],
-    	["RPG32 Missile","RPG32_F",120],
-    	["RPG32 AA Missile","RPG32_AA_F",140],
+//    	["RPG32 Missile","RPG32_F",120],
+    	["RPG32 HE Missile","RPG32_HE_F",140],
     	["Titan Missile (AA)","Titan_AA",160],
     	["Titan(S) Missile (AT)","Titan_AT",160],
     	["Titan(S) Missile (AP)","Titan_AP",160],

@@ -20,8 +20,8 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["launch_NLAW_F",2];
 		_currBox addWeaponCargoGlobal ["launch_RPG32_F",2];
 		// Add ammunition
-		_currBox addMagazineCargoGlobal ["RPG32_AA_F",5];
-		_currBox addMagazineCargoGlobal ["RPG32_F",5];
+		_currBox addMagazineCargoGlobal ["RPG32_HE_F",5];
+//		_currBox addMagazineCargoGlobal ["RPG32_F",5];
 		_currBox addMagazineCargoGlobal ["NLAW_F",5];
 		_currBox addMagazineCargoGlobal ["DemoCharge_Remote_Mag",5];
 		_currBox addMagazineCargoGlobal ["APERSMine_Range_Mag",6];
@@ -60,8 +60,8 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["launch_NLAW_F",1];
 		_currBox addWeaponCargoGlobal ["launch_RPG32_F",1];
 		_currBox addMagazineCargoGlobal ["16Rnd_9x21_Mag",10];
-		_currBox addMagazineCargoGlobal ["RPG32_AA_F",5];
-		_currBox addMagazineCargoGlobal ["RPG32_F",5];
+		_currBox addMagazineCargoGlobal ["RPG32_HE_F",5];
+//		_currBox addMagazineCargoGlobal ["RPG32_F",5];
 		_currBox addMagazineCargoGlobal ["NLAW_F",5];
 		_currBox addMagazineCargoGlobal ["DemoCharge_Remote_Mag",8];
 		_currBox addMagazineCargoGlobal ["APERSMine_Range_Mag",8];
