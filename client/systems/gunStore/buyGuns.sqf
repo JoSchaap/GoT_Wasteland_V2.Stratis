@@ -127,18 +127,6 @@ switch (_switch) do
 								hint format["You already have a backpack, please drop it before buying a new one"]; 
 							};
 						};
-                        case "vest":
-                        {
-                            if (vest player == "") then
-                            {
-                                player addVest _class;
-                            }
-                            else
-                            {
-								gunStoreCart = gunStoreCart - (_x select 2);
-								hint format["You already have a vest, please sell it before buying a new one"]; 
-                            };
-                        };
 						case "uni":
 						{
 							if (uniform player == "") then
@@ -187,9 +175,9 @@ switch (_switch) do
 								hint format["You already have headgear, please drop it before buying a new one"]; 
                             };
                         };
-						case "gogg":
+						case "vest":
                         {
-                            if (goggles player == "") then
+                            if (vest player == "") then
                             {
 								switch (_name) do
 								{
@@ -197,21 +185,21 @@ switch (_switch) do
 									{
 										switch (faction player) do
 										{
-											case "BLU_F": { player addgoggles "V_RebreatherB" };
-											case "OPF_F": { player addgoggles "V_RebreatherIR" };
-											default { player addgoggles "V_RebreatherIA" };
+											case "BLU_F": { player addVest "V_RebreatherB" };
+											case "OPF_F": { player addVest "V_RebreatherIR" };
+											default { player addVest "V_RebreatherIA" };
 										};
 									};
 									default
 									{
-										player addgoggles _class;
+										player addVest _class;
 									};
 								};
 							}
 							else
                             {
 								gunStoreCart = gunStoreCart - (_x select 2);
-								hint format["You already have goggles, please drop them before buying a new one"]; 
+								hint format["You already have a vest, please drop them before buying a new one"]; 
                             };
                         };
                     };

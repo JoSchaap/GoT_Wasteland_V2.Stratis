@@ -6,6 +6,9 @@
 
 #define icons_idc 46300
 
+#define ICON_fadeDistance 750
+#define ICON_limitDistance 1250
+
 FZF_ICHud_Zoom = 0.05;
 FZF_ICHud_Scale = 1.0;
 FZF_ICHud_Centre = [150, 150];
@@ -14,129 +17,88 @@ FZF_ICHud_Layer = 609;
 
 FZF_IC_Icons = 
 {
-    private ["_pIcons", "_relativePos"];
-    _pIcons = player getVariable "FZF_IC_Hud_pIcons";
-
-    _make_icons = false;
-	_remove_icon = false;
-    _units = [];
-    _uc = 0;
-	if (playerSide in [INDEPENDENT,sideEnemy])then{ //decide what method to check who needs icons
-		{
-			if ((!isNull(_x)) ) then {
-				if (alive(_x)) then {
-					_units set [_uc, _x];
-					_uc = _uc + 1;
-				};
-			};			
-		} forEach (units(player));	
-	} else {
-		{  //decide who needs icons
-			if ((!isNull(_x)) && ((side _x) ==playerSide)) then {
-				if (alive(_x)) then {
-					_units set [_uc, _x];
-					_uc = _uc + 1;
-				};
-			};			
-		} forEach (allUnits);
-	};
-
-    if (isNil "_pIcons")then {
-        _make_icons = true;
-    } else {
-        // Someone has joined the group
-        if (count(_pIcons) < _uc) then {
-            _make_icons = true;
-        };
-        // Someone has left the group, remove the marker
-        if (count(_pIcons) > _uc) then {
-			_make_icons = true;
-			_remove_icon = true;
-        };
-    };
-    if (_make_icons)then {
-        _pIcons = [];
-		private "_Plicon";
-		switch(playerSide) do {
-			case BLUFOR: {
-				_Plicon = "client\icons\igui_side_blufor_ca.paa";
-			};
-			case OPFOR: {
-				_Plicon = "client\icons\igui_side_opfor_ca.paa";
-			};
-			case INDEPENDENT: {
-				_Plicon = "client\icons\igui_side_indep_ca.paa";
-			};
-			case sideEnemy: {
-				_Plicon = "client\icons\igui_side_indep_ca.paa";
-			};
-		};
-        for "_marker_index" from 0 to (_uc - 1) do {
-            
-			_picon = format ["<t align='left'><img image='%1'/></t>", _Plicon ];
-            _pIcons set [_marker_index, _picon];
-        };
-        player setVariable ["FZF_IC_Hud_pIcons", _pIcons];
-    };
+	private ["_units", "_groupOnly", "_index", "_HUD_ICON"];
 	
-	private ["_index", "_FZF_IC_Hud_Disp", "_HUD_ICON"];
+	if (playerSide == INDEPENDENT) then
+	{
+		_units = units player;
+		_groupOnly = true;
+	}
+	else
+	{
+		_units = allUnits;
+		_groupOnly = false;
+	};
+	
 	_index = 0;
-	_FZF_IC_Hud_Disp = uiNamespace getVariable "FZF_IC_Hud_Disp";
-    {
-        private ["_pos","_unit", "_distance", "_name"];
-        _unit = _x;
-		_pos = getposATL _x;
-		if(surfaceIsWater _pos) then {
-			_pos = getposASL _x;
-		};
-		
-        _distance = _pos distance player;
-		if (_distance > 1 && _distance < 1100) then { //rules out the player and players too far away.
-		_pos set [2, (_pos select 2) + 1.5];
-		_screen = worldToScreen _pos;
-		_picon = _pIcons select _index;
-			if((count _screen) > 1) then {  // Dont calculate if they are not on the screen
-				_scale = 0;
-				_sx = _screen select 0;
-				_sy = _screen select 1;
-				if (_distance < 200) then {_scale = 0.3;
-				}else {
-					_scale = 1 min ((1 - ((_distance) - 3) / 15) max 0.3); 
-				};
-							
-				_HUD_ICON = _FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
-				_HUD_ICON ctrlSetStructuredText parseText _picon;
-				_HUD_ICON ctrlSetPosition [_sx, _sy, 0.4, 0.65];
-				_HUD_ICON ctrlSetScale _scale;
-				_HUD_ICON ctrlSetFade ((1- _scale ) / 2);
-				_HUD_ICON ctrlCommit 0;
-				_HUD_ICON ctrlShow true;	
+	
+	{
+		if (_x != player && {side _x == playerSide || {_groupOnly}}) then
+		{
+			private ["_unit", "_pos", "_distance", "_pIcon"];
+			
+			_unit = _x;
+			_pos = getPos _unit;
+			_distance = _pos distance player;
+			
+			if (_distance < ICON_limitDistance) then // rules out the player and players too far away.
+			{
+				_pos set [2, (_pos select 2) + 1.5];
+				_screen = worldToScreen _pos;			
 				
-			} else {
+				if (count _screen > 1) then // Dont calculate if they are not on the screen
+				{
+					_sx = _screen select 0;
+					_sy = _screen select 1;
+					
+					switch (if (alive _unit) then { side _unit } else { playerSide }) do
+					{
+						case BLUFOR:		{ _pIcon = _bluIcon };
+						case OPFOR:			{ _pIcon = _opfIcon };
+						case INDEPENDENT:	{ _pIcon = _indIcon };						
+					};
+					
+					_HUD_ICON = _FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
+					_HUD_ICON ctrlSetStructuredText _pIcon;
+					_HUD_ICON ctrlSetPosition [_sx, _sy, 0.4, 0.65];
+					_HUD_ICON ctrlSetScale (0.35 - ((_distance / ICON_limitDistance) * 0.25));
+					_HUD_ICON ctrlSetFade (0 max (((1 / (ICON_limitDistance - ICON_fadeDistance)) * _distance) - (ICON_limitDistance / ICON_fadeDistance)));
+					_HUD_ICON ctrlCommit 0;
+					_HUD_ICON ctrlShow true;
+				}
+				else
+				{
+					_HUD_ICON = _FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
+					_HUD_ICON ctrlShow false;
+				};
+			}
+			else
+			{
 				_HUD_ICON = _FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
 				_HUD_ICON ctrlShow false;
 			};
-			
-		} else {
-			_HUD_ICON = _FZF_IC_Hud_Disp displayCtrl (icons_idc + _index);
-			_HUD_ICON ctrlShow false;
+		
+			_index = _index + 1;
 		};
-        _index = _index + 1;
-		//sleep 0.0001;
-    } forEach(_units);
-		if (_remove_icon) then {
-			_HUD_ICON = _FZF_IC_Hud_Disp displayCtrl (icons_idc + _index );
-			_HUD_ICON ctrlShow false;
-//			player sideChat "Removed Unit From screen " + str(_index );
-		};
+	} forEach _units;
 	
+	if (!isNil "FZF_IC_Hud_pIcons_count") then
+	{
+		for "_oldIcon" from _index to (FZF_IC_Hud_pIcons_count - 1) do
+		{
+			_HUD_ICON = _FZF_IC_Hud_Disp displayCtrl (icons_idc + _oldIcon);
+			_HUD_ICON ctrlShow false;
+		};
+	};
+	
+	FZF_IC_Hud_pIcons_count = _index;
 };
 
 FZF_IC_Hud_Debug =
 {
-    private ["_icon_text","_Plicon"];	
-	_Plicon = "client\icons\igui_side_blufor_ca.paa";
-	_icon_text = format ["<t align='left'><img image='%1'/>%2<br/></t>", _Plicon ,name cursorTarget];
+	private ["_icon_text","_plIcon"];	
+	_plIcon = "client\icons\igui_side_blufor_ca.paa";
+	_icon_text = format ["<t align='left'><img image='%1'/>%2<br/></t>", _plIcon ,name cursorTarget];
 //	_icon_text = "<t align='left'>Test</t>";
 //	_icon_text = format["<t size='1.5' shadow='2' color='#689D22'>%1</t>",name cursorTarget];
 	_screen = worldToScreen (getpos player);
@@ -153,36 +115,43 @@ FZF_IC_Hud_Debug =
 	};
 };
 
+#define SHOW_HUD (alive player && {!visibleMap} && {showPlayerIcons} && {count allUnits > 1} && {isNil "BIS_DEBUG_CAM"})
 
 FZF_IC_INIT =
 {	
-    if (!isNil "FZF_IC_Handle") then
-    {
-        terminate FZF_IC_Handle;
-    };
+	if (!isNil "FZF_IC_Handle") then
+	{
+		terminate FZF_IC_Handle;
+	};
 
-    FZF_IC_Handle = [] spawn
-    {
-		disableSerialization; 
-        sleep 1;
-        while {true} do
-        {
-#define SHOW_HUD (cameraView in ["INTERNAL","EXTERNAL","GUNNER"]) && (alive(player) && isNil("BIS_DEBUG_CAM") && (count(allUnits) > 1)) && (!visibleMap)
-            waitUntil{sleep 1; SHOW_HUD};
-
-            FZF_ICHud_Layer cutRsc ["FZF_ICHud_Rsc", "PLAIN"];
-            while {SHOW_HUD} do {
-                call FZF_IC_Icons;
-                sleep 0.01;
-            };
-            FZF_ICHud_Layer cutText ["", "PLAIN"];
-
-        };
-    };	
+	FZF_IC_Handle = [] spawn
+	{
+		disableSerialization;
+		private ["_bluIcon", "_opfIcon", "_indIcon", "_FZF_IC_Hud_Disp"];
+		
+		_bluIcon = parseText "<t align='left'><img image='client\icons\igui_side_blufor_ca.paa'/></t>";
+		_opfIcon = parseText "<t align='left'><img image='client\icons\igui_side_opfor_ca.paa'/></t>";
+		_indIcon = parseText "<t align='left'><img image='client\icons\igui_side_indep_ca.paa'/></t>";
+		
+		sleep 1;
+		while {true} do
+		{
+			waitUntil {sleep 1; SHOW_HUD};
+			FZF_ICHud_Layer cutRsc ["FZF_ICHud_Rsc", "PLAIN"];
+			_FZF_IC_Hud_Disp = uiNamespace getVariable "FZF_IC_Hud_Disp";
+			
+			while {SHOW_HUD} do
+			{
+				call FZF_IC_Icons;
+				sleep 0.01;
+			};
+			
+			FZF_ICHud_Layer cutText ["", "PLAIN"];
+		};
+	};	
 };
 
 FZF_ICHud_Load =
 {
-
-	with uiNamespace do { FZF_IC_Hud_Disp = _this select 0; };
-}
+	with uiNamespace do { FZF_IC_Hud_Disp = _this select 0 };
+};

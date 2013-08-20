@@ -163,6 +163,8 @@ accessoriesArray = compileFinal str [
     	["Pilot Helmet(INDEP.)","H_PilotHelmetHeli_I", 10,"hat"]
 ];
 
+allGunStoreItems = compileFinal str ((call weaponsArray) + (call accessoriesArray) + (call ammoArray));
+
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 // ["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
