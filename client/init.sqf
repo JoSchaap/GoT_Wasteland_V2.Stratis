@@ -6,6 +6,7 @@
 
 if (isDedicated) exitWith {};
 
+showPlayerIcons = true; 
 mutexScriptInProgress = false;
 respawnDialogActive = false;
 groupManagmentActive = false;
