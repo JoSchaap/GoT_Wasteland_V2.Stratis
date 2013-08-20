@@ -33,7 +33,7 @@ if ([["U_B_CombatUniform_mcam","U_O_CombatUniform_ocamo","U_I_CombatUniform"], _
 		{
 			_sellValue = (ceil (((_x select 2) / 2) / 5)) * 5;
 		};
-	} forEach (call gearArray);
+	} forEach (call accessoriesArray);
 };
 
 // if(isNil {_sellValue}) exitWith {hint "The store does not want this item."};
