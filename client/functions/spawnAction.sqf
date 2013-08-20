@@ -9,8 +9,8 @@ _button = _this select 1;
 
 player removeAllEventHandlers "HandleDamage";
 player setVariable["cmoney",95,true];
-player setVariable["canfood",1,true];
-player setVariable["water",1,true];
+[MF_ITEMS_CANNED_FOOD, 1] call mf_inventory_add;
+[MF_ITEMS_WATER, 1] call mf_inventory_add;
 
 ppEffectDestroy BIS_fnc_feedback_fatigueBlur;
 ppEffectDestroy BIS_fnc_feedback_damageBlur; 
