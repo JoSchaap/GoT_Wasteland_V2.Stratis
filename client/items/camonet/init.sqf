@@ -9,7 +9,7 @@ _path = _this;
 
 MF_ITEMS_CAMO_NET = "camo_net";
 MF_ITEMS_CAMO_NET_TYPE = "Land_cargo_addon02_V2_F";
-_ground_type = "Land_SuitCase_F";
+_ground_type = "Land_cargo_addon02_V2_F";
 _icon = "client\icons\gunner.paa";
 
 _pack = [_path, "pack.sqf"] call mf_compile;

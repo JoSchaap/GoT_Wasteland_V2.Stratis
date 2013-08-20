@@ -7,9 +7,9 @@
 _path = _this;
 
 
-MF_ITEMS_MEDKIT = "medkit";
-_heal = [_path, "heal.sqf"] call mf_compile;
-[MF_ITEMS_MEDKIT, "Medkit", _heal, "Land_SuitCase_F","client\icons\medkit.paa",2] call mf_inventory_create;
+// MF_ITEMS_MEDKIT = "medkit";
+// _heal = [_path, "heal.sqf"] call mf_compile;
+// [MF_ITEMS_MEDKIT, "Medkit", _heal, "Land_SuitCase_F","client\icons\medkit.paa",2] call mf_inventory_create;
 
 MF_ITEMS_REPAIR_KIT = "repair_kit";
 _repair = [_path, "repair.sqf"] call mf_compile;
