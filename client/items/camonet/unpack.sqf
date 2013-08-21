@@ -18,9 +18,8 @@ if (MF_ITEMS_CAMO_NET call mf_inventory_count <= 0) exitWith {
 };
 
 _hasFailed = {
-	private ["_progress", "_netting", "_caller", "_failed", "_text"];
+	private ["_progress", "_failed", "_text"];
 	_progress = _this select 0;
-	_netting = _this select 1;
 	_text = "";
 	_failed = true;
 	switch (true) do {
@@ -36,7 +35,7 @@ _hasFailed = {
     [_failed, _text];
 };
 
-_success =  [DURATION, ANIM, _hasFailed, [_netting]] call mf_util_playUntil;
+_success =  [DURATION, ANIM, _hasFailed, []] call mf_util_playUntil;
     
 if (_success) then {
 	_netting = MF_ITEMS_CAMO_NET_TYPE createVehicle (position player);
