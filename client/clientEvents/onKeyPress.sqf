@@ -43,14 +43,16 @@ switch _key do
     	if (dialog) exitwith { closeDialog 0; }; // Check a current dialog is not already active.
         if(vehicle player != player) exitwith{};  // Check the player is not a car.
         
-        private ["_storeInteractionBuffer","_storeInteractionZone","_currPos","_store","_relativeDir","_absoluteDir"];
+        private ["_storeInteractionBuffer","_storeInteractionZone","_currPos","_genStore","_gunStore","_relativeDir","_absoluteDir"];
         
         _storeInteractionBuffer = 10; // The acceptable +/- look direction for interacting with stores. Higher = wider look angle.
         _storeInteractionZone = 3; // The furthest away the player can be from a store to interact with it. Higher = further.
         _currPos = getPosATL player;
         
-        _gunStore = nearestObject [_currPos, ["C_man_1_1_F"], _storeInteractionZone];    
-        _genStore = nearestObject [_currPos, ["C_man_1_2_F"], _storeInteractionZone];   
+        //_gunStore = nearestObjects [_currPos, ["C_man_1_1_F"], _storeInteractionZone];    
+		_gunStore = nearestObject [player, "C_man_1_1_F"]; 
+        //_genStore = nearestObjects [_currPos, ["C_man_1_2_F"], _storeInteractionZone];   
+		_genStore = nearestObject [player, "C_man_1_2_F"]; 
         
         if (!isNull (_gunStore select 0)) then {
         	_relativeDir = [player, _gunStore select 0] call BIS_fnc_relativeDirTo;
