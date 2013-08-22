@@ -1276,7 +1276,7 @@ class Mission
 					azimut=191;
 					id=69;
 					side="LOGIC";
-					vehicle="C_man_1_2_F";
+					vehicle="C_man_polo_6_F";
 					leader=1;
 					skill=0.60000002;
 					text="generalStore1";
@@ -1296,7 +1296,7 @@ class Mission
 					azimut=52;
 					id=70;
 					side="LOGIC";
-					vehicle="C_man_1_2_F";
+					vehicle="C_man_polo_6_F";
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
@@ -1316,7 +1316,7 @@ class Mission
 					azimut=30;
 					id=70;
 					side="LOGIC";
-					vehicle="C_man_1_2_F";
+					vehicle="C_man_polo_6_F";
 					leader=1;
 					skill=0.60000002;
 					text="generalStore3";
