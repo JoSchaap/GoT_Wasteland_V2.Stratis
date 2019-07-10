@@ -72,7 +72,7 @@ changelog for v2.2:
 		[Added] New beta boats/submarines!
 		[Added] New outpost Main-mission
 		[Added] New APC Main-mission
-		[Added] New abandonned truck sidemission</br/>
+		[Added] New abandoned truck sidemission</br/>
 		[Fixed] broken vehiclespawns/missions due to beta
 		[Fixed] errors in admin menu's
 		[Fixed] all respawn issues in limbo
